@@ -1,0 +1,62 @@
+[gd_scene format=3 uid="uid://ivx4dods5ajs"]
+
+[ext_resource type="FontFile" uid="uid://cbbnw23rahxsu" path="res://fonts/Blacknorthdemo-mLE25.otf" id="1_7vq08"]
+
+[node name="player_stats" type="ColorRect" unique_id=1767269982]
+z_index = 20
+z_as_relative = false
+y_sort_enabled = true
+anchors_preset = -1
+anchor_right = 0.202
+anchor_bottom = 0.303
+offset_top = 1.0
+offset_right = 0.19999695
+offset_bottom = 6.899994
+color = Color(0.396078, 0.396078, 0.396078, 0.498039)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=392276342]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 13.0
+offset_right = 1.0
+offset_bottom = 22.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="NivelLabel" type="Label" parent="VBoxContainer" unique_id=1771678640]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(0.0220673, 0.032571, 0.0284656, 1)
+theme_override_fonts/font = ExtResource("1_7vq08")
+theme_override_font_sizes/font_size = 20
+text = "NIVELEEE"
+
+[node name="Label" type="Label" parent="VBoxContainer" unique_id=903812718]
+layout_mode = 2
+text = "Stats"
+
+[node name="statDaño" type="Label" parent="VBoxContainer" unique_id=46616557]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Daño"
+
+[node name="statCrit" type="Label" parent="VBoxContainer" unique_id=761789678]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Crit chance
+"
+
+[node name="statAtkSpeed" type="Label" parent="VBoxContainer" unique_id=1683269906]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Atk speed
+"
+
+[node name="statMovSpeed" type="Label" parent="VBoxContainer" unique_id=526691126]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Mov speed
+"

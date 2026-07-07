@@ -1,0 +1,26 @@
+[gd_scene load_steps=4 format=3 uid="uid://dt56nixdahbca"]
+
+[ext_resource type="Texture2D" uid="uid://b7rhtttevhxtj" path="res://characters/ground_shadow.png" id="1_x7ngp"]
+[ext_resource type="Texture2D" uid="uid://btggvf4hlxn7c" path="res://trees/Rock2.png" id="2_0of7g"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_c4eqq"]
+radius = 26.0216
+height = 225.92
+
+[node name="Rock2" type="StaticBody2D"]
+
+[node name="GroundShadow" type="Sprite2D" parent="."]
+modulate = Color(0.647059, 0.619608, 0.6, 0.435294)
+position = Vector2(-1, 13)
+scale = Vector2(2.66667, 0.961538)
+texture = ExtResource("1_x7ngp")
+
+[node name="Rock2" type="Sprite2D" parent="."]
+position = Vector2(-1, -38)
+scale = Vector2(0.531725, 0.475524)
+texture = ExtResource("2_0of7g")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(1.19209e-07, -0.999998)
+rotation = -1.57822
+shape = SubResource("CapsuleShape2D_c4eqq")

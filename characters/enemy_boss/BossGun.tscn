@@ -1,0 +1,38 @@
+[gd_scene format=3 uid="uid://ch88ap2wd565c"]
+
+[ext_resource type="Script" uid="uid://mxidr3645oe1" path="res://characters/enemy_boss/boss_gun.gd" id="1_gk4xv"]
+[ext_resource type="Texture2D" uid="uid://d8iie6essi13" path="res://characters/enemy_boss/ArmaBoss.png" id="2_x78se"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_lgnat"]
+radius = 599.301
+
+[node name="BossGun" type="Area2D"]
+collision_layer = 0
+collision_mask = 8
+script = ExtResource("1_gk4xv")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(1, 1)
+shape = SubResource("CircleShape2D_lgnat")
+debug_color = Color(0.639814, 0.418158, 0.819989, 0.42)
+
+[node name="WeaponPivot" type="Marker2D" parent="."]
+position = Vector2(-4, -3)
+
+[node name="ArmaBoss" type="Sprite2D" parent="WeaponPivot"]
+position = Vector2(129, -12)
+rotation = 3.14159
+scale = Vector2(0.339623, 0.339623)
+texture = ExtResource("2_x78se")
+
+[node name="ShootingPoint" type="Marker2D" parent="WeaponPivot/ArmaBoss"]
+unique_name_in_owner = true
+position = Vector2(-120.722, 8.8328)
+rotation = -3.14159
+scale = Vector2(2.94444, 2.94444)
+
+[node name="BossAtkTimer" type="Timer" parent="."]
+wait_time = 0.3
+autostart = true
+
+[connection signal="timeout" from="BossAtkTimer" to="." method="_on_boss_atk_timer_timeout"]

@@ -1,0 +1,101 @@
+[gd_scene format=3 uid="uid://ct6ctnfjhwh25"]
+
+[ext_resource type="Script" uid="uid://m3n0nm4tul7g" path="res://characters/player/player.gd" id="1_mqknh"]
+[ext_resource type="PackedScene" uid="uid://b6tsnbtomcgxb" path="res://pistol/gun.tscn" id="3_x4s34"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_m57e4"]
+radius = 46.0109
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_w0ha4"]
+radius = 50.01
+
+[sub_resource type="SystemFont" id="SystemFont_4u571"]
+subpixel_positioning = 0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7jppe"]
+bg_color = Color(0.124396, 0.198113, 0.129093, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_f8xn8"]
+bg_color = Color(0.331746, 0.676545, 0.211343, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_u78nl"]
+bg_color = Color(0.255659, 0.255659, 0.255659, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8kf8r"]
+bg_color = Color(0.217028, 0.639558, 0.885151, 1)
+
+[node name="Player" type="CharacterBody2D" unique_id=1757322592 groups=["player"]]
+collision_layer = 9
+platform_floor_layers = 4294967040
+script = ExtResource("1_mqknh")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=125696921]
+position = Vector2(0, -25)
+shape = SubResource("CircleShape2D_m57e4")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1547333466]
+
+[node name="Gun" parent="." unique_id=1760169085 instance=ExtResource("3_x4s34")]
+position = Vector2(2, -14)
+collision_mask = 10
+
+[node name="hurtBox" type="Area2D" parent="." unique_id=239150617 groups=["player"]]
+unique_name_in_owner = true
+collision_layer = 128
+collision_mask = 130
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="hurtBox" unique_id=572627591]
+position = Vector2(-2, -8)
+rotation = -0.00639409
+shape = SubResource("CircleShape2D_w0ha4")
+debug_color = Color(0.827981, 0.318864, 0.604247, 0.42)
+
+[node name="ProgressBar" type="ProgressBar" parent="." unique_id=1323436498]
+unique_name_in_owner = true
+offset_left = -129.0
+offset_top = -184.0
+offset_right = 124.0
+offset_bottom = -149.0
+theme_override_fonts/font = SubResource("SystemFont_4u571")
+theme_override_styles/background = SubResource("StyleBoxFlat_7jppe")
+theme_override_styles/fill = SubResource("StyleBoxFlat_f8xn8")
+value = 100.0
+show_percentage = false
+metadata/_edit_use_anchors_ = true
+
+[node name="LevelBar" type="ProgressBar" parent="." unique_id=1527014536]
+unique_name_in_owner = true
+offset_left = -130.0
+offset_top = -140.0
+offset_right = 234.0
+offset_bottom = -109.0
+scale = Vector2(0.7, 0.7)
+theme_override_font_sizes/font_size = 22
+theme_override_styles/background = SubResource("StyleBoxFlat_u78nl")
+theme_override_styles/fill = SubResource("StyleBoxFlat_8kf8r")
+value = 34.0
+metadata/_edit_use_anchors_ = true
+
+[node name="valorVida" type="Label" parent="." unique_id=1061091629]
+unique_name_in_owner = true
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -24.0
+offset_top = -178.0
+offset_right = 40.0
+offset_bottom = -153.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "ALGO"
+metadata/_edit_use_anchors_ = true

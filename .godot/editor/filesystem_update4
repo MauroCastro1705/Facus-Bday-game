@@ -1,0 +1,14 @@
+res://survivors-game.tscn
+res://escenas/main_scene.tscn
+res://characters/happy_boo/happy_boo.tscn
+res://characters/player/happy_boo.tscn
+res://characters/player/facu.tscn
+res://mob.tscn
+res://bullet.tscn
+res://escenas/Main/main_scene.tscn
+res://characters/player/player.tscn
+res://mob_bossjuampi.tscn
+res://MSG_label.tscn
+res://escenas/Game_over/game_over.tscn
+res://Scripts/global.gd
+res://UI/player_stats.tscn

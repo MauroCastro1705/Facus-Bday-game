@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://b13673pc21plb"]
+
+[ext_resource type="Script" uid="uid://djwow3fkhexak" path="res://characters/enemy_boss/boss_bullet.gd" id="1_8r5kn"]
+[ext_resource type="Texture2D" uid="uid://bj15gtk0bb1ut" path="res://characters/enemy_boss/BossProjectile.png" id="2_qlxcj"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_l57ty"]
+radius = 15.0
+
+[node name="Bullet" type="Area2D"]
+top_level = true
+rotation = -0.0390057
+collision_layer = 129
+collision_mask = 129
+script = ExtResource("1_8r5kn")
+
+[node name="BossProjectile" type="Sprite2D" parent="."]
+position = Vector2(-9.99239, -0.389958)
+texture = ExtResource("2_qlxcj")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_l57ty")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

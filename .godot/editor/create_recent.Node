@@ -1,0 +1,14 @@
+VBoxContainer
+Timer
+Label
+CollisionShape2D
+ProgressBar
+AnimatedSprite2D
+Button
+ColorRect
+CharacterBody2D
+StaticBody2D
+Area2D
+PathFollow2D
+Path2D
+RigidBody2D

@@ -1,0 +1,167 @@
+[gd_scene format=3 uid="uid://cfnqhaduo88te"]
+
+[ext_resource type="Script" uid="uid://d330gp8kocg5g" path="res://escenas/level_up_screen.gd" id="1_70wo3"]
+[ext_resource type="Theme" uid="uid://dedmc73m6he8n" path="res://texto_basico.tres" id="1_l7vt7"]
+[ext_resource type="FontFile" uid="uid://ew0lbedgquft" path="res://fonts/Mindsight.ttf" id="2_2e55w"]
+[ext_resource type="Texture2D" uid="uid://ct64ahdb6i0f2" path="res://pickups/AtkDmg.png" id="4_v3yk0"]
+[ext_resource type="Texture2D" uid="uid://pt653t4xvtrd" path="res://pickups/Atkspeed.png" id="5_xoir5"]
+[ext_resource type="Texture2D" uid="uid://d25hor2gnrp42" path="res://pickups/HealthCure.png" id="6_evhup"]
+
+[node name="Level up screen" type="Control"]
+process_mode = 2
+z_index = 90
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_70wo3")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = -1
+offset_left = -968.0
+offset_top = -541.0
+offset_right = 960.0
+offset_bottom = 536.0
+color = Color(0.180392, 0.180392, 0.180392, 0.431373)
+
+[node name="ColorRect" type="ColorRect" parent="ColorRect"]
+layout_mode = 0
+offset_left = 548.0
+offset_top = 96.0
+offset_right = 1392.0
+offset_bottom = 860.0
+color = Color(0.12103, 0.12103, 0.12103, 1)
+
+[node name="Label3" type="Label" parent="ColorRect/ColorRect"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -71.0
+offset_top = -36.0
+offset_right = 68.0
+offset_bottom = -9.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_l7vt7")
+theme_override_fonts/font = ExtResource("2_2e55w")
+theme_override_font_sizes/font_size = 21
+text = "Aumentar Daño"
+
+[node name="Nivel_label" type="Label" parent="ColorRect"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -377.0
+offset_top = -384.5
+offset_right = 351.0
+offset_bottom = -266.5
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_l7vt7")
+theme_override_fonts/font = ExtResource("2_2e55w")
+theme_override_font_sizes/font_size = 90
+text = "Subiste de nivel
+"
+
+[node name="Label2" type="Label" parent="ColorRect"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -202.0
+offset_top = -204.5
+offset_right = 209.0
+offset_bottom = -135.5
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_l7vt7")
+theme_override_fonts/font = ExtResource("2_2e55w")
+theme_override_font_sizes/font_size = 37
+text = "hay que jugar mejor"
+
+[node name="MasDmg-button3" type="Button" parent="ColorRect"]
+layout_mode = 0
+offset_left = 933.0
+offset_top = 475.0
+offset_right = 999.0
+offset_bottom = 571.0
+
+[node name="AtkDmg" type="Sprite2D" parent="ColorRect/MasDmg-button3"]
+position = Vector2(34, 47)
+texture = ExtResource("4_v3yk0")
+
+[node name="MasAtkSpd-button2" type="Button" parent="ColorRect"]
+layout_mode = 0
+offset_left = 761.0
+offset_top = 493.0
+offset_right = 827.0
+offset_bottom = 589.0
+
+[node name="Atkspeed" type="Sprite2D" parent="ColorRect/MasAtkSpd-button2"]
+position = Vector2(37, 53)
+texture = ExtResource("5_xoir5")
+
+[node name="MasVida-button" type="Button" parent="ColorRect"]
+layout_mode = 0
+offset_left = 1111.0
+offset_top = 497.0
+offset_right = 1178.0
+offset_bottom = 593.0
+
+[node name="HealthCure" type="Sprite2D" parent="ColorRect/MasVida-button"]
+position = Vector2(34, 47)
+texture = ExtResource("6_evhup")
+
+[node name="Label3" type="Label" parent="ColorRect"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -268.0
+offset_top = 63.5
+offset_right = -50.0
+offset_bottom = 90.5
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_l7vt7")
+theme_override_fonts/font = ExtResource("2_2e55w")
+theme_override_font_sizes/font_size = 21
+text = "Mas Velocidad de ataque"
+
+[node name="Label3" type="Label" parent="ColorRect/Label3"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 283.0
+offset_top = -16.5
+offset_right = 421.0
+offset_bottom = 10.5
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_l7vt7")
+theme_override_fonts/font = ExtResource("2_2e55w")
+theme_override_font_sizes/font_size = 21
+text = "Recuperar vida"
+
+[connection signal="pressed" from="ColorRect/MasDmg-button3" to="." method="_on_mas_dmgbutton_3_pressed"]
+[connection signal="pressed" from="ColorRect/MasAtkSpd-button2" to="." method="_on_mas_atk_spdbutton_2_pressed"]
+[connection signal="pressed" from="ColorRect/MasVida-button" to="." method="_on_mas_vidabutton_pressed"]

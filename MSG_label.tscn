@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://dr0aopwfmiagr"]
+
+[ext_resource type="FontFile" uid="uid://ew0lbedgquft" path="res://fonts/Mindsight.ttf" id="1_s1ckm"]
+
+[node name="MSGLabel" type="Label" unique_id=516449473]
+unique_name_in_owner = true
+offset_left = -48.0
+offset_top = -109.0
+offset_right = 49.0
+offset_bottom = -86.0
+theme_override_colors/font_color = Color(9.39905e-05, 0.000103012, 0.00165697, 1)
+theme_override_fonts/font = ExtResource("1_s1ckm")
+theme_override_font_sizes/font_size = 18
+text = "asdadwad"
+horizontal_alignment = 1
+vertical_alignment = 1
