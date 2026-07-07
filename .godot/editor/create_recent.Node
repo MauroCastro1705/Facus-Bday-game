@@ -1,3 +1,7 @@
+Node2D
+MarginContainer
+HBoxContainer
+Control
 VBoxContainer
 Timer
 Label
@@ -9,6 +13,3 @@ ColorRect
 CharacterBody2D
 StaticBody2D
 Area2D
-PathFollow2D
-Path2D
-RigidBody2D

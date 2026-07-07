@@ -2,35 +2,19 @@
 
 [ext_resource type="Script" uid="uid://hhdx8g7j8jlm" path="res://pistol/gun.gd" id="1_3kxp0"]
 [ext_resource type="Texture2D" uid="uid://dhvhfi7n68pii" path="res://pistol/pistol.png" id="1_s7dlq"]
-[ext_resource type="Texture2D" uid="uid://bi3n7o5ijcor8" path="res://ui-bordersz/crosshair_game.png" id="3_0cxlp"]
+[ext_resource type="PackedScene" uid="uid://dh232j485a6kq" path="res://pistol/bullet.tscn" id="2_donny"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_lgnat"]
-radius = 429.075
-
-[node name="Gun" type="Area2D"]
-collision_layer = 0
-collision_mask = 2
+[node name="Gun" type="Node2D" unique_id=563386667]
 script = ExtResource("1_3kxp0")
+bullet = ExtResource("2_donny")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(1, 1)
-shape = SubResource("CircleShape2D_lgnat")
-
-[node name="WeaponPivot" type="Marker2D" parent="."]
+[node name="WeaponPivot" type="Marker2D" parent="." unique_id=709847980]
 position = Vector2(-4, -3)
 
-[node name="Pistol" type="Sprite2D" parent="WeaponPivot"]
+[node name="Pistol" type="Sprite2D" parent="WeaponPivot" unique_id=307666974]
 position = Vector2(85, -4)
 texture = ExtResource("1_s7dlq")
 
-[node name="ShootingPoint" type="Marker2D" parent="WeaponPivot/Pistol"]
+[node name="ShootingPoint" type="Marker2D" parent="WeaponPivot/Pistol" unique_id=1239261448]
 unique_name_in_owner = true
 position = Vector2(26, -11)
-
-[node name="Crosshair" type="Sprite2D" parent="."]
-unique_name_in_owner = true
-z_index = 54
-position = Vector2(254, -18)
-rotation = -0.484243
-scale = Vector2(0.638889, 0.638889)
-texture = ExtResource("3_0cxlp")

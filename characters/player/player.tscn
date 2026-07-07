@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://ct6ctnfjhwh25"]
 
 [ext_resource type="Script" uid="uid://m3n0nm4tul7g" path="res://characters/player/player.gd" id="1_mqknh"]
+[ext_resource type="Texture2D" uid="uid://bi3n7o5ijcor8" path="res://ui-bordersz/crosshair_game.png" id="3_exd8k"]
 [ext_resource type="PackedScene" uid="uid://b6tsnbtomcgxb" path="res://pistol/gun.tscn" id="3_x4s34"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_m57e4"]
@@ -32,10 +33,11 @@ bg_color = Color(0.255659, 0.255659, 0.255659, 1)
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8kf8r"]
 bg_color = Color(0.217028, 0.639558, 0.885151, 1)
 
-[node name="Player" type="CharacterBody2D" unique_id=1757322592 groups=["player"]]
+[node name="Player" type="CharacterBody2D" unique_id=1757322592 node_paths=PackedStringArray("gun") groups=["player"]]
 collision_layer = 9
 platform_floor_layers = 4294967040
 script = ExtResource("1_mqknh")
+gun = NodePath("Gun")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=125696921]
 position = Vector2(0, -25)
@@ -44,8 +46,7 @@ shape = SubResource("CircleShape2D_m57e4")
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1547333466]
 
 [node name="Gun" parent="." unique_id=1760169085 instance=ExtResource("3_x4s34")]
-position = Vector2(2, -14)
-collision_mask = 10
+position = Vector2(6, 3)
 
 [node name="hurtBox" type="Area2D" parent="." unique_id=239150617 groups=["player"]]
 unique_name_in_owner = true
@@ -84,18 +85,10 @@ theme_override_styles/fill = SubResource("StyleBoxFlat_8kf8r")
 value = 34.0
 metadata/_edit_use_anchors_ = true
 
-[node name="valorVida" type="Label" parent="." unique_id=1061091629]
+[node name="Crosshair" type="Sprite2D" parent="." unique_id=1855190121]
 unique_name_in_owner = true
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -24.0
-offset_top = -178.0
-offset_right = 40.0
-offset_bottom = -153.0
-grow_horizontal = 2
-grow_vertical = 2
-text = "ALGO"
-metadata/_edit_use_anchors_ = true
+z_index = 54
+position = Vector2(254, -18)
+rotation = -0.484243
+scale = Vector2(0.638889, 0.638889)
+texture = ExtResource("3_exd8k")

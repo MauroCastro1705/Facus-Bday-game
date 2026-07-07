@@ -12,3 +12,10 @@ res://MSG_label.tscn
 res://escenas/Game_over/game_over.tscn
 res://Scripts/global.gd
 res://UI/player_stats.tscn
+res://UI/top_bar_ui.tscn
+res://pistol/gun.tscn
+res://characters/player/player.gd
+res://pistol/gun.gd
+res://pistol/bullet.tscn
+res://Scripts/to-do.txt
+res://Scripts/DamageNumbers.gd
