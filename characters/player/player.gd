@@ -5,6 +5,10 @@ var is_dead: bool = false
 @onready var barra_vida: HealthBar = $BarraVida
 var max_health: float
 var current_health: float
+#arma
+var original_scale: float = 1.0
+var shoot_scale: float = 1.3
+var scale_timer: float = 0.0
 
 @onready var DAMAGE_RATE = Global.mobDmgRate
 @onready var overlapping_mobs = $hurtBox.get_overlapping_bodies()
@@ -56,16 +60,11 @@ func _physics_process(_delta):
 		trigger_shoot_effect()
 
 func trigger_shoot_effect():
-	# Cambiar el color del crosshair a naranja/amarillo
 	crosshair.modulate = Color.ORANGE  # O puedes usar Color.YELLOW
-	
-	# También puedes combinar ambos colores para un efecto más vibrante
-	# crosshair.modulate = Color(1.0, 0.8, 0.2)  # Color amarillo-naranja
-	
 	# Iniciar el temporizador para el flash
 	is_shooting = true
 	shoot_flash_timer = FLASH_DURATION
-	
+
 	# Aquí puedes añadir más efectos de disparo si lo deseas
 	print("¡Disparo!")
 
@@ -88,12 +87,9 @@ func die():
 	print("Guerrero ha muerto!")
 	queue_free()
 
-# Opcional: Si quieres un efecto más complejo con interpolación de colores
+
 func _process(_delta):
-	# Este método es alternativo al flash simple
 	if is_shooting:
-		# Puedes hacer un efecto de parpadeo más complejo aquí
 		var time_remaining = shoot_flash_timer / FLASH_DURATION
-		# Interpolar entre naranja y blanco
 		var color = Color.ORANGE.lerp(Color.WHITE, 1.0 - time_remaining)
 		crosshair.modulate = color

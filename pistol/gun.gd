@@ -4,6 +4,7 @@ extends Node2D
 @onready var shooting_point = %ShootingPoint
 @export var bullet:PackedScene
 var can_shoot = true  # Prevents continuous shooting
+@onready var pistol: Sprite2D = $Pistol
 
 func _ready():
 	pass
@@ -19,8 +20,18 @@ func start_shooting_cooldown():
 	can_shoot = true  # Allow shooting again
 
 func _physics_process(_delta):
-	look_at(get_global_mouse_position())  # Default: Aim at the mouse
+	var mouse_position = get_global_mouse_position()
+	var direction = (mouse_position - global_position).normalized()
+	
+	# Rotar el arma hacia el mouse
+	rotation = direction.angle()
+	
+	# Flip vertical cuando mira a la izquierda
+	if direction.x < 0:
+		pistol.flip_v = true
 
+	else:
+		pistol.flip_v = false
 
 #### SHOOT TYPES####
 func Normal_Shoot():

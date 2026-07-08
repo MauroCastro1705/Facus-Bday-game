@@ -8,13 +8,11 @@
 script = ExtResource("1_3kxp0")
 bullet = ExtResource("2_donny")
 
-[node name="WeaponPivot" type="Marker2D" parent="." unique_id=709847980]
-position = Vector2(-4, -3)
-
-[node name="Pistol" type="Sprite2D" parent="WeaponPivot" unique_id=307666974]
-position = Vector2(85, -4)
-texture = ExtResource("1_s7dlq")
-
-[node name="ShootingPoint" type="Marker2D" parent="WeaponPivot/Pistol" unique_id=1239261448]
+[node name="ShootingPoint" type="Marker2D" parent="." unique_id=1239261448]
 unique_name_in_owner = true
-position = Vector2(26, -11)
+position = Vector2(128, 0)
+
+[node name="Pistol" type="Sprite2D" parent="." unique_id=307666974]
+position = Vector2(71, 0)
+texture = ExtResource("1_s7dlq")
+offset = Vector2(31, 11)
