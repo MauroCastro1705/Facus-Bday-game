@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://b82ee7sufkotb"]
+
+[ext_resource type="PackedScene" uid="uid://h4sml022j7xx" path="res://escenas/rooms/room_base/RoomBase.tscn" id="1_u421q"]
+
+[node name="Room_1" unique_id=1639878217 instance=ExtResource("1_u421q")]
+
+[node name="ColorRect2" type="ColorRect" parent="." index="0" unique_id=1147890487]
+offset_right = 921.0
+offset_bottom = 730.0
+color = Color(0.96023065, 0.44573367, 0.5651272, 1)
+
+[node name="ColorRect" type="ColorRect" parent="." index="1" unique_id=482727698]
+offset_left = 411.0
+offset_top = 187.0
+offset_right = 928.0
+offset_bottom = 517.0
+color = Color(0.47788018, 0.47788012, 0.47788012, 1)
+
+[node name="SpawnPoint" parent="." index="2" unique_id=219479906]
+position = Vector2(107, 306)
+
+[node name="CollisionShape2D" parent="Transition_area" parent_id_path=PackedInt32Array(812714668) index="0" unique_id=134086289]
+position = Vector2(880, 362)

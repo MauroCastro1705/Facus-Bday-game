@@ -7,3 +7,10 @@ res://characters/player/player.gd
 res://pistol/gun.tscn
 res://pistol/gun.gd
 res://UI/barra_vida/barra_vida.tscn
+res://escenas/info sobre escenas.txt
+res://Scripts/GameManager.gd
+res://escenas/Main/survivors-game.gd
+res://escenas/Main/main_scene.gd
+res://escenas/rooms/room_base/RoomBase.tscn
+res://escenas/rooms/room_base/room_base.gd
+res://escenas/rooms/room_1.tscn

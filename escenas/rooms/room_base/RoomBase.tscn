@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://h4sml022j7xx"]
+
+[ext_resource type="Script" uid="uid://di4s67gthcc4m" path="res://escenas/rooms/room_base/room_base.gd" id="1_g0vqd"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g0vqd"]
+size = Vector2(135.5, 362)
+
+[node name="RoomBase" type="Node2D" unique_id=1639878217]
+script = ExtResource("1_g0vqd")
+
+[node name="SpawnPoint" type="Marker2D" parent="." unique_id=219479906 groups=["player_spawn"]]
+
+[node name="Transition_area" type="Area2D" parent="." unique_id=812714668 groups=["room_transition"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Transition_area" unique_id=134086289]
+position = Vector2(878, 332)
+shape = SubResource("RectangleShape2D_g0vqd")
+
+[node name="EnemiesContainer" type="Node2D" parent="." unique_id=102369919]
+
+[node name="Props" type="Node2D" parent="." unique_id=508407113]

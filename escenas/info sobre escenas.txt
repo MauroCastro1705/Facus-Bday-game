@@ -1,0 +1,12 @@
+como deberia ser un room:
+	
+	Room (Node2D)
+	├── TileMap o Sprite (fondo)
+	├── SpawnPoint (Marker2D) - Grupo: "player_spawn"
+	├── Enemies (Node2D) - Contenedor de enemigos
+	│   ├── Enemy1 (CharacterBody2D) - Grupo: "enemies"
+	│   ├── Enemy2 (CharacterBody2D) - Grupo: "enemies"
+	│   └── Enemy3 (CharacterBody2D) - Grupo: "enemies"
+	├── TransitionArea (Area2D) - Grupo: "room_transition"
+	│   └── CollisionShape2D
+	└── Decoración adicional

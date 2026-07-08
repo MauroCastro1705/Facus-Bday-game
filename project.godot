@@ -110,6 +110,11 @@ folder_colors={
 "res://escenas/": "red"
 }
 
+[global_group]
+
+player_spawn=""
+room_transition=""
+
 [input]
 
 move_left={
@@ -146,6 +151,10 @@ pause={
 
 [layer_names]
 
+2d_render/layer_1="player"
+2d_render/layer_2="enemigos"
+2d_render/layer_3="escenario"
+2d_render/layer_4="pickups"
 3d_physics/layer_2="player"
 
 [rendering]

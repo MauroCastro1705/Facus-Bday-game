@@ -1,41 +1,32 @@
 [gd_scene format=3 uid="uid://c08om84k0pbuj"]
 
-[ext_resource type="Script" uid="uid://bdg0lbwt3ne1l" path="res://escenas/Main/survivors-game.gd" id="1_rpjre"]
+[ext_resource type="Script" uid="uid://8o5hbtspb15a" path="res://escenas/Main/main_scene.gd" id="1_mo04v"]
 [ext_resource type="PackedScene" uid="uid://dh2f3xslpsv78" path="res://UI/top_bar_ui.tscn" id="2_x5rmy"]
 [ext_resource type="PackedScene" uid="uid://ct6ctnfjhwh25" path="res://characters/player/player.tscn" id="3_tcvou"]
-[ext_resource type="FontFile" uid="uid://cbbnw23rahxsu" path="res://fonts/Blacknorthdemo-mLE25.otf" id="4_wqktd"]
-[ext_resource type="Theme" uid="uid://dedmc73m6he8n" path="res://texto_basico.tres" id="6_fdnso"]
 [ext_resource type="PackedScene" uid="uid://ctjltlqtk1ga4" path="res://UI/coin_ui/coin_ui.tscn" id="6_fmakg"]
+[ext_resource type="Script" uid="uid://dx8l2vrb0opwk" path="res://Scripts/GameManager.gd" id="7_mo04v"]
+[ext_resource type="PackedScene" uid="uid://b82ee7sufkotb" path="res://escenas/rooms/room_1.tscn" id="8_du476"]
 
 [node name="Game" type="Node2D" unique_id=37439251]
 y_sort_enabled = true
-script = ExtResource("1_rpjre")
+script = ExtResource("1_mo04v")
 
-[node name="top_bar_ui" parent="." unique_id=353916242 instance=ExtResource("2_x5rmy")]
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1601601223]
+
+[node name="top_bar_ui" parent="CanvasLayer" unique_id=353916242 instance=ExtResource("2_x5rmy")]
+
+[node name="CoinUi" parent="CanvasLayer" unique_id=2125611169 instance=ExtResource("6_fmakg")]
+offset_left = 801.0
+offset_top = 20.0
+offset_right = 801.0
+offset_bottom = 20.0
 
 [node name="Player" parent="." unique_id=1183339018 instance=ExtResource("3_tcvou")]
 unique_name_in_owner = true
 position = Vector2(456, 358)
 
-[node name="MobSpawnAlert" type="RichTextLabel" parent="Player" unique_id=1447728629]
-unique_name_in_owner = true
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -170.0
-offset_top = -292.0
-offset_right = 347.0
-offset_bottom = -229.0
-grow_horizontal = 2
-theme = ExtResource("6_fdnso")
-theme_override_colors/default_color = Color(0.00267306, 0.00160861, 0.00121245, 1)
-theme_override_fonts/normal_font = ExtResource("4_wqktd")
-bbcode_enabled = true
-fit_content = true
-scroll_active = false
-
-[node name="CoinUi" parent="." unique_id=2125611169 instance=ExtResource("6_fmakg")]
-offset_left = 801.0
-offset_top = 20.0
-offset_right = 801.0
-offset_bottom = 20.0
+[node name="gameManager" type="Node2D" parent="." unique_id=1426588263 node_paths=PackedStringArray("rooms_parent", "player")]
+script = ExtResource("7_mo04v")
+rooms_parent = NodePath(".")
+player = NodePath("../Player")
+room_scenes = Array[PackedScene]([ExtResource("8_du476"), ExtResource("8_du476")])
