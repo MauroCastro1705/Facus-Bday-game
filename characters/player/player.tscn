@@ -4,12 +4,31 @@
 [ext_resource type="Texture2D" uid="uid://bi3n7o5ijcor8" path="res://ui-bordersz/crosshair_game.png" id="3_exd8k"]
 [ext_resource type="PackedScene" uid="uid://b6tsnbtomcgxb" path="res://pistol/gun.tscn" id="3_x4s34"]
 [ext_resource type="PackedScene" uid="uid://bhk8r7mumgdnr" path="res://UI/barra_vida/barra_vida.tscn" id="4_5dc8e"]
+[ext_resource type="Texture2D" uid="uid://b3334ee2weo43" path="res://ui-bordersz/crosshair_game (1).png" id="5_c6leb"]
+[ext_resource type="Texture2D" uid="uid://bw4dfu5m8hnou" path="res://ui-bordersz/crosshair_game (2).png" id="6_dirf7"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_m57e4"]
 radius = 46.0109
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_w0ha4"]
 radius = 50.01
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_idpv6"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_c6leb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_dirf7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_exd8k")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}]
 
 [node name="Player" type="CharacterBody2D" unique_id=1757322592 node_paths=PackedStringArray("gun") groups=["player"]]
 collision_layer = 9
@@ -37,13 +56,12 @@ rotation = -0.00639409
 shape = SubResource("CircleShape2D_w0ha4")
 debug_color = Color(0.827981, 0.318864, 0.604247, 0.42)
 
-[node name="Crosshair" type="Sprite2D" parent="." unique_id=1855190121]
-unique_name_in_owner = true
-z_index = 54
-position = Vector2(254, -18)
-rotation = -0.484243
-scale = Vector2(0.638889, 0.638889)
-texture = ExtResource("3_exd8k")
-
 [node name="BarraVida" parent="." unique_id=642129819 instance=ExtResource("4_5dc8e")]
 position = Vector2(-74, -161)
+
+[node name="crosshair" type="AnimatedSprite2D" parent="." unique_id=1817317563]
+position = Vector2(255.99998, 59.000004)
+scale = Vector2(0.6052632, 0.6052632)
+sprite_frames = SubResource("SpriteFrames_idpv6")
+autoplay = "default"
+frame_progress = 0.7845775

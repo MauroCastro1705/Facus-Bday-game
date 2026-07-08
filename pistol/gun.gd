@@ -1,5 +1,6 @@
-extends Area2D
+extends Node2D
 
+#GUN.gd
 @onready var shooting_point = %ShootingPoint
 @export var bullet:PackedScene
 var can_shoot = true  # Prevents continuous shooting
@@ -18,12 +19,7 @@ func start_shooting_cooldown():
 	can_shoot = true  # Allow shooting again
 
 func _physics_process(_delta):
-	if Global.auto_target_enemy:
-		var enemies_in_range = get_overlapping_bodies()
-		if enemies_in_range.size() > 0:
-			look_at(enemies_in_range[0].global_position)  # Aim at the closest enemy
-	else:
-		look_at(get_global_mouse_position())  # Default: Aim at the mouse
+	look_at(get_global_mouse_position())  # Default: Aim at the mouse
 
 
 #### SHOOT TYPES####

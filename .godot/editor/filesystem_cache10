@@ -1,5 +1,5 @@
 63f7b34db8d8cdea90c76aacccf841ec
-::res://::1783520381
+::res://::1783520643
 default_bus_layout.tres::AudioBusLayout::6564268947468103023::1744294468::0::1::::<><><>0<>0<><>::
 export_presets.cfg::TextFile::-1::1744294468::0::1::::<><><>0<>0<><>::
 icon.png::CompressedTexture2D::8812228409431975077::1744294468::1783435402::1::::<><><>0<>0<>6920f5f91be7b3649c95344f1076cca0<>res://.godot/imported/icon.png-487276ed1e3a0c39cad0279d744ee560.ctex::
@@ -49,13 +49,13 @@ level_up_screen.tscn::PackedScene::5151606474383905078::1783436030::0::1::::<><>
 ::res://escenas/Game_over/::1783444082
 game_over.gd::GDScript::8995081358037765454::1744294468::0::1::::<>Control<><>0<>0<><>::
 game_over.tscn::PackedScene::4348284783387969695::1783444082::0::1::::<><><>0<>0<><>::uid://d1fjw8gorifms::::res://escenas/Game_over/game_over.gd<>uid://dedmc73m6he8n::::res://texto_basico.tres<>uid://ew0lbedgquft::::res://fonts/Mindsight.ttf<>uid://cbbnw23rahxsu::::res://fonts/Blacknorthdemo-mLE25.otf
-::res://escenas/Main/::1783518991
-main_scene.tscn::PackedScene::6596560170204810429::1783518991::0::1::::<><><>0<>0<><>::uid://bdg0lbwt3ne1l::::res://escenas/Main/survivors-game.gd<>uid://dh2f3xslpsv78::::res://UI/top_bar_ui.tscn<>uid://ct6ctnfjhwh25::::res://characters/player/player.tscn<>uid://cbbnw23rahxsu::::res://fonts/Blacknorthdemo-mLE25.otf<>uid://dedmc73m6he8n::::res://texto_basico.tres
+::res://escenas/Main/::1783520645
+main_scene.tscn::PackedScene::6596560170204810429::1783520645::0::1::::<><><>0<>0<><>::uid://bdg0lbwt3ne1l::::res://escenas/Main/survivors-game.gd<>uid://dh2f3xslpsv78::::res://UI/top_bar_ui.tscn<>uid://ct6ctnfjhwh25::::res://characters/player/player.tscn<>uid://cbbnw23rahxsu::::res://fonts/Blacknorthdemo-mLE25.otf<>uid://dedmc73m6he8n::::res://texto_basico.tres<>uid://ctjltlqtk1ga4::::res://UI/coin_ui/coin_ui.tscn
 survivors-game.gd::GDScript::2610911137093926551::1783516510::0::1::::<>Node2D<><>0<>0<><>::
 ::res://escenas/main_menu/::1783516386
 MainMenu.tscn::PackedScene::3063522468154228025::1783516386::0::1::::<><><>0<>0<><>::uid://3gfrqyxt1qy::::res://escenas/main_menu/main_menu.gd<>uid://cbbnw23rahxsu::::res://fonts/Blacknorthdemo-mLE25.otf<>uid://c08om84k0pbuj::::res://escenas/Main/main_scene.tscn<>uid://cp8lssch42uu5::::res://fonts/pixel_font.ttf<>uid://0u48fa2u5hx0::::res://assets/logo.png
 main_menu.gd::GDScript::58176726775583400::1783516355::0::1::::<>Control<><>0<>0<><>::
-::res://fonts/::1783520438
+::res://fonts/::1783520442
 Blacknorthdemo-mLE25.otf::FontFile::4845924659307848108::1744294468::1783435402::1::::<><><>0<>0<>e459f0d9cbf8c996008ec17b5ce61f1d<>res://.godot/imported/Blacknorthdemo-mLE25.otf-64d7dda0500a2d72cb687a5e54c52593.fontdata::
 coin_font.ttf::FontFile::5692047292798921784::1008996180::1783520442::1::::<><><>0<>0<>974b2b6f36a0de03f0826cd7969f2195<>res://.godot/imported/coin_font.ttf-af9dbed4a2823e495b2df5a85ae01f40.fontdata::
 Mindsight.ttf::FontFile::327709312541104333::1744294468::1783435402::1::::<><><>0<>0<>bba7942dbed20e883598a4227f2b5a80<>res://.godot/imported/Mindsight.ttf-398672e0a47a333a1fa4dcb2680d5410.fontdata::
@@ -91,9 +91,9 @@ impact.tscn::PackedScene::706737085132625066::1744294468::0::1::::<><><>0<>0<><>
 muzzle_flash.gd::GDScript::7419334460670748435::1744294468::0::1::::<>Node2D<><>0<>0<><>::
 muzzle_flash.png::CompressedTexture2D::6739269536499323961::1744294468::1783435403::1::::<><><>0<>0<>a74a15f1b23977773ac8a5a69d69a990<>res://.godot/imported/muzzle_flash.png-752b19c1a1a60c24eac6f205d487f2ea.ctex::
 muzzle_flash.tscn::PackedScene::6601472980654318439::1744294468::0::1::::<><><>0<>0<><>::res://pistol/muzzle_flash/muzzle_flash.gd<>uid://brgpjilf7s2ul::::res://pistol/muzzle_flash/muzzle_flash.png
-::res://Scripts/::1783451374
+::res://Scripts/::1783520575
 DamageNumbers.gd::GDScript::1955495211162255769::1783451374::0::1::::<>Node<><>0<>0<><>::
-global.gd::GDScript::6787832710144654156::1783450930::0::1::::<>Node<><>0<>0<><>::
+global.gd::GDScript::6787832710144654156::1783520575::0::1::::<>Node<><>0<>0<><>::
 Global_criticos.gd::GDScript::7135281133551294157::1744294468::0::1::::<>Node<><>0<>0<><>::
 to-do.txt::TextFile::-1::1783451244::0::1::::<><><>0<>0<><>::
 ::res://smoke_explosion/::1783435403
@@ -108,9 +108,12 @@ top_bar_ui.tscn::PackedScene::7706676979462413589::1783516510::0::1::::<><><>0<>
 ::res://UI/barra_vida/::1783519397
 barra_vida.gd::GDScript::3829683560152226325::1783519238::0::1::::HealthBar<>Node2D<><>0<>0<><>::
 barra_vida.tscn::PackedScene::2900422086167443911::1783519397::0::1::::<><><>0<>0<><>::uid://butelf8xuhh4h::::res://UI/barra_vida/barra_vida.gd<>uid://cf15lay1al0yf::::res://assets/barra2.png
-::res://UI/coin_ui/::1783520314
-coin_ui.tscn::PackedScene::6125711216651367045::1783520314::0::1::::<><><>0<>0<><>::uid://dse4jm4bca771::::res://assets/coin.png
-::res://ui-bordersz/::1783435402
+::res://UI/coin_ui/::1783520687
+coin_ui.tscn::PackedScene::6125711216651367045::1783520687::0::1::::<><><>0<>0<><>::uid://dse4jm4bca771::::res://assets/coin.png<>uid://b0tv3yvho5t1h::::res://UI/coin_ui/coin_ui.gd<>uid://cndjgmrns5spc::::res://fonts/coin_font.ttf
+coin_ui.gd::GDScript::4181691304387734071::1783520680::0::1::::<>Control<><>0<>0<><>::
+::res://ui-bordersz/::1783526444
+crosshair_game (1).png::CompressedTexture2D::4411262964021333006::1783526417::1783526448::1::::<><><>0<>0<>f0d74cfb3678994aab3ab6cb5bb22b11<>res://.godot/imported/crosshair_game (1).png-a868a906b9fda80898aa9a85b630288e.ctex::
+crosshair_game (2).png::CompressedTexture2D::3990634375946121068::1783526425::1783526448::1::::<><><>0<>0<>8bdb0bd586f0c84794da6ea921790d26<>res://.godot/imported/crosshair_game (2).png-6928ce0d8e67fbe5bd401230581783ec.ctex::
 crosshair_game.png::CompressedTexture2D::3006581258268594875::1744294468::1783435402::1::::<><><>0<>0<>4dad646248a0f1b53b0d658dec2b2ea9<>res://.godot/imported/crosshair_game.png-e2663df447573dff4e0562ce0a8ed616.ctex::
 ::res://ui-bordersz/PNG/::1744294468
 ::res://ui-bordersz/PNG/Default/::1744294468

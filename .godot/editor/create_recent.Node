@@ -1,3 +1,4 @@
+AnimatedSprite2D
 Label
 TextureRect
 HBoxContainer
@@ -10,5 +11,4 @@ MarginContainer
 Control
 Timer
 CollisionShape2D
-AnimatedSprite2D
 Button

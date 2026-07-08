@@ -2,3 +2,8 @@ res://UI/coin_ui/coin_ui.tscn
 res://UI/coin_ui/coin_ui.gd
 res://Scripts/global.gd
 res://escenas/Main/main_scene.tscn
+res://characters/player/player.tscn
+res://characters/player/player.gd
+res://pistol/gun.tscn
+res://pistol/gun.gd
+res://UI/barra_vida/barra_vida.tscn
