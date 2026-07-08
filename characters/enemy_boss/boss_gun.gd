@@ -2,6 +2,7 @@ extends Area2D
 
 @onready var shooting_point = %ShootingPoint
 @onready var player = get_node("/root/Game/Player")
+@export var bullet:PackedScene
 
 
 func _ready():
@@ -17,18 +18,16 @@ func _physics_process(_delta):
 
 #### SHOOT TYPES####
 func Normal_Shoot():
-	const BULLET = preload("res://BossBullet.tscn")
-	var new_bullet = BULLET.instantiate()
+	var new_bullet = bullet.instantiate()
 	new_bullet.global_position = shooting_point.global_position
 	new_bullet.global_rotation = shooting_point.global_rotation
 	get_parent().add_child(new_bullet)  # Spawn bullet in the main scene
 
 
 func Burst_Fire():
-	const BULLET = preload("res://BossBullet.tscn")
 	for i in range(Global.bulletBurstCount):
 		await get_tree().create_timer(Global.bulletBurstDelay).timeout
-		var new_bullet = BULLET.instantiate()
+		var new_bullet = bullet.instantiate()
 		new_bullet.global_position = shooting_point.global_position
 		new_bullet.global_rotation = shooting_point.global_rotation
 		get_parent().add_child(new_bullet)

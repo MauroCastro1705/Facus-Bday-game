@@ -2,7 +2,7 @@ extends Node2D
 
 var GameScore = 0
 var gameTimer = 0
-@onready var camino = %caminitodearboles
+
 @onready var labelTiempo = %TiempoAlJefe
 @onready var timerTiempoJefe = %TimerTiempoAlJefe
 var time_left = 1 * 60  # 8 minutos en segundos
@@ -31,55 +31,7 @@ func update_labelTiempo():
 	var seconds = time_left % 60
 	labelTiempo.text = "%02d:%02d" % [minutes, seconds]  # Formato MM:SS
 
-func spaw_health_coins():
-	if Global.HealthCoinsOnScreen <= 2:
-		var new_coin = preload("res://PowerUpCoin.tscn").instantiate()
-		camino.progress_ratio = randf()
-		new_coin.global_position = camino.global_position
-		add_child(new_coin)
-		Global.HealthCoinsOnScreen += 1
 
-func spaw_speed_coins():
-	if Global.SpeedCoinsOnScreen <= 2:
-		var new_speed_coin = preload("res://PowerSpeedUpCoin.tscn").instantiate()
-		camino.progress_ratio = randf()
-		new_speed_coin.global_position = camino.global_position
-		add_child(new_speed_coin)
-		Global.SpeedCoinsOnScreen += 1
-
-func spawn_atk_speed_coins():
-	if Global.AtkSpeedCoinsOnScreen <= 2:
-		var new_atk_speed_coin = preload("res://power_up_atk_speed_coin.tscn").instantiate()
-		camino.progress_ratio = randf()
-		new_atk_speed_coin.global_position = camino.global_position
-		add_child(new_atk_speed_coin)
-		Global.AtkSpeedCoinsOnScreen += 1
-
-func spawn_mob():	
-	var new_mob = preload("res://mob.tscn").instantiate()
-	new_mob.mob_muere.connect(Score_increment.bind(2))
-	%PathFollow2D.progress_ratio = randf()
-	new_mob.global_position = %PathFollow2D.global_position
-	add_child(new_mob)
-
-func spawn_big_mob():
-	var new_big_mob = preload("res://big_mob.tscn").instantiate()
-	new_big_mob.mob_muere.connect(Score_increment.bind(6))
-	%PathFollow2D.progress_ratio = randf()
-	new_big_mob.global_position = %PathFollow2D.global_position
-	add_child(new_big_mob)
-
-func spawn_big_mob_BOSS():
-	var new_big_mob_boss = preload("res://mob_bossjuampi.tscn").instantiate()
-	new_big_mob_boss.Boss_mob_muere.connect(Score_increment.bind(100))
-	%PathFollow2D.progress_ratio = randf()
-	new_big_mob_boss.global_position = %PathFollow2D.global_position
-	add_child(new_big_mob_boss)
-
-func clear_enemies():
-	# Eliminar todos los enemigos en el grupo "mobs"
-	for enemy in get_tree().get_nodes_in_group("mobs"):
-		enemy.queue_free()	
 
 func incrementar_dificultad():
 	var dificultad = Global.playerLEVEL
@@ -100,23 +52,8 @@ func show_alert(msg: String):
 	%MobSpawnAlert.visible = false	
 
 
-### MOB SPAWNER ###
-func _on_mob_timer_timeout():
-	spawn_mob()
-	incrementar_dificultad()
-	Global.GAME_TIMER()
-	if Global.playerScore > 20 and Global.gameTimer == 10:
-		spawn_big_mob()#cada 15 mobs normales sale uno grande
-		Global.RESET_COINS()
 
-func LABELS_update():
-	%ScoreLabel.text = "Score : " + str(GameScore)
-	%NivelLabel.text = "Jugador nivel : " + str(Global.playerLEVEL)
-	%PlayerName.text = "Jugardor : " + Global.playerNAME
-	%statDaño.text = "Daño : " + str(Global.playerAtkDmg)
-	%statCrit.text = "Crit Chance : " + str(Global.playerCritChance)
-	%statAtkSpeed.text = "Atk Speed : " + str(Global.playerAtkSpeed)
-	%statMovSpeed.text = "Move Speed : " + str(Global.playerMovSpeed)
+
 
 func Score_increment(points: int):
 	var ScoreMult = Global.scoreMulti #revisar esto	

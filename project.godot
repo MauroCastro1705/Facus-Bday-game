@@ -78,10 +78,10 @@ compatibility/default_parent_skeleton_in_mesh_instance_3d=true
 
 [application]
 
-config/name="survivor game panda"
+config/name="Facus quest"
 run/main_scene="res://escenas/main_menu/MainMenu.tscn"
 config/features=PackedStringArray("4.6", "Forward Plus")
-config/icon="res://icon.png"
+config/icon="uid://0u48fa2u5hx0"
 
 [autoload]
 
@@ -150,4 +150,5 @@ pause={
 
 [rendering]
 
+textures/canvas_textures/default_texture_filter=0
 renderer/rendering_method="gl_compatibility"

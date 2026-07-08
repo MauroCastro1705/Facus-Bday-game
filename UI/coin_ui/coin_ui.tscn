@@ -1,0 +1,41 @@
+[gd_scene format=3 uid="uid://ctjltlqtk1ga4"]
+
+[ext_resource type="Texture2D" uid="uid://dse4jm4bca771" path="res://assets/coin.png" id="1_jbxyk"]
+[ext_resource type="Script" uid="uid://b0tv3yvho5t1h" path="res://UI/coin_ui/coin_ui.gd" id="1_t6qqp"]
+[ext_resource type="FontFile" uid="uid://cndjgmrns5spc" path="res://fonts/coin_font.ttf" id="2_ls1qw"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_ls1qw"]
+font = ExtResource("2_ls1qw")
+font_size = 20
+outline_size = 7
+outline_color = Color(0.08627451, 0.10980392, 0.18039216, 1)
+
+[node name="CoinUi" type="Control" unique_id=2125611169]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_t6qqp")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=1245627183]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="HBoxContainer" unique_id=1796043264]
+custom_minimum_size = Vector2(25, 25)
+layout_mode = 2
+texture = ExtResource("1_jbxyk")
+expand_mode = 5
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="HBoxContainer" unique_id=1528153688]
+unique_name_in_owner = true
+layout_mode = 2
+text = "1258"
+label_settings = SubResource("LabelSettings_ls1qw")
+horizontal_alignment = 1
+vertical_alignment = 1

@@ -5,6 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://ct6ctnfjhwh25" path="res://characters/player/player.tscn" id="3_tcvou"]
 [ext_resource type="FontFile" uid="uid://cbbnw23rahxsu" path="res://fonts/Blacknorthdemo-mLE25.otf" id="4_wqktd"]
 [ext_resource type="Theme" uid="uid://dedmc73m6he8n" path="res://texto_basico.tres" id="6_fdnso"]
+[ext_resource type="PackedScene" uid="uid://ctjltlqtk1ga4" path="res://UI/coin_ui/coin_ui.tscn" id="6_fmakg"]
 
 [node name="Game" type="Node2D" unique_id=37439251]
 y_sort_enabled = true
@@ -33,24 +34,8 @@ bbcode_enabled = true
 fit_content = true
 scroll_active = false
 
-[node name="MobTimer" type="Timer" parent="." unique_id=247191012]
-unique_name_in_owner = true
-wait_time = 0.608
-autostart = true
-
-[node name="CoinTimer" type="Timer" parent="." unique_id=289022026]
-autostart = true
-
-[node name="TreeTimer" type="Timer" parent="." unique_id=420905858]
-autostart = true
-
-[node name="BigBossTimer" type="Timer" parent="." unique_id=1505826271]
-unique_name_in_owner = true
-wait_time = 500.0
-autostart = true
-
-[connection signal="health_depleted" from="Player" to="." method="_on_player_health_depleted"]
-[connection signal="timeout" from="MobTimer" to="." method="_on_mob_timer_timeout"]
-[connection signal="timeout" from="CoinTimer" to="." method="_on_coin_timer_timeout"]
-[connection signal="timeout" from="TreeTimer" to="." method="_on_tree_timer_timeout"]
-[connection signal="timeout" from="BigBossTimer" to="." method="_on_big_boss_timer_timeout"]
+[node name="CoinUi" parent="." unique_id=2125611169 instance=ExtResource("6_fmakg")]
+offset_left = 801.0
+offset_top = 20.0
+offset_right = 801.0
+offset_bottom = 20.0

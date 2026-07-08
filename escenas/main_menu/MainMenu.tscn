@@ -1,11 +1,16 @@
 [gd_scene format=3 uid="uid://bjv81dgoelh3n"]
 
 [ext_resource type="Script" uid="uid://3gfrqyxt1qy" path="res://escenas/main_menu/main_menu.gd" id="1_2q1j2"]
-[ext_resource type="FontFile" uid="uid://ew0lbedgquft" path="res://fonts/Mindsight.ttf" id="1_48gah"]
 [ext_resource type="FontFile" uid="uid://cbbnw23rahxsu" path="res://fonts/Blacknorthdemo-mLE25.otf" id="2_pqnep"]
-[ext_resource type="Texture2D" uid="uid://d25t5ttvope24" path="res://ui-bordersz/PNG/Default/Divider/divider-003.png" id="4_gybom"]
+[ext_resource type="PackedScene" uid="uid://c08om84k0pbuj" path="res://escenas/Main/main_scene.tscn" id="2_uda5e"]
+[ext_resource type="FontFile" uid="uid://cp8lssch42uu5" path="res://fonts/pixel_font.ttf" id="3_4t5pn"]
+[ext_resource type="Texture2D" uid="uid://0u48fa2u5hx0" path="res://assets/logo.png" id="4_4t5pn"]
 
-[node name="Control" type="Control"]
+[sub_resource type="LabelSettings" id="LabelSettings_4t5pn"]
+font = ExtResource("3_4t5pn")
+font_size = 23
+
+[node name="Control" type="Control" unique_id=405304890]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -13,109 +18,62 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_2q1j2")
-metadata/_edit_lock_ = true
+main_scene = ExtResource("2_uda5e")
 
-[node name="ColorRect" type="ColorRect" parent="."]
-modulate = Color(0.102194, 0.261838, 0.201856, 1)
+[node name="ColorRect" type="ColorRect" parent="." unique_id=2109841701]
 layout_mode = 0
-offset_right = 1921.0
-offset_bottom = 1081.0
+offset_right = 904.0
+offset_bottom = 717.0
+color = Color(0.38054213, 0.29168025, 0.11893407, 1)
 metadata/_edit_lock_ = true
 
-[node name="StartButton" type="Button" parent="ColorRect"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -202.5
-offset_top = 313.5
-offset_right = 202.5
-offset_bottom = 420.5
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_colors/font_color = Color(50, 31.429, 19.285, 1)
-theme_override_fonts/font = ExtResource("1_48gah")
-theme_override_font_sizes/font_size = 70
-text = "Start Game
-"
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1977221148]
+layout_mode = 0
+offset_left = 95.0
+offset_top = 276.0
+offset_right = 850.0
+offset_bottom = 570.0
+theme_override_constants/separation = 37
+alignment = 1
 
-[node name="Label2" type="Label" parent="."]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -420.0
-offset_top = -410.0
-offset_right = 404.0
-offset_bottom = -263.0
-grow_horizontal = 2
-grow_vertical = 2
+[node name="Label4" type="Label" parent="VBoxContainer" unique_id=805266046]
+layout_mode = 2
 theme_override_colors/font_color = Color(0.868358, 0.866927, 0.854182, 1)
 theme_override_fonts/font = ExtResource("2_pqnep")
-theme_override_font_sizes/font_size = 150
-text = "Balas Locas"
+theme_override_font_sizes/font_size = 40
+text = "WASD para moverte y Space para disparar"
+label_settings = SubResource("LabelSettings_4t5pn")
+horizontal_alignment = 1
 
-[node name="Label3" type="Label" parent="."]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -599.0
-offset_top = 134.0
-offset_right = -50.0
-offset_bottom = 233.0
-grow_horizontal = 2
-grow_vertical = 2
+[node name="Label3" type="Label" parent="VBoxContainer" unique_id=175491823]
+layout_mode = 2
 theme_override_colors/font_color = Color(0.868358, 0.866927, 0.854182, 1)
 theme_override_fonts/font = ExtResource("2_pqnep")
 theme_override_font_sizes/font_size = 40
 text = "nombre del jugador"
+label_settings = SubResource("LabelSettings_4t5pn")
+horizontal_alignment = 1
 
-[node name="name_input" type="LineEdit" parent="."]
+[node name="name_input" type="LineEdit" parent="VBoxContainer" unique_id=98636278]
 unique_name_in_owner = true
-layout_mode = 0
-offset_left = 772.0
-offset_top = 658.0
-offset_right = 1166.0
-offset_bottom = 728.0
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_4t5pn")
 theme_override_font_sizes/font_size = 30
 placeholder_text = "aca pone tu nombre"
 alignment = 1
 
-[node name="Divider-003" type="Sprite2D" parent="."]
-position = Vector2(248, 198)
-scale = Vector2(5.375, 5)
-texture = ExtResource("4_gybom")
-
-[node name="Divider-004" type="Sprite2D" parent="."]
-position = Vector2(1674, 201)
-rotation = -3.14159
-scale = Vector2(5.375, 5)
-texture = ExtResource("4_gybom")
-
-[node name="Label4" type="Label" parent="."]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -250.0
-offset_top = -153.0
-offset_right = 299.0
-offset_bottom = -54.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_colors/font_color = Color(0.868358, 0.866927, 0.854182, 1)
-theme_override_fonts/font = ExtResource("2_pqnep")
-theme_override_font_sizes/font_size = 40
-text = "WASD para moverte y Space para disparar
+[node name="StartButton" type="Button" parent="VBoxContainer" unique_id=1150670714]
+layout_mode = 2
+theme_override_colors/font_color = Color(50, 31.429, 19.285, 1)
+theme_override_fonts/font = ExtResource("3_4t5pn")
+theme_override_font_sizes/font_size = 70
+text = "Start Game
 "
 
-[connection signal="pressed" from="ColorRect/StartButton" to="." method="_on_start_button_pressed"]
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1671847117]
+texture_filter = 1
+position = Vector2(454, 159)
+scale = Vector2(2.6634614, 2.6634614)
+texture = ExtResource("4_4t5pn")
+
+[connection signal="pressed" from="VBoxContainer/StartButton" to="." method="_on_start_button_pressed"]

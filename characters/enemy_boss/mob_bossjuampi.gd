@@ -7,7 +7,6 @@ extends CharacterBody2D
 @onready var _animated_sprite: AnimatedSprite2D
 
 signal Boss_mob_muere
-const CRIT_LABEL = preload("res://crit_dmg_label.tscn")
 
 func _ready():
 	player = get_node("/root/Game/Player")
@@ -34,7 +33,6 @@ func take_damage():
 		%Boss_barravida.value = health
 		print("daño critico")
 		#SHOW CRIT funcion GlobalCriticos autoload
-		GlobalCriticos.SHOW_CRIT(global_position)	
 
 	health -= dmgDone
 	if health <= 0:

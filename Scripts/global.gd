@@ -6,6 +6,7 @@ signal stats_updated
 var playerNAME = "jugador"
 var playerPosition = Vector2(0, 0)
 var isLevelUpCompleted = true
+var player_coins:int = 10
 ####### player vars ######
 var playerAtkDmg = 1.0
 var playerHealth = 100.0
@@ -66,6 +67,7 @@ var shootTypeNormal: bool = true
 var HealthCoinsOnScreen = 0
 var SpeedCoinsOnScreen = 0 
 var AtkSpeedCoinsOnScreen = 0
+
 func RESET_COINS():
 	HealthCoinsOnScreen = 0
 	SpeedCoinsOnScreen = 0

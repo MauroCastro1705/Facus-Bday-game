@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://bhk8r7mumgdnr"]
+
+[ext_resource type="Script" uid="uid://butelf8xuhh4h" path="res://UI/barra_vida/barra_vida.gd" id="1_5k62q"]
+[ext_resource type="Texture2D" uid="uid://cf15lay1al0yf" path="res://assets/barra2.png" id="2_mi7rs"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_p1ckm"]
+bg_color = Color(0.9529412, 0.101960786, 0, 1)
+
+[node name="BarraVida" type="Node2D" unique_id=642129819]
+script = ExtResource("1_5k62q")
+
+[node name="ProgressBar" type="ProgressBar" parent="." unique_id=1073827914]
+offset_right = 145.0
+offset_bottom = 19.0
+theme_override_styles/fill = SubResource("StyleBoxFlat_p1ckm")
+value = 75.0
+show_percentage = false
+
+[node name="TextureProgressBar" type="TextureProgressBar" parent="." unique_id=722131182]
+offset_left = -10.0
+offset_top = -4.0
+offset_right = 161.0
+offset_bottom = 24.0
+nine_patch_stretch = true
+texture_over = ExtResource("2_mi7rs")
