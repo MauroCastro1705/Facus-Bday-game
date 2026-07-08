@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://di4s67gthcc4m" path="res://escenas/rooms/room_base/room_base.gd" id="1_g0vqd"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_g0vqd"]
-size = Vector2(135.5, 362)
+size = Vector2(135.5, 686)
 
 [node name="RoomBase" type="Node2D" unique_id=1639878217]
 script = ExtResource("1_g0vqd")

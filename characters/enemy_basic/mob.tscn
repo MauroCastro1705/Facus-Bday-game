@@ -1,7 +1,5 @@
 [gd_scene format=3 uid="uid://hjyw2skgm8wo"]
 
-[ext_resource type="Script" uid="uid://gi3nfocfd78x" path="res://characters/enemy_basic/mob.gd" id="1_mh1pi"]
-
 [sub_resource type="CircleShape2D" id="CircleShape2D_8tavr"]
 radius = 60.0083
 
@@ -9,7 +7,6 @@ radius = 60.0083
 collision_layer = 2
 collision_mask = 3
 platform_floor_layers = 4294967040
-script = ExtResource("1_mh1pi")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1248125656]
 position = Vector2(-1, -28)
