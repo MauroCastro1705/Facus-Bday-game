@@ -114,6 +114,7 @@ folder_colors={
 
 player_spawn=""
 room_transition=""
+enemies=""
 
 [input]
 

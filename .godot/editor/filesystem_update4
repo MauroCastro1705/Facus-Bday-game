@@ -14,3 +14,4 @@ res://escenas/Main/main_scene.gd
 res://escenas/rooms/room_base/RoomBase.tscn
 res://escenas/rooms/room_base/room_base.gd
 res://escenas/rooms/room_1.tscn
+res://characters/enemy_basic/mob.tscn
