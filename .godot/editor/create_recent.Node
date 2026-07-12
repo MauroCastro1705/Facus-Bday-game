@@ -1,4 +1,5 @@
 TileMapLayer
+TileMap
 LightOccluder2D
 CanvasModulate
 ColorRect
@@ -11,4 +12,3 @@ RoomBase
 Node2D
 Area2D
 Marker2D
-Node
