@@ -1,5 +1,6 @@
 extends Area2D
 var travelled_distance = 0
+var bullet_dmg:float = 10
 
 func _physics_process(delta):
 	var SPEED = Global.bulletSpeed
@@ -16,4 +17,4 @@ func _on_body_entered(body):
 	
 	if body.has_method("take_damage"):
 		queue_free()
-		body.take_damage()
+		body.take_damage(bullet_dmg)

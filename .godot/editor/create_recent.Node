@@ -1,3 +1,6 @@
+Marker2D
+Sprite2D
+Polygon2D
 TileMapLayer
 TileMap
 LightOccluder2D
@@ -7,8 +10,6 @@ CollisionShape2D
 StaticBody2D
 PointLight2D
 CanvasLayer
-Sprite2D
 RoomBase
 Node2D
 Area2D
-Marker2D

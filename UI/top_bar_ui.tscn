@@ -1,6 +1,5 @@
 [gd_scene format=3 uid="uid://dh2f3xslpsv78"]
 
-[ext_resource type="FontFile" uid="uid://cbbnw23rahxsu" path="res://fonts/Blacknorthdemo-mLE25.otf" id="1_mkyxh"]
 [ext_resource type="Script" uid="uid://p58gjvihnk75" path="res://UI/top_bar_ui.gd" id="1_qri1s"]
 [ext_resource type="FontFile" uid="uid://ew0lbedgquft" path="res://fonts/Mindsight.ttf" id="2_qri1s"]
 
@@ -29,14 +28,6 @@ theme_override_constants/margin_bottom = 10
 layout_mode = 2
 theme_override_constants/separation = 80
 alignment = 1
-
-[node name="TiempoAlJefe" type="Label" parent="MarginContainer/HBoxContainer" unique_id=1495176364]
-unique_name_in_owner = true
-layout_mode = 2
-theme_override_colors/font_color = Color(0, 0, 0, 0.980392)
-theme_override_fonts/font = ExtResource("1_mkyxh")
-theme_override_font_sizes/font_size = 40
-text = "TIMEPO JEFE"
 
 [node name="ScoreLabel" type="Label" parent="MarginContainer/HBoxContainer" unique_id=677877828]
 unique_name_in_owner = true

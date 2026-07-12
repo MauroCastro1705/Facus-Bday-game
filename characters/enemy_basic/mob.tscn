@@ -1,13 +1,39 @@
 [gd_scene format=3 uid="uid://hjyw2skgm8wo"]
 
+[ext_resource type="Script" uid="uid://djfns3f6sbhjy" path="res://characters/enemy_basic/mob.gd" id="1_6r882"]
+[ext_resource type="PackedScene" uid="uid://dh232j485a6kq" path="res://pistol/bullet.tscn" id="2_7hi4t"]
+[ext_resource type="PackedScene" uid="uid://bhk8r7mumgdnr" path="res://UI/barra_vida/barra_vida.tscn" id="3_sjt0n"]
+[ext_resource type="Texture2D" uid="uid://b0a5kl025j6lu" path="res://assets/jack_black .png" id="4_d4ky1"]
+
 [sub_resource type="CircleShape2D" id="CircleShape2D_8tavr"]
-radius = 60.0083
+radius = 39.051247
 
 [node name="Mob" type="CharacterBody2D" unique_id=187351653 groups=["enemies"]]
 collision_layer = 2
 collision_mask = 3
 platform_floor_layers = 4294967040
+script = ExtResource("1_6r882")
+bullet = ExtResource("2_7hi4t")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1248125656]
-position = Vector2(-1, -28)
 shape = SubResource("CircleShape2D_8tavr")
+
+[node name="weapon" type="Polygon2D" parent="." unique_id=1643705988]
+position = Vector2(2, 0)
+scale = Vector2(0.6800002, 0.6800002)
+color = Color(0.14729625, 0.11392785, 0.46879572, 1)
+offset = Vector2(73.529396, 42.64705)
+polygon = PackedVector2Array(56.82248, -52.119724, 53.40741, -28.214256, 15.158661, -26.848228, 15.158661, -7.723854, 5.596466, -9.089882, 4.913452, -50.070686)
+uv = PackedVector2Array(-41.531464, -53.485752, -42.89749, -26.848228, -1.2336731, -27.531242, -1.916687, -9.772896, 5.596466, -9.089882, 4.913452, -50.070686)
+
+[node name="shooting_point" type="Marker2D" parent="weapon" unique_id=810286168]
+position = Vector2(124.99997, 1.4705887)
+
+[node name="BarraVida" parent="." unique_id=642129819 instance=ExtResource("3_sjt0n")]
+position = Vector2(-32, -53)
+scale = Vector2(0.5025189, 0.5025189)
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1387571561]
+position = Vector2(1, -1)
+scale = Vector2(0.26410258, 0.26410255)
+texture = ExtResource("4_d4ky1")

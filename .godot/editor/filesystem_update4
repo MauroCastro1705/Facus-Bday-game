@@ -5,3 +5,8 @@ res://characters/player/player.tscn
 res://characters/player/player.gd
 res://assets/top_down.tres
 res://escenas/rooms/room_2.tscn
+res://UI/top_bar_ui.tscn
+res://pistol/bullet.tscn
+res://characters/enemy_basic/mob.tscn
+res://characters/enemy_basic/mob.gd
+res://pistol/bullet.gd

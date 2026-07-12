@@ -6,8 +6,8 @@
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_5tgod"]
 light_mode = 1
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_l57ty"]
-radius = 15.0
+[sub_resource type="CircleShape2D" id="CircleShape2D_5tgod"]
+radius = 11.657792
 
 [sub_resource type="Gradient" id="Gradient_5tgod"]
 offsets = PackedFloat32Array(0, 0.60294116)
@@ -28,15 +28,18 @@ script = ExtResource("1_mjeop")
 
 [node name="Projectile" type="Sprite2D" parent="." unique_id=790455689]
 material = SubResource("CanvasItemMaterial_5tgod")
-position = Vector2(-11.368668, -0.69281125)
+position = Vector2(-5.995436, -0.233975)
 rotation = 0.08466564
+scale = Vector2(0.54585224, 0.54585224)
 texture = ExtResource("1_jdyi1")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2014727261]
 position = Vector2(0.6313367, 0.30718887)
-shape = SubResource("CircleShape2D_l57ty")
+scale = Vector2(0.5458522, 0.5458522)
+shape = SubResource("CircleShape2D_5tgod")
 
 [node name="PointLight2D" type="PointLight2D" parent="." unique_id=1386863094]
+scale = Vector2(0.5458522, 0.5458522)
 color = Color(1, 1, 0.50980395, 1)
 energy = 3.0
 shadow_enabled = true
