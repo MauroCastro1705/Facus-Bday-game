@@ -2,6 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://h4sml022j7xx" path="res://escenas/rooms/room_base/RoomBase.tscn" id="1_o3gq5"]
 [ext_resource type="Script" uid="uid://njptd5exk6fp" path="res://escenas/rooms/room_2.gd" id="2_5y2ss"]
+[ext_resource type="PackedScene" uid="uid://cha0fc1pcp1a2" path="res://objetos_mapa/bloque_generico.tscn" id="3_sxahp"]
 
 [node name="Room_2" unique_id=1639878217 instance=ExtResource("1_o3gq5")]
 script = ExtResource("2_5y2ss")
@@ -9,34 +10,37 @@ script = ExtResource("2_5y2ss")
 [node name="ColorRect" type="ColorRect" parent="." index="0" unique_id=426494132]
 offset_right = 1865.0
 offset_bottom = 705.0
-color = Color(0.40069774, 0.40069774, 0.40069768, 1)
+color = Color(0.7504317, 0, 0.20323104, 1)
 
-[node name="ColorRect2" type="ColorRect" parent="." index="1" unique_id=893311797]
-offset_left = 691.0
-offset_top = 90.0
-offset_right = 778.0
-offset_bottom = 171.0
-
-[node name="ColorRect3" type="ColorRect" parent="." index="2" unique_id=1461717162]
-offset_left = 910.0
-offset_top = 298.0
-offset_right = 997.0
-offset_bottom = 379.0
-
-[node name="ColorRect4" type="ColorRect" parent="." index="3" unique_id=479760804]
-offset_left = 515.0
-offset_top = 497.0
-offset_right = 602.0
-offset_bottom = 578.0
-
-[node name="ColorRect5" type="ColorRect" parent="." index="4" unique_id=89098047]
-offset_left = 1161.0
-offset_top = 555.0
-offset_right = 1248.0
-offset_bottom = 636.0
-
-[node name="SpawnPoint" parent="." index="5" unique_id=219479906]
+[node name="SpawnPoint" parent="." index="1" unique_id=219479906]
 position = Vector2(135, 394)
 
 [node name="CollisionShape2D" parent="Transition_area" parent_id_path=PackedInt32Array(812714668) index="0" unique_id=134086289]
 position = Vector2(1793, 335)
+
+[node name="CanvasModulate" type="CanvasModulate" parent="." index="5" unique_id=494516325]
+color = Color(0.50928617, 0.50928617, 0.50928617, 1)
+
+[node name="bloque_generico" parent="." index="6" unique_id=924551978 instance=ExtResource("3_sxahp")]
+position = Vector2(208, 87)
+
+[node name="bloque_generico2" parent="." index="7" unique_id=1509824581 instance=ExtResource("3_sxahp")]
+position = Vector2(393, 251)
+
+[node name="bloque_generico3" parent="." index="8" unique_id=528758887 instance=ExtResource("3_sxahp")]
+position = Vector2(577, 468)
+
+[node name="bloque_generico4" parent="." index="9" unique_id=864529042 instance=ExtResource("3_sxahp")]
+position = Vector2(659, 276)
+
+[node name="bloque_generico5" parent="." index="10" unique_id=2067155041 instance=ExtResource("3_sxahp")]
+position = Vector2(749, 88)
+
+[node name="bloque_generico6" parent="." index="11" unique_id=729732919 instance=ExtResource("3_sxahp")]
+position = Vector2(1018, 334)
+
+[node name="bloque_generico7" parent="." index="12" unique_id=1811169391 instance=ExtResource("3_sxahp")]
+position = Vector2(1205, 129)
+
+[node name="bloque_generico8" parent="." index="13" unique_id=235577063 instance=ExtResource("3_sxahp")]
+position = Vector2(1350, 379)

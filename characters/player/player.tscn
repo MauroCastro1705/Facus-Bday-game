@@ -6,12 +6,13 @@
 [ext_resource type="PackedScene" uid="uid://bhk8r7mumgdnr" path="res://UI/barra_vida/barra_vida.tscn" id="4_5dc8e"]
 [ext_resource type="Texture2D" uid="uid://b3334ee2weo43" path="res://ui-bordersz/crosshair_game (1).png" id="5_c6leb"]
 [ext_resource type="Texture2D" uid="uid://bw4dfu5m8hnou" path="res://ui-bordersz/crosshair_game (2).png" id="6_dirf7"]
+[ext_resource type="Texture2D" uid="uid://dbxkug2tbk7x7" path="res://assets/FREE Textures Of Light Alpha/FREE Textures Of Light Alpha/FREE Textures Of Light Alpha/160x160/160x160 textures (32).PNG" id="7_dirf7"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_m57e4"]
-radius = 46.0109
+radius = 26.076809
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_w0ha4"]
-radius = 50.01
+radius = 36.013885
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_idpv6"]
 animations = [{
@@ -37,7 +38,7 @@ script = ExtResource("1_mqknh")
 gun = NodePath("Gun")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=125696921]
-position = Vector2(0, -25)
+position = Vector2(0, 1)
 shape = SubResource("CircleShape2D_m57e4")
 
 [node name="BarraVida" parent="." unique_id=642129819 instance=ExtResource("4_5dc8e")]
@@ -45,11 +46,13 @@ position = Vector2(-74, -161)
 
 [node name="Gun" parent="." unique_id=1760169085 instance=ExtResource("3_x4s34")]
 position = Vector2(1, 1)
+scale = Vector2(0.54834604, 0.54834604)
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1547333466]
 
 [node name="hurtBox" type="Area2D" parent="." unique_id=239150617 groups=["player"]]
 unique_name_in_owner = true
+position = Vector2(2, 7)
 collision_layer = 128
 collision_mask = 130
 
@@ -61,16 +64,17 @@ debug_color = Color(0.827981, 0.318864, 0.604247, 0.42)
 
 [node name="crosshair" type="AnimatedSprite2D" parent="." unique_id=1817317563]
 position = Vector2(255.99998, 59.000004)
-scale = Vector2(0.6052632, 0.6052632)
+scale = Vector2(0.36526322, 0.36526322)
 sprite_frames = SubResource("SpriteFrames_idpv6")
 autoplay = "default"
 frame_progress = 0.46002194
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=1234735360]
-offset_left = -36.0
-offset_top = -62.0
-offset_right = 40.0
-offset_bottom = 40.0
+offset_left = -18.0
+offset_top = -20.999996
+offset_right = 58.0
+offset_bottom = 81.0
+scale = Vector2(0.54226345, 0.50396675)
 
 [node name="Label" type="Label" parent="ColorRect" unique_id=33514384]
 layout_mode = 0
@@ -80,3 +84,8 @@ offset_right = 56.0
 offset_bottom = 42.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "facu"
+
+[node name="PointLight2D" type="PointLight2D" parent="." unique_id=183698058]
+shadow_enabled = true
+texture = ExtResource("7_dirf7")
+texture_scale = 2.24

@@ -1,6 +1,7 @@
 extends CharacterBody2D
 
 var is_dead: bool = false
+@onready var collision_shape_2d: CollisionShape2D = $CollisionShape2D
 
 @onready var barra_vida: HealthBar = $BarraVida
 var max_health: float
@@ -22,6 +23,13 @@ var is_shooting: bool = false
 var shoot_flash_timer: float = 0.0
 const FLASH_DURATION: float = 0.15  # Duración del flash en segundos
 
+# Variables para el dash
+var is_dashing: bool = false
+var dash_speed: float = 800.0  # Velocidad del dash
+var dash_duration: float = 0.3  # Duración del dash en segundos
+var dash_timer: float = 0.0
+var dash_direction: Vector2 = Vector2.ZERO
+
 func _ready() -> void:
 	max_health = Global.playerHealth
 	current_health = max_health
@@ -40,9 +48,22 @@ func _ready() -> void:
 
 func _physics_process(_delta):
 	Global.playerPosition = position
-	var direction = Input.get_vector("move_left","move_right","move_up","move_down")
-	velocity = direction * movSpeed
-	move_and_slide()
+	
+	# Manejar el dash
+	if is_dashing:
+		# Movimiento del dash
+		velocity = dash_direction * dash_speed
+		move_and_slide()
+		
+		# Actualizar temporizador del dash
+		dash_timer -= _delta
+		if dash_timer <= 0:
+			end_dash()
+	else:
+		# Movimiento normal
+		var direction = Input.get_vector("move_left","move_right","move_up","move_down")
+		velocity = direction * movSpeed
+		move_and_slide()
 	
 	# Actualizar la posición del crosshair al mouse
 	crosshair.global_position = get_global_mouse_position()
@@ -58,6 +79,31 @@ func _physics_process(_delta):
 	# Detectar el input de disparo
 	if Input.is_action_just_pressed("shoot"):
 		trigger_shoot_effect()
+	
+	# Detectar el input de dash
+	if Input.is_action_just_pressed("dash") and not is_dashing:
+		start_dash()
+
+func start_dash():
+	is_dashing = true
+	dash_timer = dash_duration
+	
+	# Calcular dirección del dash hacia el mouse
+	var mouse_position = get_global_mouse_position()
+	dash_direction = (mouse_position - global_position).normalized()
+	
+	# Si el mouse está muy cerca, dash hacia adelante
+	if dash_direction.length() < 0.1:
+		dash_direction = Vector2.RIGHT  # Dirección por defecto
+	
+	# Efecto visual (opcional)
+	print("¡Dash activado! Dirección: ", dash_direction)
+
+func end_dash():
+	is_dashing = false
+	velocity = Vector2.ZERO
+	
+	print("Dash terminado")
 
 func trigger_shoot_effect():
 	crosshair.modulate = Color.ORANGE  # O puedes usar Color.YELLOW
@@ -70,6 +116,10 @@ func trigger_shoot_effect():
 
 func take_damage(damage: float):
 	if is_dead:
+		return
+	
+	# Si está en dash, no recibe daño (opcional)
+	if is_dashing:
 		return
 	
 	current_health = max(current_health - damage, 0)
@@ -86,7 +136,6 @@ func die():
 	is_dead = true
 	print("Guerrero ha muerto!")
 	queue_free()
-
 
 func _process(_delta):
 	if is_shooting:

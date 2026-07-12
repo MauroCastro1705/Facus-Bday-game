@@ -1,2 +1,5 @@
 res://escenas/rooms/room_1.tscn
+res://assets/tileset_isometrico_piedras.tres
 res://escenas/Main/main_scene.tscn
+res://characters/player/player.tscn
+res://characters/player/player.gd

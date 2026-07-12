@@ -49,7 +49,7 @@ var expToLvlUp = 100
 #### BULLETS ###
 var bulletRange = 1200
 var bulletCant = 3
-var bulletSpeed = 500
+var bulletSpeed = 800
 var bulletSpread = 15
 var bulletBurstCount = 3
 var bulletBurstDelay = 0.4		

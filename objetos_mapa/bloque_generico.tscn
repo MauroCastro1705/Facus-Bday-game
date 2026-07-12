@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://cha0fc1pcp1a2"]
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_csgnu"]
+polygon = PackedVector2Array(691, 90, 691, 171, 778, 171, 779, 90)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_20na0"]
+size = Vector2(87, 82)
+
+[node name="bloque_generico" type="StaticBody2D" unique_id=924551978 groups=["paredes"]]
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="." unique_id=1767957451]
+position = Vector2(-693, -89)
+occluder = SubResource("OccluderPolygon2D_csgnu")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1968671312]
+position = Vector2(41.5, 41)
+shape = SubResource("RectangleShape2D_20na0")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1564103626]
+offset_left = -2.0
+offset_right = 85.0
+offset_bottom = 83.0
+color = Color(0.103743516, 0.10374353, 0.103743516, 1)
