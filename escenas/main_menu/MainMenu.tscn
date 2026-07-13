@@ -5,6 +5,7 @@
 [ext_resource type="Shader" uid="uid://cqo6wuec1qmgx" path="res://shaders/3dwaves.gdshader" id="2_uda5e"]
 [ext_resource type="FontFile" uid="uid://cp8lssch42uu5" path="res://fonts/pixel_font.ttf" id="3_4t5pn"]
 [ext_resource type="Texture2D" uid="uid://0u48fa2u5hx0" path="res://assets/logo.png" id="4_4t5pn"]
+[ext_resource type="Texture2D" uid="uid://vicpufdeuy01" path="res://assets/UI Assets pack_v.1_st/Book.png" id="6_oii30"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_oii30"]
 shader = ExtResource("2_uda5e")
@@ -19,6 +20,12 @@ font_size = 23
 
 [sub_resource type="LabelSettings" id="LabelSettings_uda5e"]
 font = ExtResource("3_4t5pn")
+
+[sub_resource type="LabelSettings" id="LabelSettings_4qipx"]
+font = ExtResource("3_4t5pn")
+font_size = 29
+outline_size = 6
+outline_color = Color(0, 0, 0, 1)
 
 [node name="Control" type="Control" unique_id=405304890]
 layout_mode = 3
@@ -93,5 +100,56 @@ offset_bottom = 696.0
 text = "v0.0.23"
 label_settings = SubResource("LabelSettings_uda5e")
 
+[node name="tutorial" type="Button" parent="." unique_id=39921766]
+layout_mode = 0
+offset_left = 21.0
+offset_top = 250.0
+offset_right = 90.0
+offset_bottom = 281.0
+toggle_mode = true
+text = "Tutorial"
+
+[node name="tutorial_info" type="ColorRect" parent="tutorial" unique_id=935603079]
+layout_mode = 0
+offset_left = 92.0
+offset_top = 2.0
+offset_right = 476.0
+offset_bottom = 316.0
+color = Color(0.12225223, 0.12225223, 0.12225223, 1)
+
+[node name="NinePatchRect" type="NinePatchRect" parent="tutorial/tutorial_info" unique_id=1817394362]
+texture_filter = 1
+layout_mode = 0
+offset_left = 6.9999924
+offset_top = 8.0
+offset_right = 254.33337
+offset_bottom = 206.66666
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("6_oii30")
+region_rect = Rect2(144, 289, 47, 45)
+patch_margin_left = 17
+patch_margin_top = 16
+patch_margin_right = 15
+patch_margin_bottom = 15
+axis_stretch_horizontal = 1
+axis_stretch_vertical = 1
+
+[node name="Label" type="Label" parent="tutorial/tutorial_info" unique_id=2131205550]
+layout_mode = 0
+offset_left = 23.0
+offset_top = 19.0
+offset_right = 362.0
+offset_bottom = 299.0
+text = "-WASD para moverte
+
+-Click para disparar
+
+-Space para dash en direccion al mouse"
+label_settings = SubResource("LabelSettings_4qipx")
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
 [connection signal="pressed" from="VBoxContainer/StartButton" to="." method="_on_start_button_pressed"]
 [connection signal="pressed" from="creditos" to="." method="_on_creditos_pressed"]
+[connection signal="toggled" from="tutorial" to="." method="_on_tutorial_toggled"]
