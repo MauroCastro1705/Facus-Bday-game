@@ -4,11 +4,22 @@
 [ext_resource type="FontFile" uid="uid://cbbnw23rahxsu" path="res://fonts/Blacknorthdemo-mLE25.otf" id="2_pqnep"]
 [ext_resource type="PackedScene" uid="uid://c08om84k0pbuj" path="res://escenas/Main/main_scene.tscn" id="2_uda5e"]
 [ext_resource type="FontFile" uid="uid://cp8lssch42uu5" path="res://fonts/pixel_font.ttf" id="3_4t5pn"]
+[ext_resource type="Material" uid="uid://c7iarevdrntt3" path="res://shaders/waves.tres" id="3_oii30"]
 [ext_resource type="Texture2D" uid="uid://0u48fa2u5hx0" path="res://assets/logo.png" id="4_4t5pn"]
+
+[sub_resource type="Gradient" id="Gradient_oii30"]
+offsets = PackedFloat32Array(0, 0.46226415, 1)
+colors = PackedColorArray(0.47843137, 0.15294118, 0.2627451, 1, 0.9168142, 0.5267593, 0.12099259, 1, 0.9764706, 0.24705882, 0.2784314, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_12aag"]
+gradient = SubResource("Gradient_oii30")
 
 [sub_resource type="LabelSettings" id="LabelSettings_4t5pn"]
 font = ExtResource("3_4t5pn")
 font_size = 23
+
+[sub_resource type="LabelSettings" id="LabelSettings_uda5e"]
+font = ExtResource("3_4t5pn")
 
 [node name="Control" type="Control" unique_id=405304890]
 layout_mode = 3
@@ -20,12 +31,18 @@ grow_vertical = 2
 script = ExtResource("1_2q1j2")
 main_scene = ExtResource("2_uda5e")
 
-[node name="ColorRect" type="ColorRect" parent="." unique_id=2109841701]
-layout_mode = 0
-offset_right = 904.0
-offset_bottom = 717.0
-color = Color(0.38054213, 0.29168025, 0.11893407, 1)
-metadata/_edit_lock_ = true
+[node name="ColorRect" type="TextureRect" parent="." unique_id=496297351]
+material = ExtResource("3_oii30")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -17.0
+offset_top = 721.0
+offset_right = -169.92139
+offset_bottom = 950.687
+rotation = -1.5707964
+texture = SubResource("GradientTexture1D_12aag")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1977221148]
 layout_mode = 0
@@ -35,15 +52,6 @@ offset_right = 850.0
 offset_bottom = 570.0
 theme_override_constants/separation = 37
 alignment = 1
-
-[node name="Label4" type="Label" parent="VBoxContainer" unique_id=805266046]
-layout_mode = 2
-theme_override_colors/font_color = Color(0.868358, 0.866927, 0.854182, 1)
-theme_override_fonts/font = ExtResource("2_pqnep")
-theme_override_font_sizes/font_size = 40
-text = "WASD para moverte y Space para disparar"
-label_settings = SubResource("LabelSettings_4t5pn")
-horizontal_alignment = 1
 
 [node name="Label3" type="Label" parent="VBoxContainer" unique_id=175491823]
 layout_mode = 2
@@ -73,7 +81,25 @@ text = "Start Game
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1671847117]
 texture_filter = 1
 position = Vector2(454, 159)
-scale = Vector2(2.6634614, 2.6634614)
+scale = Vector2(3.6923077, 3.6923072)
 texture = ExtResource("4_4t5pn")
+
+[node name="creditos" type="Button" parent="." unique_id=1551492905]
+layout_mode = 0
+offset_left = 766.0
+offset_top = 632.0
+offset_right = 884.0
+offset_bottom = 677.0
+theme_override_fonts/font = ExtResource("3_4t5pn")
+text = "Creditos"
+
+[node name="version" type="Label" parent="." unique_id=2103998420]
+layout_mode = 0
+offset_left = 6.0
+offset_top = 673.0
+offset_right = 60.0
+offset_bottom = 696.0
+text = "v0.0.23"
+label_settings = SubResource("LabelSettings_uda5e")
 
 [connection signal="pressed" from="VBoxContainer/StartButton" to="." method="_on_start_button_pressed"]

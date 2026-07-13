@@ -9,6 +9,7 @@ extends CharacterBody2D
 
 @onready var barra_vida: HealthBar = $BarraVida
 @export var coin:PackedScene
+@export var coin_amount:int ##cantidad de monedas a spawnear
 var max_health: float = 80.0
 var current_health: float
 var is_dead: bool = false
@@ -168,9 +169,14 @@ func _on_health_depleted():
 	queue_free()
 
 func add_coin() -> void:
-	var coin_instance = coin.instantiate()
-	coin_instance.global_position = self.global_position
-	get_parent().add_child(coin_instance)
+	for i in coin_amount:
+		var coin_instance = coin.instantiate()
+		var offset = Vector2(
+			randf_range(-50, 50),
+			randf_range(-50, 50)
+		)
+		coin_instance.global_position = global_position + offset
+		get_parent().add_child(coin_instance)
 	
 
 func _enter_tree() -> void:

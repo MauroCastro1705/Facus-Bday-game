@@ -5,6 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://b6tsnbtomcgxb" path="res://pistol/gun.tscn" id="3_x4s34"]
 [ext_resource type="Texture2D" uid="uid://b3334ee2weo43" path="res://ui-bordersz/crosshair_game (1).png" id="5_c6leb"]
 [ext_resource type="Texture2D" uid="uid://bw4dfu5m8hnou" path="res://ui-bordersz/crosshair_game (2).png" id="6_dirf7"]
+[ext_resource type="Texture2D" uid="uid://dwxosasqgcqdt" path="res://assets/ui/03.png" id="6_idpv6"]
 [ext_resource type="Texture2D" uid="uid://b73tgd7ha2s72" path="res://assets/FREE Textures Of Light Alpha/FREE Textures Of Light Alpha/FREE Textures Of Light Alpha/512x512/512x512 textures (23).png" id="7_dirf7"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_m57e4"]
@@ -12,6 +13,26 @@ radius = 26.076809
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_w0ha4"]
 radius = 36.013885
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rpf03"]
+atlas = ExtResource("6_idpv6")
+region = Rect2(0, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x5dtk"]
+atlas = ExtResource("6_idpv6")
+region = Rect2(48, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3t07l"]
+atlas = ExtResource("6_idpv6")
+region = Rect2(96, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_on558"]
+atlas = ExtResource("6_idpv6")
+region = Rect2(144, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gqopd"]
+atlas = ExtResource("6_idpv6")
+region = Rect2(192, 0, 48, 48)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_idpv6"]
 animations = [{
@@ -27,6 +48,26 @@ animations = [{
 }],
 "loop": true,
 "name": &"default",
+"speed": 7.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rpf03")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_x5dtk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3t07l")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_on558")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gqopd")
+}],
+"loop": true,
+"name": &"reloading",
 "speed": 7.0
 }]
 
@@ -61,8 +102,9 @@ debug_color = Color(0.827981, 0.318864, 0.604247, 0.42)
 position = Vector2(255.99998, 59.000004)
 scale = Vector2(0.36526322, 0.36526322)
 sprite_frames = SubResource("SpriteFrames_idpv6")
+animation = &"reloading"
 autoplay = "default"
-frame_progress = 0.46002194
+frame_progress = 0.72250175
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=1234735360]
 offset_left = -18.0
@@ -88,6 +130,8 @@ texture = ExtResource("7_dirf7")
 wait_time = 5.0
 
 [node name="dash_timer_2" type="Timer" parent="." unique_id=85296209]
+
+[node name="reload_timer" type="Timer" parent="." unique_id=2071145628]
 
 [connection signal="timeout" from="dash_timer" to="." method="_on_dash_1_timer_timeout"]
 [connection signal="timeout" from="dash_timer_2" to="." method="_on_dash_timer_2_timeout"]

@@ -19,6 +19,14 @@ var scale_timer: float = 0.0
 
 @export var gun:Node
 
+# Sistema de munición
+@export var max_ammo: int = 12  # Balas por cartucho
+var current_ammo: int = 12
+var is_reloading: bool = false
+@export var reload_time: float = 2.0  # Tiempo de recarga en segundos
+@onready var reload_timer: Timer = $reload_timer
+
+
 # Variables para el efecto de disparo
 var is_shooting: bool = false
 var shoot_flash_timer: float = 0.0
@@ -50,6 +58,17 @@ func _ready() -> void:
 	barra_vida.max_health = max_health
 	barra_vida.current_health = current_health
 	
+	# Configurar munición
+	current_ammo = max_ammo
+	if ui_bottom and ui_bottom.has_method("set_ammo"):
+		ui_bottom.set_ammo(current_ammo, max_ammo)
+	
+	# Configurar timer de recarga
+	if reload_timer:
+		reload_timer.wait_time = reload_time
+		reload_timer.one_shot = true
+		reload_timer.timeout.connect(_on_reload_timer_timeout)
+	
 	# Configurar timers de dash
 	if dash_1_timer:
 		dash_1_timer.wait_time = dash_cooldown
@@ -58,6 +77,7 @@ func _ready() -> void:
 	if dash_2_timer:
 		dash_2_timer.wait_time = dash_cooldown
 		dash_2_timer.one_shot = true
+
 	
 	# Inicializar UI
 	if ui_bottom and ui_bottom.has_method("reset_all_dashes"):
@@ -91,11 +111,68 @@ func _physics_process(delta):
 			is_shooting = false
 	
 	# Inputs
-	if Input.is_action_just_pressed("shoot"):
-		trigger_shoot_effect()
+	if Input.is_action_just_pressed("shoot") and not is_reloading:
+		try_shoot()
+	
+	if Input.is_action_just_pressed("reload") and not is_reloading and current_ammo < max_ammo:
+		start_reload()
 	
 	if Input.is_action_just_pressed("dash") and not is_dashing:
 		try_dash()
+
+func try_shoot() -> void:
+	# Verificar si hay munición
+	if current_ammo > 0:
+		# Disparar
+		current_ammo -= 1
+		trigger_shoot_effect()
+		
+		# Actualizar UI
+		if ui_bottom and ui_bottom.has_method("set_ammo"):
+			ui_bottom.set_ammo(current_ammo, max_ammo)
+		
+		# Aquí iría el código para instanciar la bala
+		print("¡Disparo! Balas restantes: ", current_ammo)
+		
+		# Si nos quedamos sin munición, recargar automáticamente
+		if current_ammo == 0:
+			start_reload()
+	else:
+		# Sin munición, recargar automáticamente
+		start_reload()
+
+func start_reload() -> void:
+	if is_reloading or current_ammo == max_ammo:
+		return
+	
+	is_reloading = true
+	
+	# Cambiar crosshair a animación de recarga
+	crosshair.play("reloading")
+	print("Recargando...")
+	
+	# Iniciar timer de recarga
+	if reload_timer:
+		reload_timer.start()
+
+func _on_reload_timer_timeout() -> void:
+	# Recargar completamente
+	current_ammo = max_ammo
+	
+	# Actualizar UI
+	if ui_bottom and ui_bottom.has_method("set_ammo"):
+		ui_bottom.set_ammo(current_ammo, max_ammo)
+	
+	# Volver al crosshair normal
+	crosshair.play("default")
+	is_reloading = false
+	
+	print("Recarga completada! Munición: ", current_ammo)
+
+func trigger_shoot_effect():
+	crosshair.modulate = Color.ORANGE
+	is_shooting = true
+	shoot_flash_timer = FLASH_DURATION
 
 func try_dash() -> void:
 	# Intentar usar dash_1 primero
@@ -149,13 +226,6 @@ func _on_dash_1_timer_timeout() -> void:
 		ui_bottom.recover_dash_1()
 	print("Dash 1 recuperado!")
 
-# Cuando el dash 2 se recupera del cooldown
-
-func trigger_shoot_effect():
-	crosshair.modulate = Color.ORANGE
-	is_shooting = true
-	shoot_flash_timer = FLASH_DURATION
-
 func take_damage(damage: float):
 	if is_dead:
 		return
@@ -181,6 +251,10 @@ func _process(_delta):
 		var time_remaining = shoot_flash_timer / FLASH_DURATION
 		var color = Color.ORANGE.lerp(Color.WHITE, 1.0 - time_remaining)
 		crosshair.modulate = color
+	
+	# Si está recargando, mantener la animación de recarga
+	if is_reloading and crosshair.animation != "reloading":
+		crosshair.play("reloading")
 
 
 func _on_dash_timer_2_timeout() -> void:

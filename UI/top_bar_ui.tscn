@@ -1,7 +1,6 @@
 [gd_scene format=3 uid="uid://dh2f3xslpsv78"]
 
 [ext_resource type="Script" uid="uid://p58gjvihnk75" path="res://UI/top_bar_ui.gd" id="1_qri1s"]
-[ext_resource type="FontFile" uid="uid://ew0lbedgquft" path="res://fonts/Mindsight.ttf" id="2_qri1s"]
 
 [node name="top_bar_ui" type="Control" unique_id=353916242]
 layout_mode = 3
@@ -29,19 +28,4 @@ layout_mode = 2
 theme_override_constants/separation = 80
 alignment = 1
 
-[node name="ScoreLabel" type="Label" parent="MarginContainer/HBoxContainer" unique_id=677877828]
-unique_name_in_owner = true
-modulate = Color(0, 0, 0, 1)
-z_index = 1
-layout_mode = 2
-theme_override_fonts/font = ExtResource("2_qri1s")
-theme_override_font_sizes/font_size = 50
-text = "Score :"
-uppercase = true
-
-[node name="PlayerName" type="Label" parent="MarginContainer/HBoxContainer" unique_id=35927392]
-unique_name_in_owner = true
-layout_mode = 2
-theme_override_colors/font_color = Color(0.00792371, 0.0169789, 0.0128233, 1)
-theme_override_font_sizes/font_size = 40
-text = "jugador"
+[node name="Timer" type="Timer" parent="." unique_id=1941583137]

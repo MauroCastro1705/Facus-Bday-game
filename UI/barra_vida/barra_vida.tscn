@@ -17,6 +17,7 @@ value = 75.0
 show_percentage = false
 
 [node name="TextureProgressBar" type="TextureProgressBar" parent="." unique_id=722131182]
+texture_filter = 1
 offset_left = -10.0
 offset_top = -4.0
 offset_right = 155.0

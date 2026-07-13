@@ -1,15 +1,23 @@
 extends Control
-@onready var barra_vida: HealthBar = $BarraVida
+
+@onready var barra_vida: HealthBar = $health_panel/BarraVida
 @onready var dash_1: TextureRect = %dash_1
 @onready var dash_2: TextureRect = %dash_2
 @onready var dash_sprite_timer: AnimatedSprite2D = %dash_sprite_timer
 @onready var dash_sprite_timer_2: AnimatedSprite2D = %dash_sprite_timer2
+@onready var player_name: Label = %player_name
+@onready var weapon_name_label: Label = $gun_panel/weapon_name
+@onready var ammo_label: Label = $gun_panel/ammo
+
+@export var weapon_name:String ##nombre para el arma
+
 
 # Estados de los dashes: true = disponible, false = en cooldown
 var dash_1_available: bool = true
 var dash_2_available: bool = true
 
 func _ready() -> void:
+	weapon_name_label.text = weapon_name
 	dash_sprite_timer.hide()
 	dash_sprite_timer_2.hide()
 	update_all_dashes()
@@ -77,3 +85,6 @@ func get_available_dashes() -> int:
 	if dash_2_available:
 		count += 1
 	return count
+	
+func set_ammo(ammo:int , max_ammo:int):
+	ammo_label.text = str(ammo , "/" , max_ammo)

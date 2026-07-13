@@ -12,3 +12,9 @@ res://pickups/enemy_coin_pickup/coin_pickup.gd
 res://pistol/gun.tscn
 res://characters/enemy_basic/mob.tscn
 res://characters/enemy_basic/mob.gd
+res://UI/top_bar_ui.tscn
+res://UI/top_bar_ui.gd
+res://UI/barra_vida/barra_vida.tscn
+res://escenas/main_menu/MainMenu.tscn
+res://shaders/waves.gdshader
+res://shaders/waves.tres

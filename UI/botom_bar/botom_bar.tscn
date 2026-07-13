@@ -5,6 +5,10 @@
 [ext_resource type="Texture2D" uid="uid://byidm3y6cpmr5" path="res://assets/UI Assets pack_v.1_st/UI.png" id="2_8rk74"]
 [ext_resource type="LabelSettings" uid="uid://sy8p2f33pssc" path="res://assets/texto_generico.tres" id="2_cle6g"]
 [ext_resource type="PackedScene" uid="uid://bhk8r7mumgdnr" path="res://UI/barra_vida/barra_vida.tscn" id="3_ajoka"]
+[ext_resource type="Texture2D" uid="uid://d27qrk0k3uuv7" path="res://assets/Free-Skill-32x32-Icons-for-Cyberpunk-Game/1 Icons/blanco/Skillicon7_27.png" id="5_6addp"]
+[ext_resource type="Texture2D" uid="uid://c0wi7uiic1313" path="res://assets/armas/1 Icons/Icon29_03.png" id="6_gwnfv"]
+[ext_resource type="Texture2D" uid="uid://vicpufdeuy01" path="res://assets/UI Assets pack_v.1_st/Book.png" id="6_xkf6q"]
+[ext_resource type="Texture2D" uid="uid://cq8rcgoaud7ub" path="res://assets/Free-Skill-32x32-Icons-for-Cyberpunk-Game/1 Icons/blanco/Skillicon7_22.png" id="8_xdu63"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_cle6g"]
 load_path = "res://.godot/imported/Skillicon7_29.png-f4885890d01a935639c68499425ce49f.ctex"
@@ -118,6 +122,9 @@ animations = [{
 "speed": 6.0
 }]
 
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_gwnfv"]
+load_path = "res://.godot/imported/UI.png-5a782aae0c5e754dd906fb91335bfc47.ctex"
+
 [node name="BotomBar" type="Control" unique_id=1420913704]
 layout_mode = 3
 anchors_preset = 15
@@ -126,9 +133,11 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_cle6g")
+metadata/_edit_lock_ = true
 
-[node name="NinePatchRect" type="NinePatchRect" parent="." unique_id=965846550]
+[node name="health_background" type="NinePatchRect" parent="." unique_id=965846550]
 modulate = Color(0.050980393, 0.32156864, 0.44313726, 1)
+texture_filter = 1
 layout_mode = 0
 offset_left = 31.0
 offset_top = 594.0
@@ -141,65 +150,165 @@ patch_margin_top = 13
 patch_margin_right = 14
 patch_margin_bottom = 13
 
-[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=1219774687]
-layout_mode = 0
-offset_left = 55.0
-offset_top = 639.0
-offset_right = 95.0
-offset_bottom = 679.0
+[node name="health_panel" type="Control" parent="." unique_id=46475710]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
 
-[node name="Label" type="Label" parent="HBoxContainer" unique_id=896536069]
+[node name="HBoxContainer" type="HBoxContainer" parent="health_panel" unique_id=1219774687]
+layout_mode = 0
+offset_left = 62.0
+offset_top = 642.0
+offset_right = 102.0
+offset_bottom = 682.0
+
+[node name="Label" type="Label" parent="health_panel/HBoxContainer" unique_id=896536069]
 layout_mode = 2
 text = "dash"
 label_settings = ExtResource("2_cle6g")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="BarraVida" parent="." unique_id=642129819 instance=ExtResource("3_ajoka")]
-position = Vector2(56, 624)
+[node name="BarraVida" parent="health_panel" unique_id=642129819 instance=ExtResource("3_ajoka")]
+position = Vector2(56, 628)
 
-[node name="Label" type="Label" parent="." unique_id=1692511163]
+[node name="TextureRect" type="TextureRect" parent="health_panel" unique_id=586711293]
+texture_filter = 1
 layout_mode = 0
-offset_left = 51.0
-offset_top = 601.0
-offset_right = 136.0
-offset_bottom = 624.0
+offset_left = 46.0
+offset_top = 590.0
+offset_right = 73.0
+offset_bottom = 631.0
+texture = ExtResource("5_6addp")
+expand_mode = 5
+stretch_mode = 5
+
+[node name="player_name" type="Label" parent="health_panel" unique_id=1692511163]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 76.0
+offset_top = 599.0
+offset_right = 161.0
+offset_bottom = 622.0
 text = "Facundito"
 label_settings = ExtResource("2_cle6g")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="dash_1" type="TextureRect" parent="." unique_id=1412588369]
+[node name="dash_1" type="TextureRect" parent="health_panel" unique_id=1412588369]
 unique_name_in_owner = true
 layout_mode = 0
-offset_left = 131.0
-offset_top = 646.0
-offset_right = 163.0
-offset_bottom = 678.0
+offset_left = 132.0
+offset_top = 649.0
+offset_right = 164.0
+offset_bottom = 681.0
 scale = Vector2(0.9, 0.9)
 texture = SubResource("CompressedTexture2D_cle6g")
 
-[node name="dash_sprite_timer" type="AnimatedSprite2D" parent="." unique_id=1955609917]
+[node name="dash_sprite_timer" type="AnimatedSprite2D" parent="health_panel" unique_id=1955609917]
 unique_name_in_owner = true
-position = Vector2(147, 660)
+position = Vector2(148, 663)
 scale = Vector2(1.1200024, 1.1200024)
 sprite_frames = SubResource("SpriteFrames_fvxjv")
 autoplay = "default"
-frame_progress = 0.3947394
+frame_progress = 0.08064923
 
-[node name="dash_2" type="TextureRect" parent="." unique_id=492811756]
+[node name="dash_2" type="TextureRect" parent="health_panel" unique_id=492811756]
 unique_name_in_owner = true
 layout_mode = 0
-offset_left = 103.0
-offset_top = 646.0
-offset_right = 135.0
-offset_bottom = 678.0
+offset_left = 104.0
+offset_top = 649.0
+offset_right = 136.0
+offset_bottom = 681.0
 scale = Vector2(0.9, 0.9)
 texture = SubResource("CompressedTexture2D_8rk74")
 
-[node name="dash_sprite_timer2" type="AnimatedSprite2D" parent="." unique_id=575916437]
+[node name="dash_sprite_timer2" type="AnimatedSprite2D" parent="health_panel" unique_id=575916437]
 unique_name_in_owner = true
-position = Vector2(116.99999, 659.99994)
+position = Vector2(117.99999, 662.99994)
 scale = Vector2(1.1200024, 1.1200024)
 sprite_frames = SubResource("SpriteFrames_8rk74")
 autoplay = "default"
+
+[node name="gun_panel" type="Control" parent="." unique_id=1222717418]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="gun_background" type="NinePatchRect" parent="gun_panel" unique_id=500197281]
+modulate = Color(0.050980393, 0.32156864, 0.44313726, 1)
+texture_filter = 1
+layout_mode = 0
+offset_left = 663.0
+offset_top = 608.0
+offset_right = 822.9993
+offset_bottom = 662.0
+scale = Vector2(1.2000048, 1.2000048)
+texture = SubResource("CompressedTexture2D_gwnfv")
+region_rect = Rect2(283.69855, 79.32457, 52.42926, 48.663628)
+patch_margin_left = 18
+patch_margin_top = 13
+patch_margin_right = 14
+patch_margin_bottom = 13
+
+[node name="ColorRect" type="ColorRect" parent="gun_panel" unique_id=1211828615]
+layout_mode = 0
+offset_left = 682.0
+offset_top = 619.0
+offset_right = 741.0
+offset_bottom = 655.0
+scale = Vector2(1.2000048, 1.2000048)
+color = Color(0.9414571, 0.96204084, 0.9983632, 1)
+
+[node name="ammo" type="Label" parent="gun_panel" unique_id=448344515]
+layout_mode = 0
+offset_left = 776.0
+offset_top = 647.0
+offset_right = 835.0
+offset_bottom = 662.0
+text = "20/300"
+label_settings = ExtResource("2_cle6g")
+
+[node name="weapon_name" type="Label" parent="gun_panel" unique_id=553154474]
+layout_mode = 0
+offset_left = 754.0
+offset_top = 622.0
+offset_right = 850.0
+offset_bottom = 647.0
+text = "Barracuda"
+label_settings = ExtResource("2_cle6g")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="NinePatchRect" type="NinePatchRect" parent="gun_panel" unique_id=1993558899]
+texture_filter = 1
+layout_mode = 0
+offset_left = 682.0
+offset_top = 617.0
+offset_right = 742.0
+offset_bottom = 657.0
+scale = Vector2(1.2000048, 1.2000048)
+texture = ExtResource("6_xkf6q")
+region_rect = Rect2(82, 288.98553, 44.849396, 47.014465)
+patch_margin_left = 9
+patch_margin_top = 9
+patch_margin_right = 9
+patch_margin_bottom = 10
+
+[node name="Sprite2D" type="Sprite2D" parent="gun_panel" unique_id=83818972]
+texture_filter = 1
+position = Vector2(717.99994, 639.99994)
+rotation = 0.7913956
+scale = Vector2(1.2000048, 1.2000048)
+texture = ExtResource("6_gwnfv")
+
+[node name="TextureRect" type="TextureRect" parent="gun_panel" unique_id=1208321448]
+texture_filter = 1
+layout_mode = 0
+offset_left = 754.0
+offset_top = 639.0
+offset_right = 776.0
+offset_bottom = 671.0
+texture = ExtResource("8_xdu63")
+expand_mode = 5
+stretch_mode = 5
