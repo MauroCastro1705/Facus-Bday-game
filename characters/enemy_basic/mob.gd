@@ -8,6 +8,7 @@ extends CharacterBody2D
 @export var rotation_speed: float = 5.0  # Velocidad de rotación hacia el jugador
 
 @onready var barra_vida: HealthBar = $BarraVida
+@export var coin:PackedScene
 var max_health: float = 80.0
 var current_health: float
 var is_dead: bool = false
@@ -162,8 +163,14 @@ func _on_health_depleted():
 		return
 	
 	is_dead = true
+	add_coin()
 	print("Enemigo ha muerto!")
 	queue_free()
+
+func add_coin() -> void:
+	var coin_instance = coin.instantiate()
+	get_parent().add_child(coin_instance)
+	
 
 func _enter_tree() -> void:
 	# Añadir el enemigo al grupo "enemies" para referencia

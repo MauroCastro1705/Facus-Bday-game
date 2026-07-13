@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://djfns3f6sbhjy" path="res://characters/enemy_basic/mob.gd" id="1_6r882"]
 [ext_resource type="PackedScene" uid="uid://d2bikdxmosinu" path="res://pistol/bullet_enemy.tscn" id="2_3u7ve"]
+[ext_resource type="PackedScene" uid="uid://bo25qipahswpt" path="res://pickups/enemy_coin_pickup/coin_pickup.tscn" id="3_mhry0"]
 [ext_resource type="PackedScene" uid="uid://bhk8r7mumgdnr" path="res://UI/barra_vida/barra_vida.tscn" id="3_sjt0n"]
 [ext_resource type="Texture2D" uid="uid://b0a5kl025j6lu" path="res://assets/jack_black .png" id="4_d4ky1"]
 [ext_resource type="Texture2D" uid="uid://b73tgd7ha2s72" path="res://assets/FREE Textures Of Light Alpha/FREE Textures Of Light Alpha/FREE Textures Of Light Alpha/512x512/512x512 textures (23).png" id="5_3u7ve"]
@@ -16,6 +17,7 @@ script = ExtResource("1_6r882")
 bullet = ExtResource("2_3u7ve")
 fire_rate = 2.0
 enemy_speed = 75.0
+coin = ExtResource("3_mhry0")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1248125656]
 shape = SubResource("CircleShape2D_8tavr")

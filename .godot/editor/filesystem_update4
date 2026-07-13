@@ -10,3 +10,5 @@ res://pickups/enemy_coin_pickup/coin_pickup.tscn
 res://escenas/rooms/room_1.tscn
 res://pickups/enemy_coin_pickup/coin_pickup.gd
 res://pistol/gun.tscn
+res://characters/enemy_basic/mob.tscn
+res://characters/enemy_basic/mob.gd
