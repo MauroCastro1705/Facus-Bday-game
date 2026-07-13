@@ -1,0 +1,35 @@
+[gd_scene format=3 uid="uid://bbov46wpagx02"]
+
+[ext_resource type="Script" uid="uid://bqj0xnvpb1pl7" path="res://pistol/impact/impact_particle.gd" id="1_7v0vx"]
+
+[sub_resource type="Curve" id="Curve_i3af8"]
+_limits = [0.0, 1.0, 0.0, 1.5]
+_data = [Vector2(0.010695182, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_6jmjh"]
+curve = SubResource("Curve_i3af8")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_0m8cr"]
+lifetime_randomness = 0.2
+particle_flag_disable_z = true
+spread = 180.0
+initial_velocity_min = 100.0
+initial_velocity_max = 250.0
+gravity = Vector3(0, 180, 0)
+damping_min = 50.000004
+damping_max = 100.00001
+scale_max = 2.0
+color = Color(1.537, 1.686, 0, 1)
+emission_curve = SubResource("CurveTexture_6jmjh")
+hue_variation_min = -0.13000003
+hue_variation_max = -0.13000003
+
+[node name="ImpactParticle" type="GPUParticles2D" unique_id=393370022]
+emitting = false
+amount = 11
+lifetime = 0.3
+one_shot = true
+explosiveness = 0.8
+process_material = SubResource("ParticleProcessMaterial_0m8cr")
+script = ExtResource("1_7v0vx")

@@ -206,7 +206,7 @@ func _on_reload_timer_timeout() -> void:
 func trigger_shoot_effect():
 	crosshair.modulate = Color.ORANGE
 	is_shooting = true
-	shoot_flash_timer = FLASH_DURATION
+
 
 func try_dash() -> void:
 	# Intentar usar dash_1 primero

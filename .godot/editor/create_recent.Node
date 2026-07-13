@@ -1,3 +1,4 @@
+GPUParticles2D
 Label
 NinePatchRect
 Button
@@ -11,4 +12,3 @@ TextureRect
 Control
 AnimationPlayer
 PointLight2D
-AnimatedSprite2D

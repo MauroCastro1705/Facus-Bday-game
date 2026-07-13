@@ -4,6 +4,7 @@
 [ext_resource type="TileSet" uid="uid://bmaddy4gwkyk4" path="res://assets/top_down.tres" id="2_shp2q"]
 [ext_resource type="PackedScene" uid="uid://hjyw2skgm8wo" path="res://characters/enemy_basic/mob.tscn" id="3_8s4ct"]
 [ext_resource type="PackedScene" uid="uid://bx2fjbx8a57ai" path="res://characters/enemy_static/mob_static.tscn" id="4_l8lb4"]
+[ext_resource type="PackedScene" uid="uid://cha0fc1pcp1a2" path="res://objetos_mapa/bloque_generico.tscn" id="5_ltjsl"]
 
 [node name="Room_1" unique_id=1639878217 instance=ExtResource("1_u421q")]
 
@@ -44,3 +45,6 @@ position = Vector2(797, 632)
 
 [node name="CanvasModulate" type="CanvasModulate" parent="." index="8" unique_id=1486348667]
 color = Color(0.6017132, 0.49409842, 0.40608504, 1)
+
+[node name="bloque_generico" parent="." index="9" unique_id=924551978 instance=ExtResource("5_ltjsl")]
+position = Vector2(238, 325)

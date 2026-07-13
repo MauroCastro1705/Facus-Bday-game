@@ -22,6 +22,7 @@ font_size = 23
 font = ExtResource("3_4t5pn")
 
 [sub_resource type="LabelSettings" id="LabelSettings_4qipx"]
+line_spacing = 12.0
 font = ExtResource("3_4t5pn")
 font_size = 29
 outline_size = 6
@@ -139,11 +140,9 @@ layout_mode = 0
 offset_left = 23.0
 offset_top = 19.0
 offset_right = 362.0
-offset_bottom = 299.0
+offset_bottom = 297.0
 text = "-WASD para moverte
-
 -Click para disparar
-
 -Space para dash en direccion al mouse"
 label_settings = SubResource("LabelSettings_4qipx")
 horizontal_alignment = 1

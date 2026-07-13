@@ -3,21 +3,13 @@ extends Node2D
 #GUN.gd
 @onready var shooting_point = %ShootingPoint
 @export var bullet:PackedScene
-var can_shoot = true  # Prevents continuous shooting
 @onready var pistol: Sprite2D = $pistol
+@onready var flash_particle: GPUParticles2D = $GPUParticles2D
 
 func _ready():
 	pass
 
-func _process(_delta):
-	if Input.is_action_pressed("shoot") and can_shoot:
-		Normal_Shoot()
-		can_shoot = false
-		start_shooting_cooldown()
 
-func start_shooting_cooldown():
-	await get_tree().create_timer(Global.playerAtkSpeed).timeout
-	can_shoot = true  # Allow shooting again
 
 func _physics_process(_delta):
 	var mouse_position = get_global_mouse_position()
@@ -34,10 +26,12 @@ func _physics_process(_delta):
 		pistol.flip_v = false
 
 #### SHOOT TYPES####
-func Normal_Shoot():
+func shoot():
 	var new_bullet = bullet.instantiate()
 	new_bullet.global_position = shooting_point.global_position
 	new_bullet.global_rotation = shooting_point.global_rotation
+	flash_particle.restart()
+	flash_particle.emitting = true
 	get_parent().add_child(new_bullet)  # Spawn bullet in the main scene
 
 func Burst_Fire():
