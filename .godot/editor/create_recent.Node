@@ -1,7 +1,8 @@
-TextureRect
-ColorRect
-Label
 Button
+Label
+VBoxContainer
+ColorRect
+TextureRect
 Timer
 NinePatchRect
 Control
@@ -11,4 +12,3 @@ PointLight2D
 CollisionShape2D
 Area2D
 AnimatedSprite2D
-HBoxContainer

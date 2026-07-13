@@ -1,0 +1,10 @@
+[gd_resource type="ShaderMaterial" format=3 uid="uid://dweckkfhubivf"]
+
+[ext_resource type="Shader" uid="uid://cqo6wuec1qmgx" path="res://shaders/3dwaves.gdshader" id="1_v1ruj"]
+
+[resource]
+shader = ExtResource("1_v1ruj")
+shader_parameter/movement_speed = 0.1
+shader_parameter/movement_scale = 2.0
+shader_parameter/color_1 = Color(0, 0.63, 0.49, 1)
+shader_parameter/color_2 = Color(0.16, 0.16, 0.16, 1)

@@ -104,7 +104,7 @@ scale = Vector2(0.36526322, 0.36526322)
 sprite_frames = SubResource("SpriteFrames_idpv6")
 animation = &"reloading"
 autoplay = "default"
-frame_progress = 0.72250175
+frame_progress = 0.77415776
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=1234735360]
 offset_left = -18.0

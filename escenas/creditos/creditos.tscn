@@ -1,0 +1,70 @@
+[gd_scene format=3 uid="uid://byquct341q50m"]
+
+[ext_resource type="Script" uid="uid://d4djku51umb38" path="res://escenas/creditos/creditos.gd" id="1_hgkxa"]
+[ext_resource type="Material" uid="uid://dweckkfhubivf" path="res://shaders/3dwaves.tres" id="1_jr4fe"]
+[ext_resource type="FontFile" uid="uid://cndjgmrns5spc" path="res://fonts/coin_font.ttf" id="2_p63js"]
+[ext_resource type="PackedScene" uid="uid://bjv81dgoelh3n" path="res://escenas/main_menu/MainMenu.tscn" id="2_pv1q0"]
+[ext_resource type="FontFile" uid="uid://cp8lssch42uu5" path="res://fonts/pixel_font.ttf" id="3_hgkxa"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_pv1q0"]
+font = ExtResource("2_p63js")
+font_size = 60
+outline_size = 6
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_7t1ww"]
+font = ExtResource("3_hgkxa")
+font_size = 29
+outline_size = 21
+outline_color = Color(0, 0, 0, 1)
+
+[node name="Creditos" type="Node2D" unique_id=741394134]
+script = ExtResource("1_hgkxa")
+main_menu = ExtResource("2_pv1q0")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1204599373]
+material = ExtResource("1_jr4fe")
+offset_right = 913.0
+offset_bottom = 710.0
+metadata/_edit_lock_ = true
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1259409513]
+offset_left = 285.0
+offset_top = 154.0
+offset_right = 615.0
+offset_bottom = 536.0
+theme_override_constants/separation = 20
+alignment = 1
+
+[node name="Label" type="Label" parent="VBoxContainer" unique_id=700247738]
+layout_mode = 2
+text = "Creditos
+"
+label_settings = SubResource("LabelSettings_pv1q0")
+horizontal_alignment = 1
+
+[node name="Label2" type="Label" parent="VBoxContainer" unique_id=1332611493]
+layout_mode = 2
+text = "Panda"
+label_settings = SubResource("LabelSettings_7t1ww")
+horizontal_alignment = 1
+
+[node name="Label3" type="Label" parent="VBoxContainer" unique_id=247408824]
+layout_mode = 2
+text = "Juampi"
+label_settings = SubResource("LabelSettings_7t1ww")
+horizontal_alignment = 1
+
+[node name="Label4" type="Label" parent="VBoxContainer" unique_id=438207393]
+layout_mode = 2
+text = "Luca"
+label_settings = SubResource("LabelSettings_7t1ww")
+horizontal_alignment = 1
+
+[node name="Button" type="Button" parent="VBoxContainer" unique_id=1525281842]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_hgkxa")
+theme_override_font_sizes/font_size = 23
+text = "Volver"
+
+[connection signal="pressed" from="VBoxContainer/Button" to="." method="_on_button_pressed"]

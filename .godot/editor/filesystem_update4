@@ -18,3 +18,7 @@ res://UI/barra_vida/barra_vida.tscn
 res://escenas/main_menu/MainMenu.tscn
 res://shaders/waves.gdshader
 res://shaders/waves.tres
+res://shaders/3dwaves.tres
+res://shaders/3dwaves.gdshader
+res://escenas/creditos/creditos.tscn
+res://escenas/creditos/creditos.gd
