@@ -1,9 +1,9 @@
+Timer
 Button
 Label
 VBoxContainer
 ColorRect
 TextureRect
-Timer
 NinePatchRect
 Control
 Sprite2D

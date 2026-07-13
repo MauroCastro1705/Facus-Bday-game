@@ -2,7 +2,6 @@
 
 [ext_resource type="Script" uid="uid://3gfrqyxt1qy" path="res://escenas/main_menu/main_menu.gd" id="1_2q1j2"]
 [ext_resource type="FontFile" uid="uid://cbbnw23rahxsu" path="res://fonts/Blacknorthdemo-mLE25.otf" id="2_pqnep"]
-[ext_resource type="PackedScene" uid="uid://c08om84k0pbuj" path="res://escenas/Main/main_scene.tscn" id="2_uda5e"]
 [ext_resource type="FontFile" uid="uid://cp8lssch42uu5" path="res://fonts/pixel_font.ttf" id="3_4t5pn"]
 [ext_resource type="Material" uid="uid://c7iarevdrntt3" path="res://shaders/waves.tres" id="3_oii30"]
 [ext_resource type="Texture2D" uid="uid://0u48fa2u5hx0" path="res://assets/logo.png" id="4_4t5pn"]
@@ -29,7 +28,6 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_2q1j2")
-main_scene = ExtResource("2_uda5e")
 
 [node name="ColorRect" type="TextureRect" parent="." unique_id=496297351]
 material = ExtResource("3_oii30")
@@ -41,6 +39,8 @@ offset_left = -17.0
 offset_top = 721.0
 offset_right = -169.92139
 offset_bottom = 950.687
+grow_horizontal = 2
+grow_vertical = 2
 rotation = -1.5707964
 texture = SubResource("GradientTexture1D_12aag")
 
@@ -103,3 +103,4 @@ text = "v0.0.23"
 label_settings = SubResource("LabelSettings_uda5e")
 
 [connection signal="pressed" from="VBoxContainer/StartButton" to="." method="_on_start_button_pressed"]
+[connection signal="pressed" from="creditos" to="." method="_on_creditos_pressed"]

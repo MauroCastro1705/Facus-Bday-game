@@ -4,6 +4,7 @@ extends Node2D
 
 signal room_changed(new_room: Node2D, room_index: int)
 signal room_cleared(room_index: int)
+@warning_ignore("unused_signal")
 signal all_rooms_cleared()
 
 @export var initial_room_index: int = 0

@@ -104,7 +104,7 @@ scale = Vector2(0.36526322, 0.36526322)
 sprite_frames = SubResource("SpriteFrames_idpv6")
 animation = &"reloading"
 autoplay = "default"
-frame_progress = 0.77415776
+frame_progress = 0.12288983
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=1234735360]
 offset_left = -18.0
@@ -132,6 +132,9 @@ wait_time = 5.0
 [node name="dash_timer_2" type="Timer" parent="." unique_id=85296209]
 
 [node name="reload_timer" type="Timer" parent="." unique_id=2071145628]
+
+[node name="fire_rate_timer" type="Timer" parent="." unique_id=1367395353]
+wait_time = 0.2
 
 [connection signal="timeout" from="dash_timer" to="." method="_on_dash_1_timer_timeout"]
 [connection signal="timeout" from="dash_timer_2" to="." method="_on_dash_timer_2_timeout"]

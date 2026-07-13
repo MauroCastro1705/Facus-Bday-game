@@ -3,7 +3,6 @@
 [ext_resource type="Script" uid="uid://d4djku51umb38" path="res://escenas/creditos/creditos.gd" id="1_hgkxa"]
 [ext_resource type="Material" uid="uid://dweckkfhubivf" path="res://shaders/3dwaves.tres" id="1_jr4fe"]
 [ext_resource type="FontFile" uid="uid://cndjgmrns5spc" path="res://fonts/coin_font.ttf" id="2_p63js"]
-[ext_resource type="PackedScene" uid="uid://bjv81dgoelh3n" path="res://escenas/main_menu/MainMenu.tscn" id="2_pv1q0"]
 [ext_resource type="FontFile" uid="uid://cp8lssch42uu5" path="res://fonts/pixel_font.ttf" id="3_hgkxa"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_pv1q0"]
@@ -20,7 +19,6 @@ outline_color = Color(0, 0, 0, 1)
 
 [node name="Creditos" type="Node2D" unique_id=741394134]
 script = ExtResource("1_hgkxa")
-main_menu = ExtResource("2_pv1q0")
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=1204599373]
 material = ExtResource("1_jr4fe")

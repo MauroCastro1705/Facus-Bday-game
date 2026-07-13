@@ -8,11 +8,14 @@ func _ready() -> void:
 	game_manager.all_rooms_cleared.connect(_on_game_completed)
 	
 	
+@warning_ignore("unused_parameter")
 func _on_room_changed(new_room: Node2D, room_index: int):
 	pass #mostrar ui con numero de rooms
 
+@warning_ignore("unused_parameter")
 func _on_room_cleared(room_index: int):
 	pass #mensaje de room clear
 	
+@warning_ignore("unused_parameter")	
 func _on_game_completed():
 	pass #llevar a pantala victoria

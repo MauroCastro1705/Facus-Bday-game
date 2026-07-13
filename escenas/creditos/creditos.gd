@@ -1,6 +1,9 @@
 extends Node2D
 
-@export var main_menu:PackedScene
+@export var fade_duration: float = 0.5
 
 func _on_button_pressed() -> void:
-	pass # Replace with function body.
+	var tween = create_tween()
+	tween.tween_property(self, "modulate", Color.TRANSPARENT, fade_duration)
+	await tween.finished
+	get_tree().change_scene_to_file("res://escenas/main_menu/MainMenu.tscn")
