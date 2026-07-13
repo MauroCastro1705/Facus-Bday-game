@@ -42,6 +42,15 @@ position = Vector2(784, 235)
 
 [node name="Mob_static" parent="EnemiesContainer" parent_id_path=PackedInt32Array(102369919) index="1" unique_id=740083035 instance=ExtResource("4_l8lb4")]
 position = Vector2(797, 632)
+bullet_count = 3
+line_spread_spacing = 30.0
+
+[node name="Mob_static2" parent="EnemiesContainer" parent_id_path=PackedInt32Array(102369919) index="2" unique_id=1478323827 instance=ExtResource("4_l8lb4")]
+position = Vector2(1090, 453)
+shoot_type = 1
+bullet_count = 3
+spread_angle = 42.0
+line_spread_spacing = 30.0
 
 [node name="CanvasModulate" type="CanvasModulate" parent="." index="8" unique_id=1486348667]
 color = Color(0.6017132, 0.49409842, 0.40608504, 1)

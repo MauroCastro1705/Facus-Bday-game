@@ -7,3 +7,7 @@ res://pistol/impact/impact_particle.gd
 res://pistol/bullet.tscn
 res://Scripts/ImpactParticlePool.gd
 res://pistol/bullet.gd
+res://escenas/rooms/room_1.tscn
+res://Scripts/GameManager.gd
+res://characters/player/player.tscn
+res://characters/player/player.gd

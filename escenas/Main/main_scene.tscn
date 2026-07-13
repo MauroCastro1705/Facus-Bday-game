@@ -24,10 +24,11 @@ offset_bottom = -631.0
 
 [node name="BotomBar" parent="CanvasLayer" unique_id=1420913704 instance=ExtResource("4_mo04v")]
 
-[node name="Player" parent="." unique_id=1183339018 node_paths=PackedStringArray("ui_bottom") instance=ExtResource("3_tcvou")]
+[node name="Player" parent="." unique_id=1183339018 node_paths=PackedStringArray("ui_bottom", "game_manager") instance=ExtResource("3_tcvou")]
 unique_name_in_owner = true
 position = Vector2(456, 358)
 ui_bottom = NodePath("../CanvasLayer/BotomBar")
+game_manager = NodePath("../gameManager")
 
 [node name="gameManager" type="Node2D" parent="." unique_id=1426588263 node_paths=PackedStringArray("rooms_parent", "player")]
 script = ExtResource("7_mo04v")

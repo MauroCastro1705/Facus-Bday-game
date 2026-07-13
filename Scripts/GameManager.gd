@@ -1,7 +1,8 @@
 extends Node2D
 
 # GameManager.gd - Sistema de gestión de habitaciones para twin stick shooter
-
+const GAME_OVER:String = "res://escenas/Game_over/game_over.tscn"
+@export var fade_duration: float = 0.5
 signal room_changed(new_room: Node2D, room_index: int)
 signal room_cleared(room_index: int)
 @warning_ignore("unused_signal")
@@ -71,6 +72,8 @@ func load_room(room_index: int):
 	
 	room_changed.emit(current_room_instance, room_index)
 	print("Habitación ", room_index, " cargada")
+
+
 
 func setup_room(room: Node2D, room_index: int):
 	"""Configura la habitación después de instanciarla"""
@@ -215,3 +218,11 @@ func restart_game():
 	
 	room_data.clear()
 	call_deferred("load_room", initial_room_index)
+
+
+func _on_player_death():
+	var tween = create_tween()
+	tween.tween_property(self, "modulate", Color.TRANSPARENT, fade_duration)
+	await tween.finished
+	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+	get_tree().change_scene_to_file(GAME_OVER)

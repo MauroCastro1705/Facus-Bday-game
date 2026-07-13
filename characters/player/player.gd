@@ -4,6 +4,7 @@ var is_dead: bool = false
 @onready var collision_shape_2d: CollisionShape2D = $CollisionShape2D
 
 @export var ui_bottom:Node
+@export var game_manager:Node
 @onready var barra_vida:HealthBar = ui_bottom.barra_vida
 var max_health: float
 var current_health: float
@@ -278,7 +279,8 @@ func die():
 		return
 	is_dead = true
 	print("Guerrero ha muerto!")
-	queue_free()
+	game_manager._on_player_death()
+	#queue_free()
 
 func _process(_delta):
 	if is_shooting:
