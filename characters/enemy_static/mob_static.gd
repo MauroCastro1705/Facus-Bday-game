@@ -2,6 +2,8 @@ extends CharacterBody2D
 # Static Turret Enemy
 
 @export var bullet: PackedScene
+@export var coin:PackedScene
+@export var coin_amount:int ##cantidad de monedas que spawnea al morir
 @export var shoot_timer: Timer
 @export var fire_rate: float = 1.5  ## Tiempo entre disparos en segundos
 @export var detection_range: float = 600.0  ## Rango de detección del jugador
@@ -183,7 +185,18 @@ func _on_health_depleted():
 	
 	is_dead = true
 	print("Enemigo estático ha muerto!")
+	call_deferred("add_coin") 
 	queue_free()
+
+func add_coin() -> void:
+	for i in coin_amount:
+		var coin_instance = coin.instantiate()
+		var offset = Vector2(
+			randf_range(-50, 50),
+			randf_range(-50, 50)
+		)
+		coin_instance.global_position = global_position + offset
+		get_parent().add_child(coin_instance)
 
 func _enter_tree() -> void:
 	# Añadir el enemigo al grupo "enemies" para referencia

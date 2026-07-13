@@ -57,13 +57,14 @@ _data = {
 script = ExtResource("1_8t712")
 
 [node name="Area2D" type="Area2D" parent="." unique_id=1947315870]
+scale = Vector2(0.5600002, 0.5600002)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=937387084]
 shape = SubResource("CircleShape2D_8t712")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=133138779]
 position = Vector2(0, 0.99999976)
-scale = Vector2(0.609375, 0.609375)
+scale = Vector2(0.3412501, 0.3412501)
 texture = ExtResource("1_0nv51")
 
 [node name="PointLight2D" type="PointLight2D" parent="Sprite2D" unique_id=1147191594]

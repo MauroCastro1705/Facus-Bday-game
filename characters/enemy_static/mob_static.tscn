@@ -4,8 +4,10 @@
 [ext_resource type="PackedScene" uid="uid://bjlnthqxhmnap" path="res://pistol/bullet_enemy_turret.tscn" id="2_lfgu0"]
 [ext_resource type="PackedScene" uid="uid://bhk8r7mumgdnr" path="res://UI/barra_vida/barra_vida.tscn" id="3_ggavr"]
 [ext_resource type="Texture2D" uid="uid://cmd7lpsjyxrg6" path="res://assets/drhouse.png" id="3_p0rir"]
+[ext_resource type="PackedScene" uid="uid://bo25qipahswpt" path="res://pickups/enemy_coin_pickup/coin_pickup.tscn" id="3_r1uh3"]
 [ext_resource type="Texture2D" uid="uid://b73tgd7ha2s72" path="res://assets/FREE Textures Of Light Alpha/FREE Textures Of Light Alpha/FREE Textures Of Light Alpha/512x512/512x512 textures (23).png" id="5_ghbwf"]
 [ext_resource type="Texture2D" uid="uid://coeviyorq5k3e" path="res://assets/free-guns-pack-2-for-main-characters-pixel-art/2 Guns/9_1.png" id="5_p0rir"]
+[ext_resource type="Texture2D" uid="uid://byy3qxs8jr7l3" path="res://assets/armas/1 Icons/Icon29_13.png" id="7_kbwye"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_8tavr"]
 radius = 39.051247
@@ -14,6 +16,8 @@ radius = 39.051247
 platform_floor_layers = 4294967040
 script = ExtResource("1_e0i7l")
 bullet = ExtResource("2_lfgu0")
+coin = ExtResource("3_r1uh3")
+coin_amount = 20
 fire_rate = 1.7
 shoot_type = 2
 spread_angle = 50.0
@@ -39,10 +43,16 @@ texture = ExtResource("5_ghbwf")
 
 [node name="gun" type="Sprite2D" parent="." unique_id=109752920]
 texture_filter = 1
-position = Vector2(1, 1)
+position = Vector2(0, 1)
 texture = ExtResource("5_p0rir")
-offset = Vector2(71, 2)
+offset = Vector2(46, 2)
 
 [node name="shooting_point" type="Marker2D" parent="gun" unique_id=810286168]
-position = Vector2(85, 1)
+position = Vector2(59.62232, 1)
 scale = Vector2(0.6800002, 0.6800002)
+
+[node name="Sprite2D" type="Sprite2D" parent="gun" unique_id=1509588708]
+texture_filter = 1
+position = Vector2(47.622326, 1)
+rotation = 0.8066113
+texture = ExtResource("7_kbwye")

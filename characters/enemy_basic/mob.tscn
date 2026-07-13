@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://b0a5kl025j6lu" path="res://assets/jack_black .png" id="4_d4ky1"]
 [ext_resource type="Texture2D" uid="uid://b73tgd7ha2s72" path="res://assets/FREE Textures Of Light Alpha/FREE Textures Of Light Alpha/FREE Textures Of Light Alpha/512x512/512x512 textures (23).png" id="5_3u7ve"]
 [ext_resource type="Texture2D" uid="uid://b07wiay35ic14" path="res://assets/free-guns-pack-2-for-main-characters-pixel-art/2 Guns/10_1.png" id="6_gphry"]
+[ext_resource type="Texture2D" uid="uid://dhphe0mwl4ioa" path="res://assets/armas/1 Icons/Icon29_11.png" id="8_aktnc"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_8tavr"]
 radius = 39.051247
@@ -37,10 +38,15 @@ shadow_enabled = true
 texture = ExtResource("5_3u7ve")
 
 [node name="gun" type="Sprite2D" parent="." unique_id=1085861603]
-position = Vector2(1, 1)
 texture = ExtResource("6_gphry")
-offset = Vector2(76, 1)
+offset = Vector2(45, 2)
 
 [node name="shooting_point" type="Marker2D" parent="gun" unique_id=810286168]
-position = Vector2(86, 0)
+position = Vector2(55, 0)
 scale = Vector2(0.6800002, 0.6800002)
+
+[node name="Sprite2D" type="Sprite2D" parent="gun" unique_id=759907629]
+texture_filter = 1
+position = Vector2(44, 0.9999981)
+rotation = 0.7736498
+texture = ExtResource("8_aktnc")

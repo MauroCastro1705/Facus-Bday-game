@@ -163,12 +163,13 @@ func _on_health_depleted():
 		return
 	
 	is_dead = true
-	add_coin()
+	call_deferred("add_coin") 
 	print("Enemigo ha muerto!")
 	queue_free()
 
 func add_coin() -> void:
 	var coin_instance = coin.instantiate()
+	coin_instance.global_position = self.global_position
 	get_parent().add_child(coin_instance)
 	
 
