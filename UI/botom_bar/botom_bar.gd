@@ -5,68 +5,75 @@ extends Control
 @onready var dash_sprite_timer: AnimatedSprite2D = %dash_sprite_timer
 @onready var dash_sprite_timer_2: AnimatedSprite2D = %dash_sprite_timer2
 
+# Estados de los dashes: true = disponible, false = en cooldown
+var dash_1_available: bool = true
+var dash_2_available: bool = true
+
 func _ready() -> void:
 	dash_sprite_timer.hide()
 	dash_sprite_timer_2.hide()
-	update_dash_display(2, false)
+	update_all_dashes()
 
-func update_dash_display(dashes_available: int, is_cooldown: bool = false) -> void:
-	# Actualizar dashs disponibles
-	update_dash_availability(dashes_available)
-	
-	# Actualizar cooldown
-	if is_cooldown:
-		update_cooldown_indicators(dashes_available)
+# Actualiza todos los dashs según su estado
+func update_all_dashes() -> void:
+	update_dash_1()
+	update_dash_2()
+
+# Actualiza el dash 1
+func update_dash_1() -> void:
+	if dash_1_available:
+		# Dash disponible - mostrar icono normal
+		dash_1.show()
+		dash_sprite_timer.hide()
 	else:
-		hide_all_cooldown_indicators()
+		# Dash en cooldown - mostrar timer
+		dash_1.hide()
+		dash_sprite_timer.show()
+		dash_sprite_timer.play("default")
 
-func update_dash_availability(dashes_available: int) -> void:
-	# Mostrar los dashs según cuántos están disponibles
-	match dashes_available:
-		0:
-			dash_1.hide()
-			dash_2.hide()
-		1:
-			dash_1.show()
-			dash_2.hide()
-		2:
-			dash_1.show()
-			dash_2.show()
-		_:
-			# Por si hay más de 2 dashs
-			dash_1.show()
-			dash_2.show()
+# Actualiza el dash 2
+func update_dash_2() -> void:
+	if dash_2_available:
+		# Dash disponible - mostrar icono normal
+		dash_2.show()
+		dash_sprite_timer_2.hide()
+	else:
+		# Dash en cooldown - mostrar timer
+		dash_2.hide()
+		dash_sprite_timer_2.show()
+		dash_sprite_timer_2.play("default")
 
-func update_cooldown_indicators(dashes_available: int) -> void:
-	# Mostrar indicadores de cooldown SOLO para los dashs que están en cooldown
-	match dashes_available:
-		0:
-			# Ambos dashs están en cooldown
-			dash_sprite_timer.show()
-			dash_sprite_timer_2.show()
-			dash_sprite_timer.play("default")
-			dash_sprite_timer_2.play("default")
-		1:
-			# Un dash está en cooldown (el que se usó) y el otro está disponible
-			# Mostrar timer en la posición del dash que está en cooldown
-			dash_sprite_timer.show()
-			dash_sprite_timer.play("default")
-			dash_sprite_timer_2.hide()
-		2:
-			# No debería pasar porque si hay 2 dashs, no debería estar en cooldown
-			hide_all_cooldown_indicators()
+# Función para usar el dash 1 (llamada desde el player)
+func use_dash_1() -> void:
+	dash_1_available = false
+	update_dash_1()
 
-func hide_all_cooldown_indicators() -> void:
-	dash_sprite_timer.hide()
-	dash_sprite_timer_2.hide()
+# Función para usar el dash 2 (llamada desde el player)
+func use_dash_2() -> void:
+	dash_2_available = false
+	update_dash_2()
 
-# Funciones para llamar desde el player
-func start_dash_cooldown(dashes_available: int) -> void:
-	update_dash_display(dashes_available, true)
+# Función para recuperar el dash 1 (cuando termina el cooldown)
+func recover_dash_1() -> void:
+	dash_1_available = true
+	update_dash_1()
 
-func finish_dash_cooldown(dashes_available: int) -> void:
-	update_dash_display(dashes_available, false)
+# Función para recuperar el dash 2 (cuando termina el cooldown)
+func recover_dash_2() -> void:
+	dash_2_available = true
+	update_dash_2()
 
-func reset_dash_icons(max_dashes: int) -> void:
-	hide_all_cooldown_indicators()
-	update_dash_display(max_dashes, false)
+# Resetear todos los dashs
+func reset_all_dashes() -> void:
+	dash_1_available = true
+	dash_2_available = true
+	update_all_dashes()
+
+# Obtener cuántos dashs están disponibles
+func get_available_dashes() -> int:
+	var count = 0
+	if dash_1_available:
+		count += 1
+	if dash_2_available:
+		count += 1
+	return count

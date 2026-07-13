@@ -87,4 +87,7 @@ texture = ExtResource("7_dirf7")
 [node name="dash_timer" type="Timer" parent="." unique_id=673748417]
 wait_time = 5.0
 
-[connection signal="timeout" from="dash_timer" to="." method="_on_dash_timer_timeout"]
+[node name="dash_timer_2" type="Timer" parent="." unique_id=85296209]
+
+[connection signal="timeout" from="dash_timer" to="." method="_on_dash_1_timer_timeout"]
+[connection signal="timeout" from="dash_timer_2" to="." method="_on_dash_timer_2_timeout"]

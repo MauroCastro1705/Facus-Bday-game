@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://41lj1s6odrl4" path="res://UI/botom_bar/botom_bar.gd" id="1_cle6g"]
 [ext_resource type="Texture2D" uid="uid://dxrlpcra751cb" path="res://assets/ui/07.png" id="1_vvkjr"]
+[ext_resource type="Texture2D" uid="uid://byidm3y6cpmr5" path="res://assets/UI Assets pack_v.1_st/UI.png" id="2_8rk74"]
 [ext_resource type="LabelSettings" uid="uid://sy8p2f33pssc" path="res://assets/texto_generico.tres" id="2_cle6g"]
 [ext_resource type="PackedScene" uid="uid://bhk8r7mumgdnr" path="res://UI/barra_vida/barra_vida.tscn" id="3_ajoka"]
 
@@ -126,6 +127,20 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_cle6g")
 
+[node name="NinePatchRect" type="NinePatchRect" parent="." unique_id=965846550]
+modulate = Color(0.050980393, 0.32156864, 0.44313726, 1)
+layout_mode = 0
+offset_left = 31.0
+offset_top = 594.0
+offset_right = 244.0
+offset_bottom = 680.0
+texture = ExtResource("2_8rk74")
+region_rect = Rect2(283.69855, 79.32457, 52.42926, 48.663628)
+patch_margin_left = 18
+patch_margin_top = 13
+patch_margin_right = 14
+patch_margin_bottom = 13
+
 [node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=1219774687]
 layout_mode = 0
 offset_left = 55.0
@@ -166,10 +181,11 @@ texture = SubResource("CompressedTexture2D_cle6g")
 
 [node name="dash_sprite_timer" type="AnimatedSprite2D" parent="." unique_id=1955609917]
 unique_name_in_owner = true
-position = Vector2(117, 661)
+position = Vector2(147, 660)
+scale = Vector2(1.1200024, 1.1200024)
 sprite_frames = SubResource("SpriteFrames_fvxjv")
 autoplay = "default"
-frame_progress = 0.85408753
+frame_progress = 0.00042852643
 
 [node name="dash_2" type="TextureRect" parent="." unique_id=492811756]
 unique_name_in_owner = true
@@ -183,6 +199,7 @@ texture = SubResource("CompressedTexture2D_8rk74")
 
 [node name="dash_sprite_timer2" type="AnimatedSprite2D" parent="." unique_id=575916437]
 unique_name_in_owner = true
-position = Vector2(143, 660)
+position = Vector2(116.99999, 659.99994)
+scale = Vector2(1.1200024, 1.1200024)
 sprite_frames = SubResource("SpriteFrames_8rk74")
 autoplay = "default"

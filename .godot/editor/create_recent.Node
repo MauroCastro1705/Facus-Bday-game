@@ -1,4 +1,5 @@
 Timer
+NinePatchRect
 TextureRect
 Label
 AnimatedSprite2D
@@ -11,5 +12,3 @@ PointLight2D
 Marker2D
 Polygon2D
 TileMapLayer
-TileMap
-LightOccluder2D
