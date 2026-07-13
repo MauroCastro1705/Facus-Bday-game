@@ -4,3 +4,6 @@ res://shaders/3dwaves.gdshader
 res://shaders/waves.gdshader
 res://escenas/Main/main_scene.tscn
 res://pistol/impact/impact_particle.gd
+res://pistol/bullet.tscn
+res://Scripts/ImpactParticlePool.gd
+res://pistol/bullet.gd
