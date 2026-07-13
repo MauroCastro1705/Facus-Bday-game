@@ -2,16 +2,16 @@
 
 [ext_resource type="Script" uid="uid://3gfrqyxt1qy" path="res://escenas/main_menu/main_menu.gd" id="1_2q1j2"]
 [ext_resource type="FontFile" uid="uid://cbbnw23rahxsu" path="res://fonts/Blacknorthdemo-mLE25.otf" id="2_pqnep"]
+[ext_resource type="Shader" uid="uid://cqo6wuec1qmgx" path="res://shaders/3dwaves.gdshader" id="2_uda5e"]
 [ext_resource type="FontFile" uid="uid://cp8lssch42uu5" path="res://fonts/pixel_font.ttf" id="3_4t5pn"]
-[ext_resource type="Material" uid="uid://c7iarevdrntt3" path="res://shaders/waves.tres" id="3_oii30"]
 [ext_resource type="Texture2D" uid="uid://0u48fa2u5hx0" path="res://assets/logo.png" id="4_4t5pn"]
 
-[sub_resource type="Gradient" id="Gradient_oii30"]
-offsets = PackedFloat32Array(0, 0.46226415, 1)
-colors = PackedColorArray(0.47843137, 0.15294118, 0.2627451, 1, 0.9168142, 0.5267593, 0.12099259, 1, 0.9764706, 0.24705882, 0.2784314, 1)
-
-[sub_resource type="GradientTexture1D" id="GradientTexture1D_12aag"]
-gradient = SubResource("Gradient_oii30")
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_oii30"]
+shader = ExtResource("2_uda5e")
+shader_parameter/movement_speed = 0.1
+shader_parameter/movement_scale = 2.0
+shader_parameter/color_1 = Color(0.972549, 0.24313726, 0.3019608, 1)
+shader_parameter/color_2 = Color(0.9411765, 0.22352941, 0.6, 1)
 
 [sub_resource type="LabelSettings" id="LabelSettings_4t5pn"]
 font = ExtResource("3_4t5pn")
@@ -29,20 +29,11 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_2q1j2")
 
-[node name="ColorRect" type="TextureRect" parent="." unique_id=496297351]
-material = ExtResource("3_oii30")
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -17.0
-offset_top = 721.0
-offset_right = -169.92139
-offset_bottom = 950.687
-grow_horizontal = 2
-grow_vertical = 2
-rotation = -1.5707964
-texture = SubResource("GradientTexture1D_12aag")
+[node name="ColorRect2" type="ColorRect" parent="." unique_id=937212800]
+material = SubResource("ShaderMaterial_oii30")
+layout_mode = 0
+offset_right = 911.0
+offset_bottom = 714.0
 
 [node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1977221148]
 layout_mode = 0

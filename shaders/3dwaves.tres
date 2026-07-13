@@ -4,7 +4,7 @@
 
 [resource]
 shader = ExtResource("1_v1ruj")
-shader_parameter/movement_speed = 0.1
-shader_parameter/movement_scale = 2.0
-shader_parameter/color_1 = Color(0, 0.63, 0.49, 1)
-shader_parameter/color_2 = Color(0.16, 0.16, 0.16, 1)
+shader_parameter/movement_speed = 0.50000002375
+shader_parameter/movement_scale = 1.0000000475
+shader_parameter/color_1 = Color(0.43655357, 0.030681837, 0.09018875, 1)
+shader_parameter/color_2 = Color(0.8163253, 0.89137024, 0.9376628, 1)
