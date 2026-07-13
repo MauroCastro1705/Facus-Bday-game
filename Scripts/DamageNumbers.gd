@@ -1,5 +1,5 @@
 extends Node
-var damage_label # = preload("res://resources/damage_numbers.tres")
+var damage_label  = preload("res://assets/damage_numbers.tres")
 
 ##como usar = DamageNumbers.display_numbers(value:float, position:Vector2)
 
@@ -14,9 +14,9 @@ func display_numbers(value:float, position:Vector2):
 	# Ajuste del color según el daño
 	if value == 0:
 		label_settings.font_color = Color("#FFFFFF88")  # Blanco translúcido
-	elif value < 10:
-		label_settings.font_color = Color("lightgreen")
-	elif value < 30:
+	elif value < 25:
+		label_settings.font_color = Color("white")
+	elif value < 35:
 		label_settings.font_color = Color("yellow")
 	else:
 		label_settings.font_color = Color("red")

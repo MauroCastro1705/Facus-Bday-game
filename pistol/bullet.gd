@@ -18,3 +18,8 @@ func _on_body_entered(body):
 	if body.has_method("take_damage"):
 		queue_free()
 		body.take_damage(bullet_dmg)
+
+
+func _on_area_entered(area: Area2D) -> void:
+	if area.is_in_group("paredes"):
+		queue_free()

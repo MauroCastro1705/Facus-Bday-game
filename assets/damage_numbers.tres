@@ -1,0 +1,13 @@
+[gd_resource type="LabelSettings" format=3 uid="uid://c7gfkihsiqcqb"]
+
+[ext_resource type="FontFile" uid="uid://cndjgmrns5spc" path="res://fonts/coin_font.ttf" id="1_0kidd"]
+
+[resource]
+line_spacing = 5.0
+font = ExtResource("1_0kidd")
+font_size = 17
+outline_size = 7
+outline_color = Color(0.00068664533, 0.12026306, 0.24133685, 1)
+stacked_outline_count = 1
+stacked_outline_0/size = 3
+stacked_outline_0/color = Color(0.4592176, 0.68274945, 0.9926855, 1)

@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://8o5hbtspb15a" path="res://escenas/Main/main_scene.gd" id="1_mo04v"]
 [ext_resource type="PackedScene" uid="uid://dh2f3xslpsv78" path="res://UI/top_bar_ui.tscn" id="2_x5rmy"]
 [ext_resource type="PackedScene" uid="uid://ct6ctnfjhwh25" path="res://characters/player/player.tscn" id="3_tcvou"]
+[ext_resource type="PackedScene" uid="uid://xrl8b25f8jy4" path="res://UI/botom_bar/botom_bar.tscn" id="4_mo04v"]
 [ext_resource type="PackedScene" uid="uid://ctjltlqtk1ga4" path="res://UI/coin_ui/coin_ui.tscn" id="6_fmakg"]
 [ext_resource type="PackedScene" uid="uid://b82ee7sufkotb" path="res://escenas/rooms/room_1.tscn" id="7_0d53b"]
 [ext_resource type="Script" uid="uid://dx8l2vrb0opwk" path="res://Scripts/GameManager.gd" id="7_mo04v"]
@@ -21,9 +22,12 @@ offset_top = 20.0
 offset_right = 801.0
 offset_bottom = 20.0
 
-[node name="Player" parent="." unique_id=1183339018 instance=ExtResource("3_tcvou")]
+[node name="BotomBar" parent="CanvasLayer" unique_id=1420913704 instance=ExtResource("4_mo04v")]
+
+[node name="Player" parent="." unique_id=1183339018 node_paths=PackedStringArray("ui_bottom") instance=ExtResource("3_tcvou")]
 unique_name_in_owner = true
 position = Vector2(456, 358)
+ui_bottom = NodePath("../CanvasLayer/BotomBar")
 
 [node name="gameManager" type="Node2D" parent="." unique_id=1426588263 node_paths=PackedStringArray("rooms_parent", "player")]
 script = ExtResource("7_mo04v")

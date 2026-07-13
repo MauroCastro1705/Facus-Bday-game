@@ -1,23 +1,75 @@
 [gd_scene format=3 uid="uid://dh232j485a6kq"]
 
-[ext_resource type="Texture2D" uid="uid://b4fg54cpnrdw0" path="res://pistol/projectile.png" id="1_jdyi1"]
 [ext_resource type="Script" uid="uid://d38h4taacqoyv" path="res://pistol/bullet.gd" id="1_mjeop"]
-
-[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_5tgod"]
-light_mode = 1
+[ext_resource type="Texture2D" uid="uid://c00jevoq0rau" path="res://assets/16x16 Pixel Shade Bullet Free/16x16 Pixel Shade Bullet Free.png" id="3_rmedr"]
+[ext_resource type="Texture2D" uid="uid://dm1da85xdindr" path="res://assets/FREE Textures Of Light Alpha/FREE Textures Of Light Alpha/FREE Textures Of Light Alpha/512x512/512x512 textures (75).png" id="3_ucxth"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_5tgod"]
 radius = 11.657792
 
-[sub_resource type="Gradient" id="Gradient_5tgod"]
-offsets = PackedFloat32Array(0, 0.60294116)
-colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
+[sub_resource type="AtlasTexture" id="AtlasTexture_ucxth"]
+atlas = ExtResource("3_rmedr")
+region = Rect2(1152, 112, 16, 16)
 
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_ucxth"]
-gradient = SubResource("Gradient_5tgod")
-fill = 1
-fill_from = Vector2(0.535, 0.525)
-fill_to = Vector2(1, 1)
+[sub_resource type="AtlasTexture" id="AtlasTexture_rmedr"]
+atlas = ExtResource("3_rmedr")
+region = Rect2(1168, 112, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2a32b"]
+atlas = ExtResource("3_rmedr")
+region = Rect2(1184, 112, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_06kja"]
+atlas = ExtResource("3_rmedr")
+region = Rect2(1200, 112, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l0641"]
+atlas = ExtResource("3_rmedr")
+region = Rect2(1216, 112, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_km1i6"]
+atlas = ExtResource("3_rmedr")
+region = Rect2(1232, 112, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jm0lm"]
+atlas = ExtResource("3_rmedr")
+region = Rect2(1248, 112, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ooquy"]
+atlas = ExtResource("3_rmedr")
+region = Rect2(1264, 112, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_reoc5"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ucxth")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rmedr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2a32b")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_06kja")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l0641")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_km1i6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jm0lm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ooquy")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}]
 
 [node name="Bullet" type="Area2D" unique_id=322487237]
 top_level = true
@@ -26,13 +78,6 @@ collision_layer = 0
 collision_mask = 3
 script = ExtResource("1_mjeop")
 
-[node name="Projectile" type="Sprite2D" parent="." unique_id=790455689]
-material = SubResource("CanvasItemMaterial_5tgod")
-position = Vector2(-5.995436, -0.233975)
-rotation = 0.08466564
-scale = Vector2(0.54585224, 0.54585224)
-texture = ExtResource("1_jdyi1")
-
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2014727261]
 position = Vector2(0.6313367, 0.30718887)
 scale = Vector2(0.5458522, 0.5458522)
@@ -40,9 +85,17 @@ shape = SubResource("CircleShape2D_5tgod")
 
 [node name="PointLight2D" type="PointLight2D" parent="." unique_id=1386863094]
 scale = Vector2(0.5458522, 0.5458522)
-color = Color(1, 1, 0.50980395, 1)
-energy = 3.0
+color = Color(0.96862745, 0.96862745, 0, 1)
 shadow_enabled = true
-texture = SubResource("GradientTexture2D_ucxth")
+texture = ExtResource("3_ucxth")
+texture_scale = 0.8
 
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1919982876]
+position = Vector2(-7.450581e-09, 0)
+rotation = -3.1112907
+sprite_frames = SubResource("SpriteFrames_reoc5")
+autoplay = "default"
+frame_progress = 0.6800964
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

@@ -4,7 +4,7 @@ extends Node2D
 @onready var shooting_point = %ShootingPoint
 @export var bullet:PackedScene
 var can_shoot = true  # Prevents continuous shooting
-@onready var pistol: Sprite2D = $Pistol
+@onready var pistol: Sprite2D = $pistol
 
 func _ready():
 	pass

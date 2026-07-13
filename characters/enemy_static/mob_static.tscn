@@ -1,0 +1,47 @@
+[gd_scene format=3 uid="uid://bx2fjbx8a57ai"]
+
+[ext_resource type="Script" uid="uid://cjk57feap4dl0" path="res://characters/enemy_static/mob_static.gd" id="1_e0i7l"]
+[ext_resource type="PackedScene" uid="uid://bjlnthqxhmnap" path="res://pistol/bullet_enemy_turret.tscn" id="2_lfgu0"]
+[ext_resource type="PackedScene" uid="uid://bhk8r7mumgdnr" path="res://UI/barra_vida/barra_vida.tscn" id="3_ggavr"]
+[ext_resource type="Texture2D" uid="uid://cmd7lpsjyxrg6" path="res://assets/drhouse.png" id="3_p0rir"]
+[ext_resource type="Texture2D" uid="uid://b73tgd7ha2s72" path="res://assets/FREE Textures Of Light Alpha/FREE Textures Of Light Alpha/FREE Textures Of Light Alpha/512x512/512x512 textures (23).png" id="5_ghbwf"]
+[ext_resource type="Texture2D" uid="uid://coeviyorq5k3e" path="res://assets/free-guns-pack-2-for-main-characters-pixel-art/2 Guns/9_1.png" id="5_p0rir"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_8tavr"]
+radius = 39.051247
+
+[node name="Mob_static" type="CharacterBody2D" unique_id=187351653 groups=["enemies"]]
+platform_floor_layers = 4294967040
+script = ExtResource("1_e0i7l")
+bullet = ExtResource("2_lfgu0")
+fire_rate = 1.7
+shoot_type = 2
+spread_angle = 50.0
+line_spread_spacing = 50.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1248125656]
+shape = SubResource("CircleShape2D_8tavr")
+
+[node name="BarraVida" parent="." unique_id=642129819 instance=ExtResource("3_ggavr")]
+position = Vector2(-32, -53)
+scale = Vector2(0.5025189, 0.5025189)
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1387571561]
+position = Vector2(1, -1)
+scale = Vector2(0.5111111, 0.5111111)
+texture = ExtResource("3_p0rir")
+
+[node name="PointLight2D" type="PointLight2D" parent="." unique_id=434934853]
+position = Vector2(1, 0)
+energy = 0.7
+shadow_enabled = true
+texture = ExtResource("5_ghbwf")
+
+[node name="gun" type="Sprite2D" parent="." unique_id=109752920]
+position = Vector2(1, 1)
+texture = ExtResource("5_p0rir")
+offset = Vector2(71, 2)
+
+[node name="shooting_point" type="Marker2D" parent="gun" unique_id=810286168]
+position = Vector2(85, 1)
+scale = Vector2(0.6800002, 0.6800002)

@@ -1,0 +1,188 @@
+[gd_scene format=3 uid="uid://xrl8b25f8jy4"]
+
+[ext_resource type="Script" uid="uid://41lj1s6odrl4" path="res://UI/botom_bar/botom_bar.gd" id="1_cle6g"]
+[ext_resource type="Texture2D" uid="uid://dxrlpcra751cb" path="res://assets/ui/07.png" id="1_vvkjr"]
+[ext_resource type="LabelSettings" uid="uid://sy8p2f33pssc" path="res://assets/texto_generico.tres" id="2_cle6g"]
+[ext_resource type="PackedScene" uid="uid://bhk8r7mumgdnr" path="res://UI/barra_vida/barra_vida.tscn" id="3_ajoka"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_cle6g"]
+load_path = "res://.godot/imported/Skillicon7_29.png-f4885890d01a935639c68499425ce49f.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_87vyp"]
+atlas = ExtResource("1_vvkjr")
+region = Rect2(128, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ajoka"]
+atlas = ExtResource("1_vvkjr")
+region = Rect2(112, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cle6g"]
+atlas = ExtResource("1_vvkjr")
+region = Rect2(96, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8rk74"]
+atlas = ExtResource("1_vvkjr")
+region = Rect2(80, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gwnfv"]
+atlas = ExtResource("1_vvkjr")
+region = Rect2(64, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xkf6q"]
+atlas = ExtResource("1_vvkjr")
+region = Rect2(48, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xdu63"]
+atlas = ExtResource("1_vvkjr")
+region = Rect2(32, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6addp"]
+atlas = ExtResource("1_vvkjr")
+region = Rect2(16, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3u2jf"]
+atlas = ExtResource("1_vvkjr")
+region = Rect2(0, 16, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_fvxjv"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_87vyp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ajoka")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cle6g")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8rk74")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gwnfv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xkf6q")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xdu63")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6addp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3u2jf")
+}],
+"loop": true,
+"name": &"default",
+"speed": 6.0
+}]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_8rk74"]
+load_path = "res://.godot/imported/Skillicon7_29.png-f4885890d01a935639c68499425ce49f.ctex"
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_8rk74"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_87vyp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ajoka")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cle6g")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8rk74")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gwnfv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xkf6q")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xdu63")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6addp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3u2jf")
+}],
+"loop": true,
+"name": &"default",
+"speed": 6.0
+}]
+
+[node name="BotomBar" type="Control" unique_id=1420913704]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_cle6g")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=1219774687]
+layout_mode = 0
+offset_left = 55.0
+offset_top = 639.0
+offset_right = 95.0
+offset_bottom = 679.0
+
+[node name="Label" type="Label" parent="HBoxContainer" unique_id=896536069]
+layout_mode = 2
+text = "dash"
+label_settings = ExtResource("2_cle6g")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="BarraVida" parent="." unique_id=642129819 instance=ExtResource("3_ajoka")]
+position = Vector2(56, 624)
+
+[node name="Label" type="Label" parent="." unique_id=1692511163]
+layout_mode = 0
+offset_left = 51.0
+offset_top = 601.0
+offset_right = 136.0
+offset_bottom = 624.0
+text = "Facundito"
+label_settings = ExtResource("2_cle6g")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="dash_1" type="TextureRect" parent="." unique_id=1412588369]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 131.0
+offset_top = 646.0
+offset_right = 163.0
+offset_bottom = 678.0
+scale = Vector2(0.9, 0.9)
+texture = SubResource("CompressedTexture2D_cle6g")
+
+[node name="dash_sprite_timer" type="AnimatedSprite2D" parent="." unique_id=1955609917]
+unique_name_in_owner = true
+position = Vector2(117, 661)
+sprite_frames = SubResource("SpriteFrames_fvxjv")
+autoplay = "default"
+frame_progress = 0.85408753
+
+[node name="dash_2" type="TextureRect" parent="." unique_id=492811756]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 103.0
+offset_top = 646.0
+offset_right = 135.0
+offset_bottom = 678.0
+scale = Vector2(0.9, 0.9)
+texture = SubResource("CompressedTexture2D_8rk74")
+
+[node name="dash_sprite_timer2" type="AnimatedSprite2D" parent="." unique_id=575916437]
+unique_name_in_owner = true
+position = Vector2(143, 660)
+sprite_frames = SubResource("SpriteFrames_8rk74")
+autoplay = "default"

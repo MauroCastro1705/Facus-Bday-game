@@ -1,0 +1,8 @@
+[gd_resource type="LabelSettings" format=3 uid="uid://sy8p2f33pssc"]
+
+[ext_resource type="FontFile" uid="uid://cndjgmrns5spc" path="res://fonts/coin_font.ttf" id="1_ohf5y"]
+
+[resource]
+font = ExtResource("1_ohf5y")
+outline_size = 6
+outline_color = Color(0, 0, 0, 1)

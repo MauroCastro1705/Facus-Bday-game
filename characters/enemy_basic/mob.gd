@@ -19,10 +19,11 @@ var is_player_in_range: bool = false
 # Variables para el movimiento
 var target_position: Vector2 = Vector2.ZERO
 var is_moving: bool = false
+var velocity_vector: Vector2 = Vector2.ZERO  # Variable para almacenar la velocidad
 
 # Referencias al arma y punto de disparo
-@onready var weapon: Polygon2D = $weapon
-@onready var shooting_point: Marker2D = $weapon/shooting_point
+@onready var weapon: Sprite2D = $gun
+@onready var shooting_point: Marker2D = $gun/shooting_point
 
 func _ready() -> void:
 	# Configurar vida
@@ -59,15 +60,25 @@ func _physics_process(delta: float) -> void:
 	var distance_to_player = global_position.distance_to(player.global_position)
 	is_player_in_range = distance_to_player <= detection_range
 	
+	# Reiniciar velocidad
+	velocity_vector = Vector2.ZERO
+	
 	if is_player_in_range:
 		# Apuntar el arma hacia el jugador
 		aim_weapon_at_player(delta)
 		
-		# Mover hacia el jugador
-		move_towards_player(delta)
+		# Calcular dirección hacia el jugador
+		var direction = (player.global_position - global_position).normalized()
+		
+		# Establecer velocidad
+		velocity_vector = direction * enemy_speed
 	else:
 		# Si el jugador está fuera de rango, el enemigo patrulla
 		handle_out_of_range(delta)
+	
+	# Aplicar movimiento usando move_and_slide()
+	velocity = velocity_vector
+	move_and_slide()
 
 func find_player() -> void:
 	# Buscar al jugador por grupo
@@ -86,18 +97,7 @@ func aim_weapon_at_player(delta: float) -> void:
 	var target_angle = direction.angle()
 	weapon.rotation = lerp_angle(weapon.rotation, target_angle, rotation_speed * delta)
 
-func move_towards_player(delta: float) -> void:
-	if player == null:
-		return
-	
-	# Calcular dirección hacia el jugador
-	var direction = (player.global_position - global_position).normalized()
-	
-	# Mover al enemigo hacia el jugador
-	var new_position = global_position + direction * enemy_speed * delta
-	global_position = new_position
-
-func handle_out_of_range(delta: float) -> void:
+func handle_out_of_range(_delta: float) -> void:
 	# Comportamiento básico de patrulla
 	if not is_moving:
 		target_position = global_position + Vector2(randf_range(-100, 100), randf_range(-100, 100))
@@ -105,10 +105,11 @@ func handle_out_of_range(delta: float) -> void:
 	
 	if is_moving:
 		var direction = (target_position - global_position).normalized()
-		global_position += direction * enemy_speed * delta * 0.5
+		velocity_vector = direction * enemy_speed * 0.5
 		
 		if global_position.distance_to(target_position) < 10:
 			is_moving = false
+			velocity_vector = Vector2.ZERO
 
 func _on_shoot_timer_timeout() -> void:
 	if not is_player_in_range or player == null:
@@ -152,6 +153,7 @@ func take_damage(damage: int) -> void:
 	
 	print("Enemigo recibió daño: ", damage)
 	current_health = max(current_health - damage, 0)
+	DamageNumbers.display_numbers(damage, global_position)
 	if barra_vida:
 		barra_vida.take_damage(damage)
 
