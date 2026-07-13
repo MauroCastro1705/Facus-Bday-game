@@ -38,6 +38,7 @@ shadow_enabled = true
 texture = ExtResource("5_ghbwf")
 
 [node name="gun" type="Sprite2D" parent="." unique_id=109752920]
+texture_filter = 1
 position = Vector2(1, 1)
 texture = ExtResource("5_p0rir")
 offset = Vector2(71, 2)

@@ -185,7 +185,7 @@ position = Vector2(147, 660)
 scale = Vector2(1.1200024, 1.1200024)
 sprite_frames = SubResource("SpriteFrames_fvxjv")
 autoplay = "default"
-frame_progress = 0.00042852643
+frame_progress = 0.3947394
 
 [node name="dash_2" type="TextureRect" parent="." unique_id=492811756]
 unique_name_in_owner = true

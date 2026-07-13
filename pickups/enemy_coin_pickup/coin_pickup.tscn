@@ -1,0 +1,79 @@
+[gd_scene format=3 uid="uid://bo25qipahswpt"]
+
+[ext_resource type="Texture2D" uid="uid://dse4jm4bca771" path="res://assets/coin.png" id="1_0nv51"]
+[ext_resource type="Script" uid="uid://cu6undrepipfk" path="res://pickups/enemy_coin_pickup/coin_pickup.gd" id="1_8t712"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_8t712"]
+radius = 19.0
+
+[sub_resource type="Gradient" id="Gradient_0nv51"]
+colors = PackedColorArray(1, 1, 0.30588236, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_8t712"]
+gradient = SubResource("Gradient_0nv51")
+fill = 1
+fill_from = Vector2(0.5, 0.4882353)
+fill_to = Vector2(0.69411767, 0.22941177)
+
+[sub_resource type="Animation" id="Animation_8t712"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0.99999976)]
+}
+
+[sub_resource type="Animation" id="Animation_s2dn8"]
+resource_name = "coin"
+length = 2.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.8666667, 1.8666668),
+"transitions": PackedFloat32Array(1, 2.2191393, 1),
+"update": 0,
+"values": [Vector2(0, 0.99999976), Vector2(0, -5), Vector2(0, 0.99999976)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_5sjnd"]
+_data = {
+&"RESET": SubResource("Animation_8t712"),
+&"coin": SubResource("Animation_s2dn8")
+}
+
+[node name="CoinPickup" type="Node2D" unique_id=2038281599]
+script = ExtResource("1_8t712")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1947315870]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=937387084]
+shape = SubResource("CircleShape2D_8t712")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=133138779]
+position = Vector2(0, 0.99999976)
+scale = Vector2(0.609375, 0.609375)
+texture = ExtResource("1_0nv51")
+
+[node name="PointLight2D" type="PointLight2D" parent="Sprite2D" unique_id=1147191594]
+position = Vector2(0, -1.5700574)
+scale = Vector2(1.6410257, 1.6410257)
+energy = 0.7
+texture = SubResource("GradientTexture2D_8t712")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=2132513680]
+libraries/ = SubResource("AnimationLibrary_5sjnd")
+autoplay = &"coin"
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

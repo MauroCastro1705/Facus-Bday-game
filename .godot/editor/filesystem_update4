@@ -4,3 +4,9 @@ res://UI/botom_bar/botom_bar.gd
 res://characters/player/player.tscn
 res://characters/player/player.gd
 res://escenas/Main/main_scene.tscn
+res://characters/enemy_static/mob_static.tscn
+res://characters/enemy_static/mob_static.gd
+res://pickups/enemy_coin_pickup/coin_pickup.tscn
+res://escenas/rooms/room_1.tscn
+res://pickups/enemy_coin_pickup/coin_pickup.gd
+res://pistol/gun.tscn

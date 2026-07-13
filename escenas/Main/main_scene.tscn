@@ -19,8 +19,8 @@ script = ExtResource("1_mo04v")
 [node name="CoinUi" parent="CanvasLayer" unique_id=2125611169 instance=ExtResource("6_fmakg")]
 offset_left = 801.0
 offset_top = 20.0
-offset_right = 801.0
-offset_bottom = 20.0
+offset_right = 2.0
+offset_bottom = -631.0
 
 [node name="BotomBar" parent="CanvasLayer" unique_id=1420913704 instance=ExtResource("4_mo04v")]
 
