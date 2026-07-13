@@ -6,3 +6,8 @@ res://escenas/creditos/creditos.gd
 res://escenas/main_menu/MainMenu.tscn
 res://escenas/main_menu/main_menu.gd
 res://shaders/3dwaves.tres
+res://escenas/Game_over/game_over.tscn
+res://escenas/Game_over/game_over.gd
+res://UI/botom_bar/botom_bar.tscn
+res://characters/player/player.tscn
+res://escenas/Main/main_scene.tscn

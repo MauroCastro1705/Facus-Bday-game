@@ -1,9 +1,16 @@
 [gd_scene format=3 uid="uid://b27lu6bq74u6j"]
 
 [ext_resource type="Script" uid="uid://d1fjw8gorifms" path="res://escenas/Game_over/game_over.gd" id="1_ysv4t"]
+[ext_resource type="Shader" uid="uid://cqo6wuec1qmgx" path="res://shaders/3dwaves.gdshader" id="2_fqk25"]
 [ext_resource type="Theme" uid="uid://dedmc73m6he8n" path="res://texto_basico.tres" id="2_xix6v"]
-[ext_resource type="FontFile" uid="uid://ew0lbedgquft" path="res://fonts/Mindsight.ttf" id="3_vnk54"]
-[ext_resource type="FontFile" uid="uid://cbbnw23rahxsu" path="res://fonts/Blacknorthdemo-mLE25.otf" id="4_7fk6u"]
+[ext_resource type="FontFile" uid="uid://cp8lssch42uu5" path="res://fonts/pixel_font.ttf" id="4_g04ak"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_hugdu"]
+shader = ExtResource("2_fqk25")
+shader_parameter/movement_speed = 0.618000029355
+shader_parameter/movement_scale = 2.090000099275
+shader_parameter/color_1 = Color(0.1319087, 0.49296463, 0, 1)
+shader_parameter/color_2 = Color(0.27445555, 0.11435913, 0.050185565, 1)
 
 [node name="GameOver" type="Control" unique_id=1801629116]
 layout_mode = 3
@@ -15,6 +22,7 @@ grow_vertical = 2
 script = ExtResource("1_ysv4t")
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=1091710551]
+material = SubResource("ShaderMaterial_hugdu")
 layout_mode = 0
 offset_right = 910.0
 offset_bottom = 707.0
@@ -29,13 +37,15 @@ offset_left = 257.0
 offset_top = 45.0
 offset_right = -216.0
 offset_bottom = -45.0
+grow_horizontal = 2
+grow_vertical = 2
 theme_override_constants/separation = 30
 alignment = 1
 
 [node name="Label" type="Label" parent="VBoxContainer" unique_id=1738299313]
 layout_mode = 2
 theme = ExtResource("2_xix6v")
-theme_override_fonts/font = ExtResource("3_vnk54")
+theme_override_fonts/font = ExtResource("4_g04ak")
 theme_override_font_sizes/font_size = 70
 text = "Game over..."
 horizontal_alignment = 1
@@ -43,32 +53,15 @@ horizontal_alignment = 1
 [node name="Label2" type="Label" parent="VBoxContainer" unique_id=1566335521]
 layout_mode = 2
 theme = ExtResource("2_xix6v")
-theme_override_fonts/font = ExtResource("3_vnk54")
+theme_override_fonts/font = ExtResource("4_g04ak")
 theme_override_font_sizes/font_size = 37
 text = "hay que jugar mejor"
 horizontal_alignment = 1
 
-[node name="Label3" type="Label" parent="VBoxContainer" unique_id=2049182224]
-layout_mode = 2
-theme = ExtResource("2_xix6v")
-theme_override_fonts/font = ExtResource("3_vnk54")
-theme_override_font_sizes/font_size = 37
-text = "Estos son los mejores 10"
-
-[node name="TOP10" type="Label" parent="VBoxContainer" unique_id=654530771]
-unique_name_in_owner = true
-custom_minimum_size = Vector2(0, 200)
-layout_mode = 2
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_font_sizes/font_size = 30
-text = "xdfsdfsdfsdfsdfsdfvxcvsdvxcv"
-horizontal_alignment = 1
-vertical_alignment = 1
-
 [node name="Button" type="Button" parent="VBoxContainer" unique_id=784567085]
 layout_mode = 2
 theme = ExtResource("2_xix6v")
-theme_override_fonts/font = ExtResource("4_7fk6u")
+theme_override_fonts/font = ExtResource("4_g04ak")
 theme_override_font_sizes/font_size = 60
 text = "Main Menu"
 

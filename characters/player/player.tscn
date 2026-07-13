@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://bw4dfu5m8hnou" path="res://ui-bordersz/crosshair_game (2).png" id="6_dirf7"]
 [ext_resource type="Texture2D" uid="uid://dwxosasqgcqdt" path="res://assets/ui/03.png" id="6_idpv6"]
 [ext_resource type="Texture2D" uid="uid://b73tgd7ha2s72" path="res://assets/FREE Textures Of Light Alpha/FREE Textures Of Light Alpha/FREE Textures Of Light Alpha/512x512/512x512 textures (23).png" id="7_dirf7"]
+[ext_resource type="Texture2D" uid="uid://dmr2tvjl3lbou" path="res://assets/facu.png" id="8_idpv6"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_m57e4"]
 radius = 26.076809
@@ -108,19 +109,11 @@ frame_progress = 0.12288983
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=1234735360]
 offset_left = -18.0
-offset_top = -20.999996
+offset_top = -23.0
 offset_right = 58.0
-offset_bottom = 81.0
+offset_bottom = 88.118454
 scale = Vector2(0.54226345, 0.50396675)
-
-[node name="Label" type="Label" parent="ColorRect" unique_id=33514384]
-layout_mode = 0
-offset_left = 16.0
-offset_top = 19.0
-offset_right = 56.0
-offset_bottom = 42.0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-text = "facu"
+color = Color(0, 0, 0, 1)
 
 [node name="PointLight2D" type="PointLight2D" parent="." unique_id=183698058]
 shadow_enabled = true
@@ -135,6 +128,11 @@ wait_time = 5.0
 
 [node name="fire_rate_timer" type="Timer" parent="." unique_id=1367395353]
 wait_time = 0.2
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1374384207]
+position = Vector2(3, 5)
+scale = Vector2(0.29508197, 0.2950819)
+texture = ExtResource("8_idpv6")
 
 [connection signal="timeout" from="dash_timer" to="." method="_on_dash_1_timer_timeout"]
 [connection signal="timeout" from="dash_timer_2" to="." method="_on_dash_timer_2_timeout"]
