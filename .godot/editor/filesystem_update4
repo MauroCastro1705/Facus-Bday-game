@@ -11,3 +11,7 @@ res://escenas/rooms/room_1.tscn
 res://Scripts/GameManager.gd
 res://characters/player/player.tscn
 res://characters/player/player.gd
+res://escenas/main_menu/MainMenu.tscn
+res://escenas/main_menu/main_menu.gd
+res://UI/botom_bar/botom_bar.tscn
+res://UI/botom_bar/botom_bar.gd

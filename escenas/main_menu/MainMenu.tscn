@@ -1,7 +1,6 @@
 [gd_scene format=3 uid="uid://bjv81dgoelh3n"]
 
 [ext_resource type="Script" uid="uid://3gfrqyxt1qy" path="res://escenas/main_menu/main_menu.gd" id="1_2q1j2"]
-[ext_resource type="FontFile" uid="uid://cbbnw23rahxsu" path="res://fonts/Blacknorthdemo-mLE25.otf" id="2_pqnep"]
 [ext_resource type="Shader" uid="uid://cqo6wuec1qmgx" path="res://shaders/3dwaves.gdshader" id="2_uda5e"]
 [ext_resource type="FontFile" uid="uid://cp8lssch42uu5" path="res://fonts/pixel_font.ttf" id="3_4t5pn"]
 [ext_resource type="Texture2D" uid="uid://0u48fa2u5hx0" path="res://assets/logo.png" id="4_4t5pn"]
@@ -14,17 +13,13 @@ shader_parameter/movement_scale = 2.0
 shader_parameter/color_1 = Color(0.972549, 0.24313726, 0.3019608, 1)
 shader_parameter/color_2 = Color(0.9411765, 0.22352941, 0.6, 1)
 
-[sub_resource type="LabelSettings" id="LabelSettings_4t5pn"]
-font = ExtResource("3_4t5pn")
-font_size = 23
-
 [sub_resource type="LabelSettings" id="LabelSettings_uda5e"]
 font = ExtResource("3_4t5pn")
 
 [sub_resource type="LabelSettings" id="LabelSettings_4qipx"]
 line_spacing = 12.0
 font = ExtResource("3_4t5pn")
-font_size = 29
+font_size = 19
 outline_size = 6
 outline_color = Color(0, 0, 0, 1)
 
@@ -50,23 +45,6 @@ offset_top = 276.0
 offset_right = 850.0
 offset_bottom = 570.0
 theme_override_constants/separation = 37
-alignment = 1
-
-[node name="Label3" type="Label" parent="VBoxContainer" unique_id=175491823]
-layout_mode = 2
-theme_override_colors/font_color = Color(0.868358, 0.866927, 0.854182, 1)
-theme_override_fonts/font = ExtResource("2_pqnep")
-theme_override_font_sizes/font_size = 40
-text = "nombre del jugador"
-label_settings = SubResource("LabelSettings_4t5pn")
-horizontal_alignment = 1
-
-[node name="name_input" type="LineEdit" parent="VBoxContainer" unique_id=98636278]
-unique_name_in_owner = true
-layout_mode = 2
-theme_override_fonts/font = ExtResource("3_4t5pn")
-theme_override_font_sizes/font_size = 30
-placeholder_text = "aca pone tu nombre"
 alignment = 1
 
 [node name="StartButton" type="Button" parent="VBoxContainer" unique_id=1150670714]
@@ -103,19 +81,19 @@ label_settings = SubResource("LabelSettings_uda5e")
 
 [node name="tutorial" type="Button" parent="." unique_id=39921766]
 layout_mode = 0
-offset_left = 21.0
-offset_top = 250.0
-offset_right = 90.0
-offset_bottom = 281.0
+offset_left = 413.0
+offset_top = 267.0
+offset_right = 482.0
+offset_bottom = 298.0
 toggle_mode = true
 text = "Tutorial"
 
 [node name="tutorial_info" type="ColorRect" parent="tutorial" unique_id=935603079]
 layout_mode = 0
-offset_left = 92.0
-offset_top = 2.0
-offset_right = 476.0
-offset_bottom = 316.0
+offset_left = -173.0
+offset_top = 41.0
+offset_right = 211.0
+offset_bottom = 355.0
 color = Color(0.12225223, 0.12225223, 0.12225223, 1)
 
 [node name="NinePatchRect" type="NinePatchRect" parent="tutorial/tutorial_info" unique_id=1817394362]
@@ -135,12 +113,12 @@ patch_margin_bottom = 15
 axis_stretch_horizontal = 1
 axis_stretch_vertical = 1
 
-[node name="Label" type="Label" parent="tutorial/tutorial_info" unique_id=2131205550]
+[node name="Label" type="Label" parent="tutorial/tutorial_info/NinePatchRect" unique_id=2131205550]
 layout_mode = 0
-offset_left = 23.0
-offset_top = 19.0
-offset_right = 362.0
-offset_bottom = 297.0
+offset_left = 10.6666565
+offset_top = 7.3333282
+offset_right = 244.00003
+offset_bottom = 192.66667
 text = "-WASD para moverte
 -Click para disparar
 -Space para dash en direccion al mouse"

@@ -260,21 +260,12 @@ offset_bottom = 655.0
 scale = Vector2(1.2000048, 1.2000048)
 color = Color(0.9414571, 0.96204084, 0.9983632, 1)
 
-[node name="ammo" type="Label" parent="gun_panel" unique_id=448344515]
-layout_mode = 0
-offset_left = 760.0
-offset_top = 647.0
-offset_right = 819.0
-offset_bottom = 662.0
-text = "20/300"
-label_settings = ExtResource("2_cle6g")
-
 [node name="weapon_name" type="Label" parent="gun_panel" unique_id=553154474]
 layout_mode = 0
-offset_left = 754.0
-offset_top = 622.0
-offset_right = 850.0
-offset_bottom = 647.0
+offset_left = 758.0
+offset_top = 624.0
+offset_right = 845.0
+offset_bottom = 639.0
 text = "Barracuda"
 label_settings = ExtResource("2_cle6g")
 horizontal_alignment = 1
@@ -302,13 +293,24 @@ rotation = 0.7913956
 scale = Vector2(1.2000048, 1.2000048)
 texture = ExtResource("6_gwnfv")
 
-[node name="TextureRect" type="TextureRect" parent="gun_panel" unique_id=1208321448]
-texture_filter = 1
+[node name="HBoxContainer" type="HBoxContainer" parent="gun_panel" unique_id=1466324536]
 layout_mode = 0
-offset_left = 820.0
-offset_top = 639.0
-offset_right = 842.0
-offset_bottom = 671.0
+offset_left = 765.0
+offset_top = 641.0
+offset_right = 838.0
+offset_bottom = 664.0
+alignment = 1
+
+[node name="ammo" type="Label" parent="gun_panel/HBoxContainer" unique_id=448344515]
+unique_name_in_owner = true
+layout_mode = 2
+text = "20/30"
+label_settings = ExtResource("2_cle6g")
+
+[node name="TextureRect" type="TextureRect" parent="gun_panel/HBoxContainer" unique_id=1208321448]
+texture_filter = 1
+custom_minimum_size = Vector2(20, 10)
+layout_mode = 2
 texture = ExtResource("8_xdu63")
 expand_mode = 5
 stretch_mode = 5

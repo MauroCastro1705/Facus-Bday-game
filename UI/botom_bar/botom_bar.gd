@@ -7,7 +7,7 @@ extends Control
 @onready var dash_sprite_timer_2: AnimatedSprite2D = %dash_sprite_timer2
 @onready var player_name: Label = %player_name
 @onready var weapon_name_label: Label = $gun_panel/weapon_name
-@onready var ammo_label: Label = $gun_panel/ammo
+@onready var ammo_label: Label = %ammo
 
 @export var weapon_name:String ##nombre para el arma
 

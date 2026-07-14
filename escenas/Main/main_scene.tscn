@@ -23,6 +23,7 @@ offset_right = 2.0
 offset_bottom = -631.0
 
 [node name="BotomBar" parent="CanvasLayer" unique_id=1420913704 instance=ExtResource("4_mo04v")]
+weapon_name = "Ak-47"
 
 [node name="Player" parent="." unique_id=1183339018 node_paths=PackedStringArray("ui_bottom", "game_manager") instance=ExtResource("3_tcvou")]
 unique_name_in_owner = true
