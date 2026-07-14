@@ -1,5 +1,6 @@
 extends CharacterBody2D
 
+signal died
 @export var bullet: PackedScene
 @export var bullet_speed:int = 350
 @export var shoot_timer: Timer
@@ -167,7 +168,8 @@ func _on_health_depleted():
 	
 	is_dead = true
 	call_deferred("add_coin") 
-	print("Enemigo ha muerto!")
+	print("Enemigo ha muerto!, señal emitida")
+	died.emit()
 	queue_free()
 
 func add_coin() -> void:

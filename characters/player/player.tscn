@@ -72,6 +72,10 @@ animations = [{
 "speed": 7.0
 }]
 
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_idpv6"]
+cull_mode = 2
+polygon = PackedVector2Array(479, 343, 482, 397, 441, 397, 443, 346)
+
 [node name="Player" type="CharacterBody2D" unique_id=1757322592 node_paths=PackedStringArray("gun") groups=["player"]]
 collision_layer = 9
 platform_floor_layers = 4294967040
@@ -118,6 +122,8 @@ scale = Vector2(0.54226345, 0.50396675)
 color = Color(0, 0, 0, 1)
 
 [node name="PointLight2D" type="PointLight2D" parent="." unique_id=183698058]
+visible = false
+position = Vector2(2, 6)
 shadow_enabled = true
 texture = ExtResource("7_dirf7")
 
@@ -135,6 +141,10 @@ wait_time = 0.2
 position = Vector2(3, 5)
 scale = Vector2(0.29508197, 0.2950819)
 texture = ExtResource("8_idpv6")
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="." unique_id=1357216223]
+position = Vector2(-459, -365)
+occluder = SubResource("OccluderPolygon2D_idpv6")
 
 [connection signal="timeout" from="dash_timer" to="." method="_on_dash_1_timer_timeout"]
 [connection signal="timeout" from="dash_timer_2" to="." method="_on_dash_timer_2_timeout"]

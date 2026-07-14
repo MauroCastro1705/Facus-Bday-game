@@ -7,6 +7,8 @@ signal room_changed(new_room: Node2D, room_index: int)
 signal room_cleared(room_index: int)
 @warning_ignore("unused_signal")
 signal all_rooms_cleared()
+signal player_is_in_room #la hice yo
+signal enemy_died #la hice yo
 
 @export var initial_room_index: int = 0
 @export var rooms_parent: Node2D
@@ -33,7 +35,7 @@ func _ready():
 		call_deferred("load_room", initial_room_index)
 
 func load_room(room_index: int):
-	"""Carga una habitación específica por su índice - USAR CON call_deferred"""
+	#Carga una habitación específica por su índice - USAR CON call_deferred
 	if transitioning:
 		push_warning("Ya hay una transición en curso")
 		return
@@ -125,6 +127,7 @@ func position_player_in_room(room: Node2D):
 			player.global_position = room.get_player_spawn_position()
 		else:
 			player.global_position = room.global_position
+	player_is_in_room.emit()
 
 func disconnect_room_signals(room: Node2D):
 	"""Desconecta todas las señales de la habitación"""
@@ -144,7 +147,7 @@ func disconnect_room_signals(room: Node2D):
 # ============= SEÑALES CON CALL_DEFERRED =============
 
 func _on_transition_area_entered(body: Node2D, room_index: int):
-	"""Cuando el jugador entra al área de transición"""
+	#Cuando el jugador entra al área de transición
 	if body != player or transitioning:
 		return
 	
@@ -166,9 +169,10 @@ func _on_transition_area_entered(body: Node2D, room_index: int):
 		call_deferred("emit_signal", "all_rooms_cleared")
 
 func _on_enemy_died(room_index: int):
-	"""Cuando un enemigo muere"""
+	#Cuando un enemigo muere
 	if room_data.has(room_index):
 		room_data[room_index].enemies_alive -= 1
+		enemy_died.emit()
 		
 		if room_data[room_index].enemies_alive <= 0:
 			room_data[room_index].cleared = true
@@ -187,6 +191,7 @@ func get_current_room() -> Node2D:
 func get_current_room_index() -> int:
 	return current_room_index
 
+##se completo el room?
 func is_room_cleared(room_index: int = -1) -> bool:
 	if room_index == -1:
 		room_index = current_room_index
@@ -195,6 +200,7 @@ func is_room_cleared(room_index: int = -1) -> bool:
 		return room_data[room_index].cleared
 	return false
 
+##cnatidad de enemigos restantes
 func get_room_enemies_alive(room_index: int = -1) -> int:
 	if room_index == -1:
 		room_index = current_room_index
@@ -203,6 +209,7 @@ func get_room_enemies_alive(room_index: int = -1) -> int:
 		return room_data[room_index].enemies_alive
 	return 0
 
+##cantidad de enemigos total del room
 func get_room_total_enemies(room_index: int = -1) -> int:
 	if room_index == -1:
 		room_index = current_room_index

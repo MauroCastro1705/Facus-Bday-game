@@ -1,6 +1,7 @@
 extends CharacterBody2D
 # Static Turret Enemy
 
+signal died
 @export var bullet: PackedScene
 @export var bullet_speed:int = 230 ##velocidad proyectil
 @export var coin:PackedScene
@@ -186,7 +187,8 @@ func _on_health_depleted():
 		return
 	
 	is_dead = true
-	print("Enemigo estático ha muerto!")
+	print("Enemigo estático ha muerto!, señal emitida")
+	died.emit()
 	call_deferred("add_coin") 
 	queue_free()
 

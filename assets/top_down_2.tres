@@ -1,24 +1,24 @@
-[gd_resource type="TileSet" format=3 uid="uid://bmaddy4gwkyk4"]
+[gd_resource type="TileSet" format=3 uid="uid://o6u3u6bxi5oq"]
 
-[ext_resource type="Texture2D" uid="uid://dw75ttcbekhgq" path="res://assets/Pixel Art Top Down - Basic v1.2.3/Texture 32x32/TX Shadow Plant.png" id="1_21112"]
-[ext_resource type="Texture2D" uid="uid://dpcuubvxjoom8" path="res://assets/Pixel Art Top Down - Basic v1.2.3/Texture 32x32/TX Shadow.png" id="2_n5vwo"]
-[ext_resource type="Texture2D" uid="uid://d0odv6vl8uqy8" path="res://assets/Pixel Art Top Down - Basic v1.2.3/Texture 32x32/TX Struct.png" id="3_wanyw"]
-[ext_resource type="Texture2D" uid="uid://b2vcp8k857ost" path="res://assets/Pixel Art Top Down - Basic v1.2.3/Texture 32x32/TX Tileset Grass.png" id="4_ufbdl"]
-[ext_resource type="Texture2D" uid="uid://c73dj020hl3tb" path="res://assets/Pixel Art Top Down - Basic v1.2.3/Texture 32x32/TX Tileset Stone Ground.png" id="5_1a7vm"]
-[ext_resource type="Texture2D" uid="uid://b720wvkb7iv8b" path="res://assets/Pixel Art Top Down - Basic v1.2.3/Texture 32x32/TX Tileset Wall.png" id="6_h5k17"]
-[ext_resource type="Texture2D" uid="uid://c8ja2wej61pbh" path="res://assets/Pixel Art Top Down - Basic v1.2.3/Texture 32x32/TX Plant.png" id="7_vskj8"]
-[ext_resource type="Texture2D" uid="uid://x8awaqqldr6y" path="res://assets/Pixel Art Top Down - Basic v1.2.3/Texture 32x32/TX Props.png" id="8_pkq3x"]
+[ext_resource type="Texture2D" uid="uid://dw75ttcbekhgq" path="res://assets/Pixel Art Top Down - Basic v1.2.3/Texture 32x32/TX Shadow Plant.png" id="1_ixwif"]
+[ext_resource type="Texture2D" uid="uid://dpcuubvxjoom8" path="res://assets/Pixel Art Top Down - Basic v1.2.3/Texture 32x32/TX Shadow.png" id="2_ykty3"]
+[ext_resource type="Texture2D" uid="uid://d0odv6vl8uqy8" path="res://assets/Pixel Art Top Down - Basic v1.2.3/Texture 32x32/TX Struct.png" id="3_ijygm"]
+[ext_resource type="Texture2D" uid="uid://b2vcp8k857ost" path="res://assets/Pixel Art Top Down - Basic v1.2.3/Texture 32x32/TX Tileset Grass.png" id="4_w5qif"]
+[ext_resource type="Texture2D" uid="uid://c73dj020hl3tb" path="res://assets/Pixel Art Top Down - Basic v1.2.3/Texture 32x32/TX Tileset Stone Ground.png" id="5_00q2m"]
+[ext_resource type="Texture2D" uid="uid://b720wvkb7iv8b" path="res://assets/Pixel Art Top Down - Basic v1.2.3/Texture 32x32/TX Tileset Wall.png" id="6_n0pu3"]
+[ext_resource type="Texture2D" uid="uid://c8ja2wej61pbh" path="res://assets/Pixel Art Top Down - Basic v1.2.3/Texture 32x32/TX Plant.png" id="7_520vv"]
+[ext_resource type="Texture2D" uid="uid://x8awaqqldr6y" path="res://assets/Pixel Art Top Down - Basic v1.2.3/Texture 32x32/TX Props.png" id="8_y52pf"]
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_o57fj"]
-texture = ExtResource("1_21112")
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_bq7ky"]
+texture = ExtResource("1_ixwif")
 texture_region_size = Vector2i(32, 32)
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_1y842"]
-texture = ExtResource("2_n5vwo")
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_gpnym"]
+texture = ExtResource("2_ykty3")
 texture_region_size = Vector2i(32, 32)
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_hdk87"]
-texture = ExtResource("3_wanyw")
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_48gp0"]
+texture = ExtResource("3_ijygm")
 texture_region_size = Vector2i(32, 32)
 1:1/0 = 0
 2:1/0 = 0
@@ -27,8 +27,8 @@ texture_region_size = Vector2i(32, 32)
 1:3/0 = 0
 1:2/0 = 0
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_3hc5l"]
-texture = ExtResource("4_ufbdl")
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_omamu"]
+texture = ExtResource("4_w5qif")
 texture_region_size = Vector2i(32, 32)
 0:0/0 = 0
 0:0/0/terrain_set = 0
@@ -255,12 +255,12 @@ texture_region_size = Vector2i(32, 32)
 6:6/0/terrain_set = 0
 6:6/0/terrain = 0
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_dle58"]
-texture = ExtResource("5_1a7vm")
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0g7r3"]
+texture = ExtResource("5_00q2m")
 texture_region_size = Vector2i(32, 32)
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_w8efj"]
-texture = ExtResource("6_h5k17")
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_cd3lc"]
+texture = ExtResource("6_n0pu3")
 texture_region_size = Vector2i(32, 32)
 1:6/0 = 0
 1:6/0/terrain_set = 0
@@ -406,8 +406,8 @@ texture_region_size = Vector2i(32, 32)
 2:2/0 = 0
 2:2/0/terrain_set = 0
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_arstb"]
-texture = ExtResource("7_vskj8")
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_r750i"]
+texture = ExtResource("7_520vv")
 texture_region_size = Vector2i(32, 32)
 1:0/0 = 0
 2:0/0 = 0
@@ -442,8 +442,8 @@ texture_region_size = Vector2i(32, 32)
 1:6/0 = 0
 3:6/0 = 0
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_h5mpg"]
-texture = ExtResource("8_pkq3x")
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_e4t67"]
+texture = ExtResource("8_y52pf")
 texture_region_size = Vector2i(32, 32)
 11:8/0 = 0
 12:8/0 = 0
@@ -493,11 +493,11 @@ terrain_set_0/terrain_0/name = "pasto"
 terrain_set_0/terrain_0/color = Color(0.6771827, 0.17907318, 0.14931357, 1)
 terrain_set_0/terrain_1/name = "paredes"
 terrain_set_0/terrain_1/color = Color(0.5, 0.4375, 0.25, 1)
-sources/8 = SubResource("TileSetAtlasSource_arstb")
-sources/9 = SubResource("TileSetAtlasSource_h5mpg")
-sources/10 = SubResource("TileSetAtlasSource_o57fj")
-sources/11 = SubResource("TileSetAtlasSource_1y842")
-sources/12 = SubResource("TileSetAtlasSource_hdk87")
-sources/13 = SubResource("TileSetAtlasSource_3hc5l")
-sources/14 = SubResource("TileSetAtlasSource_dle58")
-sources/15 = SubResource("TileSetAtlasSource_w8efj")
+sources/8 = SubResource("TileSetAtlasSource_r750i")
+sources/9 = SubResource("TileSetAtlasSource_e4t67")
+sources/10 = SubResource("TileSetAtlasSource_bq7ky")
+sources/11 = SubResource("TileSetAtlasSource_gpnym")
+sources/12 = SubResource("TileSetAtlasSource_48gp0")
+sources/13 = SubResource("TileSetAtlasSource_omamu")
+sources/14 = SubResource("TileSetAtlasSource_0g7r3")
+sources/15 = SubResource("TileSetAtlasSource_cd3lc")

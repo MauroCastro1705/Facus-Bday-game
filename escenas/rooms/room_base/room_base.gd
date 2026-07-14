@@ -1,5 +1,10 @@
 extends Node2D
 class_name RoomBase
+@onready var luz_portal: PointLight2D = $Props/luz_portal
+@onready var portal_msg: Label = $Props/portal_msg
+
+const OK_COLOR:Color = Color(0.0, 0.678, 0.757)
+const BAD_COLOR:Color = Color(1.0, 0.188, 0.259)
 
 # Señales que pueden ser útiles
 signal room_entered()
@@ -26,6 +31,8 @@ var is_cleared: bool = false
 var is_active: bool = false
 
 func _ready():
+	portal_msg.hide()
+	luz_portal.color = BAD_COLOR
 	# Configurar transición
 	if transition_area:
 		transition_area.body_entered.connect(_on_transition_area_body_entered)
@@ -53,31 +60,24 @@ func _on_transition_area_body_exited(body: Node2D):
 		room_entered.emit()
 
 func can_exit_room() -> bool:
-	"""Verifica si se puede salir de la habitación"""
+	#Verifica si se puede salir de la habitación"""
 	if requires_clear:
 		return is_cleared
 	return true
 
 func show_blocked_message():
-	"""Muestra un mensaje cuando la salida está bloqueada"""
-	# Puedes implementar un sistema de mensajes flotantes
 	print("¡Debes eliminar todos los enemigos primero!")
-	# Ejemplo con un Label flotante:
-	if has_node("BlockedMessage"):
-		var msg = $BlockedMessage
-		msg.show()
-		msg.modulate.a = 1.0
-		var tween = create_tween()
-		tween.tween_property(msg, "modulate:a", 0.0, 1.5).set_delay(1.0)
-		tween.tween_callback(msg.hide)
+	portal_msg.show()
+	portal_msg.modulate.a = 1.0
+	var tween = create_tween()
+	tween.tween_property(portal_msg, "modulate:a", 0.0, 1.5).set_delay(1.0)
+	tween.tween_callback(portal_msg.hide)
 
 # ============= FUNCIONES DE ENEMIGOS =============
 
 func count_enemies():
-	"""Cuenta los enemigos en la habitación"""
 	total_enemies = 0
 	enemies_alive = 0
-	
 	if enemies_container:
 		# Buscar enemigos en el contenedor y en toda la escena
 		var enemies = get_tree().get_nodes_in_group("enemies")
@@ -85,12 +85,10 @@ func count_enemies():
 			if enemy.get_parent() == enemies_container or is_descendant_of(enemy, enemies_container):
 				total_enemies += 1
 				enemies_alive += 1
-				
 				# Conectar señal de muerte
 				if enemy.has_signal("died"):
 					if not enemy.died.is_connected(_on_enemy_died):
 						enemy.died.connect(_on_enemy_died)
-	
 	# Si no hay enemigos, la habitación está limpia
 	if total_enemies == 0:
 		is_cleared = true
@@ -99,7 +97,6 @@ func count_enemies():
 	enemies_changed.emit(enemies_alive, total_enemies)
 
 func _on_enemy_died():
-	"""Cuando un enemigo muere"""
 	enemies_alive -= 1
 	enemies_changed.emit(enemies_alive, total_enemies)
 	
@@ -109,10 +106,10 @@ func _on_enemy_died():
 		on_room_cleared()
 
 func on_room_cleared():
-	"""Método que se puede sobrescribir en habitaciones hijas"""
 	# Abrir puertas, mostrar mensaje, etc.
 	print("¡Habitación ", room_name, " limpiada!")
 	# Ejemplo: abrir puertas visualmente
+	luz_portal.color = OK_COLOR
 	open_doors()
 
 func set_enemies_active(active: bool):

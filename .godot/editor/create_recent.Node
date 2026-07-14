@@ -1,6 +1,9 @@
+Label
+LightOccluder2D
+PointLight2D
+TextureRect
 HBoxContainer
 GPUParticles2D
-Label
 NinePatchRect
 Button
 ColorRect
@@ -9,7 +12,3 @@ Area2D
 Sprite2D
 Timer
 VBoxContainer
-TextureRect
-Control
-AnimationPlayer
-PointLight2D

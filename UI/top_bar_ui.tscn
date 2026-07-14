@@ -1,6 +1,14 @@
 [gd_scene format=3 uid="uid://dh2f3xslpsv78"]
 
 [ext_resource type="Script" uid="uid://p58gjvihnk75" path="res://UI/top_bar_ui.gd" id="1_qri1s"]
+[ext_resource type="Texture2D" uid="uid://ddsodl8elkxjg" path="res://assets/Free-Skill-32x32-Icons-for-Cyberpunk-Game/1 Icons/blanco/Skillicon7_19.png" id="2_qri1s"]
+[ext_resource type="FontFile" uid="uid://cndjgmrns5spc" path="res://fonts/coin_font.ttf" id="3_ok2sn"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_jrh4m"]
+font = ExtResource("3_ok2sn")
+font_size = 23
+outline_size = 6
+outline_color = Color(0, 0, 0, 1)
 
 [node name="top_bar_ui" type="Control" unique_id=353916242]
 layout_mode = 3
@@ -25,7 +33,19 @@ theme_override_constants/margin_bottom = 10
 
 [node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer" unique_id=1155275122]
 layout_mode = 2
-theme_override_constants/separation = 80
 alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/HBoxContainer" unique_id=1289374794]
+texture_filter = 1
+custom_minimum_size = Vector2(10, 10)
+layout_mode = 2
+texture = ExtResource("2_qri1s")
+expand_mode = 3
+stretch_mode = 5
+
+[node name="enemies_remaining" type="Label" parent="MarginContainer/HBoxContainer" unique_id=208838343]
+layout_mode = 2
+text = "Enemies left:"
+label_settings = SubResource("LabelSettings_jrh4m")
 
 [node name="Timer" type="Timer" parent="." unique_id=1941583137]
