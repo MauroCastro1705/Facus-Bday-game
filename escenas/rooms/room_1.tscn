@@ -553,6 +553,7 @@ line_spread_spacing = 30.0
 
 [node name="Payaso" parent="EnemiesContainer" parent_id_path=PackedInt32Array(102369919) index="2" unique_id=1129131774 instance=ExtResource("12_si3gk")]
 position = Vector2(3876, 852)
+shoot_mode = 3
 
 [node name="bloque_generico" parent="." index="6" unique_id=924551978 instance=ExtResource("5_ltjsl")]
 position = Vector2(238, 325)

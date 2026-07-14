@@ -28,12 +28,15 @@ bullet = ExtResource("2_l58f0")
 bullet_speed = 400
 fire_rate = 1.2
 enemy_speed = 150.0
+coin = ExtResource("3_si8n3")
+coin_amount = 12
 shoot_mode = 4
 spread_count = 8
 spread_angle = 10.0
+ring_count = 10
 shot_alternate = true
-coin = ExtResource("3_si8n3")
-coin_amount = 12
+burst_count = 5
+spiral_rotation_speed = 30.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1946841490]
 shape = SubResource("CircleShape2D_uo8al")

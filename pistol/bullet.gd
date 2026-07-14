@@ -35,4 +35,3 @@ func _spawn_impact():
 	var impact = IMPACT_PARTICLES.instantiate()
 	get_tree().current_scene.add_child(impact)
 	impact.global_position = global_position
-	print("particula hecha")

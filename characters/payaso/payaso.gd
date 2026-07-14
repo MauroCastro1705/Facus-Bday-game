@@ -1,51 +1,55 @@
 extends CharacterBody2D
-@onready var luz: PointLight2D = $PointLight2D
+#payaso.gd boss 
+# Referencias al arma y punto de disparo
+@onready var weapon: Sprite2D = $gun
+@onready var shooting_point: Marker2D = $gun/shooting_point
 
+@onready var luz: PointLight2D = $PointLight2D
+@onready var barra_vida: HealthBar = $BarraVida
 signal died
+
+@export_group("Balas")
 @export var bullet: PackedScene
 @export var bullet_speed:int = 350
 @export var shoot_timer: Timer
-@export var fire_rate: float = 1.5  # Tiempo entre disparos en segundos
-@export var detection_range: float = 600.0  # Rango de detección del jugador
-@export var enemy_speed: float = 100.0  # Velocidad de movimiento del enemigo
-@export var rotation_speed: float = 5.0  # Velocidad de rotación hacia el jugador
-
-# Configuración de modos de disparo
-enum ShootMode {
-	SINGLE,        # Disparo único normal
-	SHOTGUN,       # Dispersión tipo escopeta
-	SPREAD,        # Dispersión en abanico
-	DOUBLE,        # Dos disparos paralelos
-	TRIPLE,        # Tres disparos en abanico
-	RING,          # Anillo de balas
-}
-
-@export var shoot_mode: ShootMode = ShootMode.SINGLE
-@export var spread_count: int = 5  # Número de balas para disparos dispersos
-@export var spread_angle: float = 30.0  # Ángulo total de dispersión en grados
-@export var ring_count: int = 8  # Número de balas en un anillo
-@export var shot_alternate: bool = false  # Para modo ALTERNATING
-var shot_side: int = -1  # -1 izquierda, 1 derecha
-
-@onready var barra_vida: HealthBar = $BarraVida
+@export var fire_rate: float = 1.5  ## Tiempo entre disparos en segundos
+@export var detection_range: float = 600.0  ## Rango de detección del jugador
+@export_group("stats payaso")
+@export var max_health: float = 200.0 ##vida payaso
+@export var enemy_speed: float = 100.0  ## Velocidad de movimiento del enemigo
+@export var rotation_speed: float = 5.0  ## Velocidad de rotación hacia el jugador
+@export_group("Coin and health")
 @export var coin:PackedScene
 @export var coin_amount:int ##cantidad de monedas a spawnear
-@export var max_health: float = 200.0
+
+@export_group("Config disparos")
+## Configuración de modos de disparo
+enum ShootMode {
+	SINGLE,        ## Disparo único normal
+	SHOTGUN,       ## Dispersión tipo escopeta
+	SPREAD,        ## Dispersión en abanico
+	RING,          ## Anillo de balas
+	BURST,         ## Ráfaga de disparos únicos seguidos
+}
+@export var shoot_mode: ShootMode = ShootMode.SINGLE
+@export var spread_count: int = 5  ## Número de balas para disparos dispersos
+@export var spread_angle: float = 30.0  ## Ángulo total de dispersión en grados
+@export var ring_count: int = 8  ## Número de balas en un anillo
+@export var burst_count: int = 3       # Balas por ráfaga
+@export var burst_delay: float = 0.12  # Tiempo entre cada bala de la ráfaga
+
 var current_health: float
 var is_dead: bool = false
 
 var player: Node2D = null
 var can_shoot: bool = true
 var is_player_in_range: bool = false
+var is_bursting: bool = false  ## Evita solapar ráfagas
 
 # Variables para el movimiento
 var target_position: Vector2 = Vector2.ZERO
 var is_moving: bool = false
 var velocity_vector: Vector2 = Vector2.ZERO  # Variable para almacenar la velocidad
-
-# Referencias al arma y punto de disparo
-@onready var weapon: Sprite2D = $gun
-@onready var shooting_point: Marker2D = $gun/shooting_point
 
 func _ready() -> void:
 	# Configurar vida
@@ -115,18 +119,16 @@ func aim_weapon_at_player(delta: float) -> void:
 	var direction = (player.global_position - global_position).normalized()
 	var target_angle = direction.angle()
 	
-	# Rotar el arma hacia el jugador
+	# Rotar el arma hacia el jugador (con suavizado)
 	weapon.rotation = lerp_angle(weapon.rotation, target_angle, rotation_speed * delta)
 	
-	# CORRECCIÓN: Flip vertical y horizontal cuando mira a la izquierda
-	if direction.x < 0:
-		# Cuando mira a la izquierda, el arma debe estar boca abajo
-		weapon.flip_v = true
-		# Ajustar la posición del arma si es necesario
-		weapon.position.x = abs(weapon.position.x) * -1  # Invertir posición X
-	else:
-		weapon.flip_v = false
-		weapon.position.x = abs(weapon.position.x)  # Posición X positiva
+	# FIX: el flip se decide con el ángulo YA interpolado del arma, no con la
+	# dirección cruda al jugador. Así el flip y la rotación visual siempre
+	# están sincronizados y no "saltan" mientras el arma todavía está girando.
+	# Además usamos scale.y en vez de flip_v + reposicionar el nodo: al
+	# espejar sobre el propio eje del arma no hace falta mover su posición.
+	var facing_left = abs(wrapf(weapon.rotation, -PI, PI)) > PI / 2.0
+	weapon.scale.y = -1.0 if facing_left else 1.0
 
 func handle_out_of_range(_delta: float) -> void:
 	# Comportamiento básico de patrulla
@@ -160,21 +162,22 @@ func shoot() -> void:
 			shoot_shotgun()
 		ShootMode.SPREAD:
 			shoot_spread()
-		ShootMode.DOUBLE:
-			shoot_double()
-		ShootMode.TRIPLE:
-			shoot_triple()
 		ShootMode.RING:
 			shoot_ring()
+		ShootMode.BURST:
+			shoot_burst()
 
 
 func create_bullet(angle_offset: float = 0.0, offset_distance: float = 0.0) -> void:
+	if bullet == null or player == null:
+		return
+	
 	var bullet_instance = bullet.instantiate()
 	bullet_instance.SPEED = bullet_speed
 	
 	# Posicionar la bala en el shooting point con offset
 	if shooting_point != null:
-		var offset_pos = Vector2(offset_distance, 0).rotated(weapon.rotation + angle_offset)
+		var offset_pos = Vector2(offset_distance, 0).rotated(weapon.rotation + deg_to_rad(angle_offset))
 		bullet_instance.global_position = shooting_point.global_position + offset_pos
 	else:
 		bullet_instance.global_position = global_position
@@ -187,39 +190,42 @@ func create_bullet(angle_offset: float = 0.0, offset_distance: float = 0.0) -> v
 	# Añadir la bala a la escena
 	get_parent().add_child(bullet_instance)
 
-# Modos de disparo
+# ---------------- Modos de disparo ----------------
+
 func shoot_single() -> void:
 	create_bullet()
 
 func shoot_shotgun() -> void:
 	# Dispersión tipo escopeta con variación aleatoria
 	for i in range(spread_count):
-		var random_offset = randf_range(-spread_angle/2, spread_angle/2)
+		var random_offset = randf_range(-spread_angle / 2, spread_angle / 2)
 		create_bullet(random_offset)
 
 func shoot_spread() -> void:
 	# Dispersión en abanico uniforme
 	for i in range(spread_count):
 		var t = float(i) / float(spread_count - 1) if spread_count > 1 else 0.5
-		var angle = -spread_angle/2 + t * spread_angle
+		var angle = -spread_angle / 2 + t * spread_angle
 		create_bullet(angle)
-
-func shoot_double() -> void:
-	# Dos disparos paralelos
-	create_bullet(-20.0)
-	create_bullet(20.0)
-
-func shoot_triple() -> void:
-	# Tres disparos en abanico
-	create_bullet(-25.0)
-	create_bullet(0.0)
-	create_bullet(25.0)
 
 func shoot_ring() -> void:
 	# Anillo de balas
 	for i in range(ring_count):
 		var angle = (360.0 / ring_count) * i
 		create_bullet(angle)
+
+func shoot_burst() -> void:
+	# Varias balas únicas seguidas en rápida sucesión (apuntando al jugador cada vez)
+	if is_bursting:
+		return
+	is_bursting = true
+	for i in range(burst_count):
+		if is_dead:
+			break
+		create_bullet()
+		await get_tree().create_timer(burst_delay).timeout
+	is_bursting = false
+
 
 # Funciones para cambiar modos de disparo desde el inspector
 func set_shoot_mode(mode: ShootMode) -> void:
