@@ -8,6 +8,8 @@
 [ext_resource type="Texture2D" uid="uid://dwxosasqgcqdt" path="res://assets/ui/03.png" id="6_idpv6"]
 [ext_resource type="Texture2D" uid="uid://b73tgd7ha2s72" path="res://assets/FREE Textures Of Light Alpha/FREE Textures Of Light Alpha/FREE Textures Of Light Alpha/512x512/512x512 textures (23).png" id="7_dirf7"]
 [ext_resource type="Texture2D" uid="uid://dmr2tvjl3lbou" path="res://assets/facu.png" id="8_idpv6"]
+[ext_resource type="LabelSettings" uid="uid://sy8p2f33pssc" path="res://assets/texto_generico.tres" id="9_rpf03"]
+[ext_resource type="Material" uid="uid://c5uh8gcbwig1f" path="res://shaders/hurt_damage.tres" id="10_x5dtk"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_m57e4"]
 radius = 26.076809
@@ -145,6 +147,22 @@ texture = ExtResource("8_idpv6")
 [node name="LightOccluder2D" type="LightOccluder2D" parent="." unique_id=1357216223]
 position = Vector2(-459, -365)
 occluder = SubResource("OccluderPolygon2D_idpv6")
+
+[node name="damage_label" type="Label" parent="." unique_id=665778693]
+offset_left = 6.0
+offset_top = -56.0
+offset_right = 46.0
+offset_bottom = -33.0
+text = "auch!"
+label_settings = ExtResource("9_rpf03")
+
+[node name="hurt_shader" type="ColorRect" parent="." unique_id=622068649]
+material = ExtResource("10_x5dtk")
+offset_left = -454.0
+offset_top = -349.0
+offset_right = 450.0
+offset_bottom = 350.0
+metadata/_edit_lock_ = true
 
 [connection signal="timeout" from="dash_timer" to="." method="_on_dash_1_timer_timeout"]
 [connection signal="timeout" from="dash_timer_2" to="." method="_on_dash_timer_2_timeout"]

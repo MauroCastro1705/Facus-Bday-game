@@ -1,7 +1,9 @@
 extends CharacterBody2D
+@onready var hurt_shader: ColorRect = $hurt_shader
 
 var is_dead: bool = false
 @onready var collision_shape_2d: CollisionShape2D = $CollisionShape2D
+@onready var damage_label: Label = $damage_label
 
 @export var ui_bottom:Node
 @export var game_manager:Node
@@ -56,6 +58,7 @@ var dash_1_available: bool = true
 var dash_2_available: bool = true
 
 func _ready() -> void:
+	damage_label.hide()
 	max_health = Global.playerHealth
 	current_health = max_health
 	
@@ -270,6 +273,7 @@ func take_damage(damage: float):
 		return
 	
 	current_health = max(current_health - damage, 0)
+	show_damage_mgs()
 	if barra_vida:
 		barra_vida.take_damage(damage)
 
@@ -300,3 +304,27 @@ func _on_dash_timer_2_timeout() -> void:
 	if ui_bottom and ui_bottom.has_method("recover_dash_2"):
 		ui_bottom.recover_dash_2()
 	print("Dash 2 recuperado!")
+	
+func show_damage_mgs() -> void:
+	damage_label.show()
+	hurt_shader_animation()
+	damage_label.modulate.a = 1.0
+	var tween = create_tween()
+	tween.tween_property(damage_label, "modulate:a", 0.0, 1.5).set_delay(0.3)
+	tween.tween_callback(damage_label.hide)
+	
+var shader_tween: Tween = null
+func hurt_shader_animation():
+	if hurt_shader == null or hurt_shader.material == null:
+		return
+	# Cancelar tween anterior si existe
+	if shader_tween and shader_tween.is_valid():
+		shader_tween.kill()
+	
+	var mat = hurt_shader.material
+	mat.set_shader_parameter("intensity", 0.0)
+	shader_tween = create_tween()
+	
+	# Opción 1: Parpadeo rápido (recomendado para daño)
+	shader_tween.tween_property(mat, "shader_parameter/intensity", 1.0, 0.1)
+	shader_tween.tween_property(mat, "shader_parameter/intensity", 0.0, 0.2)

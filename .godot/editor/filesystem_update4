@@ -2,3 +2,10 @@ res://escenas/main_menu/MainMenu.tscn
 res://assets/top_down_2.tres
 res://shaders/3dwaves.gdshader
 res://shaders/waves.gdshader
+res://objetos_mapa/portal/portal.tscn
+res://characters/player/player.tscn
+res://characters/player/player.gd
+res://escenas/rooms/room_1.tscn
+res://escenas/Main/main_scene.tscn
+res://shaders/hurt_damage.tres
+res://shaders/hurt_damage.gdshader

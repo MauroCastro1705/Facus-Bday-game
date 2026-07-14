@@ -1,0 +1,11 @@
+[gd_resource type="ShaderMaterial" format=3 uid="uid://c5uh8gcbwig1f"]
+
+[ext_resource type="Shader" uid="uid://b6o47sowa1ly8" path="res://shaders/hurt_damage.gdshader" id="1_bt8n5"]
+
+[resource]
+shader = ExtResource("1_bt8n5")
+shader_parameter/flash_color = Color(1, 0, 0, 1)
+shader_parameter/intensity = 0.0
+shader_parameter/edge_power = 2.5
+shader_parameter/inner_ratio = 0.75
+shader_parameter/feather = 0.4
