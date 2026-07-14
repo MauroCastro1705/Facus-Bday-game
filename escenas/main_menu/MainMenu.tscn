@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://3gfrqyxt1qy" path="res://escenas/main_menu/main_menu.gd" id="1_2q1j2"]
 [ext_resource type="Shader" uid="uid://cqo6wuec1qmgx" path="res://shaders/3dwaves.gdshader" id="2_uda5e"]
 [ext_resource type="FontFile" uid="uid://cp8lssch42uu5" path="res://fonts/pixel_font.ttf" id="3_4t5pn"]
+[ext_resource type="Theme" uid="uid://baqubi0p4kegy" path="res://assets/buton_panda.tres" id="3_oii30"]
 [ext_resource type="Texture2D" uid="uid://0u48fa2u5hx0" path="res://assets/logo.png" id="4_4t5pn"]
 [ext_resource type="Texture2D" uid="uid://vicpufdeuy01" path="res://assets/UI Assets pack_v.1_st/Book.png" id="6_oii30"]
 
@@ -15,6 +16,7 @@ shader_parameter/color_2 = Color(0.9411765, 0.22352941, 0.6, 1)
 
 [sub_resource type="LabelSettings" id="LabelSettings_uda5e"]
 font = ExtResource("3_4t5pn")
+font_size = 12
 
 [sub_resource type="LabelSettings" id="LabelSettings_4qipx"]
 line_spacing = 8.0
@@ -38,20 +40,15 @@ layout_mode = 0
 offset_right = 911.0
 offset_bottom = 714.0
 
-[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1977221148]
+[node name="StartButton" type="Button" parent="." unique_id=1150670714]
+texture_filter = 1
 layout_mode = 0
-offset_left = 95.0
-offset_top = 276.0
-offset_right = 850.0
-offset_bottom = 570.0
-theme_override_constants/separation = 37
-alignment = 1
-
-[node name="StartButton" type="Button" parent="VBoxContainer" unique_id=1150670714]
-layout_mode = 2
+offset_left = 318.0
+offset_top = 334.0
+offset_right = 582.55176
+offset_bottom = 446.0
+theme = ExtResource("3_oii30")
 theme_override_colors/font_color = Color(50, 31.429, 19.285, 1)
-theme_override_fonts/font = ExtResource("3_4t5pn")
-theme_override_font_sizes/font_size = 70
 text = "Start Game
 "
 
@@ -62,39 +59,42 @@ scale = Vector2(1.0635841, 1.063584)
 texture = ExtResource("4_4t5pn")
 
 [node name="creditos" type="Button" parent="." unique_id=1551492905]
+texture_filter = 1
 layout_mode = 0
-offset_left = 766.0
-offset_top = 632.0
+offset_left = 716.0
+offset_top = 612.0
 offset_right = 884.0
-offset_bottom = 677.0
-theme_override_fonts/font = ExtResource("3_4t5pn")
+offset_bottom = 683.0
+theme = ExtResource("3_oii30")
 text = "Creditos"
 
 [node name="version" type="Label" parent="." unique_id=2103998420]
 layout_mode = 0
-offset_left = 6.0
-offset_top = 673.0
-offset_right = 60.0
-offset_bottom = 696.0
-text = "v0.0.23"
+offset_left = 11.0
+offset_top = 684.0
+offset_right = 254.0
+offset_bottom = 700.0
+text = "v0.0.23 - guarda con el payaso"
 label_settings = SubResource("LabelSettings_uda5e")
 
 [node name="tutorial" type="Button" parent="." unique_id=39921766]
+texture_filter = 1
 layout_mode = 0
-offset_left = 413.0
-offset_top = 267.0
-offset_right = 482.0
-offset_bottom = 298.0
+offset_left = 83.0
+offset_top = 385.0
+offset_right = 253.0
+offset_bottom = 454.0
+theme = ExtResource("3_oii30")
 theme_override_fonts/font = ExtResource("3_4t5pn")
 toggle_mode = true
 text = "Tutorial"
 
 [node name="tutorial_info" type="ColorRect" parent="tutorial" unique_id=935603079]
 layout_mode = 0
-offset_left = -153.0
-offset_top = 41.0
-offset_right = 231.0
-offset_bottom = 355.0
+offset_left = 201.0
+offset_top = -103.0
+offset_right = 585.0
+offset_bottom = 211.0
 color = Color(0.12225223, 0.12225223, 0.12225223, 1)
 
 [node name="NinePatchRect" type="NinePatchRect" parent="tutorial/tutorial_info" unique_id=1817394362]
@@ -129,6 +129,6 @@ horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 3
 
-[connection signal="pressed" from="VBoxContainer/StartButton" to="." method="_on_start_button_pressed"]
+[connection signal="pressed" from="StartButton" to="." method="_on_start_button_pressed"]
 [connection signal="pressed" from="creditos" to="." method="_on_creditos_pressed"]
 [connection signal="toggled" from="tutorial" to="." method="_on_tutorial_toggled"]
