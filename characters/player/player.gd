@@ -19,6 +19,7 @@ var scale_timer: float = 0.0
 @onready var crosshair: AnimatedSprite2D = $crosshair
 
 @export var gun:Node
+@export var bullet_speed:int
 
 # Sistema de munición
 @export var max_ammo: int = 12  ## Balas por cartucho
@@ -169,6 +170,7 @@ func try_shoot() -> void:
 func shoot_bullet() -> void:
 	# Aquí va tu código para instanciar la bala
 	if gun and gun.has_method("shoot"):
+		gun.bullet_speed = bullet_speed
 		gun.shoot()
 
 func _on_fire_rate_timer_timeout() -> void:

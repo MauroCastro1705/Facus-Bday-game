@@ -15,3 +15,8 @@ res://escenas/main_menu/MainMenu.tscn
 res://escenas/main_menu/main_menu.gd
 res://UI/botom_bar/botom_bar.tscn
 res://UI/botom_bar/botom_bar.gd
+res://characters/enemy_static/mob_static.tscn
+res://characters/enemy_static/mob_static.gd
+res://characters/enemy_basic/mob.tscn
+res://characters/enemy_basic/mob.gd
+res://pistol/gun.gd

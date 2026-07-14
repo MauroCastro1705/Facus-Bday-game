@@ -171,6 +171,7 @@ vertical_alignment = 1
 
 [node name="BarraVida" parent="health_panel" unique_id=642129819 instance=ExtResource("3_ajoka")]
 position = Vector2(56, 628)
+scale = Vector2(1.1600006, 1)
 
 [node name="TextureRect" type="TextureRect" parent="health_panel" unique_id=586711293]
 texture_filter = 1

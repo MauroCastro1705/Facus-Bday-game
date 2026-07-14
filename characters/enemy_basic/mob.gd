@@ -1,6 +1,7 @@
 extends CharacterBody2D
 
 @export var bullet: PackedScene
+@export var bullet_speed:int = 350
 @export var shoot_timer: Timer
 @export var fire_rate: float = 1.5  # Tiempo entre disparos en segundos
 @export var detection_range: float = 600.0  # Rango de detección del jugador
@@ -125,6 +126,7 @@ func shoot() -> void:
 	
 	# Crear la bala
 	var bullet_instance = bullet.instantiate()
+	bullet_instance.SPEED = bullet_speed
 	
 	# Posicionar la bala en el shooting point
 	if shooting_point != null:

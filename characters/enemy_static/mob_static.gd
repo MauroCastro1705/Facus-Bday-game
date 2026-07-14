@@ -2,6 +2,7 @@ extends CharacterBody2D
 # Static Turret Enemy
 
 @export var bullet: PackedScene
+@export var bullet_speed:int = 230 ##velocidad proyectil
 @export var coin:PackedScene
 @export var coin_amount:int ##cantidad de monedas que spawnea al morir
 @export var shoot_timer: Timer
@@ -115,9 +116,11 @@ func shoot() -> void:
 func shoot_normal(angle: float) -> void:
 	# Un solo disparo directo
 	var bullet_instance = bullet.instantiate()
+	bullet_instance.SPEED = bullet_speed
 	place_bullet(bullet_instance, angle)
 	get_parent().add_child(bullet_instance)
 
+##disparo multiple escopeta
 func shoot_spread(base_angle: float) -> void:
 	# Disparo en abanico (como escopeta)
 	var spread_radians = deg_to_rad(spread_angle)
@@ -132,9 +135,8 @@ func shoot_spread(base_angle: float) -> void:
 		place_bullet(bullet_instance, angle)
 		get_parent().add_child(bullet_instance)
 
+##disparo multiple en linea recta
 func shoot_line_spread(base_angle: float) -> void:
-	# Disparos en línea recta perpendicular a la dirección
-	# La línea se forma en el eje perpendicular al disparo principal
 	
 	# Calcular el ángulo perpendicular (90 grados)
 	var perp_angle = base_angle + deg_to_rad(90)
@@ -144,7 +146,7 @@ func shoot_line_spread(base_angle: float) -> void:
 	
 	for i in range(bullet_count):
 		var bullet_instance = bullet.instantiate()
-		
+		bullet_instance.SPEED = bullet_speed
 		# Calcular posición de la bala en línea recta
 		var offset = start_offset + i * line_spread_spacing
 		var offset_vector = Vector2(cos(perp_angle), sin(perp_angle)) * offset

@@ -1,11 +1,13 @@
 extends Area2D
 var travelled_distance = 0
-var bullet_dmg:float = 10
+@export var bullet_dmg:float = 10
+@export var SPEED:int = 250
+
 
 const IMPACT_PARTICLES  = preload("res://pistol/impact/impactParticle.tscn")
 
 func _physics_process(delta):
-	var SPEED = Global.bulletSpeed
+	
 	var RANGE = Global.bulletRange
 	var direction = Vector2.RIGHT.rotated(rotation)
 	position += direction * SPEED * delta

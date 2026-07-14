@@ -5,6 +5,7 @@ extends Node2D
 @export var bullet:PackedScene
 @onready var pistol: Sprite2D = $pistol
 @onready var flash_particle: GPUParticles2D = $GPUParticles2D
+@export var bullet_speed: int = 800
 
 func _ready():
 	pass
@@ -30,6 +31,7 @@ func shoot():
 	var new_bullet = bullet.instantiate()
 	new_bullet.global_position = shooting_point.global_position
 	new_bullet.global_rotation = shooting_point.global_rotation
+	new_bullet.SPEED = bullet_speed
 	flash_particle.restart()
 	flash_particle.emitting = true
 	get_parent().add_child(new_bullet)  # Spawn bullet in the main scene

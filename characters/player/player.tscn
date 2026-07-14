@@ -77,6 +77,7 @@ collision_layer = 9
 platform_floor_layers = 4294967040
 script = ExtResource("1_mqknh")
 gun = NodePath("Gun")
+bullet_speed = 500
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=125696921]
 position = Vector2(0, 1)
@@ -84,6 +85,7 @@ shape = SubResource("CircleShape2D_m57e4")
 
 [node name="Gun" parent="." unique_id=1760169085 instance=ExtResource("3_x4s34")]
 position = Vector2(1, 1)
+bullet_speed = 500
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1547333466]
 
