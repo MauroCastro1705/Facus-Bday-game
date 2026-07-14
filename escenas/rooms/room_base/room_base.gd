@@ -1,10 +1,9 @@
 extends Node2D
 class_name RoomBase
-@onready var luz_portal: PointLight2D = $Props/luz_portal
-@onready var portal_msg: Label = $Props/portal_msg
 
-const OK_COLOR:Color = Color(0.0, 0.678, 0.757)
-const BAD_COLOR:Color = Color(1.0, 0.188, 0.259)
+@onready var portal: Node2D = $Props/Portal
+
+
 
 # Señales que pueden ser útiles
 signal room_entered()
@@ -31,8 +30,8 @@ var is_cleared: bool = false
 var is_active: bool = false
 
 func _ready():
-	portal_msg.hide()
-	luz_portal.color = BAD_COLOR
+	portal.portal_msg.hide()
+	portal.portal_luz_mala()
 	# Configurar transición
 	if transition_area:
 		transition_area.body_entered.connect(_on_transition_area_body_entered)
@@ -67,11 +66,7 @@ func can_exit_room() -> bool:
 
 func show_blocked_message():
 	print("¡Debes eliminar todos los enemigos primero!")
-	portal_msg.show()
-	portal_msg.modulate.a = 1.0
-	var tween = create_tween()
-	tween.tween_property(portal_msg, "modulate:a", 0.0, 1.5).set_delay(1.0)
-	tween.tween_callback(portal_msg.hide)
+	portal.show_mensaje()
 
 # ============= FUNCIONES DE ENEMIGOS =============
 
@@ -109,7 +104,7 @@ func on_room_cleared():
 	# Abrir puertas, mostrar mensaje, etc.
 	print("¡Habitación ", room_name, " limpiada!")
 	# Ejemplo: abrir puertas visualmente
-	luz_portal.color = OK_COLOR
+	portal.portal_luz_ok()
 	open_doors()
 
 func set_enemies_active(active: bool):

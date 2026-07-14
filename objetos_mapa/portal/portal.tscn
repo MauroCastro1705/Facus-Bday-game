@@ -1,0 +1,74 @@
+[gd_scene format=4 uid="uid://cqnkwniargv32"]
+
+[ext_resource type="TileSet" uid="uid://o6u3u6bxi5oq" path="res://assets/top_down_2.tres" id="1_4310p"]
+[ext_resource type="Script" uid="uid://c1ixws5rsc6oj" path="res://objetos_mapa/portal/portal.gd" id="1_tpt0p"]
+[ext_resource type="Texture2D" uid="uid://b73tgd7ha2s72" path="res://assets/FREE Textures Of Light Alpha/FREE Textures Of Light Alpha/FREE Textures Of Light Alpha/512x512/512x512 textures (23).png" id="2_tpt0p"]
+[ext_resource type="LabelSettings" uid="uid://sy8p2f33pssc" path="res://assets/texto_generico.tres" id="3_7k1wc"]
+
+[sub_resource type="Animation" id="Animation_tpt0p"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("luz_portal:energy")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [3.0]
+}
+
+[sub_resource type="Animation" id="Animation_7k1wc"]
+resource_name = "luz"
+length = 3.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("luz_portal:energy")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.5333333, 3),
+"transitions": PackedFloat32Array(1, 2.4622886, 1),
+"update": 0,
+"values": [2.0, 4.0, 2.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_gdx0k"]
+_data = {
+&"RESET": SubResource("Animation_tpt0p"),
+&"luz": SubResource("Animation_7k1wc")
+}
+
+[node name="Portal" type="Node2D" unique_id=554662976]
+script = ExtResource("1_tpt0p")
+
+[node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=1774870557]
+tile_map_data = PackedByteArray("AAD/////CQALAAgAAAD//wAACQALAAkAAAD//wEACQALAAoAAAAAAP//CQAMAAgAAAAAAAAACQAMAAkAAAAAAAEACQAMAAoAAAABAP//CQANAAgAAAABAAAACQANAAkAAAABAAEACQANAAoAAAA=")
+tile_set = ExtResource("1_4310p")
+
+[node name="luz_portal" type="PointLight2D" parent="." unique_id=777837319]
+position = Vector2(16, 16)
+color = Color(1, 0.1882353, 0.25882354, 1)
+energy = 3.0
+shadow_enabled = true
+shadow_filter = 1
+texture = ExtResource("2_tpt0p")
+texture_scale = 0.7
+
+[node name="portal_msg" type="Label" parent="." unique_id=1372483203]
+offset_left = -85.0
+offset_top = -72.0
+offset_right = 131.0
+offset_bottom = -39.0
+text = "Derrota a los enemigos para continuar"
+label_settings = ExtResource("3_7k1wc")
+horizontal_alignment = 1
+autowrap_mode = 3
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=3341291]
+libraries/ = SubResource("AnimationLibrary_gdx0k")
+autoplay = &"luz"

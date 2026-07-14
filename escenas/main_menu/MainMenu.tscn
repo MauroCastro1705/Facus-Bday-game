@@ -17,7 +17,7 @@ shader_parameter/color_2 = Color(0.9411765, 0.22352941, 0.6, 1)
 font = ExtResource("3_4t5pn")
 
 [sub_resource type="LabelSettings" id="LabelSettings_4qipx"]
-line_spacing = 12.0
+line_spacing = 8.0
 font = ExtResource("3_4t5pn")
 font_size = 19
 outline_size = 6
@@ -85,14 +85,15 @@ offset_left = 413.0
 offset_top = 267.0
 offset_right = 482.0
 offset_bottom = 298.0
+theme_override_fonts/font = ExtResource("3_4t5pn")
 toggle_mode = true
 text = "Tutorial"
 
 [node name="tutorial_info" type="ColorRect" parent="tutorial" unique_id=935603079]
 layout_mode = 0
-offset_left = -173.0
+offset_left = -153.0
 offset_top = 41.0
-offset_right = 211.0
+offset_right = 231.0
 offset_bottom = 355.0
 color = Color(0.12225223, 0.12225223, 0.12225223, 1)
 
@@ -114,6 +115,7 @@ axis_stretch_horizontal = 1
 axis_stretch_vertical = 1
 
 [node name="Label" type="Label" parent="tutorial/tutorial_info/NinePatchRect" unique_id=2131205550]
+texture_filter = 1
 layout_mode = 0
 offset_left = 10.6666565
 offset_top = 7.3333282

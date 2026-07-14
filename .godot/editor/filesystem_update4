@@ -13,3 +13,6 @@ res://characters/enemy_static/mob_static.tscn
 res://escenas/rooms/room_base/RoomBase.tscn
 res://characters/player/player.tscn
 res://pickups/enemy_coin_pickup/coin_pickup.tscn
+res://objetos_mapa/portal/portal.tscn
+res://objetos_mapa/portal/portal.gd
+res://escenas/main_menu/MainMenu.tscn
