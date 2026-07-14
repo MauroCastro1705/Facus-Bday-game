@@ -1,3 +1,4 @@
+GPUParticles2D
 AnimationPlayer
 TileMapLayer
 Label
@@ -5,11 +6,9 @@ LightOccluder2D
 PointLight2D
 TextureRect
 HBoxContainer
-GPUParticles2D
 NinePatchRect
 Button
 ColorRect
 CollisionShape2D
 Area2D
 Sprite2D
-Timer

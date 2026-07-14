@@ -538,27 +538,10 @@ position = Vector2(-333.5, 22)
 shape = SubResource("RectangleShape2D_b2xhn")
 
 [node name="Mob" parent="EnemiesContainer" parent_id_path=PackedInt32Array(102369919) index="0" unique_id=187351653 instance=ExtResource("3_8s4ct")]
-position = Vector2(784, 235)
+position = Vector2(3071, 982)
 
-[node name="Mob_static" parent="EnemiesContainer" parent_id_path=PackedInt32Array(102369919) index="1" unique_id=740083035 instance=ExtResource("4_l8lb4")]
-position = Vector2(797, 632)
-bullet_count = 3
-line_spread_spacing = 30.0
-
-[node name="Mob_static2" parent="EnemiesContainer" parent_id_path=PackedInt32Array(102369919) index="2" unique_id=1478323827 instance=ExtResource("4_l8lb4")]
-position = Vector2(1069, 409)
-shoot_type = 1
-bullet_count = 3
-spread_angle = 42.0
-line_spread_spacing = 30.0
-
-[node name="Mob_static3" parent="EnemiesContainer" parent_id_path=PackedInt32Array(102369919) index="3" unique_id=1401077320 instance=ExtResource("4_l8lb4")]
-position = Vector2(2265, 357)
-bullet_count = 3
-line_spread_spacing = 30.0
-
-[node name="Mob_static4" parent="EnemiesContainer" parent_id_path=PackedInt32Array(102369919) index="4" unique_id=1168894166 instance=ExtResource("4_l8lb4")]
-position = Vector2(2842, 1272)
+[node name="Mob_static4" parent="EnemiesContainer" parent_id_path=PackedInt32Array(102369919) index="1" unique_id=1168894166 instance=ExtResource("4_l8lb4")]
+position = Vector2(3605, 1151)
 shoot_type = 1
 bullet_count = 3
 spread_angle = 42.0

@@ -3,15 +3,19 @@ extends Node2D
 @onready var portal_msg: Label = $portal_msg
 const OK_COLOR:Color = Color(0.0, 0.678, 0.757)
 const BAD_COLOR:Color = Color(1.0, 0.188, 0.259)
+@onready var gpu_particles_2d: GPUParticles2D = $GPUParticles2D
 
 func _ready() -> void:
 	portal_msg.hide()
+	gpu_particles_2d.hide()
 
 func portal_luz_mala():
 	luz_portal.color = BAD_COLOR
 	
 func portal_luz_ok():
 	luz_portal.color = OK_COLOR
+	gpu_particles_2d.show()
+	gpu_particles_2d.emitting = true
 
 func show_mensaje():
 	portal_msg.show()

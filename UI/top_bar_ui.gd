@@ -24,5 +24,5 @@ func _enemy_died_update():
 	enemigos_left -= 1
 	enemies_remaining_label.text = "Enemies left: " + str(enemigos_left) + "/" + str(enemigos_total)
 	if enemigos_left == 0:
-		enemies_remaining_label.text = "Podes cruzar el portal"
+		enemies_remaining_label.text = "The portal is Open"
 		calavera.hide()
