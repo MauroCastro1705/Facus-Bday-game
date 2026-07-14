@@ -1,0 +1,32 @@
+[gd_scene format=3 uid="uid://cjtpjneeq4wcp"]
+
+[ext_resource type="Texture2D" uid="uid://d1dkvsygmu4vl" path="res://assets/payaso.png" id="1_uo8al"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_uo8al"]
+radius = 26.0
+
+[sub_resource type="Gradient" id="Gradient_uo8al"]
+colors = PackedColorArray(1, 1, 1, 0.58431375, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_lhjys"]
+gradient = SubResource("Gradient_uo8al")
+fill = 1
+fill_from = Vector2(0.508547, 0.508547)
+fill_to = Vector2(0.8247863, 0.15811966)
+
+[node name="Payaso" type="Node2D" unique_id=1129131774]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1906106099]
+texture_filter = 1
+scale = Vector2(0.22222221, 0.2222222)
+texture = ExtResource("1_uo8al")
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="." unique_id=395888686]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D" unique_id=1946841490]
+shape = SubResource("CircleShape2D_uo8al")
+
+[node name="PointLight2D" type="PointLight2D" parent="." unique_id=782518157]
+shadow_enabled = true
+texture = SubResource("GradientTexture2D_lhjys")
+texture_scale = 1.2

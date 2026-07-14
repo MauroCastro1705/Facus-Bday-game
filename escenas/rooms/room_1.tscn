@@ -13,6 +13,7 @@
 [ext_resource type="Texture2D" uid="uid://c8ja2wej61pbh" path="res://assets/Pixel Art Top Down - Basic v1.2.3/Texture 32x32/TX Plant.png" id="8_q6gdg"]
 [ext_resource type="Texture2D" uid="uid://x8awaqqldr6y" path="res://assets/Pixel Art Top Down - Basic v1.2.3/Texture 32x32/TX Props.png" id="9_jhm81"]
 [ext_resource type="PackedScene" uid="uid://cqnkwniargv32" path="res://objetos_mapa/portal/portal.tscn" id="12_b2xhn"]
+[ext_resource type="PackedScene" uid="uid://cjtpjneeq4wcp" path="res://characters/payaso/payaso.tscn" id="12_si3gk"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_kaiwr"]
 texture = ExtResource("2_1vl5q")
@@ -547,8 +548,11 @@ bullet_count = 3
 spread_angle = 42.0
 line_spread_spacing = 30.0
 
+[node name="Payaso" parent="EnemiesContainer" parent_id_path=PackedInt32Array(102369919) index="2" unique_id=1129131774 instance=ExtResource("12_si3gk")]
+position = Vector2(3876, 852)
+
 [node name="Portal" parent="Props" parent_id_path=PackedInt32Array(508407113) index="0" unique_id=554662976 instance=ExtResource("12_b2xhn")]
-position = Vector2(3745, 802)
+position = Vector2(3760, 816)
 
 [node name="bloque_generico" parent="." index="6" unique_id=924551978 instance=ExtResource("5_ltjsl")]
 position = Vector2(238, 325)

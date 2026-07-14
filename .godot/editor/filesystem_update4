@@ -16,3 +16,4 @@ res://pickups/enemy_coin_pickup/coin_pickup.tscn
 res://objetos_mapa/portal/portal.tscn
 res://objetos_mapa/portal/portal.gd
 res://escenas/main_menu/MainMenu.tscn
+res://characters/payaso/payaso.tscn
