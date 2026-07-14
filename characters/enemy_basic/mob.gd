@@ -96,10 +96,12 @@ func aim_weapon_at_player(delta: float) -> void:
 	
 	# Calcular dirección hacia el jugador
 	var direction = (player.global_position - global_position).normalized()
-	
-	# Rotar el arma hacia el jugador
 	var target_angle = direction.angle()
+	
+	# Rotar el arma hacia el jugador (con suavizado)
 	weapon.rotation = lerp_angle(weapon.rotation, target_angle, rotation_speed * delta)
+	var facing_left = abs(wrapf(weapon.rotation, -PI, PI)) > PI / 2.0
+	weapon.scale.y = -1.0 if facing_left else 1.0
 
 func handle_out_of_range(_delta: float) -> void:
 	# Comportamiento básico de patrulla

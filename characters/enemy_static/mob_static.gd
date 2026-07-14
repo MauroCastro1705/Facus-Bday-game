@@ -9,6 +9,7 @@ signal died
 @export var shoot_timer: Timer
 @export var fire_rate: float = 1.5  ## Tiempo entre disparos en segundos
 @export var detection_range: float = 600.0  ## Rango de detección del jugador
+@export var rotation_speed: float = 5.0  # Velocidad de rotación hacia el jugador
 
 # Tipos de disparo
 enum ShootType {
@@ -80,15 +81,18 @@ func find_player() -> void:
 	if players.size() > 0:
 		player = players[0]
 
-func aim_weapon_at_player(_delta: float) -> void:
+func aim_weapon_at_player(delta: float) -> void:
 	if player == null or weapon == null:
 		return
 	
 	# Calcular dirección hacia el jugador
 	var direction = (player.global_position - global_position).normalized()
+	var target_angle = direction.angle()
 	
-	# Rotar el arma hacia el jugador de forma instantánea (enemigo estático)
-	weapon.rotation = direction.angle()
+	# Rotar el arma hacia el jugador (con suavizado)
+	weapon.rotation = lerp_angle(weapon.rotation, target_angle, rotation_speed * delta)
+	var facing_left = abs(wrapf(weapon.rotation, -PI, PI)) > PI / 2.0
+	weapon.scale.y = -1.0 if facing_left else 1.0
 
 func _on_shoot_timer_timeout() -> void:
 	if not is_player_in_range or player == null or is_dead:

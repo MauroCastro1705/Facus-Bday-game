@@ -121,12 +121,6 @@ func aim_weapon_at_player(delta: float) -> void:
 	
 	# Rotar el arma hacia el jugador (con suavizado)
 	weapon.rotation = lerp_angle(weapon.rotation, target_angle, rotation_speed * delta)
-	
-	# FIX: el flip se decide con el ángulo YA interpolado del arma, no con la
-	# dirección cruda al jugador. Así el flip y la rotación visual siempre
-	# están sincronizados y no "saltan" mientras el arma todavía está girando.
-	# Además usamos scale.y en vez de flip_v + reposicionar el nodo: al
-	# espejar sobre el propio eje del arma no hace falta mover su posición.
 	var facing_left = abs(wrapf(weapon.rotation, -PI, PI)) > PI / 2.0
 	weapon.scale.y = -1.0 if facing_left else 1.0
 
