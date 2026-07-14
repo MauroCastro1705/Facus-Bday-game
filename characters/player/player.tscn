@@ -113,7 +113,7 @@ scale = Vector2(0.36526322, 0.36526322)
 sprite_frames = SubResource("SpriteFrames_idpv6")
 animation = &"reloading"
 autoplay = "default"
-frame_progress = 0.12288983
+frame_progress = 0.07206951
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=1234735360]
 offset_left = -18.0
@@ -124,7 +124,6 @@ scale = Vector2(0.54226345, 0.50396675)
 color = Color(0, 0, 0, 1)
 
 [node name="PointLight2D" type="PointLight2D" parent="." unique_id=183698058]
-visible = false
 position = Vector2(2, 6)
 shadow_enabled = true
 texture = ExtResource("7_dirf7")
