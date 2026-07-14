@@ -7,3 +7,7 @@ pantalla de pausa
 
 mejorar sistema de spawn de daño
 como en los otros juegos
+
+https://godotshaders.com/shader/fractal-noise-scene-transition/
+
+https://godotshaders.com/shader/shock-damage/

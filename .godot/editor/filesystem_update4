@@ -9,3 +9,4 @@ res://escenas/rooms/room_1.tscn
 res://escenas/Main/main_scene.tscn
 res://shaders/hurt_damage.tres
 res://shaders/hurt_damage.gdshader
+res://Scripts/to-do.txt
