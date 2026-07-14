@@ -1,6 +1,6 @@
+CharacterBody2D
 PointLight2D
 CollisionShape2D
-CharacterBody2D
 Sprite2D
 GPUParticles2D
 AnimationPlayer

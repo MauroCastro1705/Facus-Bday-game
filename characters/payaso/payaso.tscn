@@ -1,6 +1,11 @@
 [gd_scene format=3 uid="uid://cjtpjneeq4wcp"]
 
+[ext_resource type="Script" uid="uid://d0ptkv5sxky0l" path="res://characters/payaso/payaso.gd" id="1_lhjys"]
 [ext_resource type="Texture2D" uid="uid://d1dkvsygmu4vl" path="res://assets/payaso.png" id="1_uo8al"]
+[ext_resource type="PackedScene" uid="uid://buos4i1nimf6b" path="res://pistol/bullet_payaso.tscn" id="2_l58f0"]
+[ext_resource type="PackedScene" uid="uid://bo25qipahswpt" path="res://pickups/enemy_coin_pickup/coin_pickup.tscn" id="3_si8n3"]
+[ext_resource type="Texture2D" uid="uid://d2uocuqs5i0na" path="res://assets/armas/1 Icons/Icon29_07.png" id="3_vym8f"]
+[ext_resource type="PackedScene" uid="uid://bhk8r7mumgdnr" path="res://UI/barra_vida/barra_vida.tscn" id="4_6ydly"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_uo8al"]
 radius = 26.0
@@ -14,19 +19,51 @@ fill = 1
 fill_from = Vector2(0.508547, 0.508547)
 fill_to = Vector2(0.8247863, 0.15811966)
 
-[node name="Payaso" type="Node2D" unique_id=1129131774]
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_6ydly"]
+load_path = "res://.godot/imported/10_1.png-c42f04e9a69bb6e0b14a3edd3e8cddfd.ctex"
+
+[node name="Payaso" type="CharacterBody2D" unique_id=1465689590 groups=["payaso"]]
+script = ExtResource("1_lhjys")
+bullet = ExtResource("2_l58f0")
+bullet_speed = 400
+fire_rate = 1.2
+enemy_speed = 150.0
+shoot_mode = 4
+spread_count = 8
+spread_angle = 10.0
+shot_alternate = true
+coin = ExtResource("3_si8n3")
+coin_amount = 12
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1946841490]
+shape = SubResource("CircleShape2D_uo8al")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1906106099]
 texture_filter = 1
 scale = Vector2(0.22222221, 0.2222222)
 texture = ExtResource("1_uo8al")
 
-[node name="CharacterBody2D" type="CharacterBody2D" parent="." unique_id=395888686]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D" unique_id=1946841490]
-shape = SubResource("CircleShape2D_uo8al")
-
 [node name="PointLight2D" type="PointLight2D" parent="." unique_id=782518157]
+energy = 0.5
 shadow_enabled = true
 texture = SubResource("GradientTexture2D_lhjys")
 texture_scale = 1.2
+
+[node name="gun" type="Sprite2D" parent="." unique_id=1823940965]
+texture = SubResource("CompressedTexture2D_6ydly")
+offset = Vector2(45, 2)
+
+[node name="shooting_point" type="Marker2D" parent="gun" unique_id=781511958]
+position = Vector2(55, 0)
+scale = Vector2(0.6800002, 0.6800002)
+
+[node name="Sprite2D" type="Sprite2D" parent="gun" unique_id=647449902]
+texture_filter = 1
+position = Vector2(43.755264, 1.0028734)
+rotation = 0.7736498
+scale = Vector2(0.9891834, 0.9891834)
+texture = ExtResource("3_vym8f")
+
+[node name="BarraVida" parent="." unique_id=642129819 instance=ExtResource("4_6ydly")]
+position = Vector2(-30.000004, -44.000008)
+scale = Vector2(0.39999968, 0.39999968)

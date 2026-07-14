@@ -17,3 +17,8 @@ res://objetos_mapa/portal/portal.tscn
 res://objetos_mapa/portal/portal.gd
 res://escenas/main_menu/MainMenu.tscn
 res://characters/payaso/payaso.tscn
+res://characters/payaso/payaso.gd
+res://pistol/bullet_payaso.tscn
+res://pistol/gun.tscn
+res://pistol/gun.gd
+res://pistol/bullet.gd

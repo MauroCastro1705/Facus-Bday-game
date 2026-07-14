@@ -15,14 +15,11 @@ func _ready():
 func _physics_process(_delta):
 	var mouse_position = get_global_mouse_position()
 	var direction = (mouse_position - global_position).normalized()
-	
 	# Rotar el arma hacia el mouse
 	rotation = direction.angle()
-	
 	# Flip vertical cuando mira a la izquierda
 	if direction.x < 0:
 		pistol.flip_v = true
-
 	else:
 		pistol.flip_v = false
 
