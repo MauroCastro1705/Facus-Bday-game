@@ -11,3 +11,8 @@ res://escenas/Main/main_scene.tscn
 res://objetos_mapa/indio_vendedor/indio_shop.gd
 res://characters/player/player.tscn
 res://escenas/rooms/upgrade_room/upgrade_room_1.tscn
+res://escenas/rooms/room_2.tscn
+res://escenas/rooms/room_1.tscn
+res://assets/top_down_3.tres
+res://characters/enemy_basic/mob.tscn
+res://characters/enemy_static/mob_static.tscn

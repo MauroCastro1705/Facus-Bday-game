@@ -561,5 +561,4 @@ shoot_mode = 3
 position = Vector2(295, 307)
 
 [node name="CanvasModulate" parent="." index="7" unique_id=571325478]
-visible = false
 color = Color(0.3936443, 0.35369924, 0.33634624, 1)

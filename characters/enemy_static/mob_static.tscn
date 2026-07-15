@@ -5,21 +5,22 @@
 [ext_resource type="PackedScene" uid="uid://bhk8r7mumgdnr" path="res://UI/barra_vida/barra_vida.tscn" id="3_ggavr"]
 [ext_resource type="Texture2D" uid="uid://cmd7lpsjyxrg6" path="res://assets/drhouse.png" id="3_p0rir"]
 [ext_resource type="PackedScene" uid="uid://bo25qipahswpt" path="res://pickups/enemy_coin_pickup/coin_pickup.tscn" id="3_r1uh3"]
-[ext_resource type="Texture2D" uid="uid://b73tgd7ha2s72" path="res://assets/FREE Textures Of Light Alpha/FREE Textures Of Light Alpha/FREE Textures Of Light Alpha/512x512/512x512 textures (23).png" id="5_ghbwf"]
-[ext_resource type="Texture2D" uid="uid://coeviyorq5k3e" path="res://assets/free-guns-pack-2-for-main-characters-pixel-art/2 Guns/9_1.png" id="5_p0rir"]
+[ext_resource type="Texture2D" uid="uid://cxtigwvr7dq31" path="res://assets/luz_basica.tres" id="6_kbwye"]
 [ext_resource type="Texture2D" uid="uid://byy3qxs8jr7l3" path="res://assets/armas/1 Icons/Icon29_13.png" id="7_kbwye"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_8tavr"]
-radius = 39.051247
+radius = 23.021729
 
 [node name="Mob_static" type="CharacterBody2D" unique_id=187351653 groups=["enemies"]]
 platform_floor_layers = 4294967040
 script = ExtResource("1_e0i7l")
 bullet = ExtResource("2_lfgu0")
+bullet_speed = 180
 coin = ExtResource("3_r1uh3")
-coin_amount = 20
+coin_amount = 5
 fire_rate = 1.7
 shoot_type = 2
+bullet_count = 3
 spread_angle = 50.0
 line_spread_spacing = 50.0
 
@@ -27,24 +28,25 @@ line_spread_spacing = 50.0
 shape = SubResource("CircleShape2D_8tavr")
 
 [node name="BarraVida" parent="." unique_id=642129819 instance=ExtResource("3_ggavr")]
-position = Vector2(-32, -53)
+position = Vector2(-36, -41)
 scale = Vector2(0.5025189, 0.5025189)
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1387571561]
 position = Vector2(1, -1)
-scale = Vector2(0.5111111, 0.5111111)
+scale = Vector2(0.37777779, 0.3)
 texture = ExtResource("3_p0rir")
 
 [node name="PointLight2D" type="PointLight2D" parent="." unique_id=434934853]
 position = Vector2(1, 0)
+scale = Vector2(1.5625, 1.5625)
 energy = 0.7
 shadow_enabled = true
-texture = ExtResource("5_ghbwf")
+texture = ExtResource("6_kbwye")
+texture_scale = 0.7
 
 [node name="gun" type="Sprite2D" parent="." unique_id=109752920]
 texture_filter = 1
 position = Vector2(0, 1)
-texture = ExtResource("5_p0rir")
 offset = Vector2(46, 2)
 
 [node name="shooting_point" type="Marker2D" parent="gun" unique_id=810286168]

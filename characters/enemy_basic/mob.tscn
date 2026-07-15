@@ -5,20 +5,21 @@
 [ext_resource type="PackedScene" uid="uid://bo25qipahswpt" path="res://pickups/enemy_coin_pickup/coin_pickup.tscn" id="3_mhry0"]
 [ext_resource type="PackedScene" uid="uid://bhk8r7mumgdnr" path="res://UI/barra_vida/barra_vida.tscn" id="3_sjt0n"]
 [ext_resource type="Texture2D" uid="uid://b0a5kl025j6lu" path="res://assets/jack_black .png" id="4_d4ky1"]
-[ext_resource type="Texture2D" uid="uid://b73tgd7ha2s72" path="res://assets/FREE Textures Of Light Alpha/FREE Textures Of Light Alpha/FREE Textures Of Light Alpha/512x512/512x512 textures (23).png" id="5_3u7ve"]
-[ext_resource type="Texture2D" uid="uid://b07wiay35ic14" path="res://assets/free-guns-pack-2-for-main-characters-pixel-art/2 Guns/10_1.png" id="6_gphry"]
+[ext_resource type="Texture2D" uid="uid://cxtigwvr7dq31" path="res://assets/luz_basica.tres" id="6_mhry0"]
 [ext_resource type="Texture2D" uid="uid://dhphe0mwl4ioa" path="res://assets/armas/1 Icons/Icon29_11.png" id="8_aktnc"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_8tavr"]
-radius = 39.051247
+radius = 24.020824
 
 [node name="Mob" type="CharacterBody2D" unique_id=187351653 groups=["enemies"]]
 platform_floor_layers = 4294967040
 script = ExtResource("1_6r882")
 bullet = ExtResource("2_3u7ve")
+bullet_speed = 300
 fire_rate = 2.0
 enemy_speed = 75.0
 coin = ExtResource("3_mhry0")
+coin_amount = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1248125656]
 shape = SubResource("CircleShape2D_8tavr")
@@ -29,16 +30,16 @@ scale = Vector2(0.5025189, 0.5025189)
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1387571561]
 position = Vector2(1, -1)
-scale = Vector2(0.26410258, 0.26410255)
+scale = Vector2(0.19487178, 0.19487177)
 texture = ExtResource("4_d4ky1")
 
 [node name="PointLight2D" type="PointLight2D" parent="." unique_id=434934853]
+scale = Vector2(1.34375, 1.34375)
 energy = 0.7
 shadow_enabled = true
-texture = ExtResource("5_3u7ve")
+texture = ExtResource("6_mhry0")
 
 [node name="gun" type="Sprite2D" parent="." unique_id=1085861603]
-texture = ExtResource("6_gphry")
 offset = Vector2(45, 2)
 
 [node name="shooting_point" type="Marker2D" parent="gun" unique_id=810286168]

@@ -1,3 +1,4 @@
+Polygon2D
 VBoxContainer
 PointLight2D
 TileMapLayer
@@ -11,5 +12,3 @@ TextureRect
 Button
 Control
 Sprite2D
-Polygon2D
-ColorRect
