@@ -123,8 +123,9 @@ func position_player_in_room(room: Node2D):
 		player.global_position = spawn.global_position
 	else:
 		# Si la habitación es de tipo RoomBase, usar su método
-		if room is RoomBase:
+		if room.has_method("get_player_spawn_position"):
 			player.global_position = room.get_player_spawn_position()
+			print("vamos por aca!")
 		else:
 			player.global_position = room.global_position
 	player_is_in_room.emit()

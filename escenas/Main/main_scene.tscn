@@ -5,6 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://ct6ctnfjhwh25" path="res://characters/player/player.tscn" id="3_tcvou"]
 [ext_resource type="PackedScene" uid="uid://xrl8b25f8jy4" path="res://UI/botom_bar/botom_bar.tscn" id="4_mo04v"]
 [ext_resource type="PackedScene" uid="uid://ctjltlqtk1ga4" path="res://UI/coin_ui/coin_ui.tscn" id="6_fmakg"]
+[ext_resource type="PackedScene" uid="uid://cteu0qw5y1dl1" path="res://escenas/rooms/upgrade_room/upgrade_room_1.tscn" id="7_0d53b"]
 [ext_resource type="PackedScene" uid="uid://cdxph1s5ayb4u" path="res://escenas/rooms/room_2.tscn" id="7_du476"]
 [ext_resource type="Script" uid="uid://dx8l2vrb0opwk" path="res://Scripts/GameManager.gd" id="7_mo04v"]
 
@@ -35,7 +36,7 @@ game_manager = NodePath("../gameManager")
 script = ExtResource("7_mo04v")
 rooms_parent = NodePath(".")
 player = NodePath("../Player")
-room_scenes = Array[PackedScene]([ExtResource("7_du476")])
+room_scenes = Array[PackedScene]([ExtResource("7_0d53b"), ExtResource("7_du476"), null])
 
 [node name="CanvasLayer2" type="CanvasLayer" parent="." unique_id=114641876]
 

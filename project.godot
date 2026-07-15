@@ -88,6 +88,7 @@ config/icon="uid://0u48fa2u5hx0"
 Global="*res://Scripts/global.gd"
 DamageNumbers="*uid://24iyq2v0xsbh"
 ImpactParticlePool="uid://m8oynvo1yxi"
+TransitionManager="*uid://cu5e2i5vtoa3j"
 
 [display]
 

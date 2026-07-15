@@ -1,0 +1,43 @@
+[gd_scene format=3 uid="uid://ydm88x4beq0r"]
+
+[ext_resource type="Shader" uid="uid://b7fdd3g627rgn" path="res://shaders/transition.gdshader" id="1_ajf1b"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_t843g"]
+shader = ExtResource("1_ajf1b")
+shader_parameter/progress = 0.0
+shader_parameter/speed = 0.1
+shader_parameter/pixelation = Vector2(2, 2)
+shader_parameter/zoom = 2.0
+shader_parameter/background_threshold = 0.0
+shader_parameter/color_threshold = 0.24
+shader_parameter/color = Color(0, 0, 0, 1)
+shader_parameter/seed = 0.2
+
+[node name="Foreground" type="Control" unique_id=330318654]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="fondo" type="ColorRect" parent="." unique_id=18612553]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0.4860596, 3.3691526e-07, 0.20221397, 1)
+
+[node name="TransitionEffect" type="ColorRect" parent="." unique_id=283080274]
+material = SubResource("ShaderMaterial_t843g")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2

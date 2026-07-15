@@ -1,6 +1,10 @@
+ColorRect
+RoomBase
+AnimationPlayer
+PointLight2D
+Node
 Polygon2D
 VBoxContainer
-PointLight2D
 TileMapLayer
 CollisionShape2D
 Area2D
@@ -8,7 +12,3 @@ StaticBody2D
 Label
 HBoxContainer
 NinePatchRect
-TextureRect
-Button
-Control
-Sprite2D

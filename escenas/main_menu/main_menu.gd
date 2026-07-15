@@ -10,7 +10,7 @@ func _ready() -> void:
 func _on_start_button_pressed():
 	#Global.playerNAME = %name_input.text
 	#print("jugador = ", Global.playerNAME)
-	get_tree().change_scene_to_file("res://escenas/Main/main_scene.tscn")
+	TransitionManager.change_scene("res://escenas/Main/main_scene.tscn")
 
 
 
@@ -20,7 +20,7 @@ func _on_creditos_pressed() -> void:
 	await tween.finished
 	
 	# Cambiar a la escena del main menu
-	get_tree().change_scene_to_file("res://escenas/creditos/creditos.tscn")
+	TransitionManager.change_scene("res://escenas/creditos/creditos.tscn")
 
 
 func _on_tutorial_toggled(toggled_on: bool) -> void:
