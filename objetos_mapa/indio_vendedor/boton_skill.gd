@@ -5,7 +5,6 @@ class_name SkillPurchaseStation
 # ===== NODOS =====
 @onready var skill_name: Label = %name
 @onready var texto_skill: Label = %texto_skill
-@onready var icono: TextureRect = %icono
 @onready var price: Label = %price
 @onready var collision_shape: CollisionShape2D = $CollisionShape2D
 @onready var texto_hover: NinePatchRect = $texto_hover
@@ -56,10 +55,7 @@ func _update_ui() -> void:
 	
 	if texto_skill:
 		texto_skill.text = skill_description
-	
-	if icono and skill_icon_texture:
-		icono.texture = skill_icon_texture
-	
+		
 	if price:
 		price.text = "$" + str(skill_price)
 

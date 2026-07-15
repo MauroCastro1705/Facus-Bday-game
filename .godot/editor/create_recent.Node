@@ -1,3 +1,4 @@
+VBoxContainer
 PointLight2D
 TileMapLayer
 CollisionShape2D
@@ -12,4 +13,3 @@ Control
 Sprite2D
 Polygon2D
 ColorRect
-CharacterBody2D

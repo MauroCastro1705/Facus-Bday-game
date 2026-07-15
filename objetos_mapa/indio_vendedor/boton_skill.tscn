@@ -5,10 +5,10 @@
 [ext_resource type="Texture2D" uid="uid://dse4jm4bca771" path="res://assets/coin.png" id="2_nmqr0"]
 [ext_resource type="Texture2D" uid="uid://dba1i2a1g2aie" path="res://assets/UI Assets pack_v.1_st/ribbon.png" id="3_3uji0"]
 [ext_resource type="TileSet" uid="uid://o6u3u6bxi5oq" path="res://assets/top_down_2.tres" id="6_3uji0"]
-[ext_resource type="Texture2D" uid="uid://dlrslk7bdlg52" path="res://assets/Free-Skill-32x32-Icons-for-Cyberpunk-Game/1 Icons/10/Skillicon10_14.png" id="6_142sb"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_0jeov"]
-radius = 60.207973
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_0jeov"]
+radius = 24.0
+height = 84.0
 
 [sub_resource type="LabelSettings" id="LabelSettings_0u21u"]
 font = ExtResource("1_s14o0")
@@ -17,7 +17,7 @@ font_color = Color(0.3529412, 0.2509804, 0.16470589, 1)
 
 [sub_resource type="LabelSettings" id="LabelSettings_3uji0"]
 font = ExtResource("1_s14o0")
-font_size = 20
+font_size = 14
 font_color = Color(0.35159382, 0.24959996, 0.1653215, 1)
 
 [sub_resource type="LabelSettings" id="LabelSettings_0jeov"]
@@ -65,17 +65,18 @@ gradient = SubResource("Gradient_0u21u")
 script = ExtResource("1_0yj1r")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1361360016]
-position = Vector2(1, -20)
-shape = SubResource("CircleShape2D_0jeov")
+position = Vector2(4, -26)
+shape = SubResource("CapsuleShape2D_0jeov")
 
 [node name="texto_hover" type="NinePatchRect" parent="." unique_id=1021329700]
+z_index = 10
 anchors_preset = -1
 anchor_top = -2.7670002
 anchor_right = 1.0
 offset_left = -86.0
-offset_top = -209.0
+offset_top = -190.0
 offset_right = 92.0
-offset_bottom = -149.02002
+offset_bottom = -130.02002
 texture = ExtResource("3_3uji0")
 region_rect = Rect2(144, 21, 16, 23)
 patch_margin_left = 4
@@ -92,7 +93,7 @@ anchor_bottom = 1.0
 offset_left = 10.0
 offset_top = 5.0
 offset_right = -9.0
-offset_bottom = -9.0
+offset_bottom = -4.9799805
 grow_horizontal = 2
 grow_vertical = 2
 text = "la skill hace esto"
@@ -101,12 +102,13 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="skill_info" type="NinePatchRect" parent="." unique_id=1331825269]
+z_index = 10
 anchors_preset = -1
 anchor_top = -2.7670002
 anchor_right = 1.0
-offset_left = -47.0
-offset_top = -149.02002
-offset_right = 58.0
+offset_left = -59.0
+offset_top = -129.0
+offset_right = 70.0
 offset_bottom = -73.02002
 texture = ExtResource("3_3uji0")
 region_rect = Rect2(144, 21, 16, 23)
@@ -115,46 +117,33 @@ patch_margin_top = 4
 patch_margin_right = 4
 patch_margin_bottom = 5
 
-[node name="name" type="Label" parent="skill_info" unique_id=765940646]
+[node name="VBoxContainer" type="VBoxContainer" parent="skill_info" unique_id=1748145975]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.029000001
+anchor_right = 0.99000007
+anchor_bottom = 0.929
+offset_left = -0.045000076
+offset_top = 3.0
+offset_right = -1.9500046
+offset_bottom = -0.0054016113
+alignment = 1
+
+[node name="name" type="Label" parent="skill_info/VBoxContainer" unique_id=765940646]
 unique_name_in_owner = true
-layout_mode = 0
-offset_left = 20.999992
-offset_top = 40.000008
-offset_right = 121.99999
-offset_bottom = 63.000008
-scale = Vector2(0.59999985, 0.59999985)
+custom_minimum_size = Vector2(20, 20)
+layout_mode = 2
 text = "item name"
 label_settings = SubResource("LabelSettings_3uji0")
 horizontal_alignment = 1
 vertical_alignment = 1
+autowrap_mode = 3
 
-[node name="icono" type="TextureRect" parent="skill_info" unique_id=586989989]
-unique_name_in_owner = true
-texture_filter = 1
-custom_minimum_size = Vector2(10, 10)
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.049000002
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 24.854996
-offset_top = -3.0
-offset_right = -1.6666412
-offset_bottom = -3.078003
-scale = Vector2(0.59999985, 0.59999985)
-texture = ExtResource("6_142sb")
-expand_mode = 5
-stretch_mode = 5
-
-[node name="HBoxContainer" type="HBoxContainer" parent="skill_info" unique_id=2118597172]
-layout_mode = 0
-offset_left = 14.0
-offset_top = 49.0
-offset_right = 88.0
-offset_bottom = 81.0
+[node name="HBoxContainer" type="HBoxContainer" parent="skill_info/VBoxContainer" unique_id=2118597172]
+layout_mode = 2
 alignment = 1
 
-[node name="price" type="Label" parent="skill_info/HBoxContainer" unique_id=2095013957]
+[node name="price" type="Label" parent="skill_info/VBoxContainer/HBoxContainer" unique_id=2095013957]
 unique_name_in_owner = true
 layout_mode = 2
 text = "200"
@@ -162,7 +151,7 @@ label_settings = SubResource("LabelSettings_0jeov")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="TextureRect" type="TextureRect" parent="skill_info/HBoxContainer" unique_id=1779854885]
+[node name="TextureRect" type="TextureRect" parent="skill_info/VBoxContainer/HBoxContainer" unique_id=1779854885]
 custom_minimum_size = Vector2(17, 10)
 layout_mode = 2
 texture = ExtResource("2_nmqr0")

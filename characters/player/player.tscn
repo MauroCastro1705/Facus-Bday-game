@@ -11,8 +11,8 @@
 [ext_resource type="LabelSettings" uid="uid://sy8p2f33pssc" path="res://assets/texto_generico.tres" id="9_rpf03"]
 [ext_resource type="Material" uid="uid://c5uh8gcbwig1f" path="res://shaders/hurt_damage.tres" id="10_x5dtk"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_m57e4"]
-radius = 26.076809
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_x5dtk"]
+height = 20.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_w0ha4"]
 radius = 36.013885
@@ -76,7 +76,7 @@ animations = [{
 
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_idpv6"]
 cull_mode = 2
-polygon = PackedVector2Array(479, 343, 482, 397, 441, 397, 443, 346)
+polygon = PackedVector2Array(475, 346, 475, 390, 443, 391, 443, 346)
 
 [node name="Player" type="CharacterBody2D" unique_id=1757322592 node_paths=PackedStringArray("gun") groups=["player"]]
 collision_layer = 9
@@ -87,7 +87,7 @@ bullet_speed = 500
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=125696921]
 position = Vector2(0, 1)
-shape = SubResource("CircleShape2D_m57e4")
+shape = SubResource("CapsuleShape2D_x5dtk")
 
 [node name="Gun" parent="." unique_id=1760169085 instance=ExtResource("3_x4s34")]
 position = Vector2(1, 1)
