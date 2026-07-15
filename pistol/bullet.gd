@@ -16,6 +16,17 @@ func _physics_process(delta):
 		queue_free()
 
 func _on_body_entered(body):
+	if body.is_in_group("indio"):
+		body.change_text()
+		_spawn_impact()
+		queue_free()
+	
+	if body.is_in_group("skill") and body.has_method("try_purchase"):
+		print("bala intento comprar")
+		body.try_purchase()
+		_spawn_impact()
+		queue_free()
+	
 	if body.is_in_group("paredes"):
 		_spawn_impact()
 		queue_free()

@@ -1,0 +1,69 @@
+[gd_scene format=3 uid="uid://csyi7irf7qee5"]
+
+[ext_resource type="Script" uid="uid://kltbrqpkd382" path="res://objetos_mapa/indio_vendedor/indio_shop.gd" id="1_ysxhq"]
+[ext_resource type="Texture2D" uid="uid://cj8kyhdbilljp" path="res://assets/indio.png" id="2_estyg"]
+[ext_resource type="Texture2D" uid="uid://ilnlxjive3fp" path="res://assets/UI Assets pack_v.1_st/Interface.png" id="3_iah6x"]
+[ext_resource type="LabelSettings" uid="uid://blxxug48a0ti3" path="res://assets/label_texto_basico.tres" id="4_ql7yh"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_f8m1s"]
+radius = 39.293766
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_iah6x"]
+radius = 210.37347
+
+[node name="IndioShop" type="StaticBody2D" unique_id=1392695461 groups=["indio"]]
+script = ExtResource("1_ysxhq")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=126281114]
+position = Vector2(-4, 7)
+shape = SubResource("CircleShape2D_f8m1s")
+
+[node name="indio" type="Sprite2D" parent="." unique_id=204130135]
+position = Vector2(-2.1250153, 3.3211212)
+scale = Vector2(0.1778454, 0.17784543)
+texture = ExtResource("2_estyg")
+
+[node name="texto" type="Control" parent="." unique_id=1480006707]
+layout_mode = 3
+anchors_preset = 0
+offset_left = -22.0
+offset_top = -9.0
+offset_right = 18.0
+offset_bottom = 31.0
+
+[node name="NinePatchRect" type="NinePatchRect" parent="texto" unique_id=1460054337]
+layout_mode = 0
+offset_left = -1.0
+offset_top = -77.0
+offset_right = 199.0
+offset_bottom = -32.0
+texture = ExtResource("3_iah6x")
+region_rect = Rect2(208, 128, 48, 48)
+patch_margin_left = 4
+patch_margin_top = 3
+patch_margin_right = 3
+patch_margin_bottom = 3
+
+[node name="texto_indio" type="Label" parent="texto" unique_id=1081811720]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = -1
+anchor_top = -1.9000001
+anchor_right = 4.9500003
+anchor_bottom = -0.864
+offset_left = -2.0
+offset_right = -1.5258789e-05
+offset_bottom = 1.5600014
+text = "Soy el indio vendedor, que queres comprar luzbelito?"
+label_settings = ExtResource("4_ql7yh")
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="player_detection" type="Area2D" parent="." unique_id=2061714826]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="player_detection" unique_id=709836827]
+shape = SubResource("CircleShape2D_iah6x")
+
+[connection signal="body_entered" from="player_detection" to="." method="_on_player_detection_body_entered"]
+[connection signal="body_exited" from="player_detection" to="." method="_on_player_detection_body_exited"]

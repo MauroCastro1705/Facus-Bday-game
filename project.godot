@@ -118,6 +118,9 @@ room_transition=""
 enemies=""
 paredes=""
 payaso=""
+skill=""
+player=""
+indio=""
 
 [input]
 

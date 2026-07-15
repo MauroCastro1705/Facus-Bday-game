@@ -6,7 +6,7 @@ signal stats_updated
 var playerNAME = "jugador"
 var playerPosition = Vector2(0, 0)
 var isLevelUpCompleted = true
-var player_coins:int = 10
+var player_coins:int = 100
 ####### player vars ######
 var playerAtkDmg = 1.0
 var playerHealth = 100.0

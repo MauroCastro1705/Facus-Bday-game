@@ -95,7 +95,7 @@ bullet_speed = 500
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1547333466]
 
-[node name="hurtBox" type="Area2D" parent="." unique_id=239150617 groups=["player"]]
+[node name="hurtBox" type="Area2D" parent="." unique_id=239150617]
 unique_name_in_owner = true
 position = Vector2(2, 7)
 collision_layer = 128
