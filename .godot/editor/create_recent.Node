@@ -1,7 +1,7 @@
+ColorRect
 GPUParticles2D
 Node2D
 Timer
-ColorRect
 CollisionShape2D
 Area2D
 RoomBase
@@ -12,4 +12,3 @@ Polygon2D
 VBoxContainer
 TileMapLayer
 StaticBody2D
-Label
