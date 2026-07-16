@@ -15,7 +15,7 @@ var original_scale: float = 1.0
 var shoot_scale: float = 1.3
 var scale_timer: float = 0.0
 
-@onready var DAMAGE_RATE = Global.mobDmgRate
+@onready var DAMAGE_RATE = 10
 @onready var overlapping_mobs = $hurtBox.get_overlapping_bodies()
 @onready var movSpeed = Global.playerMovSpeed
 @onready var crosshair: AnimatedSprite2D = $crosshair
