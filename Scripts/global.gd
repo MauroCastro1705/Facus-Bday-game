@@ -8,34 +8,15 @@ var playerPosition = Vector2(0, 0)
 var isLevelUpCompleted = true
 var player_coins:int = 100
 ####### player vars ######
-var playerAtkDmg = 1.0
+var playerAtkDmg:float = 10.0
+var playerAmmo:int = 12
+
 var playerHealth = 100.0
 var playerMaxHealth = 100.0
 
-var playerCritChance : float = 0.25
-var playerCritMulti : float = 2.0
-var playerHPREGEN = 0.0
+
 var playerMovSpeed : int = 300
 var playerAtkSpeed : float = 0.8
-
-### mob vars ###
-var mobVelocity = 150
-var mobHealth = 3.0
-var mobExpValue = 12
-var mobDmgRate = 30.0
-#big mob vars
-var mobBIGVelocity = 190
-var mobBIGHealth = 12.0
-var mobBIGDmgRate = 70.0
-var mobBIGExpValue = 120
-
-#### big boss mob vars ####
-var bigBossVelocity = 100
-var bigBossHealth = 1500
-var bigBossDmgRate = 100.0
-var bigBossExpValue = 500
-var bigBossMaxHealth = 1500
-var bigBossAtkDmg = 10.0
 
 
 var playerScore = 0
@@ -73,29 +54,6 @@ func RESET_COINS():
 	SpeedCoinsOnScreen = 0
 	AtkSpeedCoinsOnScreen = 0
 
-#valores que aumentan los coins ######
-var HealthCoinValue = 25
-var SpeedCoinValue = 40
-var AtkSpeedCoinValue = 0.02
-#### Coin funcs ######
-func HEALTH_COIN():
-	playerHealth = min(playerHealth + HealthCoinValue, playerMaxHealth)
-	if HealthCoinsOnScreen > 0:
-		HealthCoinsOnScreen -= 1
-	print("mas vida")
-
-func ATK_SPD_COIN():
-	playerAtkSpeed -= AtkSpeedCoinValue
-	if AtkSpeedCoinsOnScreen > 0:
-		AtkSpeedCoinsOnScreen -= 1
-	print("mas atk speed")
-
-func SPEED_COIN():
-	playerMovSpeed += SpeedCoinValue
-	if SpeedCoinsOnScreen > 0:
-		SpeedCoinsOnScreen -= 1
-	print("mas velocidad")
-
 
 
 
@@ -115,17 +73,9 @@ func LVL_UP():
 	print("subio a nivel = " , playerLEVEL)
 	print("VIDA SUBIO a" , playerMaxHealth)
 	get_tree().paused = true
-	LVL_UP_SCREEN()
 	isLevelUpCompleted = false
 	
-func LVL_UP_SCREEN():
-	print("mostrar pantalla de nivel")
-	#var lvlUpScreen = preload("res://level_up_screen.tscn").instantiate()
-	#get_tree().get_root().add_child(lvlUpScreen)
-	#lvlUpScreen.visible = true
-	#lvlUpScreen.global_position = playerPosition
-	
-	
+
 	#SAVE DATA TOP PLAYERS######
 const SAVE_FILE = "user://highscores.json"
 func save_high_score(player_name, score, level):
@@ -148,24 +98,3 @@ func load_high_scores():
 		if data is Array:
 			return data
 	return []  # Si no hay archivo, devuelve una lista vacía
-
-
-func MOB_DAMAGE():
-	if playerLEVEL > 5:
-		mobDmgRate = 30.0 + (playerLEVEL * 2)
-		mobBIGDmgRate = 70.0 + (playerLEVEL * 3)
-	else:
-		mobDmgRate = 30.0
-		mobBIGDmgRate = 70.0
-		if playerLEVEL > 10:
-			mobDmgRate = 30.0 + (playerLEVEL * 3)
-			mobBIGDmgRate = 70.0 + (playerLEVEL * 3)
-		else:
-			mobDmgRate = 30.0
-			mobBIGDmgRate = 70.0
-
-#### GAME FUNCS ####
-func GAME_TIMER():
-	gameTimer += 1
-	if gameTimer >= 16:
-		gameTimer = 0

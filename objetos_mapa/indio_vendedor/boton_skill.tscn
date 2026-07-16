@@ -87,12 +87,13 @@ patch_margin_bottom = 5
 [node name="texto_skill" type="Label" parent="texto_hover" unique_id=143443083]
 unique_name_in_owner = true
 layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
+anchors_preset = -1
+anchor_left = 0.056
+anchor_right = 0.94900006
 anchor_bottom = 1.0
-offset_left = 10.0
+offset_left = 0.031999588
 offset_top = 5.0
-offset_right = -9.0
+offset_right = 0.07798767
 offset_bottom = -4.9799805
 grow_horizontal = 2
 grow_vertical = 2
@@ -100,6 +101,7 @@ text = "la skill hace esto"
 label_settings = SubResource("LabelSettings_0u21u")
 horizontal_alignment = 1
 vertical_alignment = 1
+autowrap_mode = 3
 
 [node name="skill_info" type="NinePatchRect" parent="." unique_id=1331825269]
 z_index = 10

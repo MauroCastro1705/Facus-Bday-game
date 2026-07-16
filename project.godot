@@ -109,7 +109,8 @@ enabled=PackedStringArray("res://addons/script-ide/plugin.cfg")
 folder_colors={
 "res://Scripts/": "blue",
 "res://characters/": "orange",
-"res://escenas/": "red"
+"res://escenas/": "red",
+"res://objetos_mapa/": "yellow"
 }
 
 [global_group]

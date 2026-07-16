@@ -1,4 +1,9 @@
+GPUParticles2D
+Node2D
+Timer
 ColorRect
+CollisionShape2D
+Area2D
 RoomBase
 AnimationPlayer
 PointLight2D
@@ -6,9 +11,5 @@ Node
 Polygon2D
 VBoxContainer
 TileMapLayer
-CollisionShape2D
-Area2D
 StaticBody2D
 Label
-HBoxContainer
-NinePatchRect

@@ -146,6 +146,7 @@ wait_time = 5.0
 wait_time = 0.2
 
 [node name="LightOccluder2D" type="LightOccluder2D" parent="." unique_id=1357216223]
+visible = false
 position = Vector2(-459, -365)
 occluder = SubResource("OccluderPolygon2D_idpv6")
 

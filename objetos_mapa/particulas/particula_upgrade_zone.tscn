@@ -1,0 +1,54 @@
+[gd_scene format=3 uid="uid://dwbhrkjxk6evy"]
+
+[ext_resource type="Script" uid="uid://sa2in7l4olp8" path="res://objetos_mapa/particulas/particula_upgrade_zone.gd" id="1_ocm0j"]
+[ext_resource type="Texture2D" uid="uid://cwadlwcj3600i" path="res://assets/particulas_panda.png" id="1_tlxx6"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pgvis"]
+atlas = ExtResource("1_tlxx6")
+region = Rect2(4, 4, 5, 5)
+
+[sub_resource type="Gradient" id="Gradient_3x7uk"]
+offsets = PackedFloat32Array(0, 0.26923078, 0.7019231, 1)
+colors = PackedColorArray(1, 1, 1, 0.019607844, 0.1554375, 0.64194226, 0.5098945, 1, 0.12924564, 0.82111454, 0.7284735, 1, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_ocm0j"]
+gradient = SubResource("Gradient_3x7uk")
+
+[sub_resource type="Curve" id="Curve_tlxx6"]
+_data = [Vector2(0.05434782, 1), 0.0, 0.0, 0, 0, Vector2(0.9673913, 0.53223395), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_pgvis"]
+curve = SubResource("Curve_tlxx6")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_tlxx6"]
+particle_flag_disable_z = true
+emission_shape = 3
+emission_box_extents = Vector3(800, 800, 1)
+direction = Vector3(0.3, 0.8, 0)
+spread = 150.0
+initial_velocity_min = 10.0
+initial_velocity_max = 30.0
+angular_velocity_min = -0.5000161
+angular_velocity_max = 0.4999839
+gravity = Vector3(0, -20, 0)
+linear_accel_min = -5.000002
+linear_accel_max = 4.9999976
+radial_accel_min = -2.0000021
+radial_accel_max = 1.9999977
+damping_min = 0.3
+damping_max = 0.8
+scale_min = 0.7
+scale_max = 0.9
+color = Color(0.8602781, 0.98857313, 1.0954857, 0.8352941)
+color_ramp = SubResource("GradientTexture1D_ocm0j")
+emission_curve = SubResource("CurveTexture_pgvis")
+
+[node name="ParticulaUpgradeZone" type="GPUParticles2D" unique_id=1775543402]
+amount = 200
+texture = SubResource("AtlasTexture_pgvis")
+lifetime = 3.0
+speed_scale = 0.5
+randomness = 0.2
+process_material = SubResource("ParticleProcessMaterial_tlxx6")
+script = ExtResource("1_ocm0j")

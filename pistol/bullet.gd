@@ -1,6 +1,6 @@
 extends Area2D
 var travelled_distance = 0
-@export var bullet_dmg:float = 10
+var bullet_dmg:float
 @export var SPEED:int = 250
 
 
@@ -32,6 +32,7 @@ func _on_body_entered(body):
 		queue_free()
 	
 	if body.has_method("take_damage"):
+		bullet_dmg = Global.playerAtkDmg
 		_spawn_impact()
 		queue_free()
 		body.take_damage(bullet_dmg)

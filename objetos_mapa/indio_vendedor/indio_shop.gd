@@ -22,5 +22,21 @@ func _on_player_detection_body_exited(body: Node2D) -> void:
 		nine_patch_rect.hide()
 		texto_indio.text = "hola soy el indio"
 
+var texto_indice = 0
+
 func change_text() -> void:
-	texto_indio.text = "que tiras tiros gil, tomatela!"
+	if not texto_indio:
+		return
+	
+	texto_indice += 1
+	
+	match texto_indice:
+		1:
+			texto_indio.text = "que tiras tiros gil, tomatela!"
+		2:
+			texto_indio.text = "Tirale a esas estatuas, algo te va a ayudar"
+		3:
+			texto_indio.text = "sos feo"
+		_:
+			texto_indice = 0
+			texto_indio.text = "que tiras tiros gil, tomatela!"

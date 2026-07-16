@@ -118,3 +118,35 @@ func flash_sprite(sprite: CanvasItem) -> void:
 	tween.set_parallel(false)  # Que sea secuencial
 	tween.tween_property(sprite, "modulate:a", 0.0, 0.1)
 	tween.tween_property(sprite, "modulate:a", 1.0, 0.1)
+	
+func display_numbers_heal(value:float, position:Vector2):
+	var number = Label.new()
+	number.global_position = position
+	number.text = str(value)
+	number.z_index = 15
+	# Duplicamos el estilo y lo modificamos
+	var label_settings = damage_label.duplicate()
+	label_settings.font_color = Color("green")
+	var base_size = 25
+	var size_multiplier = clamp(value / 50.0, 0.8, 2.0)
+	label_settings.font_size = base_size * size_multiplier
+	number.label_settings = label_settings
+	
+	call_deferred("add_child", number)
+	await number.resized
+	
+	number.pivot_offset = Vector2(number.size / 2)
+	var tween  = get_tree().create_tween()
+	tween.set_parallel(true)
+	tween.tween_property(
+		number, "position:y", number.position.y - 24, 0.25
+		).set_ease(Tween.EASE_OUT)
+	tween.tween_property(
+		number, "position:y", number.position.y, 0.5 
+	).set_ease(Tween.EASE_IN).set_delay(0.25)
+	tween.tween_property(
+		number, "scale", Vector2.ZERO, 0.25
+	).set_ease(Tween.EASE_IN).set_delay(0.5)
+	
+	await tween.finished
+	number.queue_free()

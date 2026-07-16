@@ -34,8 +34,8 @@ var is_on_cooldown: bool = false
 var purchase_cooldown: float = 0.5
 
 # ===== SEÑALES =====
-signal purchase_attempted(success: bool, skill_id: String)
-signal purchase_completed(skill_id: String)
+signal purchase_attempted
+signal purchase_completed
 
 func _ready() -> void:
 	# Guardar precio original para reset
@@ -147,8 +147,8 @@ func _execute_purchase() -> void:
 	
 	# 4. Emitir señales
 	Global.emit_signal("stats_updated")
-	emit_signal("purchase_completed", skill_id)
-	emit_signal("purchase_attempted", true, skill_id)
+	emit_signal("purchase_completed")
+	emit_signal("purchase_attempted")
 	
 	# 5. Feedback visual
 	_show_success_feedback()

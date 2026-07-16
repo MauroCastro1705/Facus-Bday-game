@@ -127,6 +127,7 @@ func _physics_process(delta):
 	
 	# Inputs - Solo disparar si NO está recargando y PUEDE disparar
 	if Input.is_action_pressed("shoot") and not is_reloading and can_shoot:
+		max_ammo = Global.playerAmmo
 		try_shoot()
 	
 	if Input.is_action_just_pressed("dash") and not is_dashing:
@@ -277,6 +278,12 @@ func take_damage(damage: float):
 	if barra_vida:
 		barra_vida.take_damage(damage)
 
+func heal_player(amount: float) -> void:
+	if barra_vida:
+		barra_vida.heal(amount)
+		DamageNumbers.display_numbers_heal(amount, global_position)
+		print("facu se curó")
+
 func _on_health_depleted():
 	die()
 
@@ -284,7 +291,7 @@ func die():
 	if is_dead:
 		return
 	is_dead = true
-	print("Guerrero ha muerto!")
+	print("murio facundito")
 	game_manager._on_player_death()
 	#queue_free()
 
