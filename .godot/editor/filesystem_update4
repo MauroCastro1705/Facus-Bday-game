@@ -1,4 +1,3 @@
-res://objetos_mapa/heal_zone/heal_zone.tscn
 res://shaders/transition.gdshader
 res://assets/top_down_2.tres
 res://assets/paredes_autotile.tres
@@ -6,5 +5,12 @@ res://assets/luz_basica.tres
 res://shaders/hurt_damage.gdshader
 res://shaders/waves.gdshader
 res://shaders/3dwaves.gdshader
-res://objetos_mapa/Pilar con luz/pilar_con_luz.tscn
+res://objetos_mapa/heal_zone/altar__curacion.tscn
 res://escenas/rooms/room_2.tscn
+res://escenas/rooms/upgrade_room/upgrade_room_1.tscn
+res://UI/top_bar_ui.tscn
+res://UI/top_bar_ui.gd
+res://escenas/Main/main_scene.tscn
+res://escenas/rooms/upgrade_room/upgrade_room_1.gd
+res://Scripts/global.gd
+res://Scripts/upgrademanager.gd

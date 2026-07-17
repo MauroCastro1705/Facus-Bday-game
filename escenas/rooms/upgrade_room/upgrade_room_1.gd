@@ -3,7 +3,6 @@ extends Node2D
 @onready var boton_skill_2: SkillPurchaseStation = $boton_skill2
 
 
-
 func _ready():
 	boton_skill.purchase_completed.connect(_skill_1_comprada)
 	boton_skill_2.purchase_completed.connect(_skill_2_comprada)
@@ -11,7 +10,8 @@ func _ready():
 
 
 func _skill_1_comprada():#cotocola
-	pass
+	UpgradeManager.unlock_upgrade("Cotocola")
 	
 func _skill_2_comprada():#buenas bolas
-	Global.playerAtkDmg += 5
+	UpgradeManager.unlock_upgrade("buenas_bolas")
+	Global.playerAtkDmg += 10

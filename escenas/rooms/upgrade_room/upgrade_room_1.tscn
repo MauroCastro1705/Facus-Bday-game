@@ -17,15 +17,15 @@
 [ext_resource type="PackedScene" uid="uid://dw504a86ptlwv" path="res://objetos_mapa/heal_zone/heal_zone.tscn" id="15_sb7yo"]
 [ext_resource type="PackedScene" uid="uid://dwbhrkjxk6evy" path="res://objetos_mapa/particulas/particula_upgrade_zone.tscn" id="16_eoo0h"]
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lc0w8"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_eoo0h"]
 texture = ExtResource("2_1aenx")
 texture_region_size = Vector2i(32, 32)
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_df5eh"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_awoxn"]
 texture = ExtResource("3_icnu7")
 texture_region_size = Vector2i(32, 32)
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_3gltl"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_q7hnq"]
 texture = ExtResource("4_jaqdj")
 texture_region_size = Vector2i(32, 32)
 1:1/0 = 0
@@ -59,7 +59,7 @@ texture_region_size = Vector2i(32, 32)
 1:13/0 = 0
 2:13/0 = 0
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_owvox"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_n0hgo"]
 texture = ExtResource("5_y2uhf")
 texture_region_size = Vector2i(32, 32)
 0:0/0 = 0
@@ -287,11 +287,11 @@ texture_region_size = Vector2i(32, 32)
 6:6/0/terrain_set = 0
 6:6/0/terrain = 0
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_wjg5q"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_n3sdy"]
 texture = ExtResource("6_k2t8d")
 texture_region_size = Vector2i(32, 32)
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_f1kib"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_n42el"]
 texture = ExtResource("7_pmbhc")
 texture_region_size = Vector2i(32, 32)
 1:6/0 = 0
@@ -438,7 +438,7 @@ texture_region_size = Vector2i(32, 32)
 2:2/0 = 0
 2:2/0/terrain_set = 0
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_8y28w"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_sa6hy"]
 texture = ExtResource("8_sb7yo")
 texture_region_size = Vector2i(32, 32)
 1:0/0 = 0
@@ -474,7 +474,7 @@ texture_region_size = Vector2i(32, 32)
 1:6/0 = 0
 3:6/0 = 0
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_j2wme"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ymiwv"]
 texture = ExtResource("9_eoo0h")
 texture_region_size = Vector2i(32, 32)
 11:8/0 = 0
@@ -543,14 +543,14 @@ terrain_set_0/terrain_0/name = "pasto"
 terrain_set_0/terrain_0/color = Color(0.6771827, 0.17907318, 0.14931357, 1)
 terrain_set_0/terrain_1/name = "paredes"
 terrain_set_0/terrain_1/color = Color(0.5, 0.4375, 0.25, 1)
-sources/8 = SubResource("TileSetAtlasSource_8y28w")
-sources/9 = SubResource("TileSetAtlasSource_j2wme")
-sources/10 = SubResource("TileSetAtlasSource_lc0w8")
-sources/11 = SubResource("TileSetAtlasSource_df5eh")
-sources/12 = SubResource("TileSetAtlasSource_3gltl")
-sources/13 = SubResource("TileSetAtlasSource_owvox")
-sources/14 = SubResource("TileSetAtlasSource_wjg5q")
-sources/15 = SubResource("TileSetAtlasSource_f1kib")
+sources/8 = SubResource("TileSetAtlasSource_sa6hy")
+sources/9 = SubResource("TileSetAtlasSource_ymiwv")
+sources/10 = SubResource("TileSetAtlasSource_eoo0h")
+sources/11 = SubResource("TileSetAtlasSource_awoxn")
+sources/12 = SubResource("TileSetAtlasSource_q7hnq")
+sources/13 = SubResource("TileSetAtlasSource_n0hgo")
+sources/14 = SubResource("TileSetAtlasSource_n3sdy")
+sources/15 = SubResource("TileSetAtlasSource_n42el")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_y2uhf"]
 size = Vector2(62, 64)
@@ -605,7 +605,7 @@ skill_description = "Tus balas hacen mas daño"
 position = Vector2(432, 803)
 
 [node name="PointLight2D33" parent="luces" index="1" unique_id=548495705 instance=ExtResource("14_pmbhc")]
-position = Vector2(432, 803)
+position = Vector2(464, 803)
 
 [node name="PointLight2D21" parent="luces" index="2" unique_id=2125979677 instance=ExtResource("14_pmbhc")]
 position = Vector2(284, 616)
@@ -665,5 +665,5 @@ position = Vector2(219, 570)
 
 [node name="ParticulaUpgradeZone" parent="." index="14" unique_id=1775543402 instance=ExtResource("16_eoo0h")]
 z_index = 2
-position = Vector2(690, 429)
+position = Vector2(647, 400)
 wind_frequency = 2.0

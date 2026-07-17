@@ -1,14 +1,23 @@
 [gd_scene format=3 uid="uid://dh2f3xslpsv78"]
 
 [ext_resource type="Script" uid="uid://p58gjvihnk75" path="res://UI/top_bar_ui.gd" id="1_qri1s"]
+[ext_resource type="Texture2D" uid="uid://byidm3y6cpmr5" path="res://assets/UI Assets pack_v.1_st/UI.png" id="2_jrh4m"]
 [ext_resource type="Texture2D" uid="uid://ddsodl8elkxjg" path="res://assets/Free-Skill-32x32-Icons-for-Cyberpunk-Game/1 Icons/blanco/Skillicon7_19.png" id="2_qri1s"]
 [ext_resource type="FontFile" uid="uid://cndjgmrns5spc" path="res://fonts/coin_font.ttf" id="3_ok2sn"]
+[ext_resource type="FontFile" uid="uid://cp8lssch42uu5" path="res://fonts/pixel_font.ttf" id="4_ok2sn"]
+[ext_resource type="PackedScene" uid="uid://ctjltlqtk1ga4" path="res://UI/coin_ui/coin_ui.tscn" id="6_civ5y"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_jrh4m"]
 font = ExtResource("3_ok2sn")
 font_size = 23
 outline_size = 6
 outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_civ5y"]
+font = ExtResource("4_ok2sn")
+font_size = 13
+outline_size = 3
+outline_color = Color(0.103483744, 0.07734782, 0.0780145, 1)
 
 [node name="top_bar_ui" type="Control" unique_id=353916242]
 layout_mode = 3
@@ -25,22 +34,17 @@ anchors_preset = -1
 anchor_right = 1.014
 anchor_bottom = 0.694
 offset_right = -0.2220459
-offset_bottom = 0.04799652
-theme_override_constants/margin_left = 10
-theme_override_constants/margin_top = 10
-theme_override_constants/margin_right = 10
-theme_override_constants/margin_bottom = 10
+offset_bottom = 8.0479965
 
 [node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer" unique_id=1155275122]
 layout_mode = 2
-alignment = 1
 
 [node name="TextureRect" type="TextureRect" parent="MarginContainer/HBoxContainer" unique_id=1289374794]
 texture_filter = 1
-custom_minimum_size = Vector2(10, 10)
+custom_minimum_size = Vector2(40, 40)
 layout_mode = 2
 texture = ExtResource("2_qri1s")
-expand_mode = 3
+expand_mode = 4
 stretch_mode = 5
 
 [node name="enemies_remaining" type="Label" parent="MarginContainer/HBoxContainer" unique_id=208838343]
@@ -48,4 +52,82 @@ layout_mode = 2
 text = "Enemies left:"
 label_settings = SubResource("LabelSettings_jrh4m")
 
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/HBoxContainer" unique_id=1178011272]
+custom_minimum_size = Vector2(90, 0)
+layout_mode = 2
+
+[node name="MarginContainer2" type="MarginContainer" parent="MarginContainer/HBoxContainer" unique_id=981373815]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 5
+
+[node name="NinePatchRect" type="NinePatchRect" parent="MarginContainer/HBoxContainer/MarginContainer2" unique_id=1717986120]
+texture_filter = 1
+layout_mode = 2
+texture = ExtResource("2_jrh4m")
+region_rect = Rect2(417, 17, 46, 46)
+patch_margin_left = 6
+patch_margin_top = 6
+patch_margin_right = 7
+patch_margin_bottom = 6
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/HBoxContainer/MarginContainer2" unique_id=1933167154]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/HBoxContainer/MarginContainer2/HBoxContainer" unique_id=119583725]
+custom_minimum_size = Vector2(30, 30)
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_right = 6
+
+[node name="Label" type="Label" parent="MarginContainer/HBoxContainer/MarginContainer2/HBoxContainer/MarginContainer" unique_id=47481078]
+layout_mode = 2
+text = "Mejoras"
+label_settings = SubResource("LabelSettings_civ5y")
+
+[node name="MarginContainer2" type="MarginContainer" parent="MarginContainer/HBoxContainer/MarginContainer2/HBoxContainer" unique_id=853176891]
+custom_minimum_size = Vector2(50, 0)
+layout_mode = 2
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 8
+
+[node name="mejoras" type="VBoxContainer" parent="MarginContainer/HBoxContainer/MarginContainer2/HBoxContainer/MarginContainer2" unique_id=1782953185]
+layout_mode = 2
+theme_override_constants/separation = 6
+alignment = 1
+
+[node name="upgrade_1" type="Label" parent="MarginContainer/HBoxContainer/MarginContainer2/HBoxContainer/MarginContainer2/mejoras" unique_id=1714080647]
+unique_name_in_owner = true
+layout_mode = 2
+text = "caconaaaaaaaaaaaaaaa"
+label_settings = SubResource("LabelSettings_civ5y")
+
+[node name="upgrade_2" type="Label" parent="MarginContainer/HBoxContainer/MarginContainer2/HBoxContainer/MarginContainer2/mejoras" unique_id=124659442]
+unique_name_in_owner = true
+layout_mode = 2
+text = "cacona 2"
+label_settings = SubResource("LabelSettings_civ5y")
+
+[node name="upgrade_3" type="Label" parent="MarginContainer/HBoxContainer/MarginContainer2/HBoxContainer/MarginContainer2/mejoras" unique_id=994219213]
+unique_name_in_owner = true
+layout_mode = 2
+text = "cacona 3"
+label_settings = SubResource("LabelSettings_civ5y")
+
 [node name="Timer" type="Timer" parent="." unique_id=1941583137]
+
+[node name="CoinUi" parent="." unique_id=2125611169 instance=ExtResource("6_civ5y")]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.87200004
+anchor_top = 0.120000005
+anchor_right = 1.01
+anchor_bottom = 0.574
+offset_left = -0.25604248
+offset_top = 0.03999901
+offset_right = 0.27001953
+offset_bottom = 0.00799942

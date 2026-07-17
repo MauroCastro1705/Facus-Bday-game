@@ -178,8 +178,8 @@ func add_coin() -> void:
 	for i in coin_amount:
 		var coin_instance = coin.instantiate()
 		var offset = Vector2(
-			randf_range(-50, 50),
-			randf_range(-50, 50)
+			randf_range(-25, 25),
+			randf_range(-25, 25)
 		)
 		coin_instance.global_position = global_position + offset
 		get_parent().add_child(coin_instance)

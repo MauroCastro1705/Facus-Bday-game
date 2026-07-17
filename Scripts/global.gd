@@ -3,6 +3,7 @@ extends Node
 @warning_ignore("unused_signal")
 signal stats_updated
 
+
 var playerNAME = "jugador"
 var playerPosition = Vector2(0, 0)
 var isLevelUpCompleted = true
