@@ -21,6 +21,7 @@ weapon_name = "Ak-47"
 
 [node name="Player" parent="." unique_id=1183339018 node_paths=PackedStringArray("ui_bottom", "game_manager") instance=ExtResource("3_tcvou")]
 unique_name_in_owner = true
+z_index = 3
 position = Vector2(456, 358)
 ui_bottom = NodePath("../CanvasLayer/BotomBar")
 game_manager = NodePath("../gameManager")

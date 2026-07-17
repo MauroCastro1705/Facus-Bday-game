@@ -8,11 +8,7 @@ var bullet_dmg:float
 
 const IMPACT_PARTICLES  = preload("res://pistol/impact/impactParticle.tscn")
 
-func _ready() -> void:
-	bullet.scale = Global.bullet_global_size
-
 func _physics_process(delta):
-	bullet.scale = Global.bullet_global_size
 	var RANGE = Global.bulletRange
 	var direction = Vector2.RIGHT.rotated(rotation)
 	position += direction * SPEED * delta
@@ -22,14 +18,9 @@ func _physics_process(delta):
 
 func _on_body_entered(body):
 	if body.is_in_group("indio"):
-		body.change_text()
-		_spawn_impact()
 		queue_free()
 	
 	if body.is_in_group("skill") and body.has_method("try_purchase"):
-		print("bala intento comprar")
-		body.try_purchase()
-		_spawn_impact()
 		queue_free()
 	
 	if body.is_in_group("paredes"):
@@ -37,7 +28,7 @@ func _on_body_entered(body):
 		queue_free()
 	
 	if body.has_method("take_damage"):
-		bullet_dmg = Global.playerAtkDmg
+		bullet_dmg = Global.mob_basico_dmg
 		_spawn_impact()
 		queue_free()
 		body.take_damage(bullet_dmg)

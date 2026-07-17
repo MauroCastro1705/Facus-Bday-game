@@ -10,7 +10,8 @@ func _ready():
 
 
 func _skill_1_comprada():#cotocola
-	UpgradeManager.unlock_upgrade("Cotocola")
+	UpgradeManager.unlock_upgrade("cotocola")
+	Global.bullet_global_size = Vector2(2,2)
 	
 func _skill_2_comprada():#buenas bolas
 	UpgradeManager.unlock_upgrade("buenas_bolas")

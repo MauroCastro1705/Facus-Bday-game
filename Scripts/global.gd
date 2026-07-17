@@ -7,10 +7,12 @@ signal stats_updated
 var playerNAME = "jugador"
 var playerPosition = Vector2(0, 0)
 var isLevelUpCompleted = true
-var player_coins:int = 100
+var player_coins:int = 1000
 ####### player vars ######
 var playerAtkDmg:float = 10.0
 var playerAmmo:int = 12
+var bullet_global_size:Vector2 = Vector2(0.5,0.5)
+
 
 var playerHealth = 100.0
 var playerMaxHealth = 100.0
@@ -23,19 +25,15 @@ var playerAtkSpeed : float = 0.8
 var playerScore = 0
 var scoreMulti = 1.0
 
-#player LEVEL vars
-var playerLEVEL = 1
-var playerExp = 0
-var expToLvlUp = 100
 
 #### BULLETS ###
 var bulletRange = 1200
-var bulletCant = 3
 var bulletSpeed = 800
-var bulletSpread = 15
-var bulletBurstCount = 3
-var bulletBurstDelay = 0.4		
 
+
+### enemigos daño balas
+var mob_basico_dmg:float = 11
+var mob_torreta_dmg:float = 8
 
 #### GAME VARS ###
 var gameTimer = 0
@@ -54,27 +52,6 @@ func RESET_COINS():
 	HealthCoinsOnScreen = 0
 	SpeedCoinsOnScreen = 0
 	AtkSpeedCoinsOnScreen = 0
-
-
-
-
-func ADD_EXP(amount):
-	playerExp += amount
-	print("experiencia = " , playerExp)
-	if playerExp >= expToLvlUp:
-		LVL_UP()
-		
-
-func LVL_UP():
-	playerExp -= expToLvlUp
-	playerLEVEL += 1
-	expToLvlUp = round(expToLvlUp * 1.2)  # Incremento del 20% en cada nivel
-	playerMaxHealth += 10 + (playerLEVEL * 2)
-	playerHealth = playerMaxHealth
-	print("subio a nivel = " , playerLEVEL)
-	print("VIDA SUBIO a" , playerMaxHealth)
-	get_tree().paused = true
-	isLevelUpCompleted = false
 	
 
 	#SAVE DATA TOP PLAYERS######

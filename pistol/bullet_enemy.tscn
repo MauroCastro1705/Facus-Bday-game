@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://d2bikdxmosinu"]
 
-[ext_resource type="Script" uid="uid://d38h4taacqoyv" path="res://pistol/bullet.gd" id="1_5jmvy"]
-[ext_resource type="Texture2D" uid="uid://dm1da85xdindr" path="res://assets/FREE Textures Of Light Alpha/FREE Textures Of Light Alpha/FREE Textures Of Light Alpha/512x512/512x512 textures (75).png" id="2_rujii"]
+[ext_resource type="Script" uid="uid://cy387tou51olb" path="res://pistol/bullet_enemy.gd" id="1_5jmvy"]
+[ext_resource type="Texture2D" uid="uid://dm1da85xdindr" path="res://assets/Textures Of Light Alpha/512x512 textures (75).png" id="2_rujii"]
 [ext_resource type="Texture2D" uid="uid://c00jevoq0rau" path="res://assets/16x16 Pixel Shade Bullet Free/16x16 Pixel Shade Bullet Free.png" id="3_epeiw"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_5tgod"]

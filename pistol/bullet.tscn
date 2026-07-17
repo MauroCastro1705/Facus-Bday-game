@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://d38h4taacqoyv" path="res://pistol/bullet.gd" id="1_mjeop"]
 [ext_resource type="Texture2D" uid="uid://c00jevoq0rau" path="res://assets/16x16 Pixel Shade Bullet Free/16x16 Pixel Shade Bullet Free.png" id="3_rmedr"]
-[ext_resource type="Texture2D" uid="uid://dm1da85xdindr" path="res://assets/FREE Textures Of Light Alpha/FREE Textures Of Light Alpha/FREE Textures Of Light Alpha/512x512/512x512 textures (75).png" id="3_ucxth"]
+[ext_resource type="Texture2D" uid="uid://dm1da85xdindr" path="res://assets/Textures Of Light Alpha/512x512 textures (75).png" id="3_ucxth"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_5tgod"]
 radius = 11.657792

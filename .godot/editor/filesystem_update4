@@ -14,3 +14,9 @@ res://escenas/Main/main_scene.tscn
 res://escenas/rooms/upgrade_room/upgrade_room_1.gd
 res://Scripts/global.gd
 res://Scripts/upgrademanager.gd
+res://pistol/bullet.tscn
+res://pistol/bullet.gd
+res://pistol/bullet_enemy.tscn
+res://pistol/bullet_enemy.gd
+res://pistol/bullet_enemy_turret.gd
+res://pistol/bullet_enemy_turret.tscn
