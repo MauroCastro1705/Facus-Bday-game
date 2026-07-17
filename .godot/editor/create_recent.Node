@@ -1,3 +1,4 @@
+DirectionalLight2D
 HBoxContainer
 MarginContainer
 NinePatchRect
@@ -12,4 +13,3 @@ Timer
 CollisionShape2D
 Area2D
 RoomBase
-PointLight2D

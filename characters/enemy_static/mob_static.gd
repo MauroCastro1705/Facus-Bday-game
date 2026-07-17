@@ -10,7 +10,8 @@ signal died
 @export var fire_rate: float = 1.5  ## Tiempo entre disparos en segundos
 @export var detection_range: float = 600.0  ## Rango de detección del jugador
 @export var rotation_speed: float = 5.0  # Velocidad de rotación hacia el jugador
-
+# ✅ Variable para guardar la posición de muerte
+var death_position: Vector2 = Vector2.ZERO
 # Tipos de disparo
 enum ShootType {
 	NORMAL,      ## Un solo disparo directo
@@ -191,20 +192,34 @@ func _on_health_depleted():
 		return
 	
 	is_dead = true
-	print("Enemigo estático ha muerto!, señal emitida")
+	
+	# ✅ GUARDAR POSICIÓN Y REFERENCIA AL MUNDO
+	death_position = global_position
+	var world = get_tree().current_scene
+	
+	# Emitir señal
 	died.emit()
-	call_deferred("add_coin") 
+	
+	# ✅ Call deferred con la posición y referencia al mundo
+	call_deferred("spawn_coins_safe", world)
+	
 	queue_free()
 
-func add_coin() -> void:
+func spawn_coins_safe(world: Node) -> void:
+	"""Spawnear monedas de forma segura con referencia al mundo"""
+	if world == null:
+		world = get_tree().current_scene
+		if world == null:
+			return
+	
 	for i in coin_amount:
 		var coin_instance = coin.instantiate()
 		var offset = Vector2(
-			randf_range(-50, 50),
-			randf_range(-50, 50)
+			randf_range(-25, 25),
+			randf_range(-25, 25)
 		)
-		coin_instance.global_position = global_position + offset
-		get_parent().add_child(coin_instance)
+		coin_instance.global_position = death_position + offset
+		world.add_child(coin_instance)
 
 func _enter_tree() -> void:
 	# Añadir el enemigo al grupo "enemies" para referencia

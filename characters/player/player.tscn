@@ -108,7 +108,7 @@ position = Vector2(1, 1)
 bullet_speed = 500
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1547333466]
-zoom = Vector2(1.5, 1.5)
+zoom = Vector2(1.25, 1.25)
 
 [node name="hurtBox" type="Area2D" parent="." unique_id=239150617]
 unique_name_in_owner = true
@@ -160,10 +160,10 @@ label_settings = ExtResource("9_rpf03")
 
 [node name="hurt_shader" type="ColorRect" parent="." unique_id=622068649]
 material = ExtResource("10_x5dtk")
-offset_left = -300.0
-offset_top = -233.0
-offset_right = 300.0
-offset_bottom = 234.0
+offset_left = -359.0
+offset_top = -280.0
+offset_right = 361.0
+offset_bottom = 280.0
 
 [connection signal="timeout" from="dash_timer" to="." method="_on_dash_1_timer_timeout"]
 [connection signal="timeout" from="dash_timer_2" to="." method="_on_dash_timer_2_timeout"]

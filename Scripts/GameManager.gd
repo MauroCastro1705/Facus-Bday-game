@@ -7,8 +7,8 @@ signal room_changed(new_room: Node2D, room_index: int)
 signal room_cleared(room_index: int)
 @warning_ignore("unused_signal")
 signal all_rooms_cleared()
-signal player_is_in_room #la hice yo
-signal enemy_died #la hice yo
+signal player_is_in_room
+signal enemy_died
 
 @export var initial_room_index: int = 0
 @export var rooms_parent: Node2D
@@ -22,6 +22,10 @@ var room_data: Dictionary = {}
 
 # Flag para controlar transiciones
 var transitioning: bool = false
+var pending_room_index: int = -1  # Para guardar la habitación pendiente durante la transición
+
+# Referencia al TransitionManager (Autoload)
+@onready var transition_manager: TransitionManager = get_node("/root/TransitionManager")
 
 func _ready():
 	if rooms_parent == null:
@@ -31,11 +35,11 @@ func _ready():
 		player = get_tree().get_first_node_in_group("player")
 	
 	if room_scenes.size() > 0:
-		# Usar call_deferred para cargar la primera habitación de forma segura
-		call_deferred("load_room", initial_room_index)
+		# Cargar la primera habitación usando el sistema de transiciones
+		_switch_to_room(initial_room_index)
 
-func load_room(room_index: int):
-	#Carga una habitación específica por su índice - USAR CON call_deferred
+func _switch_to_room(room_index: int):
+	"""Cambia a una habitación usando el TransitionManager"""
 	if transitioning:
 		push_warning("Ya hay una transición en curso")
 		return
@@ -45,8 +49,33 @@ func load_room(room_index: int):
 		return
 	
 	transitioning = true
+	pending_room_index = room_index
 	
-	# Limpiar habitación actual (usando call_deferred)
+	# Usar el TransitionManager para la transición
+	if transition_manager:
+		# Conectar la señal scene_changed para saber cuándo termina la transición
+		if not transition_manager.scene_changed.is_connected(_on_transition_complete):
+			transition_manager.scene_changed.connect(_on_transition_complete)
+		
+		# Iniciar la transición (esto activa el efecto visual)
+		transition_manager.change_scene("")  # Pasamos string vacío porque no cambiamos de escena
+		
+		# Esperar a que la transición de entrada termine
+		await get_tree().create_timer(0.5).timeout  # La duración de la transición
+		
+		# Realizar el cambio de habitación
+		_perform_room_change(room_index)
+		
+		# Completar la transición (efecto de salida)
+		transition_manager._scene_changed_callback()
+	else:
+		# Fallback sin transición
+		_perform_room_change(room_index)
+		transitioning = false
+
+func _perform_room_change(room_index: int):
+	"""Realiza el cambio físico de la habitación"""
+	# Limpiar habitación actual
 	if current_room_instance:
 		disconnect_room_signals(current_room_instance)
 		current_room_instance.queue_free()
@@ -75,7 +104,12 @@ func load_room(room_index: int):
 	room_changed.emit(current_room_instance, room_index)
 	print("Habitación ", room_index, " cargada")
 
-
+func _on_transition_complete():
+	"""Callback cuando la transición visual termina"""
+	# Si hay una habitación pendiente, cargarla
+	if pending_room_index >= 0:
+		_perform_room_change(pending_room_index)
+		pending_room_index = -1
 
 func setup_room(room: Node2D, room_index: int):
 	"""Configura la habitación después de instanciarla"""
@@ -148,7 +182,7 @@ func disconnect_room_signals(room: Node2D):
 # ============= SEÑALES CON CALL_DEFERRED =============
 
 func _on_transition_area_entered(body: Node2D, room_index: int):
-	#Cuando el jugador entra al área de transición
+	"""Cuando el jugador entra al área de transición"""
 	if body != player or transitioning:
 		return
 	
@@ -160,17 +194,17 @@ func _on_transition_area_entered(body: Node2D, room_index: int):
 			current_room_instance.show_blocked_message()
 		return
 	
-	# Avanzar a la siguiente habitación usando call_deferred
+	# Avanzar a la siguiente habitación usando el TransitionManager
 	var next_room_index = room_index + 1
 	if next_room_index < room_scenes.size():
-		print("Avanzando a la habitación ", next_room_index)
-		call_deferred("load_room", next_room_index)
+		print("Avanzando a la habitación ", next_room_index, " con transición")
+		_switch_to_room(next_room_index)
 	else:
 		print("¡Todas las habitaciones completadas!")
-		call_deferred("emit_signal", "all_rooms_cleared")
+		all_rooms_cleared.emit()
 
 func _on_enemy_died(room_index: int):
-	#Cuando un enemigo muere
+	"""Cuando un enemigo muere"""
 	if room_data.has(room_index):
 		room_data[room_index].enemies_alive -= 1
 		enemy_died.emit()
@@ -192,7 +226,6 @@ func get_current_room() -> Node2D:
 func get_current_room_index() -> int:
 	return current_room_index
 
-##se completo el room?
 func is_room_cleared(room_index: int = -1) -> bool:
 	if room_index == -1:
 		room_index = current_room_index
@@ -201,7 +234,6 @@ func is_room_cleared(room_index: int = -1) -> bool:
 		return room_data[room_index].cleared
 	return false
 
-##cnatidad de enemigos restantes
 func get_room_enemies_alive(room_index: int = -1) -> int:
 	if room_index == -1:
 		room_index = current_room_index
@@ -210,7 +242,6 @@ func get_room_enemies_alive(room_index: int = -1) -> int:
 		return room_data[room_index].enemies_alive
 	return 0
 
-##cantidad de enemigos total del room
 func get_room_total_enemies(room_index: int = -1) -> int:
 	if room_index == -1:
 		room_index = current_room_index
@@ -225,12 +256,15 @@ func restart_game():
 		return
 	
 	room_data.clear()
-	call_deferred("load_room", initial_room_index)
-
+	_switch_to_room(initial_room_index)
 
 func _on_player_death():
-	var tween = create_tween()
-	tween.tween_property(self, "modulate", Color.TRANSPARENT, fade_duration)
-	await tween.finished
-	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
-	get_tree().change_scene_to_file(GAME_OVER)
+	"""Cuando el jugador muere, usa el TransitionManager"""
+	if transition_manager:
+		# Usar el sistema de transiciones para ir al Game Over
+		transition_manager.change_scene(GAME_OVER)
+	else:
+		# Fallback si no hay TransitionManager
+		print("⚠️ TransitionManager no encontrado, cambiando sin transición")
+		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+		get_tree().change_scene_to_file(GAME_OVER)

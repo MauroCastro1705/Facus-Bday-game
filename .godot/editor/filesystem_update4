@@ -20,3 +20,8 @@ res://pistol/bullet_enemy.tscn
 res://pistol/bullet_enemy.gd
 res://pistol/bullet_enemy_turret.gd
 res://pistol/bullet_enemy_turret.tscn
+res://Scripts/GameManager.gd
+res://Scripts/TransitionManager.gd
+res://characters/enemy_basic/mob.gd
+res://characters/player/player.tscn
+res://characters/enemy_static/mob_static.gd

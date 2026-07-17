@@ -4,14 +4,14 @@ signal died
 @export var bullet: PackedScene
 @export var bullet_speed:int = 350
 @export var shoot_timer: Timer
-@export var fire_rate: float = 1.5  # Tiempo entre disparos en segundos
-@export var detection_range: float = 600.0  # Rango de detección del jugador
-@export var enemy_speed: float = 100.0  # Velocidad de movimiento del enemigo
-@export var rotation_speed: float = 5.0  # Velocidad de rotación hacia el jugador
+@export var fire_rate: float = 1.5
+@export var detection_range: float = 600.0
+@export var enemy_speed: float = 100.0
+@export var rotation_speed: float = 5.0
 
 @onready var barra_vida: HealthBar = $BarraVida
 @export var coin:PackedScene
-@export var coin_amount:int ##cantidad de monedas a spawnear
+@export var coin_amount:int
 var max_health: float = 80.0
 var current_health: float
 var is_dead: bool = false
@@ -20,26 +20,24 @@ var player: Node2D = null
 var can_shoot: bool = true
 var is_player_in_range: bool = false
 
-# Variables para el movimiento
 var target_position: Vector2 = Vector2.ZERO
 var is_moving: bool = false
-var velocity_vector: Vector2 = Vector2.ZERO  # Variable para almacenar la velocidad
+var velocity_vector: Vector2 = Vector2.ZERO
 
-# Referencias al arma y punto de disparo
 @onready var weapon: Sprite2D = $gun
 @onready var shooting_point: Marker2D = $gun/shooting_point
 
+# ✅ Variable para guardar la posición de muerte
+var death_position: Vector2 = Vector2.ZERO
+
 func _ready() -> void:
-	# Configurar vida
 	current_health = max_health
 	barra_vida.health_depleted.connect(_on_health_depleted)
 	barra_vida.max_health = max_health
 	barra_vida.current_health = current_health
 	
-	# Buscar al jugador por grupo
 	find_player()
 	
-	# Configurar el timer si no está asignado
 	if shoot_timer == null:
 		shoot_timer = Timer.new()
 		shoot_timer.wait_time = fire_rate
@@ -51,41 +49,29 @@ func _ready() -> void:
 		shoot_timer.one_shot = false
 		shoot_timer.timeout.connect(_on_shoot_timer_timeout)
 	
-	# Iniciar el timer
 	shoot_timer.start()
 
 func _physics_process(delta: float) -> void:
-	# Buscar al jugador constantemente si no se ha encontrado
 	if player == null:
 		find_player()
 		return
 	
-	# Verificar si el jugador está dentro del rango de detección
 	var distance_to_player = global_position.distance_to(player.global_position)
 	is_player_in_range = distance_to_player <= detection_range
 	
-	# Reiniciar velocidad
 	velocity_vector = Vector2.ZERO
 	
 	if is_player_in_range:
-		# Apuntar el arma hacia el jugador
 		aim_weapon_at_player(delta)
-		
-		# Calcular dirección hacia el jugador
 		var direction = (player.global_position - global_position).normalized()
-		
-		# Establecer velocidad
 		velocity_vector = direction * enemy_speed
 	else:
-		# Si el jugador está fuera de rango, el enemigo patrulla
 		handle_out_of_range(delta)
 	
-	# Aplicar movimiento usando move_and_slide()
 	velocity = velocity_vector
 	move_and_slide()
 
 func find_player() -> void:
-	# Buscar al jugador por grupo
 	var players = get_tree().get_nodes_in_group("player")
 	if players.size() > 0:
 		player = players[0]
@@ -94,17 +80,13 @@ func aim_weapon_at_player(delta: float) -> void:
 	if player == null or weapon == null:
 		return
 	
-	# Calcular dirección hacia el jugador
 	var direction = (player.global_position - global_position).normalized()
 	var target_angle = direction.angle()
-	
-	# Rotar el arma hacia el jugador (con suavizado)
 	weapon.rotation = lerp_angle(weapon.rotation, target_angle, rotation_speed * delta)
 	var facing_left = abs(wrapf(weapon.rotation, -PI, PI)) > PI / 2.0
 	weapon.scale.y = -1.0 if facing_left else 1.0
 
 func handle_out_of_range(_delta: float) -> void:
-	# Comportamiento básico de patrulla
 	if not is_moving:
 		target_position = global_position + Vector2(randf_range(-100, 100), randf_range(-100, 100))
 		is_moving = true
@@ -120,30 +102,22 @@ func handle_out_of_range(_delta: float) -> void:
 func _on_shoot_timer_timeout() -> void:
 	if not is_player_in_range or player == null:
 		return
-	
 	shoot()
 
 func shoot() -> void:
 	if bullet == null:
 		return
 	
-	# Crear la bala
 	var bullet_instance = bullet.instantiate()
 	bullet_instance.SPEED = bullet_speed
 	
-	# Posicionar la bala en el shooting point
 	if shooting_point != null:
 		bullet_instance.global_position = shooting_point.global_position
 	else:
 		bullet_instance.global_position = global_position
 	
-	# Calcular dirección hacia el jugador
 	var direction = (player.global_position - global_position).normalized()
-	
-	# Rotar la bala hacia el jugador
 	bullet_instance.rotation = direction.angle()
-	
-	# Añadir la bala a la escena
 	get_parent().add_child(bullet_instance)
 
 func set_fire_rate(rate: float) -> void:
@@ -169,22 +143,34 @@ func _on_health_depleted():
 		return
 	
 	is_dead = true
-	call_deferred("add_coin") 
-	print("Enemigo ha muerto!, señal emitida")
+	
+	# ✅ GUARDAR POSICIÓN Y REFERENCIA AL MUNDO
+	death_position = global_position
+	var world = get_tree().current_scene
+	
+	# Emitir señal
 	died.emit()
+	
+	# ✅ Call deferred con la posición y referencia al mundo
+	call_deferred("spawn_coins_safe", world)
+	
 	queue_free()
 
-func add_coin() -> void:
+func spawn_coins_safe(world: Node) -> void:
+	"""Spawnear monedas de forma segura con referencia al mundo"""
+	if world == null:
+		world = get_tree().current_scene
+		if world == null:
+			return
+	
 	for i in coin_amount:
 		var coin_instance = coin.instantiate()
 		var offset = Vector2(
 			randf_range(-25, 25),
 			randf_range(-25, 25)
 		)
-		coin_instance.global_position = global_position + offset
-		get_parent().add_child(coin_instance)
-	
+		coin_instance.global_position = death_position + offset
+		world.add_child(coin_instance)
 
 func _enter_tree() -> void:
-	# Añadir el enemigo al grupo "enemies" para referencia
 	add_to_group("enemies")
