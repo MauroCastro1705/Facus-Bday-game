@@ -1,3 +1,4 @@
+AnimationPlayer
 TextureRect
 ColorRect
 GPUParticles2D
@@ -6,10 +7,8 @@ Timer
 CollisionShape2D
 Area2D
 RoomBase
-AnimationPlayer
 PointLight2D
 Node
 Polygon2D
 VBoxContainer
 TileMapLayer
-StaticBody2D

@@ -8,7 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://b720wvkb7iv8b" path="res://assets/Pixel Art Top Down - Basic v1.2.3/Texture 32x32/TX Tileset Wall.png" id="6_pmk7e"]
 [ext_resource type="Texture2D" uid="uid://c8ja2wej61pbh" path="res://assets/Pixel Art Top Down - Basic v1.2.3/Texture 32x32/TX Plant.png" id="7_dj7yj"]
 [ext_resource type="Texture2D" uid="uid://x8awaqqldr6y" path="res://assets/Pixel Art Top Down - Basic v1.2.3/Texture 32x32/TX Props.png" id="8_61gup"]
-[ext_resource type="Texture2D" uid="uid://j0k4rqeltw1m" path="res://assets/FREE Textures Of Light Alpha/FREE Textures Of Light Alpha/FREE Textures Of Light Alpha/512x512/512x512 textures (48).png" id="9_1ma2l"]
+[ext_resource type="Texture2D" uid="uid://j0k4rqeltw1m" path="res://assets/Textures Of Light Alpha/512x512 textures (48).png" id="9_1ma2l"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5650r"]
 texture = ExtResource("1_e5xut")
@@ -1025,8 +1025,8 @@ sources/14 = SubResource("TileSetAtlasSource_6o53b")
 sources/15 = SubResource("TileSetAtlasSource_f6pc1")
 
 [sub_resource type="Gradient" id="Gradient_s54v6"]
-offsets = PackedFloat32Array(0, 0.5341615, 1)
-colors = PackedColorArray(0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 0)
+offsets = PackedFloat32Array(0, 0.53637904, 1)
+colors = PackedColorArray(0, 0, 0, 0, 0.3764706, 0.6, 0.23137255, 1, 1, 1, 1, 0)
 
 [sub_resource type="GradientTexture1D" id="GradientTexture1D_7k1wc"]
 gradient = SubResource("Gradient_s54v6")
@@ -1061,9 +1061,17 @@ damping_min = 64.062004
 damping_max = 64.062004
 scale_max = 4.0
 scale_curve = SubResource("CurveTexture_jek74")
-color = Color(0.10525205, 0.789285, 0.64926744, 1)
+color = Color(0.44705883, 0.972549, 0.23137255, 1)
 color_ramp = SubResource("GradientTexture1D_7k1wc")
 emission_curve = SubResource("CurveTexture_rom5k")
+
+[sub_resource type="Animation" id="Animation_e5xut"]
+resource_name = "letras"
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_twdp0"]
+_data = {
+&"letras": SubResource("Animation_e5xut")
+}
 
 [node name="Pilar con luz" type="Node2D" unique_id=1352233178]
 
@@ -1073,6 +1081,7 @@ tile_map_data = PackedByteArray(0, 0, 38, 0, 10, 0, 9, 0, 7, 0, 2, 0, 0, 0, 38, 
 tile_set = SubResource("TileSet_fhv74")
 
 [node name="efectos piola" type="TileMapLayer" parent="." unique_id=608293516]
+modulate = Color(0, 0.8666667, 0.12156863, 0.85882354)
 position = Vector2(-1233, -378)
 tile_map_data = PackedByteArray(0, 0, 38, 0, 11, 0, 9, 0, 8, 0, 3, 0, 0, 0, 38, 0, 12, 0, 9, 0, 8, 0, 4, 0, 0, 0)
 tile_set = SubResource("TileSet_3w02n")
@@ -1081,8 +1090,8 @@ tile_set = SubResource("TileSet_3w02n")
 position = Vector2(3.5527137e-15, 3.0517578e-05)
 rotation = -1.5707964
 scale = Vector2(0.5740284, 0.8607474)
-color = Color(0.34117648, 0.6666667, 0.76862746, 1)
-energy = 2.9
+color = Color(0.44705883, 0.972549, 0.23137255, 1)
+energy = 1.15
 shadow_enabled = true
 texture = ExtResource("9_1ma2l")
 
@@ -1092,3 +1101,6 @@ amount = 36
 lifetime = 2.0
 preprocess = 2.0
 process_material = SubResource("ParticleProcessMaterial_e4byi")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=632821921]
+libraries/ = SubResource("AnimationLibrary_twdp0")

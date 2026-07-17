@@ -1,9 +1,10 @@
 [gd_scene format=3 uid="uid://dw504a86ptlwv"]
 
 [ext_resource type="Script" uid="uid://opavlqll62vi" path="res://objetos_mapa/heal_zone/heal_zone.gd" id="1_tqka0"]
+[ext_resource type="PackedScene" uid="uid://cuaaepishugjb" path="res://objetos_mapa/Pilar con luz/pilar_con_luz.tscn" id="2_t7l7f"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_t7l7f"]
-size = Vector2(92, 87)
+[sub_resource type="CircleShape2D" id="CircleShape2D_xo1ou"]
+radius = 62.201286
 
 [node name="HealZone" type="Node2D" unique_id=2003737963]
 script = ExtResource("1_tqka0")
@@ -11,16 +12,12 @@ script = ExtResource("1_tqka0")
 [node name="Area2D" type="Area2D" parent="." unique_id=261654942]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=859417698]
-position = Vector2(2, 7.5)
-shape = SubResource("RectangleShape2D_t7l7f")
-
-[node name="ColorRect" type="ColorRect" parent="." unique_id=1366491007]
-offset_left = -45.0
-offset_top = -39.0
-offset_right = 48.0
-offset_bottom = 52.0
+position = Vector2(1, -1)
+shape = SubResource("CircleShape2D_xo1ou")
 
 [node name="Timer" type="Timer" parent="." unique_id=68054309]
+
+[node name="Pilar con luz" parent="." unique_id=1352233178 instance=ExtResource("2_t7l7f")]
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]
