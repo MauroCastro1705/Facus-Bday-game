@@ -14,6 +14,15 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_b2xhn"]
 size = Vector2(98.5, 82)
 
+[sub_resource type="Gradient" id="Gradient_n42el"]
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_6x78x"]
+gradient = SubResource("Gradient_n42el")
+fill = 1
+fill_from = Vector2(0.4871795, 0.5555556)
+fill_to = Vector2(0.76495725, 0.22222222)
+
 [node name="Room_1" unique_id=1639878217 instance=ExtResource("1_u421q")]
 room_name = "primer nivel"
 
@@ -202,3 +211,77 @@ volume_db = -3.0
 autoplay = true
 max_distance = 4096.0
 attenuation = 0.000117911746
+
+[node name="luz_ambiental" type="Node2D" parent="." index="16" unique_id=1030836420]
+
+[node name="PointLight2D23" type="PointLight2D" parent="luz_ambiental" index="0" unique_id=165317812]
+position = Vector2(543, -26)
+scale = Vector2(31.979158, 31.979158)
+color = Color(1, 0.3874513, 0.32410908, 1)
+energy = 1.5
+texture = SubResource("GradientTexture2D_6x78x")
+texture_scale = 0.3
+
+[node name="PointLight2D24" type="PointLight2D" parent="luz_ambiental" index="1" unique_id=327444214]
+position = Vector2(1469, 145)
+scale = Vector2(31.979158, 31.979158)
+color = Color(1, 0.3874513, 0.32410908, 1)
+energy = 1.5
+texture = SubResource("GradientTexture2D_6x78x")
+texture_scale = 0.3
+
+[node name="PointLight2D25" type="PointLight2D" parent="luz_ambiental" index="2" unique_id=978220734]
+position = Vector2(883, 648)
+scale = Vector2(31.979158, 31.979158)
+color = Color(1, 0.3874513, 0.32410908, 1)
+energy = 1.5
+texture = SubResource("GradientTexture2D_6x78x")
+texture_scale = 0.3
+
+[node name="PointLight2D26" type="PointLight2D" parent="luz_ambiental" index="3" unique_id=932050122]
+position = Vector2(2346, -405)
+scale = Vector2(31.979158, 31.979158)
+color = Color(1, 0.3874513, 0.32410908, 1)
+energy = 1.5
+texture = SubResource("GradientTexture2D_6x78x")
+texture_scale = 0.3
+
+[node name="PointLight2D27" type="PointLight2D" parent="luz_ambiental" index="4" unique_id=545890775]
+position = Vector2(2338.9998, 680)
+scale = Vector2(31.979158, 31.979158)
+color = Color(1, 0.3874513, 0.32410908, 1)
+energy = 1.5
+texture = SubResource("GradientTexture2D_6x78x")
+texture_scale = 0.3
+
+[node name="PointLight2D28" type="PointLight2D" parent="luz_ambiental" index="5" unique_id=1143306762]
+position = Vector2(2624, 864)
+scale = Vector2(31.979158, 31.979158)
+color = Color(1, 0.3874513, 0.32410908, 1)
+energy = 1.5
+texture = SubResource("GradientTexture2D_6x78x")
+texture_scale = 0.3
+
+[node name="PointLight2D29" type="PointLight2D" parent="luz_ambiental" index="6" unique_id=556296878]
+position = Vector2(1782, 734)
+scale = Vector2(31.979158, 31.979158)
+color = Color(1, 0.3874513, 0.32410908, 1)
+energy = 1.5
+texture = SubResource("GradientTexture2D_6x78x")
+texture_scale = 0.3
+
+[node name="PointLight2D30" type="PointLight2D" parent="luz_ambiental" index="7" unique_id=1412796919]
+position = Vector2(1296, -200.00006)
+scale = Vector2(31.979158, 31.979158)
+color = Color(1, 0.3874513, 0.32410908, 1)
+energy = 1.5
+texture = SubResource("GradientTexture2D_6x78x")
+texture_scale = 0.3
+
+[node name="PointLight2D31" type="PointLight2D" parent="luz_ambiental" index="8" unique_id=993161303]
+position = Vector2(78, 85)
+scale = Vector2(31.979158, 31.979158)
+color = Color(1, 0.3874513, 0.32410908, 1)
+energy = 1.5
+texture = SubResource("GradientTexture2D_6x78x")
+texture_scale = 0.3

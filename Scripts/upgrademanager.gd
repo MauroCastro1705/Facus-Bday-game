@@ -5,7 +5,8 @@ signal upgrade_unlocked(upgrade_name: String)
 
 var available_upgrades := {
 	"buenas_bolas": {"text": "- Buenas Bolas", "unlocked": false},
-	"cotocola": {"text": "- Cotocola", "unlocked": false}
+	"cotocola": {"text": "- Cotocola", "unlocked": false},
+	"bullterier": {"text": "- Bullterrier", "unlocked": false}
 }
 
 func unlock_upgrade(upgrade_name: String) -> void:

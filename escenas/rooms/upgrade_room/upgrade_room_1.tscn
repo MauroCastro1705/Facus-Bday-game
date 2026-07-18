@@ -816,7 +816,7 @@ position = Vector2(209, 536)
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." index="20" unique_id=48407526]
 position = Vector2(346, 382)
 stream = ExtResource("19_n3sdy")
-volume_db = -9.985
+volume_db = -9.0
 autoplay = true
 max_distance = 4096.0
 attenuation = 1e-05
