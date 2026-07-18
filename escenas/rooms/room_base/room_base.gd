@@ -1,6 +1,6 @@
 extends Node2D
 class_name RoomBase
-
+#ROOM 1
 @onready var portal: Node2D = $Props/Portal
 
 
@@ -10,6 +10,7 @@ signal room_entered()
 signal room_exited()
 signal room_cleared()
 signal enemies_changed(enemies_alive: int, total_enemies: int)
+
 
 # Variables exportadas para personalizar cada habitación
 @export var room_name: String = "Habitación"
@@ -46,12 +47,9 @@ func _ready():
 
 func _on_transition_area_body_entered(body: Node2D):
 	if body.is_in_group("player"):
-		# Verificar si se puede salir de la habitación
 		if can_exit_room():
 			room_exited.emit()
-			# El GameManager manejará la transición
 		else:
-			# Mostrar mensaje o feedback
 			show_blocked_message()
 
 func _on_transition_area_body_exited(body: Node2D):
@@ -65,7 +63,7 @@ func can_exit_room() -> bool:
 	return true
 
 func show_blocked_message():
-	print("¡Debes eliminar todos los enemigos primero!")
+	print("Room base : Debes eliminar todos los enemigos primero" , "se limpio? :" ,  is_cleared)
 	portal.show_mensaje()
 
 # ============= FUNCIONES DE ENEMIGOS =============
@@ -86,16 +84,18 @@ func count_enemies():
 					if not enemy.died.is_connected(_on_enemy_died):
 						enemy.died.connect(_on_enemy_died)
 	# Si no hay enemigos, la habitación está limpia
-	if total_enemies == 0:
-		is_cleared = true
-		room_cleared.emit()
 	Global.enemy_room_count = total_enemies
 	Global.enemy_room_left = enemies_alive
-	print("enemigos totales room 2. " , total_enemies)
+	if enemies_alive == 0:
+		is_cleared = true
+		room_cleared.emit()
+
+	print("enemigos totales room 1. " , total_enemies)
 	enemies_changed.emit(enemies_alive, total_enemies)
 
 func _on_enemy_died():
 	enemies_alive -= 1
+	Global.enemy_room_left -= 1
 	enemies_changed.emit(enemies_alive, total_enemies)
 	
 	if enemies_alive <= 0:
@@ -109,6 +109,8 @@ func on_room_cleared():
 	# Ejemplo: abrir puertas visualmente
 	portal.portal_luz_ok()
 	open_doors()
+	can_exit_room()
+	is_cleared = true
 
 func set_enemies_active(active: bool):
 	"""Activa o desactiva todos los enemigos de la habitación"""

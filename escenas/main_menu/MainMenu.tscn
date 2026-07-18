@@ -6,6 +6,7 @@
 [ext_resource type="Theme" uid="uid://baqubi0p4kegy" path="res://assets/buton_panda.tres" id="3_oii30"]
 [ext_resource type="Texture2D" uid="uid://0u48fa2u5hx0" path="res://assets/logo.png" id="4_4t5pn"]
 [ext_resource type="Texture2D" uid="uid://vicpufdeuy01" path="res://assets/UI Assets pack_v.1_st/Book.png" id="6_oii30"]
+[ext_resource type="AudioStream" uid="uid://52w54u5vmuo8" path="res://assets/main_menu.mp3" id="7_12aag"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_oii30"]
 shader = ExtResource("2_uda5e")
@@ -128,6 +129,13 @@ label_settings = SubResource("LabelSettings_4qipx")
 horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 3
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=626628197]
+position = Vector2(480, 414)
+stream = ExtResource("7_12aag")
+volume_db = -4.0
+autoplay = true
+attenuation = 0.00085014716
 
 [connection signal="pressed" from="StartButton" to="." method="_on_start_button_pressed"]
 [connection signal="pressed" from="creditos" to="." method="_on_creditos_pressed"]
