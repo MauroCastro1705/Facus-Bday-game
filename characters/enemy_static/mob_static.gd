@@ -1,5 +1,7 @@
 extends CharacterBody2D
 # Static Turret Enemy
+@onready var gun_sound: AudioStreamPlayer2D = $gun_sound
+@onready var death_sound: AudioStreamPlayer2D = $death_sound
 
 signal died
 @export var bullet: PackedScene
@@ -109,6 +111,7 @@ func shoot() -> void:
 	var direction = (player.global_position - global_position).normalized()
 	var base_angle = direction.angle()
 	
+	
 	match shoot_type:
 		ShootType.NORMAL:
 			shoot_normal(base_angle)
@@ -125,6 +128,7 @@ func shoot_normal(angle: float) -> void:
 	bullet_instance.SPEED = bullet_speed
 	place_bullet(bullet_instance, angle)
 	get_parent().add_child(bullet_instance)
+	gun_sound.play()
 
 ##disparo multiple escopeta
 func shoot_spread(base_angle: float) -> void:
@@ -140,6 +144,7 @@ func shoot_spread(base_angle: float) -> void:
 		var angle = start_angle + (angle_step * i)
 		place_bullet(bullet_instance, angle)
 		get_parent().add_child(bullet_instance)
+		gun_sound.play()
 
 ##disparo multiple en linea recta
 func shoot_line_spread(base_angle: float) -> void:
@@ -167,6 +172,7 @@ func shoot_line_spread(base_angle: float) -> void:
 		bullet_instance.rotation = base_angle
 		
 		get_parent().add_child(bullet_instance)
+		gun_sound.play()
 
 func place_bullet(bullet_instance: Node2D, angle: float) -> void:
 	# Posicionar la bala en el shooting point
@@ -199,6 +205,7 @@ func _on_health_depleted():
 	
 	# Emitir señal
 	died.emit()
+	death_sound.play()
 	
 	# ✅ Call deferred con la posición y referencia al mundo
 	call_deferred("spawn_coins_safe", world)

@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://d38h4taacqoyv" path="res://pistol/bullet.gd" id="1_mjeop"]
 [ext_resource type="Texture2D" uid="uid://c00jevoq0rau" path="res://assets/16x16 Pixel Shade Bullet Free/16x16 Pixel Shade Bullet Free.png" id="3_rmedr"]
 [ext_resource type="Texture2D" uid="uid://dm1da85xdindr" path="res://assets/Textures Of Light Alpha/512x512 textures (75).png" id="3_ucxth"]
+[ext_resource type="AudioStream" uid="uid://t8i101duai2j" path="res://assets/500 Sound Effects by Jalastram/bullet_hit.wav" id="4_rmedr"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_5tgod"]
 radius = 11.657792
@@ -96,6 +97,10 @@ rotation = -3.1112907
 sprite_frames = SubResource("SpriteFrames_reoc5")
 autoplay = "default"
 frame_progress = 0.6800964
+
+[node name="hit_sound" type="AudioStreamPlayer2D" parent="." unique_id=689966617]
+stream = ExtResource("4_rmedr")
+volume_db = 1.0
 
 [connection signal="area_entered" from="." to="." method="_on_area_entered"]
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

@@ -1,15 +1,14 @@
+AudioStreamPlayer2D
+AnimationPlayer
 DirectionalLight2D
 HBoxContainer
 MarginContainer
 NinePatchRect
 Label
 VBoxContainer
-AnimationPlayer
 TextureRect
 ColorRect
 GPUParticles2D
 Node2D
 Timer
 CollisionShape2D
-Area2D
-RoomBase

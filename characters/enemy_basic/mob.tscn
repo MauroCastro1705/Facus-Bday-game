@@ -7,6 +7,8 @@
 [ext_resource type="Texture2D" uid="uid://b0a5kl025j6lu" path="res://assets/jack_black .png" id="4_d4ky1"]
 [ext_resource type="Texture2D" uid="uid://cxtigwvr7dq31" path="res://assets/luz_basica.tres" id="6_mhry0"]
 [ext_resource type="Texture2D" uid="uid://dhphe0mwl4ioa" path="res://assets/armas/1 Icons/Icon29_11.png" id="8_aktnc"]
+[ext_resource type="AudioStream" uid="uid://mdvkja71o3v5" path="res://assets/500 Sound Effects by Jalastram/FX71.mp3" id="8_lt8ey"]
+[ext_resource type="AudioStream" uid="uid://d0hofq3evkwpd" path="res://assets/500 Sound Effects by Jalastram/death.mp3" id="9_lt8ey"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_8tavr"]
 radius = 24.020824
@@ -52,3 +54,9 @@ texture_filter = 1
 position = Vector2(44, 0.9999981)
 rotation = 0.7736498
 texture = ExtResource("8_aktnc")
+
+[node name="gun_sound" type="AudioStreamPlayer2D" parent="." unique_id=636503637]
+stream = ExtResource("8_lt8ey")
+
+[node name="death_sound" type="AudioStreamPlayer2D" parent="." unique_id=1061026739]
+stream = ExtResource("9_lt8ey")

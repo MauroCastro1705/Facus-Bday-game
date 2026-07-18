@@ -2,6 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://dse4jm4bca771" path="res://assets/coin.png" id="1_0nv51"]
 [ext_resource type="Script" uid="uid://cu6undrepipfk" path="res://pickups/enemy_coin_pickup/coin_pickup.gd" id="1_8t712"]
+[ext_resource type="AudioStream" uid="uid://7ka0swortcxg" path="res://assets/500 Sound Effects by Jalastram/coin2.wav" id="3_s2dn8"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_8t712"]
 radius = 19.0
@@ -78,5 +79,10 @@ texture_scale = 3.0
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=2132513680]
 libraries/ = SubResource("AnimationLibrary_5sjnd")
 autoplay = &"coin"
+
+[node name="pick_up_sound" type="AudioStreamPlayer2D" parent="." unique_id=1129729205]
+stream = ExtResource("3_s2dn8")
+volume_db = -1.0
+pitch_scale = 1.3
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

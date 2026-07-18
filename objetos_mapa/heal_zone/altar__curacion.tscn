@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://c8ja2wej61pbh" path="res://assets/Pixel Art Top Down - Basic v1.2.3/Texture 32x32/TX Plant.png" id="7_2c2wk"]
 [ext_resource type="Texture2D" uid="uid://x8awaqqldr6y" path="res://assets/Pixel Art Top Down - Basic v1.2.3/Texture 32x32/TX Props.png" id="8_wdmtc"]
 [ext_resource type="PackedScene" uid="uid://dw504a86ptlwv" path="res://objetos_mapa/heal_zone/heal_zone.tscn" id="9_vujn3"]
+[ext_resource type="PackedScene" uid="uid://x7kt6vxo1fjl" path="res://objetos_mapa/luz_animada.tscn" id="10_ijbl1"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_cgchx"]
 texture = ExtResource("1_14x4u")
@@ -1177,7 +1178,6 @@ texture_region_size = Vector2i(32, 32)
 13:7/0 = 0
 13:7/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
 14:4/0 = 0
-14:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
 14:3/0 = 0
 12:0/0 = 0
 12:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
@@ -1822,9 +1822,29 @@ tile_map_data = PackedByteArray("AAAJABIADwADAAIAAAAGABAADwACAAEAAAAJABEADwADAAI
 tile_set = SubResource("TileSet_8l7vf")
 
 [node name="detalles" type="TileMapLayer" parent="." unique_id=2078879702]
-position = Vector2(-328, -660)
-tile_map_data = PackedByteArray("AAAJABMACQAJAA8AAAAIABIACQAOAAMAAAAIABMACQAOAAQAAAAIABUACQAOAAMAAAAIABYACQAOAAQAAAAMABIACQAOAAMAAAAMABMACQAOAAQAAAAMABUACQAOAAMAAAAMABYACQAOAAQAAAA=")
+position = Vector2(-310, -660)
+tile_map_data = PackedByteArray("AAAJABMACQAJAA8AAAAHABUACQAOAAMAAAAHABYACQAOAAQAAAAMABUACQAOAAMAAAAMABYACQAOAAQAAAAMABIACQAOAAMAAAAMABMACQAOAAQAAAAHABIACQAOAAMAAAAHABMACQAOAAQAAAA=")
 tile_set = SubResource("TileSet_dhqft")
 
 [node name="HealZone" parent="." unique_id=2003737963 instance=ExtResource("9_vujn3")]
 position = Vector2(4, 1)
+
+[node name="PointLight2D21" parent="." unique_id=929265754 instance=ExtResource("10_ijbl1")]
+position = Vector2(91, 54)
+color = Color(0.44582188, 0.97387785, 0.23226759, 1)
+shadow_enabled = true
+
+[node name="PointLight2D34" parent="." unique_id=1637205812 instance=ExtResource("10_ijbl1")]
+position = Vector2(-70, 53)
+color = Color(0.44582188, 0.97387785, 0.23226759, 1)
+shadow_enabled = true
+
+[node name="PointLight2D35" parent="." unique_id=272819052 instance=ExtResource("10_ijbl1")]
+position = Vector2(-70, -43)
+color = Color(0.44582188, 0.97387785, 0.23226759, 1)
+shadow_enabled = true
+
+[node name="PointLight2D36" parent="." unique_id=430143448 instance=ExtResource("10_ijbl1")]
+position = Vector2(90, -44)
+color = Color(0.44582188, 0.97387785, 0.23226759, 1)
+shadow_enabled = true

@@ -10,6 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://dmr2tvjl3lbou" path="res://assets/facu.png" id="8_idpv6"]
 [ext_resource type="LabelSettings" uid="uid://sy8p2f33pssc" path="res://assets/texto_generico.tres" id="9_rpf03"]
 [ext_resource type="Material" uid="uid://c5uh8gcbwig1f" path="res://shaders/hurt_damage.tres" id="10_x5dtk"]
+[ext_resource type="AudioStream" uid="uid://jvmn0wk48cwd" path="res://assets/500 Sound Effects by Jalastram/lasergun.ogg" id="11_3t07l"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_x5dtk"]
 radius = 16.0
@@ -151,11 +152,19 @@ position = Vector2(-459, -365)
 occluder = SubResource("OccluderPolygon2D_idpv6")
 
 [node name="damage_label" type="Label" parent="." unique_id=665778693]
-offset_left = 6.0
-offset_top = -56.0
-offset_right = 46.0
-offset_bottom = -33.0
+offset_left = -73.0
+offset_top = -41.0
+offset_right = -30.0
+offset_bottom = -18.0
 text = "auch!"
+label_settings = ExtResource("9_rpf03")
+
+[node name="reloading" type="Label" parent="." unique_id=2015309820]
+offset_left = -54.0
+offset_top = -68.0
+offset_right = 52.0
+offset_bottom = -45.0
+text = "Recargando..."
 label_settings = ExtResource("9_rpf03")
 
 [node name="hurt_shader" type="ColorRect" parent="." unique_id=622068649]
@@ -164,6 +173,9 @@ offset_left = -359.0
 offset_top = -280.0
 offset_right = 361.0
 offset_bottom = 280.0
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=90387491]
+stream = ExtResource("11_3t07l")
 
 [connection signal="timeout" from="dash_timer" to="." method="_on_dash_1_timer_timeout"]
 [connection signal="timeout" from="dash_timer_2" to="." method="_on_dash_timer_2_timeout"]

@@ -18,7 +18,7 @@ var playerHealth = 100.0
 var playerMaxHealth = 100.0
 
 
-var playerMovSpeed : int = 300
+var playerMovSpeed : int = 200
 var playerAtkSpeed : float = 0.8
 
 

@@ -8,6 +8,8 @@ signal died
 @export var detection_range: float = 600.0
 @export var enemy_speed: float = 100.0
 @export var rotation_speed: float = 5.0
+@onready var gun_sound: AudioStreamPlayer2D = $gun_sound
+@onready var death_sound: AudioStreamPlayer2D = $death_sound
 
 @onready var barra_vida: HealthBar = $BarraVida
 @export var coin:PackedScene
@@ -110,6 +112,7 @@ func shoot() -> void:
 	
 	var bullet_instance = bullet.instantiate()
 	bullet_instance.SPEED = bullet_speed
+	gun_sound.play()
 	
 	if shooting_point != null:
 		bullet_instance.global_position = shooting_point.global_position
@@ -149,10 +152,12 @@ func _on_health_depleted():
 	var world = get_tree().current_scene
 	
 	# Emitir señal
+	death_sound.play()
 	died.emit()
 	
 	# ✅ Call deferred con la posición y referencia al mundo
 	call_deferred("spawn_coins_safe", world)
+	
 	
 	queue_free()
 

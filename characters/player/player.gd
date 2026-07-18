@@ -1,9 +1,11 @@
 extends CharacterBody2D
 @onready var hurt_shader: ColorRect = $hurt_shader
+@onready var reloading_label: Label = $reloading
 
 var is_dead: bool = false
 @onready var collision_shape_2d: CollisionShape2D = $CollisionShape2D
 @onready var damage_label: Label = $damage_label
+@onready var gun_sound: AudioStreamPlayer2D = $AudioStreamPlayer2D
 
 @export var ui_bottom:Node
 @export var game_manager:Node
@@ -58,6 +60,7 @@ var dash_1_available: bool = true
 var dash_2_available: bool = true
 
 func _ready() -> void:
+	reloading_label.hide()
 	damage_label.hide()
 	max_health = Global.playerHealth
 	current_health = max_health
@@ -175,6 +178,7 @@ func shoot_bullet() -> void:
 	# Aquí va tu código para instanciar la bala
 	if gun and gun.has_method("shoot"):
 		gun.bullet_speed = bullet_speed
+		gun_sound.play()
 		gun.shoot()
 
 func _on_fire_rate_timer_timeout() -> void:
@@ -187,6 +191,7 @@ func start_reload() -> void:
 		return
 	
 	is_reloading = true
+	show_reload_mgs()
 	
 	# Cambiar crosshair a animación de recarga
 	crosshair.play("reloading")
@@ -319,6 +324,14 @@ func show_damage_mgs() -> void:
 	var tween = create_tween()
 	tween.tween_property(damage_label, "modulate:a", 0.0, 1.5).set_delay(0.3)
 	tween.tween_callback(damage_label.hide)
+
+func show_reload_mgs() -> void:
+	reloading_label.show()
+	hurt_shader_animation()
+	reloading_label.modulate.a = 1.0
+	var tween = create_tween()
+	tween.tween_property(reloading_label, "modulate:a", 0.0, 1.5).set_delay(0.3)
+	tween.tween_callback(reloading_label.hide)
 	
 var shader_tween: Tween = null
 func hurt_shader_animation():
