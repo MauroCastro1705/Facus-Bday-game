@@ -145,7 +145,6 @@ shoot_mode = 3
 color = Color(0.25063577, 0.30064827, 0.36516958, 1)
 
 [node name="Altar__curacion" parent="." index="12" unique_id=886289789 instance=ExtResource("8_ws2lx")]
-visible = false
 position = Vector2(1524, 411)
 
 [node name="Altar__curacion2" parent="." index="13" unique_id=1497698834 instance=ExtResource("8_ws2lx")]
