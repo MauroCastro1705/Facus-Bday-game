@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://cqnkwniargv32" path="res://objetos_mapa/portal/portal.tscn" id="5_tmtkd"]
 [ext_resource type="PackedScene" uid="uid://x7kt6vxo1fjl" path="res://objetos_mapa/luz_animada.tscn" id="6_qmwk5"]
 [ext_resource type="PackedScene" uid="uid://5e0vkf1a1w4g" path="res://objetos_mapa/heal_zone/altar__curacion.tscn" id="10_3c5uc"]
+[ext_resource type="AudioStream" uid="uid://c507o3iwj0a20" path="res://assets/doom_music.wav" id="11_55iea"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5y2ss"]
 size = Vector2(135.5, 156)
@@ -370,3 +371,11 @@ autoplay = &"luz"
 
 [node name="Altar__curacion" parent="." index="19" unique_id=886289789 instance=ExtResource("10_3c5uc")]
 position = Vector2(1907, -400)
+
+[node name="doom_music" type="AudioStreamPlayer2D" parent="." index="20" unique_id=2122189624]
+position = Vector2(969, 138)
+stream = ExtResource("11_55iea")
+volume_db = -3.0
+autoplay = true
+max_distance = 4096.0
+attenuation = 0.000117911746

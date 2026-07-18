@@ -1,6 +1,6 @@
 Node2D
-PointLight2D
 AudioStreamPlayer2D
+PointLight2D
 AnimationPlayer
 DirectionalLight2D
 HBoxContainer

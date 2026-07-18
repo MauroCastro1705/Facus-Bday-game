@@ -16,3 +16,4 @@ res://UI/top_bar_ui.gd
 res://escenas/rooms/room_1.tscn
 res://escenas/rooms/upgrade_room/upgrade_room_1.gd
 res://pickups/enemy_coin_pickup/coin_pickup.tscn
+res://escenas/rooms/room_base/room_base.gd
