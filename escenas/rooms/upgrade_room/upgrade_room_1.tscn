@@ -661,17 +661,23 @@ position = Vector2(1026, 210)
 skill_display_name = "Cotocola"
 skill_description = "Aumenta la cantidad de municion"
 skill_price = 150
+can_purchase_multiple_times = true
+max_purchases = 3
 
 [node name="boton_skill2" parent="." index="12" unique_id=1478620971 instance=ExtResource("12_y2uhf")]
 position = Vector2(1024, 532)
 skill_display_name = "Buenas bolas"
 skill_description = "Tus balas hacen mas daño"
+can_purchase_multiple_times = true
+max_purchases = 3
 
 [node name="boton_skill3" parent="." index="13" unique_id=702408362 instance=ExtResource("12_y2uhf")]
 position = Vector2(1080, -132)
 skill_display_name = "Bullterrier"
 skill_description = "Aumenta el cargador del arma"
 skill_price = 250
+can_purchase_multiple_times = true
+max_purchases = 3
 
 [node name="luz_ambiental" type="Node2D" parent="." index="14" unique_id=1798354220]
 position = Vector2(464, 803)
