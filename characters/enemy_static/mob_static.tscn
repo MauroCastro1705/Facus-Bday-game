@@ -4,7 +4,6 @@
 [ext_resource type="PackedScene" uid="uid://bjlnthqxhmnap" path="res://pistol/bullet_enemy_turret.tscn" id="2_lfgu0"]
 [ext_resource type="PackedScene" uid="uid://bhk8r7mumgdnr" path="res://UI/barra_vida/barra_vida.tscn" id="3_ggavr"]
 [ext_resource type="PackedScene" uid="uid://bo25qipahswpt" path="res://pickups/enemy_coin_pickup/coin_pickup.tscn" id="3_r1uh3"]
-[ext_resource type="Texture2D" uid="uid://cxtigwvr7dq31" path="res://assets/luz_basica.tres" id="6_kbwye"]
 [ext_resource type="Texture2D" uid="uid://byy3qxs8jr7l3" path="res://assets/armas/1 Icons/Icon29_13.png" id="7_kbwye"]
 [ext_resource type="AudioStream" uid="uid://u6g00rrd1smp" path="res://assets/500 Sound Effects by Jalastram/FX272.wav" id="8_r1uh3"]
 [ext_resource type="Texture2D" uid="uid://jx1jh3tkrbx6" path="res://assets/virus33.png" id="9_ekaau"]
@@ -12,6 +11,9 @@
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_8tavr"]
 radius = 23.021729
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_r1uh3"]
+load_path = "res://.godot/imported/512x512 textures (10).png-6ae72a0d72c37c94642dee2b9f3294e5.ctex"
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ssqyf"]
 atlas = ExtResource("9_ekaau")
@@ -90,13 +92,14 @@ shape = SubResource("CircleShape2D_8tavr")
 position = Vector2(-36, -41)
 scale = Vector2(0.5025189, 0.5025189)
 
-[node name="PointLight2D" type="PointLight2D" parent="." unique_id=434934853]
-position = Vector2(1, 0)
-scale = Vector2(1.5625, 1.5625)
-energy = 0.7
+[node name="PointLight2D" type="PointLight2D" parent="." unique_id=384542132]
+position = Vector2(-0.99999976, 0)
+scale = Vector2(1.5794836, 1.5115488)
+color = Color(0.6915334, 0.03983243, 0.5754088, 1)
+energy = 2.73
 shadow_enabled = true
-texture = ExtResource("6_kbwye")
-texture_scale = 0.7
+texture = SubResource("CompressedTexture2D_r1uh3")
+texture_scale = 0.23
 
 [node name="gun" type="Sprite2D" parent="." unique_id=109752920]
 texture_filter = 1
