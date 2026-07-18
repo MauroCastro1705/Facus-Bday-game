@@ -9,3 +9,4 @@ res://shaders/3dwaves.gdshader
 res://characters/enemy_static/mob_static.tscn
 res://objetos_mapa/indio_vendedor/indio_shop.tscn
 res://escenas/rooms/upgrade_room/upgrade_room_1.tscn
+res://escenas/rooms/room_1.tscn
