@@ -201,7 +201,7 @@ position = Vector2(2496, 916)
 position = Vector2(2255, 341)
 
 [node name="mob8" parent="EnemiesContainer" index="8" unique_id=418079781 instance=ExtResource("3_st5td")]
-position = Vector2(1328, 31)
+position = Vector2(1181, 15)
 
 [node name="mob10" parent="EnemiesContainer" index="9" unique_id=386696681 instance=ExtResource("3_st5td")]
 position = Vector2(1457, -582)
@@ -228,7 +228,7 @@ position = Vector2(1665, 1457)
 position = Vector2(1490, 450)
 
 [node name="Mob_static5" parent="EnemiesContainer" index="17" unique_id=1300062658 instance=ExtResource("4_tmtkd")]
-position = Vector2(1745, 24)
+position = Vector2(1650, 22)
 
 [node name="Mob_static6" parent="EnemiesContainer" index="18" unique_id=1297710442 instance=ExtResource("4_tmtkd")]
 position = Vector2(1097, -252)
