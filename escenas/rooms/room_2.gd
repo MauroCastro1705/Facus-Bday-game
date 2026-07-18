@@ -78,6 +78,7 @@ func count_enemies():
 			if enemy.get_parent() == enemies_container or is_descendant_of(enemy, enemies_container):
 				total_enemies += 1
 				enemies_alive += 1
+				
 				# Conectar señal de muerte
 				if enemy.has_signal("died"):
 					if not enemy.died.is_connected(_on_enemy_died):
@@ -86,12 +87,15 @@ func count_enemies():
 	if total_enemies == 0:
 		is_cleared = true
 		room_cleared.emit()
-	
+	Global.enemy_room_count = total_enemies
+	Global.enemy_room_left = enemies_alive
+	print("enemigos totales room 2. " , total_enemies)
 	enemies_changed.emit(enemies_alive, total_enemies)
 
 func _on_enemy_died():
 	enemies_alive -= 1
 	enemies_changed.emit(enemies_alive, total_enemies)
+	Global.enemy_room_left -= 1
 	
 	if enemies_alive <= 0:
 		is_cleared = true

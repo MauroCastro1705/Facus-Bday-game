@@ -1,4 +1,4 @@
-res://escenas/Main/main_scene.tscn
+res://escenas/rooms/upgrade_room/upgrade_room_1.tscn
 res://shaders/transition.gdshader
 res://assets/top_down_2.tres
 res://assets/paredes_autotile.tres
@@ -6,10 +6,13 @@ res://assets/luz_basica.tres
 res://shaders/hurt_damage.gdshader
 res://shaders/waves.gdshader
 res://shaders/3dwaves.gdshader
-res://escenas/rooms/upgrade_room/upgrade_room_1.tscn
+res://escenas/rooms/room_2.tscn
+res://escenas/Main/main_scene.tscn
+res://Scripts/GameManager.gd
+res://escenas/rooms/room_2.gd
+res://Scripts/global.gd
+res://UI/top_bar_ui.tscn
+res://UI/top_bar_ui.gd
+res://escenas/rooms/room_1.tscn
 res://escenas/rooms/upgrade_room/upgrade_room_1.gd
-res://characters/player/player.tscn
-res://characters/player/player.gd
-res://objetos_mapa/indio_vendedor/indio_shop.tscn
-res://objetos_mapa/Pilar con luz/pilar_con_luz.tscn
-res://objetos_mapa/heal_zone/altar__curacion.tscn
+res://pickups/enemy_coin_pickup/coin_pickup.tscn

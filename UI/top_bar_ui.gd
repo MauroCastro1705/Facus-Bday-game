@@ -7,14 +7,13 @@ extends Control
 @onready var upgrade_2: Label = %upgrade_2
 @onready var upgrade_3: Label = %upgrade_3
 
-var enemigos_total: int = 0
-var enemigos_left: int = 0
 var upgrades_unlocked := []  # Para evitar duplicados
-
+var enemigos_left:int = 0
 func _ready() -> void:
 	upgrade_1.hide()
 	upgrade_2.hide()
 	upgrade_3.hide()
+	enemigos_left = Global.enemy_room_left
 	# Conectar señales del game manager
 	game_manager.player_is_in_room.connect(_on_player_entered_room)
 	game_manager.enemy_died.connect(_on_enemy_died)
@@ -33,20 +32,18 @@ func _reset_ui() -> void:
 	upgrade_3.text = ""
 
 func _on_player_entered_room() -> void:
-	enemigos_total = game_manager.get_room_total_enemies()
-	enemigos_left = enemigos_total
 	_update_enemies_label()
 
 func _on_enemy_died() -> void:
-	enemigos_left -= 1
 	_update_enemies_label()
-	
+	enemigos_left = Global.enemy_room_left
 	if enemigos_left == 0:
 		enemies_remaining_label.text = "The portal is Open"
 		calavera.hide()
 
 func _update_enemies_label() -> void:
-	enemies_remaining_label.text = "Enemies left: " + str(enemigos_left) + "/" + str(enemigos_total)
+	enemies_remaining_label.text = "Enemies left: " + str(Global.enemy_room_left) + "/" + str(Global.enemy_room_count)
+	print("enemigos totales: " , Global.enemy_room_count , "enemigos que quedan. ", Global.enemy_room_left)
 
 func _on_upgrade_unlocked(upgrade_name: String) -> void:
 	# Evitar duplicados

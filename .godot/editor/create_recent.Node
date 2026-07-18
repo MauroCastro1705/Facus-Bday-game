@@ -1,3 +1,4 @@
+Node2D
 PointLight2D
 AudioStreamPlayer2D
 AnimationPlayer
@@ -10,6 +11,4 @@ VBoxContainer
 TextureRect
 ColorRect
 GPUParticles2D
-Node2D
 Timer
-CollisionShape2D

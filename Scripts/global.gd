@@ -34,7 +34,8 @@ var bulletSpeed = 800
 ### enemigos daño balas
 var mob_basico_dmg:float = 11
 var mob_torreta_dmg:float = 8
-
+var enemy_room_count:int = 0
+var enemy_room_left:int = 0
 #### GAME VARS ###
 var gameTimer = 0
 

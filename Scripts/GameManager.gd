@@ -39,7 +39,6 @@ func _ready():
 		_switch_to_room(initial_room_index)
 
 func _switch_to_room(room_index: int):
-	"""Cambia a una habitación usando el TransitionManager"""
 	if transitioning:
 		push_warning("Ya hay una transición en curso")
 		return
@@ -74,7 +73,6 @@ func _switch_to_room(room_index: int):
 		transitioning = false
 
 func _perform_room_change(room_index: int):
-	"""Realiza el cambio físico de la habitación"""
 	# Limpiar habitación actual
 	if current_room_instance:
 		disconnect_room_signals(current_room_instance)
@@ -182,7 +180,6 @@ func disconnect_room_signals(room: Node2D):
 # ============= SEÑALES CON CALL_DEFERRED =============
 
 func _on_transition_area_entered(body: Node2D, room_index: int):
-	"""Cuando el jugador entra al área de transición"""
 	if body != player or transitioning:
 		return
 	
@@ -251,7 +248,6 @@ func get_room_total_enemies(room_index: int = -1) -> int:
 	return 0
 
 func restart_game():
-	"""Reinicia el juego desde la primera habitación"""
 	if transitioning:
 		return
 	
@@ -259,12 +255,9 @@ func restart_game():
 	_switch_to_room(initial_room_index)
 
 func _on_player_death():
-	"""Cuando el jugador muere, usa el TransitionManager"""
 	if transition_manager:
 		# Usar el sistema de transiciones para ir al Game Over
 		transition_manager.change_scene(GAME_OVER)
 	else:
-		# Fallback si no hay TransitionManager
-		print("⚠️ TransitionManager no encontrado, cambiando sin transición")
 		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 		get_tree().change_scene_to_file(GAME_OVER)

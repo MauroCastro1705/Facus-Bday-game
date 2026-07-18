@@ -609,6 +609,10 @@ _data = {
 
 [node name="Upgrade room 1" unique_id=1639878217 instance=ExtResource("1_36eoa")]
 script = ExtResource("2_jaqdj")
+room_name = "Mejoras el indio"
+room_id = 1
+requires_clear = false
+spawn_enemies_on_enter = false
 
 [node name="SpawnPoint" parent="." index="0" unique_id=219479906]
 position = Vector2(51, 112)
@@ -669,59 +673,77 @@ skill_display_name = "Bullterrier"
 skill_description = "Aumenta el cargador del arma"
 skill_price = 250
 
-[node name="PointLight2D23" parent="." index="14" unique_id=1771395343 instance=ExtResource("14_pmbhc")]
-position = Vector2(460, 106.00001)
+[node name="PointLight2D23" type="PointLight2D" parent="." index="14" unique_id=1771395343]
+position = Vector2(461, 124.00001)
 scale = Vector2(21.97917, 21.97917)
-color = Color(1, 1, 1, 1)
+color = Color(1, 0.85490197, 0.6156863, 1)
+energy = 1.5
 texture = SubResource("GradientTexture2D_sa6hy")
+texture_scale = 0.3
 
-[node name="PointLight2D24" parent="." index="15" unique_id=929265754 instance=ExtResource("14_pmbhc")]
-position = Vector2(452, 591)
+[node name="PointLight2D24" type="PointLight2D" parent="." index="15" unique_id=1044833421]
+position = Vector2(651, 431)
 scale = Vector2(21.97917, 21.97917)
-color = Color(1, 1, 1, 1)
+color = Color(1, 0.85490197, 0.6156863, 1)
+energy = 1.5
 texture = SubResource("GradientTexture2D_sa6hy")
+texture_scale = 0.3
 
-[node name="PointLight2D25" parent="." index="16" unique_id=930976023 instance=ExtResource("14_pmbhc")]
-position = Vector2(805, 227.00006)
+[node name="PointLight2D25" type="PointLight2D" parent="." index="16" unique_id=846938579]
+position = Vector2(116, 366)
 scale = Vector2(21.97917, 21.97917)
-color = Color(1, 1, 1, 1)
+color = Color(1, 0.85490197, 0.6156863, 1)
+energy = 1.5
 texture = SubResource("GradientTexture2D_sa6hy")
+texture_scale = 0.3
 
-[node name="PointLight2D26" parent="." index="17" unique_id=484587479 instance=ExtResource("14_pmbhc")]
-position = Vector2(904, -128)
+[node name="PointLight2D26" type="PointLight2D" parent="." index="17" unique_id=1387691010]
+position = Vector2(690, 621)
 scale = Vector2(21.97917, 21.97917)
-color = Color(1, 1, 1, 1)
+color = Color(1, 0.85490197, 0.6156863, 1)
+energy = 1.5
 texture = SubResource("GradientTexture2D_sa6hy")
+texture_scale = 0.3
 
-[node name="PointLight2D27" parent="." index="18" unique_id=1832498775 instance=ExtResource("14_pmbhc")]
-position = Vector2(1212, 357)
+[node name="PointLight2D27" type="PointLight2D" parent="." index="18" unique_id=1967292083]
+position = Vector2(881.00006, 241.00006)
 scale = Vector2(21.97917, 21.97917)
-color = Color(1, 1, 1, 1)
+color = Color(1, 0.85490197, 0.6156863, 1)
+energy = 1.5
 texture = SubResource("GradientTexture2D_sa6hy")
+texture_scale = 0.3
 
-[node name="PointLight2D28" parent="." index="19" unique_id=148602184 instance=ExtResource("14_pmbhc")]
-position = Vector2(1272.0001, 743)
+[node name="PointLight2D28" type="PointLight2D" parent="." index="19" unique_id=36662279]
+position = Vector2(974.00006, -126)
 scale = Vector2(21.97917, 21.97917)
-color = Color(1, 1, 1, 1)
+color = Color(1, 0.85490197, 0.6156863, 1)
+energy = 1.5
 texture = SubResource("GradientTexture2D_sa6hy")
+texture_scale = 0.3
 
-[node name="PointLight2D29" parent="." index="20" unique_id=91115224 instance=ExtResource("14_pmbhc")]
-position = Vector2(826.0001, 739.00006)
+[node name="PointLight2D29" type="PointLight2D" parent="." index="20" unique_id=461577763]
+position = Vector2(945, 478)
 scale = Vector2(21.97917, 21.97917)
-color = Color(1, 1, 1, 1)
+color = Color(1, 0.85490197, 0.6156863, 1)
+energy = 1.5
 texture = SubResource("GradientTexture2D_sa6hy")
+texture_scale = 0.3
 
-[node name="PointLight2D30" parent="." index="21" unique_id=2004994377 instance=ExtResource("14_pmbhc")]
-position = Vector2(968, 521.00006)
+[node name="PointLight2D30" type="PointLight2D" parent="." index="21" unique_id=1931685526]
+position = Vector2(1273, 398.00003)
 scale = Vector2(21.97917, 21.97917)
-color = Color(1, 1, 1, 1)
+color = Color(1, 0.85490197, 0.6156863, 1)
+energy = 1.5
 texture = SubResource("GradientTexture2D_sa6hy")
+texture_scale = 0.3
 
-[node name="PointLight2D31" parent="." index="22" unique_id=2020867540 instance=ExtResource("14_pmbhc")]
-position = Vector2(950.00006, 227)
+[node name="PointLight2D31" type="PointLight2D" parent="." index="22" unique_id=811645260]
+position = Vector2(453, 716)
 scale = Vector2(21.97917, 21.97917)
-color = Color(1, 1, 1, 1)
+color = Color(1, 0.85490197, 0.6156863, 1)
+energy = 1.5
 texture = SubResource("GradientTexture2D_sa6hy")
+texture_scale = 0.3
 
 [node name="luces" type="Node2D" parent="." index="23" unique_id=1917856121]
 
