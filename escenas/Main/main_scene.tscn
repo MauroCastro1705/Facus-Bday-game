@@ -31,7 +31,7 @@ game_manager = NodePath("../gameManager")
 script = ExtResource("7_mo04v")
 rooms_parent = NodePath(".")
 player = NodePath("../Player")
-room_scenes = Array[PackedScene]([ExtResource("7_0d53b"), ExtResource("6_du476"), ExtResource("7_du476")])
+room_scenes = Array[PackedScene]([ExtResource("6_du476"), ExtResource("7_0d53b"), ExtResource("7_du476")])
 
 [node name="CanvasLayer2" type="CanvasLayer" parent="." unique_id=114641876]
 

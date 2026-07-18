@@ -7,7 +7,9 @@
 [ext_resource type="PackedScene" uid="uid://bx2fjbx8a57ai" path="res://characters/enemy_static/mob_static.tscn" id="4_l8lb4"]
 [ext_resource type="PackedScene" uid="uid://5e0vkf1a1w4g" path="res://objetos_mapa/heal_zone/altar__curacion.tscn" id="8_ws2lx"]
 [ext_resource type="PackedScene" uid="uid://x7kt6vxo1fjl" path="res://objetos_mapa/luz_animada.tscn" id="9_23bs8"]
+[ext_resource type="Texture2D" uid="uid://27snuo2xxv58" path="res://assets/Textures Of Light Alpha/512x512 textures (82).png" id="10_1vl5q"]
 [ext_resource type="AudioStream" uid="uid://c507o3iwj0a20" path="res://assets/doom_music.wav" id="10_6x78x"]
+[ext_resource type="Texture2D" uid="uid://b73tgd7ha2s72" path="res://assets/Textures Of Light Alpha/512x512 textures (23).png" id="11_b2xhn"]
 [ext_resource type="PackedScene" uid="uid://cqnkwniargv32" path="res://objetos_mapa/portal/portal.tscn" id="12_b2xhn"]
 [ext_resource type="PackedScene" uid="uid://cjtpjneeq4wcp" path="res://characters/payaso/payaso.tscn" id="12_si3gk"]
 
@@ -22,6 +24,9 @@ gradient = SubResource("Gradient_n42el")
 fill = 1
 fill_from = Vector2(0.4871795, 0.5555556)
 fill_to = Vector2(0.76495725, 0.22222222)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_si3gk"]
+load_path = "res://.godot/imported/512x512 textures (46).png-485bd899392c30c2312cf93d8b8fdabc.ctex"
 
 [node name="Room_1" unique_id=1639878217 instance=ExtResource("1_u421q")]
 room_name = "primer nivel"
@@ -167,40 +172,157 @@ position = Vector2(1841, 995)
 [node name="PointLight2D37" parent="luces" index="4" unique_id=1284599144 instance=ExtResource("9_23bs8")]
 position = Vector2(2384, 1027)
 
-[node name="PointLight2D38" parent="luces" index="5" unique_id=1012072329 instance=ExtResource("9_23bs8")]
+[node name="PointLight2D50" parent="luces" index="5" unique_id=1129345687 instance=ExtResource("9_23bs8")]
+position = Vector2(2033, 911.00006)
+scale = Vector2(-0.29976925, 0.45688957)
+texture = ExtResource("10_1vl5q")
+texture_scale = 0.67
+
+[node name="PointLight2D51" parent="luces" index="6" unique_id=1251975345 instance=ExtResource("9_23bs8")]
+position = Vector2(1648, 911.00006)
+scale = Vector2(-0.29976925, 0.45688957)
+texture = ExtResource("10_1vl5q")
+texture_scale = 0.67
+
+[node name="PointLight2D52" parent="luces" index="7" unique_id=1437881239 instance=ExtResource("9_23bs8")]
+position = Vector2(1679.9999, 469.0001)
+scale = Vector2(-0.29976925, 0.45688957)
+texture = ExtResource("10_1vl5q")
+texture_scale = 0.67
+
+[node name="PointLight2D53" parent="luces" index="8" unique_id=2030559026 instance=ExtResource("9_23bs8")]
+position = Vector2(1363, 465.99997)
+scale = Vector2(-0.29976925, 0.45688957)
+texture = ExtResource("10_1vl5q")
+texture_scale = 0.67
+
+[node name="PointLight2D54" parent="luces" index="9" unique_id=1462768465 instance=ExtResource("9_23bs8")]
+position = Vector2(402, 120.00003)
+scale = Vector2(-0.29976925, 0.45688957)
+texture = ExtResource("10_1vl5q")
+texture_scale = 0.67
+
+[node name="PointLight2D55" parent="luces" index="10" unique_id=30988680 instance=ExtResource("9_23bs8")]
+position = Vector2(1423, 302)
+scale = Vector2(-0.29976925, 0.45688957)
+texture = ExtResource("10_1vl5q")
+texture_scale = 0.67
+
+[node name="PointLight2D56" parent="luces" index="11" unique_id=1480412597 instance=ExtResource("9_23bs8")]
+position = Vector2(1874, 306.00003)
+scale = Vector2(-0.29976925, 0.45688957)
+texture = ExtResource("10_1vl5q")
+texture_scale = 0.67
+
+[node name="PointLight2D59" parent="luces" index="12" unique_id=957306473 instance=ExtResource("9_23bs8")]
+position = Vector2(2384, 632)
+scale = Vector2(-0.22546294, 0.15978728)
+color = Color(0.55647755, 0.07282158, 0.14839897, 1)
+texture = ExtResource("10_1vl5q")
+texture_scale = 0.67
+
+[node name="PointLight2D60" parent="luces" index="13" unique_id=958590863 instance=ExtResource("9_23bs8")]
+position = Vector2(2673.0002, 632)
+scale = Vector2(-0.22546294, 0.15978728)
+color = Color(0.55647755, 0.07282158, 0.14839897, 1)
+texture = ExtResource("10_1vl5q")
+texture_scale = 0.67
+
+[node name="PointLight2D61" parent="luces" index="14" unique_id=204951302 instance=ExtResource("9_23bs8")]
+position = Vector2(2479, 632)
+scale = Vector2(-0.22546294, 0.15978728)
+color = Color(0.55647755, 0.07282158, 0.14839897, 1)
+texture = ExtResource("10_1vl5q")
+texture_scale = 0.67
+
+[node name="PointLight2D62" parent="luces" index="15" unique_id=637832209 instance=ExtResource("9_23bs8")]
+position = Vector2(2384, 726.40674)
+scale = Vector2(-0.22546294, 0.15978728)
+color = Color(0.55647755, 0.07282158, 0.14839897, 1)
+texture = ExtResource("10_1vl5q")
+texture_scale = 0.67
+
+[node name="PointLight2D63" parent="luces" index="16" unique_id=1041999916 instance=ExtResource("9_23bs8")]
+position = Vector2(2673.0002, 726.40674)
+scale = Vector2(-0.22546294, 0.15978728)
+color = Color(0.55647755, 0.07282158, 0.14839897, 1)
+texture = ExtResource("10_1vl5q")
+texture_scale = 0.67
+
+[node name="PointLight2D64" parent="luces" index="17" unique_id=343401801 instance=ExtResource("9_23bs8")]
+position = Vector2(2479, 726.40674)
+scale = Vector2(-0.22546294, 0.15978728)
+color = Color(0.55647755, 0.07282158, 0.14839897, 1)
+texture = ExtResource("10_1vl5q")
+texture_scale = 0.67
+
+[node name="PointLight2D65" parent="luces" index="18" unique_id=424359947 instance=ExtResource("9_23bs8")]
+position = Vector2(2384, 823.40674)
+scale = Vector2(-0.22546294, 0.15978728)
+color = Color(0.55647755, 0.07282158, 0.14839897, 1)
+texture = ExtResource("10_1vl5q")
+texture_scale = 0.67
+
+[node name="PointLight2D66" parent="luces" index="19" unique_id=1886231308 instance=ExtResource("9_23bs8")]
+position = Vector2(2673.0002, 823.40674)
+scale = Vector2(-0.22546294, 0.15978728)
+color = Color(0.55647755, 0.07282158, 0.14839897, 1)
+texture = ExtResource("10_1vl5q")
+texture_scale = 0.67
+
+[node name="PointLight2D67" parent="luces" index="20" unique_id=2059102135 instance=ExtResource("9_23bs8")]
+position = Vector2(2479, 823.40674)
+scale = Vector2(-0.22546294, 0.15978728)
+color = Color(0.55647755, 0.07282158, 0.14839897, 1)
+texture = ExtResource("10_1vl5q")
+texture_scale = 0.67
+
+[node name="PointLight2D57" parent="luces" index="21" unique_id=451955326 instance=ExtResource("9_23bs8")]
+position = Vector2(2127, 306.00003)
+scale = Vector2(-0.29976925, 0.45688957)
+texture = ExtResource("10_1vl5q")
+texture_scale = 0.67
+
+[node name="PointLight2D58" parent="luces" index="22" unique_id=1679057960 instance=ExtResource("9_23bs8")]
+position = Vector2(1141, -136)
+scale = Vector2(-0.29976925, 0.45688957)
+texture = ExtResource("10_1vl5q")
+texture_scale = 0.67
+
+[node name="PointLight2D38" parent="luces" index="23" unique_id=1012072329 instance=ExtResource("9_23bs8")]
 position = Vector2(2640, 1027)
 
-[node name="PointLight2D39" parent="luces" index="6" unique_id=1942477896 instance=ExtResource("9_23bs8")]
+[node name="PointLight2D39" parent="luces" index="24" unique_id=1942477896 instance=ExtResource("9_23bs8")]
 position = Vector2(2001, 387)
 
-[node name="PointLight2D40" parent="luces" index="7" unique_id=1535426255 instance=ExtResource("9_23bs8")]
+[node name="PointLight2D40" parent="luces" index="25" unique_id=1535426255 instance=ExtResource("9_23bs8")]
 position = Vector2(1616, 195)
 
-[node name="PointLight2D41" parent="luces" index="8" unique_id=1023176617 instance=ExtResource("9_23bs8")]
+[node name="PointLight2D41" parent="luces" index="26" unique_id=1023176617 instance=ExtResource("9_23bs8")]
 position = Vector2(1233, 387)
 
-[node name="PointLight2D42" parent="luces" index="9" unique_id=1016040296 instance=ExtResource("9_23bs8")]
+[node name="PointLight2D42" parent="luces" index="27" unique_id=1016040296 instance=ExtResource("9_23bs8")]
 position = Vector2(112, 195)
 
-[node name="PointLight2D49" parent="luces" index="10" unique_id=2065942920 instance=ExtResource("9_23bs8")]
+[node name="PointLight2D49" parent="luces" index="28" unique_id=2065942920 instance=ExtResource("9_23bs8")]
 position = Vector2(560, 163)
 
-[node name="PointLight2D43" parent="luces" index="11" unique_id=558087012 instance=ExtResource("9_23bs8")]
+[node name="PointLight2D43" parent="luces" index="29" unique_id=558087012 instance=ExtResource("9_23bs8")]
 position = Vector2(1296, 3)
 
-[node name="PointLight2D44" parent="luces" index="12" unique_id=272292637 instance=ExtResource("9_23bs8")]
+[node name="PointLight2D44" parent="luces" index="30" unique_id=272292637 instance=ExtResource("9_23bs8")]
 position = Vector2(1456, -125)
 
-[node name="PointLight2D45" parent="luces" index="13" unique_id=969567918 instance=ExtResource("9_23bs8")]
+[node name="PointLight2D45" parent="luces" index="31" unique_id=969567918 instance=ExtResource("9_23bs8")]
 position = Vector2(1744, -157)
 
-[node name="PointLight2D46" parent="luces" index="14" unique_id=892736272 instance=ExtResource("9_23bs8")]
+[node name="PointLight2D46" parent="luces" index="32" unique_id=892736272 instance=ExtResource("9_23bs8")]
 position = Vector2(1904, -157)
 
-[node name="PointLight2D47" parent="luces" index="15" unique_id=1245734756 instance=ExtResource("9_23bs8")]
+[node name="PointLight2D47" parent="luces" index="33" unique_id=1245734756 instance=ExtResource("9_23bs8")]
 position = Vector2(2256, -125)
 
-[node name="PointLight2D48" parent="luces" index="16" unique_id=876100536 instance=ExtResource("9_23bs8")]
+[node name="PointLight2D48" parent="luces" index="34" unique_id=876100536 instance=ExtResource("9_23bs8")]
 position = Vector2(2545, -124)
 
 [node name="luz_ambiental" type="Node2D" parent="." index="15" unique_id=1030836420]
@@ -237,31 +359,40 @@ energy = 1.5
 texture = SubResource("GradientTexture2D_6x78x")
 texture_scale = 0.3
 
-[node name="PointLight2D27" type="PointLight2D" parent="luz_ambiental" index="4" unique_id=545890775]
-position = Vector2(2338.9998, 680)
-scale = Vector2(31.979158, 31.979158)
-color = Color(1, 0.3874513, 0.32410908, 1)
-energy = 1.5
-texture = SubResource("GradientTexture2D_6x78x")
-texture_scale = 0.3
+[node name="PointLight2D28" type="PointLight2D" parent="luz_ambiental" index="4" unique_id=1143306762]
+position = Vector2(2494, 772)
+scale = Vector2(3.8769517, 3.0388896)
+color = Color(0.5251852, 0.19536638, 0.16609648, 1)
+energy = 4.49
+blend_mode = 2
+texture = SubResource("CompressedTexture2D_si3gk")
+texture_scale = 0.4
 
-[node name="PointLight2D28" type="PointLight2D" parent="luz_ambiental" index="5" unique_id=1143306762]
-position = Vector2(2624, 864)
-scale = Vector2(31.979158, 31.979158)
-color = Color(1, 0.3874513, 0.32410908, 1)
-energy = 1.5
-texture = SubResource("GradientTexture2D_6x78x")
-texture_scale = 0.3
-
-[node name="PointLight2D29" type="PointLight2D" parent="luz_ambiental" index="6" unique_id=556296878]
+[node name="PointLight2D29" type="PointLight2D" parent="luz_ambiental" index="5" unique_id=556296878]
 position = Vector2(1822, 756.99994)
-scale = Vector2(31.979158, 31.979158)
-color = Color(1, 0.3874513, 0.32410908, 1)
+scale = Vector2(23.33332, 23.33332)
+color = Color(0.09672869, 0.7114189, 0.6526513, 1)
 energy = 1.5
 texture = SubResource("GradientTexture2D_6x78x")
 texture_scale = 0.3
 
-[node name="PointLight2D30" type="PointLight2D" parent="luz_ambiental" index="7" unique_id=1412796919]
+[node name="PointLight2D33" type="PointLight2D" parent="luz_ambiental" index="6" unique_id=766670646]
+position = Vector2(477, 350)
+scale = Vector2(23.33332, 23.33332)
+color = Color(0.09672869, 0.7114189, 0.6526513, 1)
+energy = 1.5
+texture = SubResource("GradientTexture2D_6x78x")
+texture_scale = 0.3
+
+[node name="PointLight2D34" type="PointLight2D" parent="luz_ambiental" index="7" unique_id=682516908]
+position = Vector2(1333, -96)
+scale = Vector2(23.33332, 23.33332)
+color = Color(0.09672869, 0.7114189, 0.6526513, 1)
+energy = 1.5
+texture = SubResource("GradientTexture2D_6x78x")
+texture_scale = 0.3
+
+[node name="PointLight2D30" type="PointLight2D" parent="luz_ambiental" index="8" unique_id=1412796919]
 position = Vector2(1215, -224)
 scale = Vector2(31.979158, 31.979158)
 color = Color(1, 0.3874513, 0.32410908, 1)
@@ -269,7 +400,7 @@ energy = 1.5
 texture = SubResource("GradientTexture2D_6x78x")
 texture_scale = 0.3
 
-[node name="PointLight2D32" type="PointLight2D" parent="luz_ambiental" index="8" unique_id=1412309254]
+[node name="PointLight2D32" type="PointLight2D" parent="luz_ambiental" index="9" unique_id=1412309254]
 position = Vector2(1919, -264)
 scale = Vector2(31.979158, 31.979158)
 color = Color(1, 0.3874513, 0.32410908, 1)
@@ -277,13 +408,13 @@ energy = 1.5
 texture = SubResource("GradientTexture2D_6x78x")
 texture_scale = 0.3
 
-[node name="PointLight2D31" type="PointLight2D" parent="luz_ambiental" index="9" unique_id=993161303]
-position = Vector2(78, 85)
-scale = Vector2(31.979158, 31.979158)
-color = Color(1, 0.3874513, 0.32410908, 1)
+[node name="PointLight2D31" type="PointLight2D" parent="luz_ambiental" index="10" unique_id=993161303]
+position = Vector2(83.00001, 108)
+scale = Vector2(141.01563, 92.68365)
+color = Color(0.6266686, 0.6189164, 0.58454823, 1)
 energy = 1.5
-texture = SubResource("GradientTexture2D_6x78x")
-texture_scale = 0.3
+texture = ExtResource("11_b2xhn")
+texture_scale = 0.01
 
 [node name="doom_music" type="AudioStreamPlayer2D" parent="." index="16" unique_id=2022148181]
 position = Vector2(472, 84)
