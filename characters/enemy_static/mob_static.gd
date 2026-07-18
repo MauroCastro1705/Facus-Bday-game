@@ -4,6 +4,9 @@ extends CharacterBody2D
 @onready var death_sound: AudioStreamPlayer2D = $death_sound
 
 signal died
+
+@onready var mob_sprite: AnimatedSprite2D = $AnimatedSprite2D
+
 @export var bullet: PackedScene
 @export var bullet_speed:int = 230 ##velocidad proyectil
 @export var coin:PackedScene
@@ -190,6 +193,7 @@ func take_damage(damage: int) -> void:
 	
 	current_health = max(current_health - damage, 0)
 	DamageNumbers.display_numbers(damage, global_position)
+	apply_damage_effect(mob_sprite)
 	if barra_vida:
 		barra_vida.take_damage(damage)
 
@@ -231,3 +235,16 @@ func spawn_coins_safe(world: Node) -> void:
 func _enter_tree() -> void:
 	# Añadir el enemigo al grupo "enemies" para referencia
 	add_to_group("enemies")
+	
+func apply_damage_effect(sprite: AnimatedSprite2D):
+	var tween = create_tween()
+	
+	# Flash blanco (más rápido y visible)
+	sprite.modulate = Color.WHITE
+	tween.tween_property(sprite, "modulate", Color(1, 1, 1, 1), 0.05)
+	tween.tween_property(sprite, "modulate", Color(1, 1, 1, 0.5), 0.05)
+	tween.tween_property(sprite, "modulate", Color(1, 1, 1, 1), 0.05)
+	
+	# Pequeño movimiento hacia atrás
+	tween.parallel().tween_property(sprite, "position", sprite.position - Vector2(10, 0), 0.1)
+	tween.tween_property(sprite, "position", sprite.position, 0.1)

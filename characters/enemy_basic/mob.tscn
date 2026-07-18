@@ -4,14 +4,78 @@
 [ext_resource type="PackedScene" uid="uid://d2bikdxmosinu" path="res://pistol/bullet_enemy.tscn" id="2_3u7ve"]
 [ext_resource type="PackedScene" uid="uid://bo25qipahswpt" path="res://pickups/enemy_coin_pickup/coin_pickup.tscn" id="3_mhry0"]
 [ext_resource type="PackedScene" uid="uid://bhk8r7mumgdnr" path="res://UI/barra_vida/barra_vida.tscn" id="3_sjt0n"]
-[ext_resource type="Texture2D" uid="uid://b0a5kl025j6lu" path="res://assets/jack_black .png" id="4_d4ky1"]
 [ext_resource type="Texture2D" uid="uid://cxtigwvr7dq31" path="res://assets/luz_basica.tres" id="6_mhry0"]
 [ext_resource type="Texture2D" uid="uid://dhphe0mwl4ioa" path="res://assets/armas/1 Icons/Icon29_11.png" id="8_aktnc"]
 [ext_resource type="AudioStream" uid="uid://mdvkja71o3v5" path="res://assets/500 Sound Effects by Jalastram/FX71.mp3" id="8_lt8ey"]
+[ext_resource type="Texture2D" uid="uid://clxbwt1s5415j" path="res://assets/virus_1.png" id="9_joq50"]
 [ext_resource type="AudioStream" uid="uid://d0hofq3evkwpd" path="res://assets/500 Sound Effects by Jalastram/death.mp3" id="9_lt8ey"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_8tavr"]
 radius = 24.020824
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k7ffh"]
+atlas = ExtResource("9_joq50")
+region = Rect2(0, 0, 330, 314)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o654q"]
+atlas = ExtResource("9_joq50")
+region = Rect2(330, 0, 330, 314)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pa1bs"]
+atlas = ExtResource("9_joq50")
+region = Rect2(660, 0, 330, 314)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4ab1e"]
+atlas = ExtResource("9_joq50")
+region = Rect2(990, 0, 330, 314)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8d8sk"]
+atlas = ExtResource("9_joq50")
+region = Rect2(0, 390, 330, 314)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_homye"]
+atlas = ExtResource("9_joq50")
+region = Rect2(330, 390, 330, 314)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u28ih"]
+atlas = ExtResource("9_joq50")
+region = Rect2(660, 390, 330, 314)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x4mu3"]
+atlas = ExtResource("9_joq50")
+region = Rect2(990, 390, 330, 314)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_0vxqd"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_k7ffh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_o654q")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pa1bs")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4ab1e")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8d8sk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_homye")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_u28ih")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_x4mu3")
+}],
+"loop": true,
+"name": &"new_animation",
+"speed": 8.0
+}]
 
 [node name="Mob" type="CharacterBody2D" unique_id=187351653 groups=["enemies"]]
 platform_floor_layers = 4294967040
@@ -31,13 +95,8 @@ shape = SubResource("CircleShape2D_8tavr")
 position = Vector2(-32, -53)
 scale = Vector2(0.5025189, 0.5025189)
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1387571561]
-position = Vector2(1, -1)
-scale = Vector2(0.19487178, 0.19487177)
-texture = ExtResource("4_d4ky1")
-
 [node name="PointLight2D" type="PointLight2D" parent="." unique_id=434934853]
-scale = Vector2(1.34375, 1.34375)
+scale = Vector2(1.8125001, 1.8125002)
 energy = 0.7
 shadow_enabled = true
 texture = ExtResource("6_mhry0")
@@ -60,3 +119,11 @@ stream = ExtResource("8_lt8ey")
 
 [node name="death_sound" type="AudioStreamPlayer2D" parent="." unique_id=1061026739]
 stream = ExtResource("9_lt8ey")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1286666484]
+texture_filter = 1
+scale = Vector2(0.17197451, 0.17197452)
+sprite_frames = SubResource("SpriteFrames_0vxqd")
+animation = &"new_animation"
+autoplay = "new_animation"
+frame_progress = 0.11284253
