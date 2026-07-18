@@ -91,7 +91,7 @@ shape = SubResource("RectangleShape2D_b2xhn")
 [node name="Mob" parent="EnemiesContainer" parent_id_path=PackedInt32Array(102369919) index="0" unique_id=187351653 instance=ExtResource("3_8s4ct")]
 position = Vector2(1197, 230)
 fire_rate = 1.0
-detection_range = 150.0
+detection_range = 200.0
 
 [node name="Mob2" parent="EnemiesContainer" parent_id_path=PackedInt32Array(102369919) index="1" unique_id=2125748505 instance=ExtResource("3_8s4ct")]
 position = Vector2(702, -68)
@@ -214,7 +214,7 @@ attenuation = 0.000117911746
 [node name="luz_ambiental" type="Node2D" parent="." index="16" unique_id=1030836420]
 
 [node name="PointLight2D23" type="PointLight2D" parent="luz_ambiental" index="0" unique_id=165317812]
-position = Vector2(543, -26)
+position = Vector2(552, -8)
 scale = Vector2(31.979158, 31.979158)
 color = Color(1, 0.3874513, 0.32410908, 1)
 energy = 1.5
@@ -222,7 +222,7 @@ texture = SubResource("GradientTexture2D_6x78x")
 texture_scale = 0.3
 
 [node name="PointLight2D24" type="PointLight2D" parent="luz_ambiental" index="1" unique_id=327444214]
-position = Vector2(1469, 145)
+position = Vector2(1471, 134)
 scale = Vector2(31.979158, 31.979158)
 color = Color(1, 0.3874513, 0.32410908, 1)
 energy = 1.5
@@ -270,7 +270,7 @@ texture = SubResource("GradientTexture2D_6x78x")
 texture_scale = 0.3
 
 [node name="PointLight2D30" type="PointLight2D" parent="luz_ambiental" index="7" unique_id=1412796919]
-position = Vector2(1296, -200.00006)
+position = Vector2(1215, -224)
 scale = Vector2(31.979158, 31.979158)
 color = Color(1, 0.3874513, 0.32410908, 1)
 energy = 1.5
