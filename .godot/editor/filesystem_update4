@@ -8,3 +8,5 @@ res://shaders/waves.gdshader
 res://shaders/3dwaves.gdshader
 res://escenas/rooms/room_1.tscn
 res://escenas/rooms/room_2.tscn
+res://escenas/rooms/room_base/room_base.gd
+res://Scripts/GameManager.gd

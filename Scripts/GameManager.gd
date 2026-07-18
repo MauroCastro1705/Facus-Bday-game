@@ -60,7 +60,7 @@ func _switch_to_room(room_index: int):
 		transition_manager.change_scene("")  # Pasamos string vacío porque no cambiamos de escena
 		
 		# Esperar a que la transición de entrada termine
-		await get_tree().create_timer(0.5).timeout  # La duración de la transición
+		await get_tree().create_timer(0.2).timeout  # La duración de la transición
 		
 		# Realizar el cambio de habitación
 		_perform_room_change(room_index)
@@ -110,7 +110,6 @@ func _on_transition_complete():
 		pending_room_index = -1
 
 func setup_room(room: Node2D, room_index: int):
-	"""Configura la habitación después de instanciarla"""
 	# Buscar áreas de transición
 	var transition_areas = room.get_tree().get_nodes_in_group("room_transition")
 	for area in transition_areas:
@@ -179,20 +178,29 @@ func disconnect_room_signals(room: Node2D):
 
 # ============= SEÑALES CON CALL_DEFERRED =============
 
-func _on_transition_area_entered(body: Node2D, room_index: int):
+
+func _on_transition_area_entered(body: Node2D, _room_index: int):
 	if body != player or transitioning:
 		return
 	
-	# Verificar si la habitación está limpia
-	if not is_room_cleared(room_index):
-		print("¡Debes eliminar todos los enemigos primero!")
-		# Mostrar mensaje de bloqueo
-		if current_room_instance and current_room_instance is RoomBase:
+	# Verificar si la habitación actual está limpia
+	var room_clearedX = false
+	
+	# Primero intentar con RoomBase
+	if current_room_instance is RoomBase:
+		room_clearedX = current_room_instance.is_cleared
+	else:
+		# Fallback con el dictionary
+		room_clearedX = is_room_cleared(current_room_index)
+	
+	if not room_clearedX:
+		print("GameManager: Debes eliminar todos los enemigos primero")
+		if current_room_instance is RoomBase:
 			current_room_instance.show_blocked_message()
 		return
 	
-	# Avanzar a la siguiente habitación usando el TransitionManager
-	var next_room_index = room_index + 1
+	# Avanzar a la siguiente habitación
+	var next_room_index = current_room_index + 1  # Usar índice actual + 1
 	if next_room_index < room_scenes.size():
 		print("Avanzando a la habitación ", next_room_index, " con transición")
 		_switch_to_room(next_room_index)
@@ -208,9 +216,8 @@ func _on_enemy_died(room_index: int):
 		
 		if room_data[room_index].enemies_alive <= 0:
 			room_data[room_index].cleared = true
-			print("¡Habitación ", room_index, " limpiada!")
+			print("Game_manager = Habitación ", room_index, " limpiada!")
 			room_cleared.emit(room_index)
-			
 			# Notificar a la habitación si es RoomBase
 			if current_room_instance and current_room_instance is RoomBase:
 				current_room_instance.on_room_cleared()
