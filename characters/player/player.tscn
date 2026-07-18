@@ -6,7 +6,6 @@
 [ext_resource type="Texture2D" uid="uid://b3334ee2weo43" path="res://ui-bordersz/crosshair_game (1).png" id="5_c6leb"]
 [ext_resource type="Texture2D" uid="uid://bw4dfu5m8hnou" path="res://ui-bordersz/crosshair_game (2).png" id="6_dirf7"]
 [ext_resource type="Texture2D" uid="uid://dwxosasqgcqdt" path="res://assets/ui/03.png" id="6_idpv6"]
-[ext_resource type="Texture2D" uid="uid://b73tgd7ha2s72" path="res://assets/Textures Of Light Alpha/512x512 textures (23).png" id="7_dirf7"]
 [ext_resource type="Texture2D" uid="uid://dmr2tvjl3lbou" path="res://assets/facu.png" id="8_idpv6"]
 [ext_resource type="LabelSettings" uid="uid://sy8p2f33pssc" path="res://assets/texto_generico.tres" id="9_rpf03"]
 [ext_resource type="Material" uid="uid://c5uh8gcbwig1f" path="res://shaders/hurt_damage.tres" id="10_x5dtk"]
@@ -80,6 +79,15 @@ animations = [{
 cull_mode = 2
 polygon = PackedVector2Array(475, 346, 475, 390, 443, 391, 443, 346)
 
+[sub_resource type="Gradient" id="Gradient_x5dtk"]
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_3t07l"]
+gradient = SubResource("Gradient_x5dtk")
+fill = 1
+fill_from = Vector2(0.50427353, 0.50427353)
+fill_to = Vector2(0.7136752, 0.2008547)
+
 [node name="Player" type="CharacterBody2D" unique_id=1757322592 node_paths=PackedStringArray("gun") groups=["player"]]
 collision_layer = 9
 platform_floor_layers = 4294967040
@@ -131,11 +139,6 @@ animation = &"reloading"
 autoplay = "default"
 frame_progress = 0.07206951
 
-[node name="PointLight2D" type="PointLight2D" parent="." unique_id=183698058]
-position = Vector2(2, 6)
-shadow_enabled = true
-texture = ExtResource("7_dirf7")
-
 [node name="dash_timer" type="Timer" parent="." unique_id=673748417]
 wait_time = 5.0
 
@@ -176,6 +179,9 @@ offset_bottom = 280.0
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=90387491]
 stream = ExtResource("11_3t07l")
+
+[node name="PointLight2D" type="PointLight2D" parent="." unique_id=1621380998]
+texture = SubResource("GradientTexture2D_3t07l")
 
 [connection signal="timeout" from="dash_timer" to="." method="_on_dash_1_timer_timeout"]
 [connection signal="timeout" from="dash_timer_2" to="." method="_on_dash_timer_2_timeout"]

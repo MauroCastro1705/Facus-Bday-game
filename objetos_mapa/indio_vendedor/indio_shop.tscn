@@ -11,6 +11,16 @@ radius = 39.293766
 [sub_resource type="CircleShape2D" id="CircleShape2D_iah6x"]
 radius = 210.37347
 
+[sub_resource type="Gradient" id="Gradient_x5dtk"]
+offsets = PackedFloat32Array(0, 0.8235294)
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_f8m1s"]
+gradient = SubResource("Gradient_x5dtk")
+fill = 1
+fill_from = Vector2(0.50427353, 0.50427353)
+fill_to = Vector2(0.7136752, 0.2008547)
+
 [node name="IndioShop" type="StaticBody2D" unique_id=1392695461 groups=["indio"]]
 script = ExtResource("1_ysxhq")
 
@@ -64,6 +74,11 @@ autowrap_mode = 3
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="player_detection" unique_id=709836827]
 shape = SubResource("CircleShape2D_iah6x")
+
+[node name="PointLight2D" type="PointLight2D" parent="." unique_id=1421065459]
+position = Vector2(0, 10.999999)
+scale = Vector2(4.375, 4.3749995)
+texture = SubResource("GradientTexture2D_f8m1s")
 
 [connection signal="body_entered" from="player_detection" to="." method="_on_player_detection_body_entered"]
 [connection signal="body_exited" from="player_detection" to="." method="_on_player_detection_body_exited"]

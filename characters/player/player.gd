@@ -327,7 +327,6 @@ func show_damage_mgs() -> void:
 
 func show_reload_mgs() -> void:
 	reloading_label.show()
-	hurt_shader_animation()
 	reloading_label.modulate.a = 1.0
 	var tween = create_tween()
 	tween.tween_property(reloading_label, "modulate:a", 0.0, 1.5).set_delay(0.3)

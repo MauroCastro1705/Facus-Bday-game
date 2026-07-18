@@ -8,7 +8,6 @@
 [ext_resource type="Texture2D" uid="uid://b720wvkb7iv8b" path="res://assets/Pixel Art Top Down - Basic v1.2.3/Texture 32x32/TX Tileset Wall.png" id="6_pmk7e"]
 [ext_resource type="Texture2D" uid="uid://c8ja2wej61pbh" path="res://assets/Pixel Art Top Down - Basic v1.2.3/Texture 32x32/TX Plant.png" id="7_dj7yj"]
 [ext_resource type="Texture2D" uid="uid://x8awaqqldr6y" path="res://assets/Pixel Art Top Down - Basic v1.2.3/Texture 32x32/TX Props.png" id="8_61gup"]
-[ext_resource type="Texture2D" uid="uid://j0k4rqeltw1m" path="res://assets/Textures Of Light Alpha/512x512 textures (48).png" id="9_1ma2l"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5650r"]
 texture = ExtResource("1_e5xut")
@@ -1073,6 +1072,16 @@ _data = {
 &"letras": SubResource("Animation_e5xut")
 }
 
+[sub_resource type="Gradient" id="Gradient_x5dtk"]
+offsets = PackedFloat32Array(0, 0.8235294)
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_6h4l3"]
+gradient = SubResource("Gradient_x5dtk")
+fill = 1
+fill_from = Vector2(0.50427353, 0.50427353)
+fill_to = Vector2(0.7136752, 0.2008547)
+
 [node name="Pilar con luz" type="Node2D" unique_id=1352233178]
 
 [node name="paredes" type="TileMapLayer" parent="." unique_id=1377779858]
@@ -1086,15 +1095,6 @@ position = Vector2(-1233, -378)
 tile_map_data = PackedByteArray(0, 0, 38, 0, 11, 0, 9, 0, 8, 0, 3, 0, 0, 0, 38, 0, 12, 0, 9, 0, 8, 0, 4, 0, 0, 0)
 tile_set = SubResource("TileSet_3w02n")
 
-[node name="PointLight2D" type="PointLight2D" parent="." unique_id=1954895427]
-position = Vector2(3.5527137e-15, 3.0517578e-05)
-rotation = -1.5707964
-scale = Vector2(0.5740284, 0.8607474)
-color = Color(0.44705883, 0.972549, 0.23137255, 1)
-energy = 1.15
-shadow_enabled = true
-texture = ExtResource("9_1ma2l")
-
 [node name="GPUParticles2D" type="GPUParticles2D" parent="." unique_id=534517309]
 position = Vector2(0.19999695, -0.80000305)
 amount = 36
@@ -1104,3 +1104,10 @@ process_material = SubResource("ParticleProcessMaterial_e4byi")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=632821921]
 libraries/ = SubResource("AnimationLibrary_twdp0")
+
+[node name="PointLight2D2" type="PointLight2D" parent="." unique_id=866849166]
+position = Vector2(0, 10.999999)
+scale = Vector2(4.375, 4.3749995)
+color = Color(0.6371783, 0.9949767, 0.29833716, 1)
+energy = 3.0
+texture = SubResource("GradientTexture2D_6h4l3")
