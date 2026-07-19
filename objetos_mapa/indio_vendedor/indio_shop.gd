@@ -32,11 +32,12 @@ func change_text() -> void:
 	
 	match texto_indice:
 		1:
-			texto_indio.text = "que tiras tiros gil, tomatela!"
+			texto_indio.text = "¡Nene-nena! ¡Nene-nena! ¡Nene-nena!
+¡Nene-nena! ¡Nena-uh"
 		2:
-			texto_indio.text = "Tirale a esas estatuas, algo te va a ayudar"
+			texto_indio.text = "Tirale a esas estatuas, algo te van a ayudar"
 		3:
-			texto_indio.text = "sos feo"
+			texto_indio.text = "VIVIR SOLO CUESTA BIRRA"
 		_:
 			texto_indice = 0
 			texto_indio.text = "que tiras tiros gil, tomatela!"

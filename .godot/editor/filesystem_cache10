@@ -1,5 +1,5 @@
 63f7b34db8d8cdea90c76aacccf841ec
-::res://::1784470422
+::res://::1784470624
 default_bus_layout.tres::AudioBusLayout::6564268947468103023::1783623361::0::1::::<><><>0<>0<><>::
 export_presets.cfg::TextFile::-1::1783623361::0::1::::<><><>0<>0<><>::
 icon.png::CompressedTexture2D::8812228409431975077::1783623361::1783704150::1::::<><><>0<>0<>6920f5f91be7b3649c95344f1076cca0<>res://.godot/imported/icon.png-487276ed1e3a0c39cad0279d744ee560.ctex::
@@ -36,7 +36,7 @@ split_code_edit.gd::GDScript::100600887905101977::1783981135::0::1::::<>CodeEdit
 custom_tab.gd::GDScript::3471091704543533932::1783981135::0::1::::<>Button<><>0<>1<><>::
 multiline_tab_bar.gd::GDScript::826788674424172162::1783981135::0::1::::<>PanelContainer<><>0<>1<><>::
 multiline_tab_bar.tscn::PackedScene::1493773027729435784::1783981135::0::1::::<><><>0<>0<><>::uid://l1rdargfn67o::::res://addons/script-ide/tabbar/multiline_tab_bar.gd
-::res://assets/::1784470393
+::res://assets/::1784470446
 barra2.png::CompressedTexture2D::5179300598954955057::1783623359::1783704145::1::::<><><>0<>0<>9867043beb2ef90f85d697b433594141<>res://.godot/imported/barra2.png-417958e2845eb51085711ef4afb3a73f.ctex::
 buton_panda.tres::Theme::2420667312934886196::1784401839::0::1::::<><><>0<>0<><>::uid://cp8lssch42uu5::::res://fonts/pixel_font.ttf<>uid://xl2okcp2erut::::res://assets/buttons/botones_facu.png
 coin.png::CompressedTexture2D::8432696287643172698::1783623359::1783704145::1::::<><><>0<>0<>c9853c028daa40d6761f715e44768d9f<>res://.godot/imported/coin.png-f04b9cd408b88aba3ab0966b4da32df0.ctex::
@@ -56,7 +56,7 @@ misa ricotera lo fi.mp3::AudioStreamMP3::48863123793618526::1784335362::17843354
 misa_ricotera.wav::AudioStreamWAV::4500424570781627659::1784340228::1784340249::1::::<><><>0<>0<>584e8f6bc6f79f57575889a9ca17df93<>res://.godot/imported/misa_ricotera.wav-71a9b1ac35c1f474bf2a1d241b684fa8.sample::
 mob_1.png::CompressedTexture2D::6607607749441422128::1784410151::1784425243::1::::<><><>0<>0<>522aaa1db80bb792b73cb0402b0fbe4a<>res://.godot/imported/mob_1.png-3e6474df9506fd82c51fa351ada94d10.ctex::
 paredes_atlas.png::CompressedTexture2D::6365577496083233014::1783804287::1783804292::1::::<><><>0<>0<>40eeb07cabd94352d7fe71702856dac0<>res://.godot/imported/paredes_atlas.png-ab96fa0816da6eb630b6924a6cdc75f2.ctex::
-paredes_autotile.tres::TileSet::6872763907189084340::1784470393::0::1::::<><><>0<>0<><>::uid://dw75ttcbekhgq::::res://assets/Pixel Art Top Down - Basic v1.2.3/Texture 32x32/TX Shadow Plant.png<>uid://dpcuubvxjoom8::::res://assets/Pixel Art Top Down - Basic v1.2.3/Texture 32x32/TX Shadow.png<>uid://d0odv6vl8uqy8::::res://assets/Pixel Art Top Down - Basic v1.2.3/Texture 32x32/TX Struct.png<>uid://b2vcp8k857ost::::res://assets/Pixel Art Top Down - Basic v1.2.3/Texture 32x32/TX Tileset Grass.png<>uid://c73dj020hl3tb::::res://assets/Pixel Art Top Down - Basic v1.2.3/Texture 32x32/TX Tileset Stone Ground.png<>uid://b720wvkb7iv8b::::res://assets/Pixel Art Top Down - Basic v1.2.3/Texture 32x32/TX Tileset Wall.png<>uid://c8ja2wej61pbh::::res://assets/Pixel Art Top Down - Basic v1.2.3/Texture 32x32/TX Plant.png<>uid://x8awaqqldr6y::::res://assets/Pixel Art Top Down - Basic v1.2.3/Texture 32x32/TX Props.png
+paredes_autotile.tres::TileSet::6872763907189084340::1784470446::0::1::::<><><>0<>0<><>::uid://dw75ttcbekhgq::::res://assets/Pixel Art Top Down - Basic v1.2.3/Texture 32x32/TX Shadow Plant.png<>uid://dpcuubvxjoom8::::res://assets/Pixel Art Top Down - Basic v1.2.3/Texture 32x32/TX Shadow.png<>uid://d0odv6vl8uqy8::::res://assets/Pixel Art Top Down - Basic v1.2.3/Texture 32x32/TX Struct.png<>uid://b2vcp8k857ost::::res://assets/Pixel Art Top Down - Basic v1.2.3/Texture 32x32/TX Tileset Grass.png<>uid://c73dj020hl3tb::::res://assets/Pixel Art Top Down - Basic v1.2.3/Texture 32x32/TX Tileset Stone Ground.png<>uid://b720wvkb7iv8b::::res://assets/Pixel Art Top Down - Basic v1.2.3/Texture 32x32/TX Tileset Wall.png<>uid://c8ja2wej61pbh::::res://assets/Pixel Art Top Down - Basic v1.2.3/Texture 32x32/TX Plant.png<>uid://x8awaqqldr6y::::res://assets/Pixel Art Top Down - Basic v1.2.3/Texture 32x32/TX Props.png
 particulas_panda.png::CompressedTexture2D::6317198881185064214::1784239906::1784241972::1::::<><><>0<>0<>7c99595d4aab45954e67b3b681f6560a<>res://.godot/imported/particulas_panda.png-de9f10cf3347227feb897d05ec34a611.ctex::
 payaso.png::CompressedTexture2D::8991010773315069417::1784065893::1784068228::1::::<><><>0<>0<>833cf685aef7184ce154820d02c421df<>res://.godot/imported/payaso.png-3c8d24bdf82447ea95aafe8e4f8c3d8d.ctex::
 pis.png::CompressedTexture2D::7667695561254586153::1783623361::1783704147::1::::<><><>0<>0<>8ac555d9929b9d0a650286e3eea4030d<>res://.godot/imported/pis.png-bf91aabb304ec01f0ba5bbf569f5f377.ctex::
@@ -64,7 +64,7 @@ proposal_2_16bit.png::CompressedTexture2D::576282162578909218::1784419808::17844
 texto_generico.tres::LabelSettings::1314976126416580518::1783981135::0::1::::<><><>0<>0<><>::uid://cndjgmrns5spc::::res://fonts/coin_font.ttf
 tileset_isometrico_piedras.tres::TileSet::2127008701105950591::1783874233::0::1::::<><><>0<>0<><>::uid://cwxsep3dw1vas::::res://assets/paredes_atlas.png<>uid://dhij3cospmw3j::::res://assets/pis.png
 top_down.tres::TileSet::3228875621371668353::1784065893::0::1::::<><><>0<>0<><>::uid://dw75ttcbekhgq::::res://assets/Pixel Art Top Down - Basic v1.2.3/Texture 32x32/TX Shadow Plant.png<>uid://dpcuubvxjoom8::::res://assets/Pixel Art Top Down - Basic v1.2.3/Texture 32x32/TX Shadow.png<>uid://d0odv6vl8uqy8::::res://assets/Pixel Art Top Down - Basic v1.2.3/Texture 32x32/TX Struct.png<>uid://b2vcp8k857ost::::res://assets/Pixel Art Top Down - Basic v1.2.3/Texture 32x32/TX Tileset Grass.png<>uid://c73dj020hl3tb::::res://assets/Pixel Art Top Down - Basic v1.2.3/Texture 32x32/TX Tileset Stone Ground.png<>uid://b720wvkb7iv8b::::res://assets/Pixel Art Top Down - Basic v1.2.3/Texture 32x32/TX Tileset Wall.png<>uid://c8ja2wej61pbh::::res://assets/Pixel Art Top Down - Basic v1.2.3/Texture 32x32/TX Plant.png<>uid://x8awaqqldr6y::::res://assets/Pixel Art Top Down - Basic v1.2.3/Texture 32x32/TX Props.png
-top_down_2.tres::TileSet::1047904961825433332::1784470255::0::1::::<><><>0<>0<><>::uid://dw75ttcbekhgq::::res://assets/Pixel Art Top Down - Basic v1.2.3/Texture 32x32/TX Shadow Plant.png<>uid://dpcuubvxjoom8::::res://assets/Pixel Art Top Down - Basic v1.2.3/Texture 32x32/TX Shadow.png<>uid://d0odv6vl8uqy8::::res://assets/Pixel Art Top Down - Basic v1.2.3/Texture 32x32/TX Struct.png<>uid://b2vcp8k857ost::::res://assets/Pixel Art Top Down - Basic v1.2.3/Texture 32x32/TX Tileset Grass.png<>uid://c73dj020hl3tb::::res://assets/Pixel Art Top Down - Basic v1.2.3/Texture 32x32/TX Tileset Stone Ground.png<>uid://b720wvkb7iv8b::::res://assets/Pixel Art Top Down - Basic v1.2.3/Texture 32x32/TX Tileset Wall.png<>uid://c8ja2wej61pbh::::res://assets/Pixel Art Top Down - Basic v1.2.3/Texture 32x32/TX Plant.png<>uid://x8awaqqldr6y::::res://assets/Pixel Art Top Down - Basic v1.2.3/Texture 32x32/TX Props.png
+top_down_2.tres::TileSet::1047904961825433332::1784470446::0::1::::<><><>0<>0<><>::uid://dw75ttcbekhgq::::res://assets/Pixel Art Top Down - Basic v1.2.3/Texture 32x32/TX Shadow Plant.png<>uid://dpcuubvxjoom8::::res://assets/Pixel Art Top Down - Basic v1.2.3/Texture 32x32/TX Shadow.png<>uid://d0odv6vl8uqy8::::res://assets/Pixel Art Top Down - Basic v1.2.3/Texture 32x32/TX Struct.png<>uid://b2vcp8k857ost::::res://assets/Pixel Art Top Down - Basic v1.2.3/Texture 32x32/TX Tileset Grass.png<>uid://c73dj020hl3tb::::res://assets/Pixel Art Top Down - Basic v1.2.3/Texture 32x32/TX Tileset Stone Ground.png<>uid://b720wvkb7iv8b::::res://assets/Pixel Art Top Down - Basic v1.2.3/Texture 32x32/TX Tileset Wall.png<>uid://c8ja2wej61pbh::::res://assets/Pixel Art Top Down - Basic v1.2.3/Texture 32x32/TX Plant.png<>uid://x8awaqqldr6y::::res://assets/Pixel Art Top Down - Basic v1.2.3/Texture 32x32/TX Props.png
 top_down_3.tres::TileSet::429029325883472537::1784156610::0::1::::<><><>0<>0<><>::uid://dw75ttcbekhgq::::res://assets/Pixel Art Top Down - Basic v1.2.3/Texture 32x32/TX Shadow Plant.png<>uid://dpcuubvxjoom8::::res://assets/Pixel Art Top Down - Basic v1.2.3/Texture 32x32/TX Shadow.png<>uid://d0odv6vl8uqy8::::res://assets/Pixel Art Top Down - Basic v1.2.3/Texture 32x32/TX Struct.png<>uid://b2vcp8k857ost::::res://assets/Pixel Art Top Down - Basic v1.2.3/Texture 32x32/TX Tileset Grass.png<>uid://c73dj020hl3tb::::res://assets/Pixel Art Top Down - Basic v1.2.3/Texture 32x32/TX Tileset Stone Ground.png<>uid://b720wvkb7iv8b::::res://assets/Pixel Art Top Down - Basic v1.2.3/Texture 32x32/TX Tileset Wall.png<>uid://c8ja2wej61pbh::::res://assets/Pixel Art Top Down - Basic v1.2.3/Texture 32x32/TX Plant.png<>uid://x8awaqqldr6y::::res://assets/Pixel Art Top Down - Basic v1.2.3/Texture 32x32/TX Props.png
 virus33.png::CompressedTexture2D::680775406838019641::1784410151::1784425244::1::::<><><>0<>0<>371aa98a3613b4534af56fd706dfc6a4<>res://.godot/imported/virus33.png-f5c47c7bbb9c2bd1f86a5c2ea6ce36e3.ctex::
 virus 2.png::CompressedTexture2D::3356522687518899699::1784410151::1784425244::1::::<><><>0<>0<>cbccc11503c00ec3779249c7f7c7db6e<>res://.godot/imported/virus 2.png-b46f98690b52a5b86954b72391ecf573.ctex::
@@ -396,9 +396,9 @@ player.tscn::PackedScene::6170581161901117264::1784425424::0::1::::<><><>0<>0<><
 info sobre escenas.txt::TextFile::-1::1783623361::0::1::::<><><>0<>0<><>::
 level_up_screen.gd::GDScript::9183881728942422026::1783623361::0::1::::<>Control<><>0<>0<><>::
 level_up_screen.tscn::PackedScene::5151606474383905078::1783623361::0::1::::<><><>0<>0<><>::uid://d330gp8kocg5g::::res://escenas/level_up_screen.gd<>uid://dedmc73m6he8n::::res://texto_basico.tres<>uid://ew0lbedgquft::::res://fonts/Mindsight.ttf<>uid://ct64ahdb6i0f2::::res://pickups/AtkDmg.png<>uid://pt653t4xvtrd::::res://pickups/Atkspeed.png<>uid://d25hor2gnrp42::::res://pickups/HealthCure.png
-::res://escenas/creditos/::1783981136
+::res://escenas/creditos/::1784470446
 creditos.gd::GDScript::9201497058738025661::1783981136::0::1::::<>Node2D<><>0<>0<><>::
-creditos.tscn::PackedScene::4105201929065186582::1783981136::0::1::::<><><>0<>0<><>::uid://d4djku51umb38::::res://escenas/creditos/creditos.gd<>uid://dweckkfhubivf::::res://shaders/3dwaves.tres<>uid://cndjgmrns5spc::::res://fonts/coin_font.ttf<>uid://cp8lssch42uu5::::res://fonts/pixel_font.ttf
+creditos.tscn::PackedScene::4105201929065186582::1784470446::0::1::::<><><>0<>0<><>::uid://d4djku51umb38::::res://escenas/creditos/creditos.gd<>uid://dweckkfhubivf::::res://shaders/3dwaves.tres<>uid://cndjgmrns5spc::::res://fonts/coin_font.ttf<>uid://cp8lssch42uu5::::res://fonts/pixel_font.ttf
 ::res://escenas/Game_over/::1783981136
 game_over.gd::GDScript::8995081358037765454::1783981136::0::1::::<>Control<><>0<>0<><>::
 game_over.tscn::PackedScene::4348284783387969695::1783981136::0::1::::<><><>0<>0<><>::uid://d1fjw8gorifms::::res://escenas/Game_over/game_over.gd<>uid://cqo6wuec1qmgx::::res://shaders/3dwaves.gdshader<>uid://dedmc73m6he8n::::res://texto_basico.tres<>uid://cp8lssch42uu5::::res://fonts/pixel_font.ttf
@@ -471,13 +471,13 @@ ImpactParticlePool.gd::GDScript::26802476541443078::1783985235::0::1::::<>Node<>
 to-do.txt::TextFile::-1::1784065893::0::1::::<><><>0<>0<><>::
 TransitionManager.gd::GDScript::6238841124686160257::1784324541::0::1::::<>Control<><>0<>0<><>::
 upgrademanager.gd::GDScript::98011480632341068::1784406094::0::1::::<>Node<><>0<>0<><>::
-::res://shaders/::1784470255
-3dwaves.gdshader::Shader::5926686725165704307::1784470255::0::1::::<><><>0<>0<><>::
+::res://shaders/::1784470446
+3dwaves.gdshader::Shader::5926686725165704307::1784470446::0::1::::<><><>0<>0<><>::
 3dwaves.tres::ShaderMaterial::8711813947359184087::1783981136::0::1::::<><><>0<>0<><>::uid://cqo6wuec1qmgx::::res://shaders/3dwaves.gdshader
-hurt_damage.gdshader::Shader::4592995031272305165::1784470255::0::1::::<><><>0<>0<><>::
+hurt_damage.gdshader::Shader::4592995031272305165::1784470446::0::1::::<><><>0<>0<><>::
 hurt_damage.tres::ShaderMaterial::6920278500061462737::1784156564::0::1::::<><><>0<>0<><>::uid://b6o47sowa1ly8::::res://shaders/hurt_damage.gdshader
-transition.gdshader::Shader::4642974558608937645::1784470255::0::1::::<><><>0<>0<><>::
-waves.gdshader::Shader::5785830717734155408::1784470255::0::1::::<><><>0<>0<><>::
+transition.gdshader::Shader::4642974558608937645::1784470446::0::1::::<><><>0<>0<><>::
+waves.gdshader::Shader::5785830717734155408::1784470446::0::1::::<><><>0<>0<><>::
 waves.tres::ShaderMaterial::7035429987025950726::1783981136::0::1::::<><><>0<>0<><>::uid://coox10ks0l11m::::res://shaders/waves.gdshader
 ::res://smoke_explosion/::1783704146
 circle_32.png::CompressedTexture2D::5064880245830870598::1783623361::1783704146::1::::<><><>0<>0<>7f34e86d7a2d4c23db2d6861255608dd<>res://.godot/imported/circle_32.png-ff53eadac5c62484a55afe7e47d5145f.ctex::

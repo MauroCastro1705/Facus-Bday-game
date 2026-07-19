@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://s2gy730y2qwd" path="res://assets/Textures Of Light Alpha/512x512 textures (20).png" id="5_3c5uc"]
 [ext_resource type="PackedScene" uid="uid://cqnkwniargv32" path="res://objetos_mapa/portal/portal.tscn" id="5_tmtkd"]
 [ext_resource type="PackedScene" uid="uid://x7kt6vxo1fjl" path="res://objetos_mapa/luz_animada.tscn" id="6_qmwk5"]
+[ext_resource type="PackedScene" uid="uid://cjtpjneeq4wcp" path="res://characters/payaso/payaso.tscn" id="8_duf11"]
 [ext_resource type="PackedScene" uid="uid://5e0vkf1a1w4g" path="res://objetos_mapa/heal_zone/altar__curacion.tscn" id="10_3c5uc"]
 [ext_resource type="AudioStream" uid="uid://c507o3iwj0a20" path="res://assets/doom_music.wav" id="11_55iea"]
 
@@ -193,9 +194,12 @@ position = Vector2(510, -432)
 
 [node name="mob5" parent="EnemiesContainer" index="5" unique_id=1761670038 instance=ExtResource("3_st5td")]
 position = Vector2(775, -77)
+fire_rate = 1.0
+detection_range = 500.0
 
 [node name="mob6" parent="EnemiesContainer" index="6" unique_id=940683560 instance=ExtResource("3_st5td")]
-position = Vector2(2496, 916)
+position = Vector2(2057, 914)
+detection_range = 400.0
 
 [node name="mob7" parent="EnemiesContainer" index="7" unique_id=1648903744 instance=ExtResource("3_st5td")]
 position = Vector2(2255, 341)
@@ -208,6 +212,7 @@ position = Vector2(1457, -582)
 
 [node name="Mob_static" parent="EnemiesContainer" index="10" unique_id=1156200088 instance=ExtResource("4_tmtkd")]
 position = Vector2(357, 546)
+fire_rate = 1.0
 
 [node name="Mob_static2" parent="EnemiesContainer" index="11" unique_id=1456970122 instance=ExtResource("4_tmtkd")]
 position = Vector2(693, 378)
@@ -237,10 +242,22 @@ position = Vector2(1097, -252)
 position = Vector2(1779, -646)
 
 [node name="Mob_static7" parent="EnemiesContainer" index="20" unique_id=510113753 instance=ExtResource("4_tmtkd")]
-position = Vector2(437, -902)
+position = Vector2(259, -839)
+shoot_type = 1
+bullet_count = 7
 
 [node name="Mob_static8" parent="EnemiesContainer" index="21" unique_id=349079079 instance=ExtResource("4_tmtkd")]
-position = Vector2(241, -983)
+position = Vector2(266, -982)
+bullet_count = 7
+
+[node name="Payaso" parent="EnemiesContainer" index="22" unique_id=1465689590 instance=ExtResource("8_duf11")]
+position = Vector2(1201, -924)
+
+[node name="Payaso2" parent="EnemiesContainer" index="23" unique_id=181872009 instance=ExtResource("8_duf11")]
+position = Vector2(2567, 905)
+fire_rate = 0.6
+detection_range = 500.0
+shoot_mode = 1
 
 [node name="CanvasModulate" parent="." index="15" unique_id=571325478]
 position = Vector2(593, 368)
@@ -327,7 +344,7 @@ position = Vector2(1919, 1523)
 position = Vector2(2495, 980)
 
 [node name="PointLight2D25" parent="luces bordes" index="25" unique_id=906088527 instance=ExtResource("6_qmwk5")]
-position = Vector2(2688, 979)
+position = Vector2(2687, 979)
 
 [node name="PointLight2D28" parent="luces bordes" index="26" unique_id=1617590709 instance=ExtResource("6_qmwk5")]
 position = Vector2(2656, 692)
