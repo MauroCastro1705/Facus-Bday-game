@@ -53,6 +53,12 @@ text = "Juampi"
 label_settings = SubResource("LabelSettings_7t1ww")
 horizontal_alignment = 1
 
+[node name="Label5" type="Label" parent="VBoxContainer" unique_id=1869665102]
+layout_mode = 2
+text = "marian"
+label_settings = SubResource("LabelSettings_7t1ww")
+horizontal_alignment = 1
+
 [node name="Label4" type="Label" parent="VBoxContainer" unique_id=438207393]
 layout_mode = 2
 text = "Luca"

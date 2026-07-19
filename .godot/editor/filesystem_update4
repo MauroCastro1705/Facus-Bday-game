@@ -1,13 +1,7 @@
-res://objetos_mapa/indio_vendedor/indio_shop.tscn
+res://escenas/creditos/creditos.tscn
 res://shaders/transition.gdshader
 res://shaders/hurt_damage.gdshader
 res://assets/top_down_2.tres
 res://assets/paredes_autotile.tres
 res://shaders/waves.gdshader
 res://shaders/3dwaves.gdshader
-res://characters/player/player.tscn
-res://escenas/Main/main_scene.tscn
-res://Scripts/global.gd
-res://UI/top_bar_ui.tscn
-res://UI/botom_bar/botom_bar.tscn
-res://escenas/rooms/room_1.tscn

@@ -95,6 +95,7 @@ UpgradeManager="*uid://bnqh8ni0a053"
 
 window/size/viewport_width=1200
 window/size/viewport_height=800
+window/size/mode=3
 window/stretch/mode="canvas_items"
 
 [dotnet]
@@ -174,5 +175,4 @@ dash={
 
 [rendering]
 
-renderer/rendering_method="gl_compatibility"
 textures/icon="res://icon.png"
