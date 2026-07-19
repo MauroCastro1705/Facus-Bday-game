@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://csyi7irf7qee5"]
 
 [ext_resource type="Script" uid="uid://kltbrqpkd382" path="res://objetos_mapa/indio_vendedor/indio_shop.gd" id="1_ysxhq"]
-[ext_resource type="Texture2D" uid="uid://ihfjvf5hl1wg" path="res://assets/proposal_2_16bit.png" id="2_f8m1s"]
+[ext_resource type="Texture2D" uid="uid://co0a03fx5phbq" path="res://assets/el indio 2.png" id="2_f8m1s"]
 [ext_resource type="Texture2D" uid="uid://ilnlxjive3fp" path="res://assets/UI Assets pack_v.1_st/Interface.png" id="3_iah6x"]
 [ext_resource type="LabelSettings" uid="uid://blxxug48a0ti3" path="res://assets/label_texto_basico.tres" id="4_ql7yh"]
 
@@ -30,7 +30,7 @@ shape = SubResource("CircleShape2D_f8m1s")
 
 [node name="indio" type="Sprite2D" parent="." unique_id=204130135]
 position = Vector2(-2.1250153, 3.3211212)
-scale = Vector2(0.12939459, 0.12939465)
+scale = Vector2(0.072509795, 0.07250983)
 texture = ExtResource("2_f8m1s")
 
 [node name="texto" type="Control" parent="." unique_id=1480006707]

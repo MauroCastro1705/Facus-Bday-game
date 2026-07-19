@@ -139,10 +139,10 @@ metadata/_edit_lock_ = true
 modulate = Color(0.050980393, 0.32156864, 0.44313726, 1)
 texture_filter = 1
 layout_mode = 0
-offset_left = 31.0
-offset_top = 594.0
-offset_right = 244.0
-offset_bottom = 680.0
+offset_left = 28.0
+offset_top = 689.0
+offset_right = 241.0
+offset_bottom = 775.0
 texture = ExtResource("2_8rk74")
 region_rect = Rect2(283.69855, 79.32457, 52.42926, 48.663628)
 patch_margin_left = 18
@@ -152,15 +152,17 @@ patch_margin_bottom = 13
 
 [node name="health_panel" type="Control" parent="." unique_id=46475710]
 anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+offset_left = 1.0
+offset_top = 581.0
+offset_right = 1200.0
+offset_bottom = 798.0
 
 [node name="HBoxContainer" type="HBoxContainer" parent="health_panel" unique_id=1219774687]
 layout_mode = 0
-offset_left = 62.0
-offset_top = 642.0
-offset_right = 102.0
-offset_bottom = 682.0
+offset_left = 61.0
+offset_top = 155.0
+offset_right = 101.0
+offset_bottom = 195.0
 
 [node name="Label" type="Label" parent="health_panel/HBoxContainer" unique_id=896536069]
 layout_mode = 2
@@ -170,16 +172,16 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="BarraVida" parent="health_panel" unique_id=642129819 instance=ExtResource("3_ajoka")]
-position = Vector2(56, 628)
+position = Vector2(55, 141)
 scale = Vector2(1.1600006, 1)
 
 [node name="TextureRect" type="TextureRect" parent="health_panel" unique_id=586711293]
 texture_filter = 1
 layout_mode = 0
-offset_left = 46.0
-offset_top = 590.0
-offset_right = 73.0
-offset_bottom = 631.0
+offset_left = 45.0
+offset_top = 103.0
+offset_right = 72.0
+offset_bottom = 144.0
 texture = ExtResource("5_6addp")
 expand_mode = 5
 stretch_mode = 5
@@ -187,10 +189,10 @@ stretch_mode = 5
 [node name="player_name" type="Label" parent="health_panel" unique_id=1692511163]
 unique_name_in_owner = true
 layout_mode = 0
-offset_left = 76.0
-offset_top = 599.0
-offset_right = 161.0
-offset_bottom = 622.0
+offset_left = 75.0
+offset_top = 112.0
+offset_right = 160.0
+offset_bottom = 135.0
 text = "Facundito"
 label_settings = ExtResource("2_cle6g")
 horizontal_alignment = 1
@@ -199,16 +201,16 @@ vertical_alignment = 1
 [node name="dash_1" type="TextureRect" parent="health_panel" unique_id=1412588369]
 unique_name_in_owner = true
 layout_mode = 0
-offset_left = 132.0
-offset_top = 649.0
-offset_right = 164.0
-offset_bottom = 681.0
+offset_left = 131.0
+offset_top = 162.0
+offset_right = 163.0
+offset_bottom = 194.0
 scale = Vector2(0.9, 0.9)
 texture = SubResource("CompressedTexture2D_cle6g")
 
 [node name="dash_sprite_timer" type="AnimatedSprite2D" parent="health_panel" unique_id=1955609917]
 unique_name_in_owner = true
-position = Vector2(148, 663)
+position = Vector2(147, 176)
 scale = Vector2(1.1200024, 1.1200024)
 sprite_frames = SubResource("SpriteFrames_fvxjv")
 autoplay = "default"
@@ -217,24 +219,26 @@ frame_progress = 0.08064923
 [node name="dash_2" type="TextureRect" parent="health_panel" unique_id=492811756]
 unique_name_in_owner = true
 layout_mode = 0
-offset_left = 104.0
-offset_top = 649.0
-offset_right = 136.0
-offset_bottom = 681.0
+offset_left = 103.0
+offset_top = 162.0
+offset_right = 135.0
+offset_bottom = 194.0
 scale = Vector2(0.9, 0.9)
 texture = SubResource("CompressedTexture2D_8rk74")
 
 [node name="dash_sprite_timer2" type="AnimatedSprite2D" parent="health_panel" unique_id=575916437]
 unique_name_in_owner = true
-position = Vector2(117.99999, 662.99994)
+position = Vector2(116.99999, 175.99994)
 scale = Vector2(1.1200024, 1.1200024)
 sprite_frames = SubResource("SpriteFrames_8rk74")
 autoplay = "default"
 
 [node name="gun_panel" type="Control" parent="." unique_id=1222717418]
 anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+offset_left = 327.0
+offset_top = 106.0
+offset_right = 367.0
+offset_bottom = 146.0
 
 [node name="gun_background" type="NinePatchRect" parent="gun_panel" unique_id=500197281]
 modulate = Color(0.050980393, 0.32156864, 0.44313726, 1)
