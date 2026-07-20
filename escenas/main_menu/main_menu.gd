@@ -8,8 +8,7 @@ func _ready() -> void:
 	tutorial_info.hide()
 
 func _on_start_button_pressed():
-	#Global.playerNAME = %name_input.text
-	#print("jugador = ", Global.playerNAME)
+	Global.RESET_STATS()
 	TransitionManager.change_scene("res://escenas/Main/main_scene.tscn")
 
 

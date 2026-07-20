@@ -23,9 +23,14 @@ script = ExtResource("1_ysv4t")
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=1091710551]
 material = SubResource("ShaderMaterial_hugdu")
-layout_mode = 0
-offset_right = 910.0
-offset_bottom = 707.0
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 8.0
+offset_bottom = 3.0
+grow_horizontal = 2
+grow_vertical = 2
 color = Color(0.17881, 0.17881, 0.17881, 1)
 
 [node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1916409983]

@@ -37,17 +37,24 @@ script = ExtResource("1_2q1j2")
 
 [node name="ColorRect2" type="ColorRect" parent="." unique_id=937212800]
 material = SubResource("ShaderMaterial_oii30")
-layout_mode = 0
-offset_right = 911.0
-offset_bottom = 714.0
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 2.0
+grow_horizontal = 2
+grow_vertical = 2
 
 [node name="StartButton" type="Button" parent="." unique_id=1150670714]
 texture_filter = 1
-layout_mode = 0
-offset_left = 318.0
-offset_top = 334.0
-offset_right = 582.55176
-offset_bottom = 446.0
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 489.0
+offset_top = 391.0
+offset_right = -446.44824
+offset_bottom = -297.0
 theme = ExtResource("3_oii30")
 theme_override_colors/font_color = Color(50, 31.429, 19.285, 1)
 text = "Start Game
@@ -55,36 +62,39 @@ text = "Start Game
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1671847117]
 texture_filter = 1
-position = Vector2(454, 159)
+position = Vector2(625, 216.00002)
 scale = Vector2(1.0635841, 1.063584)
 texture = ExtResource("4_4t5pn")
 
 [node name="creditos" type="Button" parent="." unique_id=1551492905]
 texture_filter = 1
 layout_mode = 0
-offset_left = 716.0
-offset_top = 612.0
-offset_right = 884.0
-offset_bottom = 683.0
+offset_left = 887.0
+offset_top = 669.0
+offset_right = 1055.0
+offset_bottom = 740.0
 theme = ExtResource("3_oii30")
 text = "Creditos"
 
 [node name="version" type="Label" parent="." unique_id=2103998420]
 layout_mode = 0
-offset_left = 11.0
-offset_top = 684.0
-offset_right = 254.0
-offset_bottom = 700.0
-text = "v0.0.23 - guarda con el payaso"
+offset_left = 3.0
+offset_top = 783.0
+offset_right = 246.0
+offset_bottom = 799.0
+text = "v0.0.26 - guarda con el payaso"
 label_settings = SubResource("LabelSettings_uda5e")
 
 [node name="tutorial" type="Button" parent="." unique_id=39921766]
 texture_filter = 1
-layout_mode = 0
-offset_left = 83.0
-offset_top = 385.0
-offset_right = 253.0
-offset_bottom = 454.0
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 91.0
+offset_top = 425.0
+offset_right = -939.0
+offset_bottom = -306.0
 theme = ExtResource("3_oii30")
 theme_override_fonts/font = ExtResource("3_4t5pn")
 toggle_mode = true

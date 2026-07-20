@@ -55,7 +55,6 @@ var _transition_effect_parameter_call = func(value : float):
 	_transition_effect.material.set_shader_parameter("color_threshold", min(1.0, abs(-4.0 + value*8.0)) * 0.48)
 
 func change_scene(scene_path : String):
-	"""Cambia a una nueva escena o inicia una transición visual"""
 	if _is_transitioning:
 		push_warning("Ya hay una transición en curso")
 		return
